@@ -1,0 +1,18 @@
+{
+  "name": "DOS Advocacia Imobiliária",
+  "short_name": "DOS Advocacia",
+  "description": "Assessoria jurídica especializada para o mercado imobiliário.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f8f8f5",
+  "theme_color": "#0b1e47",
+  "icons": [
+    {
+      "src": "/assets/brand/symbol.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
