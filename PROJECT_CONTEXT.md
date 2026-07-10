@@ -187,6 +187,12 @@ npm run build
 - Lighthouse mobile apresentou variação relevante do ambiente local. A melhor execução limpa registrou Performance 95, Acessibilidade 96, Boas Práticas 100 e SEO 100; LCP 2,7 s, CLS 0 e TBT 130 ms. O LCP ficou 0,2 s acima do alvo laboratorial e deve ser acompanhado no Speed Insights com tráfego real.
 - Como o Wix Blog continua inativo sem credenciais, não existe post representativo renderizável para a auditoria obrigatória. `/conteudos` foi usado como página editorial substituta; a auditoria de um `/post/[slug]` permanece gate da integração Wix.
 
+### 2026-07-10 - Ajuste de enquadramento dos treinamentos
+
+- Hero de `/treinamentos` passou a usar `treinamento-juridico-equipe-locacao.webp`, com enquadramento vertical direcionado ao grupo.
+- Bloco de treinamento da Home passou a usar somente a foto horizontal da turma com certificados.
+- Removidos o recorte de mesa, a foto secundária desfavorável e a legenda sobreposta aos rostos.
+
 ### 2026-07-10 — Governança e continuidade
 
 - Criados e mantidos `AGENTS.md` e `PROJECT_CONTEXT.md` como entrada operacional para futuros agentes.

@@ -159,13 +159,9 @@ h1, h2, h3 { text-wrap: balance; }
 .training-highlights li { display: grid; grid-template-columns: 22px 1fr; gap: .7rem; color: rgba(255,255,255,.86); font-size: .93rem; }
 .training-highlights li::before { color: var(--coral); font-weight: 800; content: "↗"; }
 .training-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
-.training-collage { position: relative; min-height: 660px; }
-.training-collage-main { position: absolute; top: 0; right: 5%; width: 84%; margin: 0; overflow: hidden; box-shadow: 0 30px 80px rgba(5,15,33,.3); }
-.training-collage-main img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.training-collage-detail { position: absolute; z-index: 1; bottom: 0; left: 0; width: 38%; margin: 0; overflow: hidden; border: 8px solid var(--teal); box-shadow: 0 24px 60px rgba(5,15,33,.32); }
-.training-collage-detail img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center; }
-.training-collage-note { position: absolute; right: 0; bottom: 1.2rem; width: 54%; margin: 0; padding: 1rem 1.2rem; color: rgba(255,255,255,.7); background: rgba(11,30,71,.72); backdrop-filter: blur(8px); font-size: .78rem; line-height: 1.45; }
-.training-collage-note span { display: block; color: white; font-size: 1.02rem; font-weight: 700; }
+.training-collage { position: relative; min-height: 0; }
+.training-collage-main { width: 100%; margin: 0; overflow: hidden; box-shadow: 0 30px 80px rgba(5,15,33,.3); }
+.training-collage-main img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 
 .editorial { background: #f3f4f1; }
 .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
@@ -196,7 +192,7 @@ h1, h2, h3 { text-wrap: balance; }
 .training-hero-copy > p:not(.eyebrow) { max-width: 640px; margin-bottom: 2.3rem; color: rgba(255,255,255,.78); font-size: clamp(1.05rem, 1.45vw, 1.2rem); line-height: 1.62; }
 .training-hero-visual { position: relative; min-height: 720px; margin: 0; overflow: hidden; }
 .training-hero-visual::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, rgba(11,30,71,.04) 45%, rgba(5,15,33,.85)); }
-.training-hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.training-hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center 62%; }
 .training-hero-visual figcaption { position: absolute; z-index: 1; right: 2rem; bottom: 2rem; left: 2rem; display: grid; }
 .training-hero-visual figcaption span { color: var(--coral); font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
 .training-hero-visual figcaption strong { max-width: 340px; font-size: 1.5rem; font-weight: 600; letter-spacing: -.035em; line-height: 1.1; }
@@ -420,7 +416,7 @@ h1, h2, h3 { text-wrap: balance; }
   .contact-band-inner, .quiet-cta { align-items: flex-start; flex-direction: column; }
   .about-aside { min-height: 335px; }
   .founder-portrait, .founder-portrait img, .about-portrait, .about-portrait img, .trainer-photo, .trainer-photo img { min-height: 560px; }
-  .training-collage { min-height: 620px; }
+  .training-collage { min-height: 0; }
   .training-hero-grid { width: 100%; min-height: auto; grid-template-columns: 1fr; }
   .training-hero-copy { width: var(--shell); min-height: 640px; padding-right: 0; margin: 0 auto; }
   .training-hero-visual { min-height: 580px; }
@@ -464,10 +460,8 @@ h1, h2, h3 { text-wrap: balance; }
   .founder-credentials { grid-template-columns: 1fr; }
   .founder-credentials p { min-height: 100px; }
   .training-actions { align-items: flex-start; flex-direction: column; }
-  .training-collage { min-height: 500px; }
-  .training-collage-main { right: 0; width: 92%; }
-  .training-collage-detail { width: 42%; border-width: 5px; }
-  .training-collage-note { width: 62%; }
+  .training-collage { min-height: 0; }
+  .training-collage-main { width: 100%; }
   .training-hero-copy { min-height: 610px; padding-top: 4.5rem; padding-bottom: 4.5rem; }
   .training-hero-copy h1 { font-size: clamp(2.9rem, 13vw, 4.5rem); }
   .training-hero-visual { min-height: 470px; }
