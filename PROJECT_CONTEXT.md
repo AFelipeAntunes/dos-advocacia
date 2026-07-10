@@ -155,8 +155,9 @@ npm run build
 - Base técnica de Wix Blog, rotas, sitemap dinâmico e webhook seguro implementada, porém **inativa por ausência intencional de credenciais Wix**.
 - Nome profissional padronizado para **Drielle Pereira**; fotos e treinamentos presentes; rodapé em 2024.
 - Repositório privado usa somente `main`; pushes nessa branch disparam publicação na Vercel.
-- Speed Insights integrado ao layout; a coleta começa após o primeiro deploy válido e visitas reais.
-- Domínio, DNS, GA4, Search Console, Vercel Analytics e integração Wix ainda não configurados.
+- Vercel Web Analytics e Speed Insights integrados ao layout; a coleta começa após o deploy válido e visitas reais.
+- CTAs de WhatsApp nas páginas de serviços e treinamentos usam mensagens pré-preenchidas com o contexto da página. Links globais de contato permanecem genéricos.
+- Domínio, DNS, GA4, Search Console e integração Wix ainda não configurados.
 
 ## 12. Alterações recentes
 
@@ -192,6 +193,12 @@ npm run build
 - Hero de `/treinamentos` passou a usar `treinamento-juridico-equipe-locacao.webp`, com enquadramento vertical direcionado ao grupo.
 - Bloco de treinamento da Home passou a usar somente a foto horizontal da turma com certificados.
 - Removidos o recorte de mesa, a foto secundária desfavorável e a legenda sobreposta aos rostos.
+
+### 2026-07-10 - Mensuração e conversão por WhatsApp
+
+- Adicionado `@vercel/analytics` ao layout global, em conjunto com o Speed Insights, para medir visitas e visualizações de página somente nos deployments da Vercel.
+- Corrigida a especificidade de `.text-link-light`, garantindo contraste alto para CTAs de texto em fundos escuros em todas as páginas.
+- CTAs principais de Contratos Imobiliários, Assessoria em Locação, Conflitos Imobiliários, Due Diligence, Áreas de Atuação e Treinamentos agora iniciam o WhatsApp com mensagens que identificam a origem e a intenção do contato.
 
 ### 2026-07-10 — Governança e continuidade
 
