@@ -1,31 +1,61 @@
-# DOS Advocacia Imobiliária — protótipo
+# DOS Advocacia Imobiliária
 
-Site estático, responsivo e sem dependências de build. Abra `index.html` por um servidor HTTP local ou publique a pasta em uma hospedagem estática com suporte a URLs limpas.
+Site institucional da DOS Advocacia Imobiliária, com Drielle Pereira como profissional apresentada no projeto. O site é desenvolvido em **Next.js 16 (App Router)** para publicação na Vercel e está preparado para usar o Wix Blog como painel editorial em uma etapa posterior.
 
-## Estrutura
+## Continuidade para agentes
 
-- Home, páginas institucionais, quatro páginas de serviço e uma landing page de treinamentos em HTML semântico;
-- Metadados únicos, `canonical`, Open Graph e JSON-LD aderente ao conteúdo visível;
-- `robots.txt` e `sitemap.xml` prontos para o domínio canônico;
-- Paleta enviada, Urbanist e logotipos oficiais;
-- Hero original em `assets/images/hero-dos-advocacia.png` e fotografias autorais otimizadas em WebP para a apresentação da profissional e dos treinamentos.
+Antes de qualquer análise ou alteração, leia integralmente [AGENTS.md](AGENTS.md) e [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md). O contexto registra as decisões de marca, o estado técnico, as fases de migração, os riscos de SEO e as pendências operacionais.
 
-## Pré-publicação obrigatória
+## Executar localmente
 
-1. O nome profissional canônico definido para o projeto é **Drielle Pereira**. Manter essa grafia nos cabeçalhos, no schema, no Google Business Profile e na autoria dos artigos.
-2. Conferir endereço, telefone, e-mail, horário e Instagram antes de publicar. Eles foram espelhados do site atual.
-3. Confirmar a autorização de uso das fotografias da profissional e das turmas antes da publicação em produção.
-4. Migrar todos os artigos atuais para URLs próprias, com autora, data de publicação/revisão e links internos. Não excluir artigos que já recebem tráfego.
-5. Criar redirecionamentos HTTP 301 individuais para cada URL antiga, especialmente posts e páginas de serviço. Não redirecionar todo o acervo para a home.
-6. Validar schema no Rich Results Test, sitemap no Search Console e as páginas no URL Inspection depois do lançamento.
-7. Revisar a comunicação conforme o Provimento OAB 205/2021 e a política de privacidade de acordo com as ferramentas que forem adicionadas.
-
-## Ver localmente
-
-No PowerShell:
+Requer Node.js 20.9 ou superior.
 
 ```powershell
-py -m http.server 4173
+npm install
+npm run dev -- --port 4173
 ```
 
-Depois, abra `http://localhost:4173`.
+Abra `http://localhost:4173`.
+
+Validações de produção:
+
+```powershell
+npm run typecheck
+npm run build
+```
+
+## Arquitetura atual
+
+- Next.js 16, React 19, TypeScript e App Router;
+- páginas institucionais preservadas em rotas limpas, com o HTML previamente aprovado mantido em `src/legacy-pages/` e renderizado no servidor;
+- imagens, logotipos e manifesto em `public/`;
+- metadados, canonical, Open Graph, JSON-LD, `robots.txt` e `sitemap.xml` gerados pelo App Router;
+- redirecionamentos permanentes das antigas URLs `*.html` para as rotas limpas;
+- base segura para Wix Blog em `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/`.
+
+As páginas `/blog` e `/post/[slug]` permanecem indisponíveis até a configuração da integração Wix. Isso evita publicar conteúdo parcial, expor credenciais ou indexar páginas sem a fonte editorial validada.
+
+## Variáveis de ambiente
+
+Copie `.env.example` para `.env.local` somente quando a integração for autorizada. Nunca versione valores reais.
+
+| Variável | Finalidade |
+| --- | --- |
+| `WIX_API_KEY` | Chave de API Wix com permissão mínima **Read Blog**. |
+| `WIX_SITE_ID` | Site ID correspondente ao Wix Blog. |
+| `WIX_APP_ID` | App ID da Custom App Wix que assina os webhooks. |
+| `WIX_WEBHOOK_PUBLIC_KEY` | Chave pública usada para validar o JWT do webhook. |
+| `SITE_URL` | URL canônica. Usar o domínio público somente depois do corte de DNS. |
+
+As chaves são usadas apenas em módulos de servidor. O webhook valida JWT RS256, emissor e audiência, ignora o corpo como fonte de conteúdo e consulta o Wix antes de revalidar cache, listagem e sitemap.
+
+## Próxima etapa: integração editorial Wix
+
+1. Criar/configurar a Custom App e a API Key de leitura do Wix Blog.
+2. Validar, com o acervo real, os 86 posts publicados e as URLs atuais `/post/[slug]`.
+3. Preservar cada slug exatamente como está, incluindo caracteres acentuados; não normalizar nem recriar URLs sem necessidade.
+4. Validar título, descrição, autora, datas, imagens, Rich Content, HTML, sitemap e eventuais redirecionamentos 301.
+5. Configurar os eventos de post criado, atualizado e excluído no endpoint público da Vercel.
+6. Testar em preview antes de qualquer alteração de DNS.
+
+Não houve deploy, alteração de domínio, DNS, Wix ou credenciais nesta migração.

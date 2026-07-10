@@ -1,0 +1,20 @@
+# Dependencies and build output
+node_modules/
+.next/
+out/
+
+# Local environment and credentials
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Local tooling
+.vercel/
+coverage/
+*.tsbuildinfo
+
+# Local verification artifacts
+.playwright-cli/
+output/
+.next-dev*.log

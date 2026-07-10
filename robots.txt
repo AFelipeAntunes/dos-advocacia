@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://www.dosadvocacia.com.br/sitemap.xml
