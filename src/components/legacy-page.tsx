@@ -1,4 +1,3 @@
-import { SiteInteractions } from "@/components/site-interactions";
 import { getLegacyPage, type LegacyPageKey } from "@/lib/legacy-pages";
 
 type LegacyPageProps = {
@@ -18,7 +17,7 @@ export async function LegacyPage({ page }: LegacyPageProps) {
         />
       ))}
       <div dangerouslySetInnerHTML={{ __html: legacyPage.body }} />
-      <SiteInteractions />
+      <script src="/site-interactions.js" />
     </>
   );
 }

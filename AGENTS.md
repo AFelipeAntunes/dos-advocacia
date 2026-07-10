@@ -20,7 +20,10 @@ Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integ
 - Marca e domínio: **DOS Advocacia Imobiliária** / `dosadvocacia.com.br`.
 - Tipografia: Urbanist.
 - Paleta: `#0b1e47`, `#49596c`, `#8fabbc`, `#194951`, `#eb574d`, `#e4e5df`.
-- A comunicação deve ser elegante, humana, objetiva e informativa, sem promessas de resultado ou captação antiética.
+- A voz principal fala diretamente com **você**; Drielle fala em primeira pessoa quando relata experiência ou autoridade profissional.
+- A primeira frase de cada bloco deve trazer argumento, situação ou risco concreto. Evite aberturas institucionais lentas.
+- Não usar travessão largo, dois-pontos decorativos, paralelismo artificial de três itens nem conectores automáticos como “é importante destacar”, “vale ressaltar”, “nesse contexto”, “além disso” e “por fim”.
+- A comunicação deve ser elegante, humana, objetiva e informativa, sem promessas de resultado, superlativos promocionais ou captação antiética.
 - Antes de usar novas fotos de turmas, clientes ou terceiros, confirmar autorização de imagem.
 
 ## Regras técnicas e SEO
@@ -29,6 +32,9 @@ Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integ
 - O HTML institucional preservado está em `src/legacy-pages/`. Mudanças visuais devem preservar semântica, responsividade e acessibilidade.
 - Preserve títulos, descriptions, canonical, Open Graph, JSON-LD, `robots.ts` e `sitemap.ts` quando uma alteração afetar SEO.
 - Toda nova imagem deve ser otimizada e ter `alt` descritivo.
+- Preserve a camada visual CSS-first: animar apenas `transform` e `opacity`, manter o LCP independente de JavaScript e respeitar `prefers-reduced-motion`.
+- Símbolos oficiais publicados estão em `public/assets/brand/`. Os wordmarks enviados ainda exibem “Drielle Oliveira” e foram isolados em `design-assets/brand-legacy/`; não os mova de volta para `public/` sem a correção gráfica.
+- Fotos otimizadas em WebP ficam em `public/assets/images/`. Não versionar os PNGs originais de alta resolução.
 - URLs `*.html` antigas devem continuar com redirecionamento 301 específico; não redirecionar todo o acervo para a home.
 
 ## Wix Blog e Vercel

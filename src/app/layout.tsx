@@ -1,8 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { Urbanist } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
+
+const urbanist = Urbanist({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-urbanist"
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.SITE_URL ?? "https://www.dosadvocacia.com.br"),
@@ -19,10 +26,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={urbanist.variable}>
       <body>
         {children}
-        <SpeedInsights />
+        {process.env.VERCEL === "1" ? <SpeedInsights /> : null}
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 # DOS Advocacia Imobiliária
 
-Site institucional da DOS Advocacia Imobiliária, com Drielle Pereira como profissional apresentada no projeto. O site é desenvolvido em **Next.js 16 (App Router)** para publicação na Vercel e está preparado para usar o Wix Blog como painel editorial em uma etapa posterior.
+Site institucional da DOS Advocacia Imobiliária, com Drielle Pereira como profissional apresentada no projeto. Desenvolvido em **Next.js 16 (App Router)** para publicação na Vercel, combina conteúdo renderizado no servidor, identidade visual própria e uma fundação segura para usar o Wix Blog como painel editorial.
 
 ## Continuidade para agentes
 
@@ -24,16 +24,29 @@ npm run typecheck
 npm run build
 ```
 
+O checklist do projeto também inclui `npm audit --omit=dev`, QA visual em desktop/mobile, teste de `prefers-reduced-motion`, validação de canonical/schema/robots/sitemap e Lighthouse. Um post real só pode ser auditado depois da ativação segura do Wix Blog.
+
 ## Arquitetura atual
 
 - Next.js 16, React 19, TypeScript e App Router;
-- páginas institucionais preservadas em rotas limpas, com o HTML previamente aprovado mantido em `src/legacy-pages/` e renderizado no servidor;
+- páginas institucionais em rotas limpas, com o conteúdo aprovado mantido em `src/legacy-pages/` e renderizado no servidor;
 - imagens, logotipos e manifesto em `public/`;
+- tipografia Urbanist servida por `next/font`, imagens WebP e microinterações CSS-first com `prefers-reduced-motion`;
+- menu e scroll reveal em JavaScript nativo, sem hidratar um Client Component para interações simples;
 - metadados, canonical, Open Graph, JSON-LD, `robots.txt` e `sitemap.xml` gerados pelo App Router;
 - redirecionamentos permanentes das antigas URLs `*.html` para as rotas limpas;
 - base segura para Wix Blog em `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/`.
 
-As páginas `/blog` e `/post/[slug]` permanecem indisponíveis até a configuração da integração Wix. Isso evita publicar conteúdo parcial, expor credenciais ou indexar páginas sem a fonte editorial validada.
+As páginas `/blog` e `/post/[slug]` permanecem indisponíveis até a configuração da integração Wix. Isso evita publicar conteúdo parcial, expor credenciais ou indexar páginas sem a fonte editorial validada. O site institucional, porém, já está preparado para receber esse acervo sem mudar o domínio público.
+
+## Voz e identidade
+
+- Nome profissional: **Drielle Pereira**.
+- Tipografia: **Urbanist**.
+- Paleta: `#0b1e47`, `#49596c`, `#8fabbc`, `#194951`, `#eb574d`, `#e4e5df`.
+- Voz principal em segunda pessoa, com primeira pessoa da Drielle em trechos de experiência.
+- Copy orientada a riscos concretos, sem promessa de resultado, superlativos promocionais ou instruções que substituam assessoria jurídica.
+- Símbolo oficial em `public/assets/brand/` e imagens otimizadas em `public/assets/images/`. Os wordmarks com sobrenome antigo estão preservados, mas fora da área pública, em `design-assets/brand-legacy/`.
 
 ## Variáveis de ambiente
 

@@ -15,7 +15,7 @@ Manter uma presença digital premium para advocacia imobiliária, com foco em co
 | Domínio canônico planejado | `https://www.dosadvocacia.com.br` |
 | Atuação | Curitiba/PR e atendimento em todo o Brasil |
 | Tipografia | Urbanist |
-| Tom | Elegante, direto, humano, seguro e sem juridiquês desnecessário |
+| Tom | Direto, consultivo e humano; segunda pessoa como voz principal e primeira pessoa da Drielle em trechos de autoridade |
 | Regra crítica | Nunca usar “Drielle Oliveira” em texto, metadados, schema ou novos arquivos |
 
 Paleta: `#0b1e47`, `#49596c`, `#8fabbc`, `#194951`, `#eb574d`, `#e4e5df`.
@@ -28,13 +28,13 @@ Proposta: orientar decisões imobiliárias antes que riscos contratuais, documen
 
 ## 4. Arquitetura implementada
 
-O projeto migrou do site estático para **Next.js 16.2.10, React 19.2.7 e TypeScript**, usando App Router e pronto para Vercel. A migração preserva o visual e as páginas institucionais existentes; não representa uma reformulação de identidade ou conteúdo.
+O projeto usa **Next.js 16.2.10, React 19.2.7 e TypeScript** com App Router e publicação na Vercel. A camada institucional foi modernizada em voz, imagens e microinterações, preservando arquitetura, rotas, renderização no servidor e fundação SEO.
 
 | Área | Implementação atual |
 | --- | --- |
 | Páginas institucionais | Rotas App Router que renderizam o HTML preservado em `src/legacy-pages/` |
-| Estilos | `src/app/globals.css` |
-| Interações de navegação e revelação | `src/components/site-interactions.tsx` |
+| Estilos | `src/app/globals.css`, Urbanist via `next/font` e animações CSS-first com redução de movimento |
+| Interações de navegação e revelação | `public/site-interactions.js`, JavaScript nativo sem hidratação React |
 | Metadados e schema institucional | Extraídos das páginas preservadas por `src/lib/legacy-pages.ts` |
 | Imagens, marca e manifesto | `public/assets/` e `public/site.webmanifest` |
 | SEO técnico | `src/app/robots.ts`, `src/app/sitemap.ts`, metadata do App Router e redirects em `next.config.ts` |
@@ -46,7 +46,7 @@ As antigas URLs `*.html` possuem redirecionamentos permanentes específicos para
 
 ## 5. Treinamentos e imagens
 
-`/treinamentos` é uma landing page comercial para treinamento jurídico presencial e in company para equipes de locação de imobiliárias e administradoras.
+`/treinamentos` é uma landing page consultiva para quem decide contratar treinamento jurídico presencial e in company para equipes de locação de imobiliárias e administradoras. A abertura parte do custo operacional de um time despreparado; os módulos entram como prova após o diagnóstico.
 
 Módulos apresentados:
 
@@ -65,7 +65,7 @@ O conteúdo foi estruturado a partir de `TREINAMENTOS.docx`. O treinamento prepa
 - WhatsApp: `+55 41 98792-6468`
 - E-mail: `drielle@dosadvocacia.com.br`
 - Instagram: `https://www.instagram.com/drielleadvimobiliaria/`
-- Endereço: Av. do Batel, 1230, Conj. 508, Batel — Curitiba/PR
+- Endereço: Av. do Batel, 1230, Conj. 508, Batel - Curitiba/PR
 - Horário: segunda a sexta, 10h às 18h
 - Rodapé: `© 2024 DOS Advocacia Imobiliária.`
 
@@ -149,11 +149,12 @@ npm run build
 
 ## 11. Status atual
 
-- Site institucional migrado para Next.js, com design e conteúdo institucional preservados.
+- Site institucional em Next.js com nova voz consultiva, copy orientada a situações reais de risco e experiência da Drielle apresentada em primeira pessoa.
+- Camada visual modernizada sem bibliotecas de animação: logo oficial, Urbanist via `next/font`, imagens WebP, entrada CSS do hero, microinterações, View Transitions nativas e suporte a `prefers-reduced-motion`.
 - Páginas, metadata, JSON-LD, assets e redirects de URLs HTML incluídos na nova estrutura.
 - Base técnica de Wix Blog, rotas, sitemap dinâmico e webhook seguro implementada, porém **inativa por ausência intencional de credenciais Wix**.
 - Nome profissional padronizado para **Drielle Pereira**; fotos e treinamentos presentes; rodapé em 2024.
-- Repositório privado usa somente `main`. As alterações desta migração ainda não foram commitadas, enviadas ou implantadas.
+- Repositório privado usa somente `main`; pushes nessa branch disparam publicação na Vercel.
 - Speed Insights integrado ao layout; a coleta começa após o primeiro deploy válido e visitas reais.
 - Domínio, DNS, GA4, Search Console, Vercel Analytics e integração Wix ainda não configurados.
 
@@ -170,6 +171,22 @@ npm run build
 - Executados com sucesso `npm run typecheck` e `npm run build` sem credenciais Wix.
 - Sem alteração de conteúdo Wix, domínio, DNS, Vercel, credenciais, deploy, commit ou push.
 
+### 2026-07-10 - Revisão de voz, marca e experiência visual
+
+- Reescritas Home, Sobre, Áreas de atuação, quatro páginas de serviços, Treinamentos, Conteúdos e Contato com voz direta em segunda pessoa e autoridade da Drielle em primeira pessoa.
+- Diferencial da experiência dentro de imobiliária levado para a primeira dobra e aplicado como eixo narrativo do site.
+- Removidos travessões largos e expressões proibidas da copy; CTAs passaram a ser convites consultivos sem promessa de resultado.
+- Símbolo oficial incorporado ao cabeçalho e rodapé com o nome canônico em texto HTML. Os wordmarks enviados ainda exibem “Drielle Oliveira”, foram isolados em `design-assets/brand-legacy/` e não podem ser publicados até a correção gráfica.
+- Novas fotos da Drielle e dos treinamentos convertidas para WebP, com originais pesados fora do diretório público.
+- Urbanist passou a ser servido pelo `next/font`; hero principal foi reduzido de aproximadamente 1,8 MB para cerca de 73 KB em WebP.
+- Adicionadas microinterações CSS-first, View Transitions, scroll reveal progressivo e tratamento explícito para redução de movimento.
+- Interações simples foram movidas de um Client Component para JavaScript nativo, evitando hidratação React apenas para menu e scroll reveal.
+- `robots.ts` passou a liberar explicitamente OAI-SearchBot, ChatGPT-User, PerplexityBot, Claude-SearchBot e Claude-User. A política para bots de treinamento permanece uma decisão separada.
+- Validação final local em build de produção: TypeScript e build aprovados, 17 rotas geradas, `npm audit --omit=dev` com zero vulnerabilidades e QA de voz sem nome antigo, travessão largo ou expressões proibidas.
+- Lighthouse da Home em desktop: Performance 99, Acessibilidade 96, Boas Práticas 100 e SEO 100; LCP 0,7 s, CLS 0 e TBT 100 ms.
+- Lighthouse mobile apresentou variação relevante do ambiente local. A melhor execução limpa registrou Performance 95, Acessibilidade 96, Boas Práticas 100 e SEO 100; LCP 2,7 s, CLS 0 e TBT 130 ms. O LCP ficou 0,2 s acima do alvo laboratorial e deve ser acompanhado no Speed Insights com tráfego real.
+- Como o Wix Blog continua inativo sem credenciais, não existe post representativo renderizável para a auditoria obrigatória. `/conteudos` foi usado como página editorial substituta; a auditoria de um `/post/[slug]` permanece gate da integração Wix.
+
 ### 2026-07-10 — Governança e continuidade
 
 - Criados e mantidos `AGENTS.md` e `PROJECT_CONTEXT.md` como entrada operacional para futuros agentes.
@@ -178,6 +195,9 @@ npm run build
 ## 13. Pendências e recomendações
 
 - Executar o roteiro da seção 9 antes de colocar o blog ou o domínio público em produção.
+- Repetir Lighthouse e validar `BlogPosting` em um `/post/[slug]` real assim que as credenciais Wix forem habilitadas.
 - Confirmar dados públicos, autorizações de imagem e conformidade OAB/LGPD antes do lançamento.
+- Solicitar versões corrigidas dos logotipos horizontais com “Drielle Pereira”; até lá, preservar a composição símbolo + texto usada no site.
+- Decidir e documentar separadamente a política para bots de treinamento como GPTBot, ClaudeBot, Google-Extended e CCBot.
 - Não criar outro CMS: a decisão atual é manter Wix Blog como painel editorial integrado ao Next/Vercel.
 - Não fazer DNS ou deploy até haver preview validado, plano de rollback e autorização explícita.
