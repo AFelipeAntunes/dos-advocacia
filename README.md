@@ -56,11 +56,11 @@ Copie `.env.example` para `.env.local` somente quando a integração for autoriz
 | --- | --- |
 | `WIX_API_KEY` | Chave de API Wix com permissão mínima **Read Blog**. |
 | `WIX_SITE_ID` | Site ID correspondente ao Wix Blog. |
-| `WIX_APP_ID` | App ID da Custom App Wix que assina os webhooks. |
+| `WIX_APP_ID` | App ID da Custom App Wix, necessário para a configuração e auditoria no painel. |
 | `WIX_WEBHOOK_PUBLIC_KEY` | Chave pública usada para validar o JWT do webhook. |
 | `SITE_URL` | URL canônica. Usar o domínio público somente depois do corte de DNS. |
 
-As chaves são usadas apenas em módulos de servidor. O webhook valida JWT RS256, emissor e audiência, ignora o corpo como fonte de conteúdo e consulta o Wix antes de revalidar cache, listagem e sitemap.
+As chaves são usadas apenas em módulos de servidor. O webhook valida a assinatura JWT RS256 com a chave pública, ignora o corpo como fonte de conteúdo e invalida cache, listagem e sitemap sem consultar o Wix antes da resposta.
 
 ## Próxima etapa: integração editorial Wix
 

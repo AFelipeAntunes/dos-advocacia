@@ -15,6 +15,9 @@ const legacyRedirects = [
 ] as const;
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [{ hostname: "static.wixstatic.com", protocol: "https" }]
+  },
   async redirects() {
     return legacyRedirects.map(([source, destination]) => ({
       source,

@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { BlogPostJsonLd } from "@/components/blog-post-json-ld";
+import { WixRichContent } from "@/components/wix-rich-content";
 import { getWixPostBySlug, isWixBlogConfigured, listWixPosts } from "@/lib/wix/blog";
+import { getPostDescription, getPostImageUrl } from "@/lib/wix/seo";
 
 type PostPageProps = {
   params: Promise<{ slug: string }>;
@@ -24,8 +27,9 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   const post = await getWixPostBySlug(slug);
   if (!post?.title || !post.slug) return {};
 
-  const description = post.excerpt ?? getSummary(post.contentText);
+  const description = getPostDescription(post);
   const canonicalSlug = encodeURIComponent(post.slug);
+  const image = getPostImageUrl(post);
 
   return {
     title: `${post.title} | DOS Advocacia Imobiliária`,
@@ -39,7 +43,14 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       publishedTime: post.firstPublishedDate,
       modifiedTime: post.lastPublishedDate,
       locale: "pt_BR",
-      siteName: "DOS Advocacia Imobiliária"
+      siteName: "DOS Advocacia Imobiliária",
+      images: image ? [image] : undefined
+    },
+    twitter: {
+      card: image ? "summary_large_image" : "summary",
+      description,
+      images: image ? [image] : undefined,
+      title: post.title
     }
   };
 }
@@ -54,6 +65,7 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <main className="article-shell">
       <article className="article">
+        <BlogPostJsonLd post={post} siteUrl={process.env.SITE_URL ?? "https://www.dosadvocacia.com.br"} />
         <Link className="text-link" href="/blog">
           <span aria-hidden="true">←</span> Ver todos os conteúdos
         </Link>
@@ -63,27 +75,12 @@ export default async function PostPage({ params }: PostPageProps) {
           {formatDate(post.firstPublishedDate)}
           {post.minutesToRead ? ` · ${post.minutesToRead} min de leitura` : ""}
         </p>
-        <div className="article__content">
-          {toParagraphs(post.contentText ?? post.excerpt).map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
+        <div className="article__content"><WixRichContent content={post.richContent} fallback={post.contentText ?? post.excerpt} /></div>
       </article>
     </main>
   );
 }
 
-function getSummary(content?: string) {
-  if (!content) return undefined;
-  return content.length > 160 ? `${content.slice(0, 157).trim()}…` : content;
-}
-
-function toParagraphs(content?: string) {
-  return (content ?? "Conteúdo em atualização.")
-    .split(/\n{2,}/)
-    .map((paragraph) => paragraph.trim())
-    .filter(Boolean);
-}
 
 function formatDate(value?: string) {
   if (!value) return "Conteúdo jurídico";

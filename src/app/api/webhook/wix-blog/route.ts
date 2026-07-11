@@ -1,7 +1,7 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 
-import { WIX_BLOG_TAG, isWixBlogConfigured, refreshWixBlogSource } from "@/lib/wix/blog";
+import { WIX_BLOG_TAG, isWixBlogConfigured } from "@/lib/wix/blog";
 import { isWixWebhookConfigured, verifyWixWebhook } from "@/lib/wix/webhook";
 
 export const runtime = "nodejs";
@@ -22,13 +22,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Webhook signature is invalid." }, { status: 401 });
   }
 
-  try {
-    // The verified event is only a trigger. Content is always re-read from Wix.
-    await refreshWixBlogSource();
-  } catch {
-    return NextResponse.json({ error: "Wix Blog could not be refreshed." }, { status: 503 });
-  }
-
+  // The event is only a verified invalidation signal. The next request reloads the source from Wix.
   revalidateTag(WIX_BLOG_TAG, { expire: 0 });
   revalidatePath("/blog");
   revalidatePath("/post/[slug]", "page");

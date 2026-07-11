@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { isWixBlogConfigured, listWixPosts } from "@/lib/wix/blog";
+import { getPostDescription, getPostImageUrl } from "@/lib/wix/seo";
 
 export const revalidate = 3600;
 
@@ -11,11 +13,6 @@ export const metadata: Metadata = {
   description: "Conteúdos sobre Direito Imobiliário, contratos, locação e prevenção de riscos.",
   alternates: { canonical: "/blog" }
 };
-
-function getExcerpt(content?: string) {
-  if (!content) return "Leia o conteúdo completo preparado pela DOS Advocacia Imobiliária.";
-  return content.length > 180 ? `${content.slice(0, 177).trim()}…` : content;
-}
 
 export default async function BlogPage() {
   if (!isWixBlogConfigured()) notFound();
@@ -36,11 +33,21 @@ export default async function BlogPage() {
       <section className="blog-grid" aria-label="Publicações do blog">
         {posts.map((post) => (
           <article className="blog-card" key={post.id ?? post.slug}>
+            {getPostImageUrl(post) ? (
+              <Image
+                alt={`Capa do artigo: ${post.title}`}
+                className="blog-card__image"
+                height={480}
+                sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                src={getPostImageUrl(post) ?? ""}
+                width={760}
+              />
+            ) : null}
             <p className="blog-card__date">{formatDate(post.firstPublishedDate)}</p>
             <h2>
               <Link href={`/post/${encodeURIComponent(post.slug ?? "")}`}>{post.title}</Link>
             </h2>
-            <p>{getExcerpt(post.excerpt)}</p>
+            <p>{getPostDescription(post)}</p>
             <Link className="text-link" href={`/post/${encodeURIComponent(post.slug ?? "")}`}>
               Ler artigo <span aria-hidden="true">→</span>
             </Link>

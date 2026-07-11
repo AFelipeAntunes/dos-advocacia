@@ -93,6 +93,8 @@ Não presumir endpoint, nome de campo ou formato do webhook. Comparar cada item 
 
 ## Fase 3 — Criar credenciais com menor privilégio
 
+**Pré-requisito concluído:** a preparação técnica foi implementada e validada localmente com `npm run test:wix`, `npm run typecheck` e `npm run build`, sem credenciais Wix. O próximo agente não deve reimplementar o renderer ou o webhook sem evidência do ambiente Preview.
+
 Após autorização explícita:
 
 1. Criar ou confirmar uma Wix Custom App vinculada somente ao site da DOS.
@@ -205,24 +207,18 @@ Auditoria concluída sem criar credenciais, webhooks, variáveis, deployment ou 
 - O modelo atual da API precisa de `fieldsets` para receber conteúdo, Rich Content, SEO, mídia e URL. Sem isso, o site novo não renderizaria o conteúdo real.
 - O endpoint do webhook deve verificar assinatura JWT, mas não deve presumir `issuer`, `audience` ou validade de 60 segundos antes de validar o token real. Também deve responder rapidamente, sem uma consulta síncrona ao Wix no caminho crítico.
 
-## Prompt de execução para o próximo agente
+## Prompt de configuração para o próximo agente
 
 ```text
 Leia integralmente AGENTS.md, PROJECT_CONTEXT.md e docs/WIX_BLOG_INTEGRATION_HANDOFF.md.
 
-Objetivo: implementar a preparação técnica da integração Wix Blog → Next.js/Vercel, sem criar ou configurar recursos externos.
+Objetivo: configurar e validar a integração em Preview, depois de receber autorização explícita para criar recursos no Wix e na Vercel.
 
-Escopo obrigatório:
-1. Ajustar as consultas Wix para solicitar somente os fieldsets necessários de conteúdo, Rich Content, SEO, mídia e URL.
-2. Expandir os tipos de dados do post e implementar renderer seguro para o Rich Content realmente suportado pelo acervo, com imagens e links acessíveis.
-3. Criar metadata, Open Graph e BlogPosting JSON-LD a partir do post. Usar Drielle Pereira como autora canônica do site novo sem depender da resolução da autora pelo endpoint de posts.
-4. Corrigir o webhook para validar a assinatura JWT com a chave pública, sem claims não documentadas, e revalidar cache sem chamada de rede síncrona antes da resposta.
-5. Criar testes com fixtures para post simples, post com imagem/links e post com citação.
-6. Atualizar PROJECT_CONTEXT.md e este handoff com decisões, testes e pendências.
+Antes de qualquer alteração, confirme que a main contém a preparação técnica e que `npm run test:wix`, `npm run typecheck` e `npm run build` estão verdes.
 
-Fora de escopo sem autorização explícita: API key, Custom App, webhook Wix, variáveis Vercel, deployment, domínio, DNS, publicação ou mudança de dados do Wix.
+Fora de escopo sem autorização explícita: domínio, DNS, produção, alteração de posts, perfis de autora ou dados do Wix.
 
-Antes de implementar, confirme os endpoints, fieldsets, schema e comportamento de webhook na documentação oficial atual da Wix. Não invente campos ou claims.
+Ao receber autorização para Preview, crie a API Key de leitura mínima, a Custom App e o webhook de Preview conforme as Fases 3 e 4. Nunca exponha segredos, tokens, chaves completas, payloads de webhook ou dados pessoais de clientes.
 Nunca exponha segredos, tokens, chaves completas, payloads de webhook ou dados pessoais de clientes.
 Execute typecheck, build e testes relevantes. Faça commit e push somente se eu autorizar explicitamente.
 ```

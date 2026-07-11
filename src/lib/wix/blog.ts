@@ -1,17 +1,11 @@
 import "server-only";
 
-export const WIX_BLOG_TAG = "wix-blog";
+import type { WixBlogPost } from "@/lib/wix/types";
 
-export type WixBlogPost = {
-  contentText?: string;
-  excerpt?: string;
-  firstPublishedDate?: string;
-  id?: string;
-  lastPublishedDate?: string;
-  minutesToRead?: number;
-  slug?: string;
-  title?: string;
-};
+export type { WixBlogPost } from "@/lib/wix/types";
+
+export const WIX_BLOG_TAG = "wix-blog";
+const WIX_POST_FIELDSETS = ["CONTENT_TEXT", "RICH_CONTENT", "SEO", "URL"];
 
 type WixListPostsResponse = {
   posts?: WixBlogPost[];
@@ -68,30 +62,21 @@ async function wixFetch<T>(path: string, options?: RequestInit) {
   return (await response.json()) as T;
 }
 
+function fieldsetsQuery() {
+  return WIX_POST_FIELDSETS.map((fieldset) => `fieldsets=${fieldset}`).join("&");
+}
+
 export async function listWixPosts() {
-  const response = await wixFetch<WixListPostsResponse>("/v3/posts?paging.limit=100");
+  const response = await wixFetch<WixListPostsResponse>(
+    `/v3/posts?paging.limit=100&${fieldsetsQuery()}`
+  );
   return response?.posts?.filter((post) => Boolean(post.slug && post.title)) ?? [];
 }
 
 export async function getWixPostBySlug(rawSlug: string) {
   const slug = decodeWixSlug(rawSlug);
-  const response = await wixFetch<WixGetPostResponse>(`/v3/posts/slugs/${encodeURIComponent(slug)}`);
+  const response = await wixFetch<WixGetPostResponse>(
+    `/v3/posts/slugs/${encodeURIComponent(slug)}?${fieldsetsQuery()}`
+  );
   return response?.post ?? null;
-}
-
-export async function refreshWixBlogSource() {
-  const config = getWixApiConfig();
-  if (!config) return;
-
-  const response = await fetch("https://www.wixapis.com/v3/posts?paging.limit=100", {
-    cache: "no-store",
-    headers: {
-      Authorization: config.apiKey,
-      "wix-site-id": config.siteId
-    }
-  });
-
-  if (!response.ok) {
-    throw new Error(`Wix Blog refresh failed with status ${response.status}.`);
-  }
 }

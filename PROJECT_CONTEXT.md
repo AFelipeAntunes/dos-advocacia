@@ -106,8 +106,8 @@ Redatora → Wix Blog → API de servidor → Next.js/Vercel → visitante e Goo
 - API Wix isolada em módulos de servidor com `WIX_API_KEY` e `WIX_SITE_ID`.
 - Rotas `/blog` e `/post/[slug]` com metadata, listagem, geração de parâmetros, conteúdo textual de fallback e cache por tag.
 - Sitemap que inclui as páginas institucionais e, após credenciais, lista posts publicados com seus slugs reais.
-- Endpoint `POST /api/webhook/wix-blog` preparado para validar JWT RS256 com chave pública, `issuer` `wix.com`, `audience` do App ID e janela curta de validade.
-- Webhook falha fechado quando credenciais não existem, não utiliza seu corpo como conteúdo, consulta a fonte Wix e somente então revalida a tag, `/blog`, `/post/[slug]` e `/sitemap.xml`.
+- Endpoint `POST /api/webhook/wix-blog` preparado para validar a assinatura JWT RS256 com a chave pública configurada, sem presumir claims não documentadas.
+- Webhook falha fechado quando credenciais não existem, não utiliza seu corpo como conteúdo e revalida a tag, `/blog`, `/post/[slug]` e `/sitemap.xml` sem consulta síncrona antes da resposta.
 - Nenhuma credencial, integração externa, analytics, deploy ou DNS foi configurado.
 
 ### Limite intencional desta etapa
@@ -116,7 +116,7 @@ Sem credenciais, `/blog` e `/post/[slug]` retornam 404 e o sitemap contém apena
 
 ## 9. Roteiro para a próxima etapa
 
-O handoff operacional completo, incluindo gates, segurança de credenciais, auditoria de conteúdo, preview, SEO, DNS e rollback está em [`docs/WIX_BLOG_INTEGRATION_HANDOFF.md`](docs/WIX_BLOG_INTEGRATION_HANDOFF.md). O próximo agente deve iniciar apenas pelas Fases 1 e 2, que são de descoberta e compatibilidade.
+O handoff operacional completo, incluindo gates, segurança de credenciais, auditoria de conteúdo, preview, SEO, DNS e rollback está em [`docs/WIX_BLOG_INTEGRATION_HANDOFF.md`](docs/WIX_BLOG_INTEGRATION_HANDOFF.md). As Fases 1 e 2 já foram concluídas; a próxima etapa externa é configurar credenciais apenas em Preview.
 
 1. Criar ou confirmar uma Wix Custom App e API Key de servidor com privilégio mínimo **Read Blog**.
 2. Configurar em ambiente local e preview: `WIX_API_KEY`, `WIX_SITE_ID`, `WIX_APP_ID`, `WIX_WEBHOOK_PUBLIC_KEY` e `SITE_URL`; nunca commitar valores.
@@ -214,6 +214,14 @@ npm run build
 - A API Wix exige `fieldsets` para devolver conteúdo, Rich Content, SEO, mídia e URL. A camada atual não os solicita e precisa ser corrigida antes de criar credenciais.
 - O webhook atual pressupõe claims e uma validade curta não confirmadas para o JWT e faz consulta síncrona antes da resposta. A próxima etapa técnica deve validar somente a assinatura documentada e responder sem bloquear em consulta ao Wix.
 - 85 posts exibem a autora antiga "Dra. Drielle Oliveira" e um exibe `drielle90`. Corrigir os perfis no Wix é pendência obrigatória de marca antes do corte de DNS.
+
+### 2026-07-11 - Preparação técnica Wix Blog
+
+- As consultas de posts agora pedem os fieldsets `CONTENT_TEXT`, `RICH_CONTENT`, `SEO` e `URL`, e os tipos incluem mídia, Rich Content e SEO.
+- Implementado renderer seguro, sem HTML injetado, para parágrafos, títulos, links, citações e imagens do formato Ricos auditado. Conteúdos futuros fora desse conjunto exigem validação antes de publicação.
+- `/blog` e `/post/[slug]` estão preparados para imagem de capa, metadata, Open Graph, Twitter Card e `BlogPosting` com autora canônica Drielle Pereira.
+- Webhook passou a validar somente a assinatura RS256 e a revalidar caches sem consulta síncrona ao Wix antes da resposta.
+- Adicionado `tsx` como dependência de desenvolvimento e o comando `npm run test:wix` para fixtures de texto, links, citação e imagem.
 
 ### 2026-07-10 — Governança e continuidade
 
