@@ -1,5 +1,5 @@
 # Handoff — Wix Blog como CMS e Next.js/Vercel como site público
-
+> Nota de validacao (2026-07-11): branch criada apenas para gerar um Vercel Preview deployment de validacao da integracao Wix Blog em ambiente nao-Production. Nenhuma alteracao funcional de codigo nesta branch.
 ## Objetivo desta etapa
 
 Manter o Wix Blog como painel editorial para a redatora e entregar cada artigo em HTML renderizado pelo Next.js, no mesmo domínio público. O leitor não deve ver Wix, iframe ou redirecionamento.
