@@ -116,6 +116,8 @@ Sem credenciais, `/blog` e `/post/[slug]` retornam 404 e o sitemap contém apena
 
 ## 9. Roteiro para a próxima etapa
 
+O handoff operacional completo, incluindo gates, segurança de credenciais, auditoria de conteúdo, preview, SEO, DNS e rollback está em [`docs/WIX_BLOG_INTEGRATION_HANDOFF.md`](docs/WIX_BLOG_INTEGRATION_HANDOFF.md). O próximo agente deve iniciar apenas pelas Fases 1 e 2, que são de descoberta e compatibilidade.
+
 1. Criar ou confirmar uma Wix Custom App e API Key de servidor com privilégio mínimo **Read Blog**.
 2. Configurar em ambiente local e preview: `WIX_API_KEY`, `WIX_SITE_ID`, `WIX_APP_ID`, `WIX_WEBHOOK_PUBLIC_KEY` e `SITE_URL`; nunca commitar valores.
 3. Consultar List Posts e Get Post By Slug, confirmar os 86 posts, suas URLs exatas, campos de SEO, data, autora, imagem e Rich Content.
@@ -199,6 +201,19 @@ npm run build
 - Adicionado `@vercel/analytics` ao layout global, em conjunto com o Speed Insights, para medir visitas e visualizações de página somente nos deployments da Vercel.
 - Corrigida a especificidade de `.text-link-light`, garantindo contraste alto para CTAs de texto em fundos escuros em todas as páginas.
 - CTAs principais de Contratos Imobiliários, Assessoria em Locação, Conflitos Imobiliários, Due Diligence, Áreas de Atuação e Treinamentos agora iniciam o WhatsApp com mensagens que identificam a origem e a intenção do contato.
+
+### 2026-07-10 - Handoff da integração Wix Blog
+
+- Criado `docs/WIX_BLOG_INTEGRATION_HANDOFF.md` com as fases de descoberta, confirmação de contrato da API, credenciais mínimas, preview, webhook, auditoria SEO, produção e rollback.
+- O handoff bloqueia credenciais, variáveis Vercel, webhook, deploy e DNS até haver evidência de compatibilidade com três posts de amostra e autorização explícita.
+
+### 2026-07-11 - Auditoria Wix Blog e próximo gate técnico
+
+- Auditoria de leitura confirmou 86 posts publicados, todos já no padrão `/post/[slug]`; não há redirecionamentos 301 de path a criar. Há dois rascunhos e 19 itens na lixeira fora do escopo.
+- A amostra de conteúdo mostrou texto, imagens, links e citações. A implementação precisa suportar Rich Content seguro antes da ativação, mesmo sem tabelas ou embeds no acervo atual.
+- A API Wix exige `fieldsets` para devolver conteúdo, Rich Content, SEO, mídia e URL. A camada atual não os solicita e precisa ser corrigida antes de criar credenciais.
+- O webhook atual pressupõe claims e uma validade curta não confirmadas para o JWT e faz consulta síncrona antes da resposta. A próxima etapa técnica deve validar somente a assinatura documentada e responder sem bloquear em consulta ao Wix.
+- 85 posts exibem a autora antiga "Dra. Drielle Oliveira" e um exibe `drielle90`. Corrigir os perfis no Wix é pendência obrigatória de marca antes do corte de DNS.
 
 ### 2026-07-10 — Governança e continuidade
 
