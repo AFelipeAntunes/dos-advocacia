@@ -2,11 +2,11 @@
 
 ## Leitura obrigatória
 
-Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integralmente [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md). Ele é a fonte de verdade para negócio, marca, SEO, arquitetura, estado do repositório e rollout Wix/Vercel.
+Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integralmente [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) e [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Eles são a fonte de verdade para negócio, marca, SEO, arquitetura, estado do repositório e rollout Wix/Vercel.
 
 ## Fluxo de trabalho
 
-1. Leia `PROJECT_CONTEXT.md`.
+1. Leia `PROJECT_CONTEXT.md` e `docs/ARCHITECTURE.md`.
 2. Verifique branch, `git status` e escopo do pedido.
 3. Identifique impacto em marca, SEO, conteúdo, imagens, Wix, Vercel, domínio ou deploy.
 4. Implemente somente a menor mudança segura e reversível.

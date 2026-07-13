@@ -4,7 +4,7 @@ Site institucional da DOS Advocacia Imobiliária, com Drielle Pereira como profi
 
 ## Continuidade para agentes
 
-Antes de qualquer análise ou alteração, leia integralmente [AGENTS.md](AGENTS.md) e [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md). O contexto registra as decisões de marca, o estado técnico, as fases de migração, os riscos de SEO e as pendências operacionais.
+Antes de qualquer análise ou alteração, leia integralmente [AGENTS.md](AGENTS.md), [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) e [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). O contexto registra as decisões de marca, o estado técnico, as fases de migração, os riscos de SEO e as pendências operacionais.
 
 ## Executar localmente
 

@@ -231,6 +231,12 @@ npm run build
 - A rota foi validada em Preview com resposta HTTP 200 e sem exposição de segredo. `WIX_REVALIDATION_SECRET` está marcado como Sensitive e limitado a Preview; não há variável equivalente em Production.
 - Os webhooks temporários de criação e exclusão foram removidos do Wix após a validação. A Vercel Authentication de Preview foi reativada; Production, domínio, DNS, e-mail e posts Wix permaneceram inalterados.
 
+### 2026-07-13 - Conteúdos ligados ao blog e arquitetura registrada
+
+- `/conteudos` e a URL legada `/conteudos.html` agora direcionam permanentemente para `/blog`; links institucionais de Conteúdos também passam a levar à listagem real de artigos.
+- A abertura da listagem foi reescrita para orientar o visitante a reconhecer riscos antes de decidir sobre um imóvel, sem promessas de resultado.
+- Criado `docs/ARCHITECTURE.md` como referência canônica de rotas, SEO, Wix, cache, segredos, Preview, Production, DNS e rollback. `AGENTS.md` e `README.md` passaram a exigir sua leitura antes de alterações futuras.
+
 ### 2026-07-10 — Governança e continuidade
 
 - Criados e mantidos `AGENTS.md` e `PROJECT_CONTEXT.md` como entrada operacional para futuros agentes.

@@ -23,10 +23,10 @@ export default async function BlogPage() {
     <main className="blog-shell">
       <section className="blog-intro">
         <p className="eyebrow">Conteúdos</p>
-        <h1>Conhecimento para decisões imobiliárias mais seguras.</h1>
+        <h1>Antes de decidir sobre um imóvel, entenda o que pode mudar o seu caso.</h1>
         <p>
-          Análises claras sobre contratos, locação, conflitos e os aspectos jurídicos que protegem
-          decisões relevantes.
+          Textos diretos sobre contratos, locação, documentação e conflitos para você reconhecer
+          riscos, formular perguntas mais precisas e saber quando uma análise jurídica faz diferença.
         </p>
       </section>
 
