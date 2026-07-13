@@ -223,6 +223,12 @@ npm run build
 - Webhook passou a validar somente a assinatura RS256 e a revalidar caches sem consulta síncrona ao Wix antes da resposta.
 - Adicionado `tsx` como dependência de desenvolvimento e o comando `npm run test:wix` para fixtures de texto, links, citação e imagem.
 
+### 2026-07-13 - Revalidação editorial sob demanda
+
+- Adicionada a rota interna `POST /api/revalidate/wix-blog`, protegida por `WIX_REVALIDATION_SECRET` exclusivamente no servidor. Ela invalida a tag do Wix Blog, listagem, artigos e sitemap sem aceitar conteúdo no corpo da requisição.
+- A redatora continua trabalhando apenas no Wix. Após publicar ou editar, ela solicita ao responsável técnico/assistente autorizado a revalidação do blog; o segredo não é compartilhado, incluído em links, logs ou variáveis `NEXT_PUBLIC_`.
+- Como o catálogo Wix atual não oferece evento de post atualizado/publicado, a rota segura é o caminho imediato; o ISR permanece como contingência.
+
 ### 2026-07-10 — Governança e continuidade
 
 - Criados e mantidos `AGENTS.md` e `PROJECT_CONTEXT.md` como entrada operacional para futuros agentes.

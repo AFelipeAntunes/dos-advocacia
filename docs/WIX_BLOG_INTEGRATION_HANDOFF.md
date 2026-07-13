@@ -207,6 +207,16 @@ Auditoria concluída sem criar credenciais, webhooks, variáveis, deployment ou 
 - O modelo atual da API precisa de `fieldsets` para receber conteúdo, Rich Content, SEO, mídia e URL. Sem isso, o site novo não renderizaria o conteúdo real.
 - O endpoint do webhook deve verificar assinatura JWT, mas não deve presumir `issuer`, `audience` ou validade de 60 segundos antes de validar o token real. Também deve responder rapidamente, sem uma consulta síncrona ao Wix no caminho crítico.
 
+## Revalidação para edições sem webhook nativo
+
+O catálogo do Wix confirmou apenas eventos de criação e exclusão de posts. Enquanto não houver evento nativo de edição/publicação, usar a rota interna `POST /api/revalidate/wix-blog` após uma alteração editorial.
+
+- A rota exige `Authorization: Bearer <WIX_REVALIDATION_SECRET>` ou o cabeçalho de servidor `x-revalidation-secret` com o mesmo valor.
+- O segredo existe somente em variáveis de ambiente do destino correspondente; nunca no Wix, navegador, URL, chat, Git ou `NEXT_PUBLIC_`.
+- A chamada invalida a tag do Wix Blog, `/blog`, `/post/[slug]` e `/sitemap.xml`. Não recebe ou grava o conteúdo do artigo.
+- Procedimento para a redatora: publicar/editar no Wix e avisar o responsável: **"Revalide o blog Wix"**. O responsável autorizado executa a chamada segura e confirma a URL atualizada.
+- O ISR continua sendo contingência. Para produção, criar outro segredo distinto somente quando o corte for aprovado.
+
 ## Prompt de configuração para o próximo agente
 
 ```text
