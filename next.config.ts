@@ -6,7 +6,7 @@ const legacyRedirects = [
   ["/assessoria-em-locacao.html", "/assessoria-em-locacao"],
   ["/conflitos-imobiliarios.html", "/conflitos-imobiliarios"],
   ["/contato.html", "/contato"],
-  ["/conteudos.html", "/conteudos"],
+  ["/conteudos.html", "/blog"],
   ["/contratos-imobiliarios.html", "/contratos-imobiliarios"],
   ["/due-diligence-imobiliaria.html", "/due-diligence-imobiliaria"],
   ["/politica-de-privacidade.html", "/politica-de-privacidade"],

@@ -4,7 +4,7 @@ Site institucional da DOS Advocacia Imobiliária, com Drielle Pereira como profi
 
 ## Continuidade para agentes
 
-Antes de qualquer análise ou alteração, leia integralmente [AGENTS.md](AGENTS.md) e [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md). O contexto registra as decisões de marca, o estado técnico, as fases de migração, os riscos de SEO e as pendências operacionais.
+Antes de qualquer análise ou alteração, leia integralmente [AGENTS.md](AGENTS.md), [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) e [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). O contexto registra as decisões de marca, o estado técnico, as fases de migração, os riscos de SEO e as pendências operacionais.
 
 ## Executar localmente
 
@@ -58,9 +58,16 @@ Copie `.env.example` para `.env.local` somente quando a integração for autoriz
 | `WIX_SITE_ID` | Site ID correspondente ao Wix Blog. |
 | `WIX_APP_ID` | App ID da Custom App Wix, necessário para a configuração e auditoria no painel. |
 | `WIX_WEBHOOK_PUBLIC_KEY` | Chave pública usada para validar o JWT do webhook. |
+| `WIX_REVALIDATION_SECRET` | Segredo exclusivamente de servidor para invalidar o cache editorial sob demanda. |
 | `SITE_URL` | URL canônica. Usar o domínio público somente depois do corte de DNS. |
 
 As chaves são usadas apenas em módulos de servidor. O webhook valida a assinatura JWT RS256 com a chave pública, ignora o corpo como fonte de conteúdo e invalida cache, listagem e sitemap sem consultar o Wix antes da resposta.
+
+### Atualização editorial imediata
+
+O Wix continua sendo o único painel da redatora. Depois de publicar ou editar um artigo, ela pode solicitar ao responsável técnico: **"Revalide o blog Wix"**. O responsável usa a rota interna `POST /api/revalidate/wix-blog` com o segredo `WIX_REVALIDATION_SECRET`, armazenado apenas na Vercel. A rota invalida o cache do blog, dos artigos e do sitemap sem receber nem registrar o conteúdo do post.
+
+Não compartilhar esse segredo, não criar links com ele e não chamar a rota pelo navegador. Enquanto não houver um evento Wix para edição/publicação, o ISR é a contingência; a operação sob demanda é o caminho para atualização imediata.
 
 ## Próxima etapa: integração editorial Wix
 

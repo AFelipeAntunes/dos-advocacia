@@ -9,7 +9,6 @@ const legacyRoutes = [
   "/assessoria-em-locacao",
   "/conflitos-imobiliarios",
   "/contato",
-  "/conteudos",
   "/contratos-imobiliarios",
   "/due-diligence-imobiliaria",
   "/politica-de-privacidade",

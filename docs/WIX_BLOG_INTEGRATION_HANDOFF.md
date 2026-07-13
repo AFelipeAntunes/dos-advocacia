@@ -1,5 +1,5 @@
 # Handoff — Wix Blog como CMS e Next.js/Vercel como site público
-
+> Nota de validacao (2026-07-11): branch criada apenas para gerar um Vercel Preview deployment de validacao da integracao Wix Blog em ambiente nao-Production. Nenhuma alteracao funcional de codigo nesta branch.
 ## Objetivo desta etapa
 
 Manter o Wix Blog como painel editorial para a redatora e entregar cada artigo em HTML renderizado pelo Next.js, no mesmo domínio público. O leitor não deve ver Wix, iframe ou redirecionamento.
@@ -206,6 +206,24 @@ Auditoria concluída sem criar credenciais, webhooks, variáveis, deployment ou 
 - O perfil de escritora publicado ainda exibe **Dra. Drielle Oliveira** em 85 posts e um post tem autoria `drielle90`. Corrigir os perfis no Wix antes do corte de DNS é requisito de marca.
 - O modelo atual da API precisa de `fieldsets` para receber conteúdo, Rich Content, SEO, mídia e URL. Sem isso, o site novo não renderizaria o conteúdo real.
 - O endpoint do webhook deve verificar assinatura JWT, mas não deve presumir `issuer`, `audience` ou validade de 60 segundos antes de validar o token real. Também deve responder rapidamente, sem uma consulta síncrona ao Wix no caminho crítico.
+
+## Revalidação para edições sem webhook nativo
+
+O catálogo do Wix confirmou apenas eventos de criação e exclusão de posts. Enquanto não houver evento nativo de edição/publicação, usar a rota interna `POST /api/revalidate/wix-blog` após uma alteração editorial.
+
+- A rota exige `Authorization: Bearer <WIX_REVALIDATION_SECRET>` ou o cabeçalho de servidor `x-revalidation-secret` com o mesmo valor.
+- O segredo existe somente em variáveis de ambiente do destino correspondente; nunca no Wix, navegador, URL, chat, Git ou `NEXT_PUBLIC_`.
+- A chamada invalida a tag do Wix Blog, `/blog`, `/post/[slug]` e `/sitemap.xml`. Não recebe ou grava o conteúdo do artigo.
+- Procedimento para a redatora: publicar/editar no Wix e avisar o responsável: **"Revalide o blog Wix"**. O responsável autorizado executa a chamada segura e confirma a URL atualizada.
+- O ISR continua sendo contingência. Para produção, criar outro segredo distinto somente quando o corte for aprovado.
+
+### Estado de validação em Preview - 13 de julho de 2026
+
+- O endpoint respondeu HTTP 200 com `{ "revalidated": true }` no deployment de Preview da branch `preview/wix-blog-validation`.
+- `WIX_REVALIDATION_SECRET` foi armazenado como Sensitive e apenas em Preview. Não há valor de revalidação em Production.
+- Os dois webhooks Wix exclusivos da validação (criação e exclusão) foram removidos após o teste. A proteção por login do Preview foi reativada.
+- Não houve alteração em Production, domínio, DNS, e-mail, posts Wix ou perfis de autora.
+- O alias de branch e URLs imutáveis de Preview não devem ser usados em webhook permanente. Antes da produção, refazer a validação com a URL canônica aprovada e um segredo diferente.
 
 ## Prompt de configuração para o próximo agente
 
