@@ -244,11 +244,18 @@ npm run build
 
 ## 13. Pendências e recomendações
 
-- Executar o roteiro da seção 9 antes de colocar o blog ou o domínio público em produção.
+### Estado de produção confirmado — 13 de julho de 2026
+
+- O site público está ativo em `https://www.dosadvocacia.com.br` no projeto oficial da Vercel. `https://dosadvocacia.com.br` responde com redirecionamento permanente 308 para `www`.
+- No Registro.br, somente os registros web foram alterados: `A dosadvocacia.com.br -> 216.198.79.1` e `CNAME www.dosadvocacia.com.br -> 82aaee17cb676f6c.vercel-dns-017.com.`. MX Microsoft 365, SPF, verificações TXT e `autodiscover` foram preservados.
+- As variáveis Wix e `SITE_URL` foram configuradas em Production; `WIX_REVALIDATION_SECRET` é distinto do Preview e permanece Sensitive. Um redeploy de Production foi necessário após incluir as variáveis, pois elas são capturadas no build.
+- Smoke test público aprovado: home, blog, artigo real, sitemap e robots responderam 200; artigo possui canonical, description, Open Graph e `BlogPosting`; sitemap contém a URL do artigo.
+- Não há webhook Wix permanente em Production. O catálogo atual não oferece evento de edição/publicação; para alterações editoriais usar a revalidação segura sob demanda, conforme `docs/ARCHITECTURE.md`.
+
+- Monitorar a propagação de DNS pelos resolvedores externos e as primeiras métricas de Vercel Analytics e Speed Insights.
 - Repetir Lighthouse e validar `BlogPosting` em um `/post/[slug]` real assim que as credenciais Wix forem habilitadas.
 - Confirmar dados públicos, autorizações de imagem e conformidade OAB/LGPD antes do lançamento.
 - Solicitar versões corrigidas dos logotipos horizontais com “Drielle Pereira”; até lá, preservar a composição símbolo + texto usada no site.
 - Decidir e documentar separadamente a política para bots de treinamento como GPTBot, ClaudeBot, Google-Extended e CCBot.
 - Não criar outro CMS: a decisão atual é manter Wix Blog como painel editorial integrado ao Next/Vercel.
-- Não fazer DNS ou deploy até haver preview validado, plano de rollback e autorização explícita.
-- Antes de um corte para Production, criar um segredo de revalidação distinto, validar novamente a rota no domínio de produção e cadastrar somente os webhooks que existirem no catálogo Wix naquele momento.
+- Antes de qualquer alteração de conteúdo no Wix, manter o procedimento de revalidação sob demanda. Reavaliar webhook somente se o catálogo Wix passar a oferecer evento de atualização/publicação ou se sua assinatura for validada novamente no ambiente alvo.

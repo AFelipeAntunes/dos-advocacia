@@ -240,3 +240,12 @@ Ao receber autorização para Preview, crie a API Key de leitura mínima, a Cust
 Nunca exponha segredos, tokens, chaves completas, payloads de webhook ou dados pessoais de clientes.
 Execute typecheck, build e testes relevantes. Faça commit e push somente se eu autorizar explicitamente.
 ```
+
+### Corte de Production concluído — 13 de julho de 2026
+
+- Production foi publicada a partir de `main` no projeto oficial da Vercel. As variáveis necessárias foram aplicadas como Sensitive em Production e houve redeploy posterior para que o build as consumisse.
+- `SITE_URL` de Production usa `https://www.dosadvocacia.com.br`; `WIX_REVALIDATION_SECRET` é diferente do Preview e não foi revelado.
+- Vercel recebeu `dosadvocacia.com.br` e `www.dosadvocacia.com.br`. A raiz está em redirect 308 para `www`.
+- No Registro.br foram alterados somente `A dosadvocacia.com.br -> 216.198.79.1` e `CNAME www.dosadvocacia.com.br -> 82aaee17cb676f6c.vercel-dns-017.com.`. MX, SPF, TXT de verificação e `autodiscover` permaneceram inalterados.
+- Smoke test público aprovado: `/`, `/blog`, um artigo real, `/sitemap.xml` e `/robots.txt` responderam 200. O artigo conferido possui canonical, description, Open Graph e `BlogPosting`; o sitemap o contém.
+- Nenhum webhook Wix foi cadastrado em Production. O fluxo seguro para edição/publicação segue sendo revalidação sob demanda até existir evento nativo de update/publish e uma nova validação da assinatura.

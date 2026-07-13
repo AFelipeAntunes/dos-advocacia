@@ -74,3 +74,17 @@ Variáveis esperadas: `WIX_API_KEY`, `WIX_SITE_ID`, `WIX_APP_ID`, `WIX_WEBHOOK_P
 - Deploy: promover o deployment anterior funcional na Vercel.
 - DNS: restaurar somente os registros `@` e `www` anteriores, preservando e-mail.
 - Nunca apagar posts, API Keys ou registros DNS como primeira resposta.
+
+## Corte de Production registrado — 13 de julho de 2026
+
+O corte foi concluído no projeto oficial `dos-advocacia` da Vercel.
+
+- Domínio canônico: `https://www.dosadvocacia.com.br`.
+- `dosadvocacia.com.br` está configurado na Vercel com redirect 308 para `www`.
+- DNS autoritativo no Registro.br: `A` da raiz para `216.198.79.1` e `CNAME` de `www` para `82aaee17cb676f6c.vercel-dns-017.com.`.
+- Os registros de e-mail e verificação (MX, SPF/TXT, Microsoft/Google TXT e `autodiscover`) foram preservados. Nunca substituir nameservers como forma de mudar apenas o site.
+- `WIX_API_KEY`, `WIX_SITE_ID`, `WIX_APP_ID`, `WIX_WEBHOOK_PUBLIC_KEY`, `WIX_REVALIDATION_SECRET` e `SITE_URL` estão em Production como Sensitive; o segredo de revalidação é exclusivo desse ambiente. Segredos nunca devem ser revelados em documentação, commits ou chat.
+- Após adicionar ou alterar variável de Production, executar um redeploy da Production antes de validar o blog: variáveis entram no build do deployment.
+- Verificação realizada no domínio público: home, `/blog`, artigo Wix real, `/sitemap.xml` e `/robots.txt` com HTTP 200; a raiz respondeu 308 para `www`; um artigo foi confirmado com canonical, description, Open Graph e `BlogPosting`.
+
+O Wix continua como backoffice. Como não existe evento de edição/publicação no catálogo atual, a rotina para alterações permanece: redatora publica/edita no Wix, solicita “Revalide o blog Wix”, e um responsável autorizado chama a rota segura de revalidação sem expor o segredo.
