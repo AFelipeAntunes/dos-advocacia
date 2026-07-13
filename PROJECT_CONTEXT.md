@@ -228,6 +228,8 @@ npm run build
 - Adicionada a rota interna `POST /api/revalidate/wix-blog`, protegida por `WIX_REVALIDATION_SECRET` exclusivamente no servidor. Ela invalida a tag do Wix Blog, listagem, artigos e sitemap sem aceitar conteúdo no corpo da requisição.
 - A redatora continua trabalhando apenas no Wix. Após publicar ou editar, ela solicita ao responsável técnico/assistente autorizado a revalidação do blog; o segredo não é compartilhado, incluído em links, logs ou variáveis `NEXT_PUBLIC_`.
 - Como o catálogo Wix atual não oferece evento de post atualizado/publicado, a rota segura é o caminho imediato; o ISR permanece como contingência.
+- A rota foi validada em Preview com resposta HTTP 200 e sem exposição de segredo. `WIX_REVALIDATION_SECRET` está marcado como Sensitive e limitado a Preview; não há variável equivalente em Production.
+- Os webhooks temporários de criação e exclusão foram removidos do Wix após a validação. A Vercel Authentication de Preview foi reativada; Production, domínio, DNS, e-mail e posts Wix permaneceram inalterados.
 
 ### 2026-07-10 — Governança e continuidade
 
@@ -243,3 +245,4 @@ npm run build
 - Decidir e documentar separadamente a política para bots de treinamento como GPTBot, ClaudeBot, Google-Extended e CCBot.
 - Não criar outro CMS: a decisão atual é manter Wix Blog como painel editorial integrado ao Next/Vercel.
 - Não fazer DNS ou deploy até haver preview validado, plano de rollback e autorização explícita.
+- Antes de um corte para Production, criar um segredo de revalidação distinto, validar novamente a rota no domínio de produção e cadastrar somente os webhooks que existirem no catálogo Wix naquele momento.

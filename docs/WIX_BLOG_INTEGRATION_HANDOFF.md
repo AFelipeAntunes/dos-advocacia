@@ -217,6 +217,14 @@ O catálogo do Wix confirmou apenas eventos de criação e exclusão de posts. E
 - Procedimento para a redatora: publicar/editar no Wix e avisar o responsável: **"Revalide o blog Wix"**. O responsável autorizado executa a chamada segura e confirma a URL atualizada.
 - O ISR continua sendo contingência. Para produção, criar outro segredo distinto somente quando o corte for aprovado.
 
+### Estado de validação em Preview - 13 de julho de 2026
+
+- O endpoint respondeu HTTP 200 com `{ "revalidated": true }` no deployment de Preview da branch `preview/wix-blog-validation`.
+- `WIX_REVALIDATION_SECRET` foi armazenado como Sensitive e apenas em Preview. Não há valor de revalidação em Production.
+- Os dois webhooks Wix exclusivos da validação (criação e exclusão) foram removidos após o teste. A proteção por login do Preview foi reativada.
+- Não houve alteração em Production, domínio, DNS, e-mail, posts Wix ou perfis de autora.
+- O alias de branch e URLs imutáveis de Preview não devem ser usados em webhook permanente. Antes da produção, refazer a validação com a URL canônica aprovada e um segredo diferente.
+
 ## Prompt de configuração para o próximo agente
 
 ```text
