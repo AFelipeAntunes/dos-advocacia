@@ -67,7 +67,7 @@ function extractBody(source: string) {
 }
 
 const nationalLandingPath = "/advogada-imobiliaria";
-const nationalLandingLink = `<a href="${nationalLandingPath}">Advogada Imobiliária</a>`;
+const nationalLandingLink = `<a href="${nationalLandingPath}">Advogada Imobiliarista</a>`;
 
 function addNationalLandingLinks(body: string) {
   const withMenuLink = body.replace(

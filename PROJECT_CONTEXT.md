@@ -161,8 +161,16 @@ npm run build
 - CTAs de WhatsApp nas páginas de serviços e treinamentos usam mensagens pré-preenchidas com o contexto da página. Links globais de contato permanecem genéricos.
 - Domínio, DNS, GA4, Search Console e integração Wix ainda não configurados.
 - A landing nacional funciona como página-mãe do cluster de advocacia imobiliária; a página de Curitiba permanece como satélite com links cruzados.
+- Home e landing nacional exibem um bloco sóbrio de reconhecimento com nota média 5,0, 11 avaliações e link para o perfil público do Google, sem reproduzir comentários de clientes.
 
 ## 12. Alterações recentes
+
+### 2026-07-17 — Reconhecimento público e âncora imobiliarista
+
+- Adicionada à Home e à landing nacional uma seção `Reconhecimento` construída somente com `intro-layout`, `founder-credentials` e `text-link` já existentes.
+- A nota 5,0 e a contagem de 11 avaliações foram confirmadas no perfil público do Google fornecido para a tarefa; nenhum comentário individual foi copiado para o site.
+- O link global da landing nacional passou a exibir `Advogada Imobiliarista`, preservando `/advogada-imobiliaria`, title e metadata.
+- Na landing nacional, os títulos destacados passaram a usar `advogada imobiliarista` e `advocacia imobiliarista`, sem alteração de layout.
 
 ### 2026-07-17 — Landing SEO de advocacia imobiliária
 
@@ -277,5 +285,6 @@ npm run build
 - Decidir e documentar separadamente a política para bots de treinamento como GPTBot, ClaudeBot, Google-Extended e CCBot.
 - Tratar Curitiba como a primeira página-satélite; antes de abrir novas praças, validar demanda orgânica, conteúdo local próprio e links para `/advogada-imobiliaria`, sem duplicar a landing nacional por cidade.
 - Definir uma arquitetura de storage e sincronização antes de migrar imagens editoriais do Wix. Hoje `static.wixstatic.com` é a origem dinâmica do CMS; copiar URLs isoladamente sem sincronização criaria risco de imagens quebradas ou desatualizadas.
+- Revalidar periodicamente a nota e a quantidade de avaliações no Google antes de futuras publicações que alterem o bloco de reconhecimento; esses dados são factuais e podem mudar.
 - Não criar outro CMS: a decisão atual é manter Wix Blog como painel editorial integrado ao Next/Vercel.
 - Antes de qualquer alteração de conteúdo no Wix, manter o procedimento de revalidação sob demanda. Reavaliar webhook somente se o catálogo Wix passar a oferecer evento de atualização/publicação ou se sua assinatura for validada novamente no ambiente alvo.
