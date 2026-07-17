@@ -40,7 +40,7 @@ O projeto usa **Next.js 16.2.10, React 19.2.7 e TypeScript** com App Router e pu
 | SEO técnico | `src/app/robots.ts`, `src/app/sitemap.ts`, metadata do App Router e redirects em `next.config.ts` |
 | Blog futuro | `/blog`, `/post/[slug]`, `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/route.ts` |
 
-Rotas institucionais: `/`, `/sobre`, `/areas-de-atuacao`, `/contratos-imobiliarios`, `/assessoria-em-locacao`, `/conflitos-imobiliarios`, `/due-diligence-imobiliaria`, `/treinamentos`, `/conteudos`, `/contato` e `/politica-de-privacidade`.
+Rotas institucionais: `/`, `/advogada-imobiliaria`, `/advogada-imobiliaria-curitiba`, `/sobre`, `/areas-de-atuacao`, `/contratos-imobiliarios`, `/assessoria-em-locacao`, `/conflitos-imobiliarios`, `/due-diligence-imobiliaria`, `/treinamentos`, `/conteudos`, `/contato` e `/politica-de-privacidade`.
 
 As antigas URLs `*.html` possuem redirecionamentos permanentes específicos para as rotas limpas. Não há redirecionamento genérico para a home.
 
@@ -153,7 +153,7 @@ npm run build
 
 - Site institucional em Next.js com nova voz consultiva, copy orientada a situações reais de risco e experiência da Drielle apresentada em primeira pessoa.
 - Camada visual modernizada sem bibliotecas de animação: logo oficial, Urbanist via `next/font`, imagens WebP, entrada CSS do hero, microinterações, View Transitions nativas e suporte a `prefers-reduced-motion`.
-- Páginas, metadata, JSON-LD, assets e redirects de URLs HTML incluídos na nova estrutura.
+- Páginas, metadata, JSON-LD, assets e redirects de URLs HTML incluídos na nova estrutura, incluindo a landing nacional `/advogada-imobiliaria` e a página-satélite `/advogada-imobiliaria-curitiba`.
 - Base técnica de Wix Blog, rotas, sitemap dinâmico e webhook seguro implementada, porém **inativa por ausência intencional de credenciais Wix**.
 - Nome profissional padronizado para **Drielle Pereira**; fotos e treinamentos presentes; rodapé em 2024.
 - Repositório privado usa somente `main`; pushes nessa branch disparam publicação na Vercel.
@@ -162,6 +162,20 @@ npm run build
 - Domínio, DNS, GA4, Search Console e integração Wix ainda não configurados.
 
 ## 12. Alterações recentes
+
+### 2026-07-17 — Landing SEO de advocacia imobiliária
+
+- Criada a rota institucional `/advogada-imobiliaria` como página nacional para a intenção de busca “advogada imobiliária”.
+- Adicionados title, meta description, canonical, Open Graph, imagem com alt descritivo, JSON-LD de `Service` e breadcrumb, além da entrada no sitemap.
+- O conteúdo visível distribui com naturalidade as variações de intenção ligadas a due diligence, contratos, locação e assessoria remota, sem usar a obsoleta tag `meta keywords`.
+
+### 2026-07-17 — Página-satélite de advocacia imobiliária em Curitiba
+
+- Criada a rota `/advogada-imobiliaria-curitiba` com conteúdo BoFu local, metadata, canonical, Open Graph, breadcrumb, `FAQPage`, `LegalService` e entrada no sitemap.
+- Reutilizados apenas os blocos visuais existentes; nenhuma dependência, CSS ou componente visual novo foi adicionado.
+- A landing de Curitiba passou a ser vinculada no menu e no rodapé das páginas institucionais durante a renderização do HTML preservado.
+- Todos os links de WhatsApp da nova página mantêm a mensagem padrão e acrescentam a origem “Advogada Imobiliária” para identificação do lead, sem restringir a procedência geográfica da pessoa.
+- As comparações de custo da copy recebida foram substituídas por formulações informativas para respeitar a política de publicidade profissional registrada no projeto.
 
 ### 2026-07-10 — Migração técnica Next.js e fundação Wix Blog
 
@@ -257,5 +271,6 @@ npm run build
 - Confirmar dados públicos, autorizações de imagem e conformidade OAB/LGPD antes do lançamento.
 - Solicitar versões corrigidas dos logotipos horizontais com “Drielle Pereira”; até lá, preservar a composição símbolo + texto usada no site.
 - Decidir e documentar separadamente a política para bots de treinamento como GPTBot, ClaudeBot, Google-Extended e CCBot.
+- Tratar Curitiba como a primeira página-satélite; antes de abrir novas praças, validar demanda orgânica, conteúdo local próprio e links para `/advogada-imobiliaria`, sem duplicar a landing nacional por cidade.
 - Não criar outro CMS: a decisão atual é manter Wix Blog como painel editorial integrado ao Next/Vercel.
 - Antes de qualquer alteração de conteúdo no Wix, manter o procedimento de revalidação sob demanda. Reavaliar webhook somente se o catálogo Wix passar a oferecer evento de atualização/publicação ou se sua assinatura for validada novamente no ambiente alvo.

@@ -6,6 +6,8 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 export const legacyPageFiles = {
+  advogadaImobiliaria: "advogada-imobiliaria.html",
+  advogadaImobiliariaCuritiba: "advogada-imobiliaria-curitiba.html",
   home: "index.html",
   areas: "areas-de-atuacao.html",
   locacao: "assessoria-em-locacao.html",
@@ -56,9 +58,37 @@ function extractBody(source: string) {
     ""
   );
 
-  return Object.entries(legacyLinkMap).reduce(
+  const normalizedLinks = Object.entries(legacyLinkMap).reduce(
     (html, [legacyPath, routePath]) => html.replaceAll(legacyPath, routePath),
     withoutLegacyScript
+  );
+
+  return addCuritibaLandingLinks(normalizedLinks);
+}
+
+const curitibaLandingPath = "/advogada-imobiliaria-curitiba";
+const curitibaLandingLink = `<a href="${curitibaLandingPath}">Advogada em Curitiba</a>`;
+
+function addCuritibaLandingLinks(body: string) {
+  const withMenuLink = body.replace(
+    /<nav\b[^>]*class=["'][^"']*\bmain-nav\b[^"']*["'][^>]*>[\s\S]*?<\/nav>/i,
+    (navigation) => {
+      if (navigation.includes(`href="${curitibaLandingPath}"`)) return navigation;
+
+      return navigation.replace(
+        /(<a\b[^>]*class=["'][^"']*\bnav-contact\b)/i,
+        `${curitibaLandingLink}$1`
+      );
+    }
+  );
+
+  return withMenuLink.replace(
+    /<div class="footer-column">\s*<p class="footer-label">Navegação<\/p>[\s\S]*?<\/div>/i,
+    (navigation) => {
+      if (navigation.includes(`href="${curitibaLandingPath}"`)) return navigation;
+
+      return navigation.replace(/<\/div>$/i, `${curitibaLandingLink}</div>`);
+    }
   );
 }
 

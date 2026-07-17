@@ -5,6 +5,8 @@ import { isWixBlogConfigured, listWixPosts } from "@/lib/wix/blog";
 const siteUrl = process.env.SITE_URL ?? "https://www.dosadvocacia.com.br";
 const legacyRoutes = [
   "/",
+  "/advogada-imobiliaria",
+  "/advogada-imobiliaria-curitiba",
   "/areas-de-atuacao",
   "/assessoria-em-locacao",
   "/conflitos-imobiliarios",
