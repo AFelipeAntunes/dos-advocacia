@@ -63,21 +63,21 @@ function extractBody(source: string) {
     withoutLegacyScript
   );
 
-  return addCuritibaLandingLinks(normalizedLinks);
+  return addNationalLandingLinks(normalizedLinks);
 }
 
-const curitibaLandingPath = "/advogada-imobiliaria-curitiba";
-const curitibaLandingLink = `<a href="${curitibaLandingPath}">Advogada em Curitiba</a>`;
+const nationalLandingPath = "/advogada-imobiliaria";
+const nationalLandingLink = `<a href="${nationalLandingPath}">Advogada Imobiliária</a>`;
 
-function addCuritibaLandingLinks(body: string) {
+function addNationalLandingLinks(body: string) {
   const withMenuLink = body.replace(
     /<nav\b[^>]*class=["'][^"']*\bmain-nav\b[^"']*["'][^>]*>[\s\S]*?<\/nav>/i,
     (navigation) => {
-      if (navigation.includes(`href="${curitibaLandingPath}"`)) return navigation;
+      if (navigation.includes(`href="${nationalLandingPath}"`)) return navigation;
 
       return navigation.replace(
         /(<a\b[^>]*class=["'][^"']*\bnav-contact\b)/i,
-        `${curitibaLandingLink}$1`
+        `${nationalLandingLink}$1`
       );
     }
   );
@@ -85,9 +85,9 @@ function addCuritibaLandingLinks(body: string) {
   return withMenuLink.replace(
     /<div class="footer-column">\s*<p class="footer-label">Navegação<\/p>[\s\S]*?<\/div>/i,
     (navigation) => {
-      if (navigation.includes(`href="${curitibaLandingPath}"`)) return navigation;
+      if (navigation.includes(`href="${nationalLandingPath}"`)) return navigation;
 
-      return navigation.replace(/<\/div>$/i, `${curitibaLandingLink}</div>`);
+      return navigation.replace(/<\/div>$/i, `${nationalLandingLink}</div>`);
     }
   );
 }

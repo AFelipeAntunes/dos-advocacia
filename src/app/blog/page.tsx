@@ -9,7 +9,7 @@ import { getPostDescription, getPostImageUrl } from "@/lib/wix/seo";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Conteúdos | DOS Advocacia Imobiliária",
+  title: "Blog de Direito Imobiliário | DOS Advocacia",
   description: "Conteúdos sobre Direito Imobiliário, contratos, locação e prevenção de riscos.",
   alternates: { canonical: "/blog" }
 };

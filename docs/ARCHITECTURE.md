@@ -29,6 +29,7 @@ Não usar iframe, redirect de leitores ao Wix ou uma segunda origem para os arti
 ## Rotas e SEO
 
 - Institucional: `/`, `/advogada-imobiliaria`, `/advogada-imobiliaria-curitiba`, `/sobre`, `/areas-de-atuacao`, serviços, `/treinamentos` e `/contato`.
+- Cluster imobiliário: `/advogada-imobiliaria` é a página-mãe nacional vinculada no menu e no rodapé; `/advogada-imobiliaria-curitiba` é a primeira página-satélite. As duas rotas mantêm links cruzados descritivos.
 - Blog: `/blog` é a listagem editorial; cada artigo é `/post/[slug]`.
 - Compatibilidade: `/conteudos` e `/conteudos.html` redirecionam permanentemente para `/blog`.
 - Descoberta: `robots.ts` e `sitemap.ts` geram URLs com base em `SITE_URL`. O sitemap só inclui artigos quando a integração Wix estiver configurada.
@@ -37,6 +38,8 @@ Não usar iframe, redirect de leitores ao Wix ou uma segunda origem para os arti
 ## Conteúdo Wix e cache
 
 O servidor consulta a Wix Blog API com os fieldsets de texto, Rich Content, SEO e URL. A renderização de Rich Content é deliberadamente segura: não usa HTML bruto de terceiros.
+
+As imagens editoriais continuam sendo entregues por `static.wixstatic.com`, origem controlada pelo CMS e permitida em `next.config.ts`. Uma migração para storage próprio exige definir destino, sincronização, atualização e rollback antes de remover essa origem.
 
 | Evento | Comportamento |
 | --- | --- |

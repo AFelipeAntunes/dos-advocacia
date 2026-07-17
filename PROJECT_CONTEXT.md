@@ -160,14 +160,18 @@ npm run build
 - Vercel Web Analytics e Speed Insights integrados ao layout; a coleta começa após o deploy válido e visitas reais.
 - CTAs de WhatsApp nas páginas de serviços e treinamentos usam mensagens pré-preenchidas com o contexto da página. Links globais de contato permanecem genéricos.
 - Domínio, DNS, GA4, Search Console e integração Wix ainda não configurados.
+- A landing nacional funciona como página-mãe do cluster de advocacia imobiliária; a página de Curitiba permanece como satélite com links cruzados.
 
 ## 12. Alterações recentes
 
 ### 2026-07-17 — Landing SEO de advocacia imobiliária
 
-- Criada a rota institucional `/advogada-imobiliaria` como página nacional para a intenção de busca “advogada imobiliária”.
-- Adicionados title, meta description, canonical, Open Graph, imagem com alt descritivo, JSON-LD de `Service` e breadcrumb, além da entrada no sitemap.
-- O conteúdo visível distribui com naturalidade as variações de intenção ligadas a due diligence, contratos, locação e assessoria remota, sem usar a obsoleta tag `meta keywords`.
+- Ampliada a rota institucional `/advogada-imobiliaria` como página-mãe nacional para a intenção de busca “advogada imobiliária”, reutilizando os mesmos blocos visuais da landing de Curitiba.
+- Aplicados title, meta description, canonical, Open Graph, imagem com alt descritivo e JSON-LD de `BreadcrumbList`, `FAQPage` e `LegalService`.
+- O conteúdo distribui com naturalidade as variações de intenção ligadas a due diligence, contratos, locação e assessoria remota, com ajustes de conformidade para evitar comparação de serviços, preço indireto e alegação de título de especialista sem comprovação registrada.
+- O menu e o rodapé globais passaram a apontar para a landing nacional; as páginas nacional e Curitiba receberam links cruzados descritivos para formar o cluster mãe e satélite.
+- Os CTAs de WhatsApp da landing nacional identificam a origem com a mensagem “Vim pela página Advogada Imobiliária”, sem restringir geograficamente o lead.
+- O title de `/blog` passou a incluir “Direito Imobiliário” sem alteração visual.
 
 ### 2026-07-17 — Página-satélite de advocacia imobiliária em Curitiba
 
@@ -272,5 +276,6 @@ npm run build
 - Solicitar versões corrigidas dos logotipos horizontais com “Drielle Pereira”; até lá, preservar a composição símbolo + texto usada no site.
 - Decidir e documentar separadamente a política para bots de treinamento como GPTBot, ClaudeBot, Google-Extended e CCBot.
 - Tratar Curitiba como a primeira página-satélite; antes de abrir novas praças, validar demanda orgânica, conteúdo local próprio e links para `/advogada-imobiliaria`, sem duplicar a landing nacional por cidade.
+- Definir uma arquitetura de storage e sincronização antes de migrar imagens editoriais do Wix. Hoje `static.wixstatic.com` é a origem dinâmica do CMS; copiar URLs isoladamente sem sincronização criaria risco de imagens quebradas ou desatualizadas.
 - Não criar outro CMS: a decisão atual é manter Wix Blog como painel editorial integrado ao Next/Vercel.
 - Antes de qualquer alteração de conteúdo no Wix, manter o procedimento de revalidação sob demanda. Reavaliar webhook somente se o catálogo Wix passar a oferecer evento de atualização/publicação ou se sua assinatura for validada novamente no ambiente alvo.
