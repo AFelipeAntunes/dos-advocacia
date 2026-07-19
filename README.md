@@ -20,6 +20,7 @@ Abra `http://localhost:4173`.
 Validações de produção:
 
 ```powershell
+npm run test:wix
 npm run typecheck
 npm run build
 ```
@@ -34,14 +35,16 @@ O checklist do projeto também inclui `npm audit --omit=dev`, QA visual em deskt
 - tipografia Urbanist servida por `next/font`, imagens WebP e microinterações CSS-first com `prefers-reduced-motion`;
 - menu e scroll reveal em JavaScript nativo, sem hidratar um Client Component para interações simples;
 - metadados, canonical, Open Graph, JSON-LD, `robots.txt` e `sitemap.xml` gerados pelo App Router;
+- cluster SEO com `/advogada-imobiliaria` como página nacional e `/advogada-imobiliaria-curitiba` como página-satélite, mantendo os slugs já indexados;
 - redirecionamentos permanentes das antigas URLs `*.html` para as rotas limpas;
 - base segura para Wix Blog em `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/`.
 
-As páginas `/blog` e `/post/[slug]` permanecem indisponíveis até a configuração da integração Wix. Isso evita publicar conteúdo parcial, expor credenciais ou indexar páginas sem a fonte editorial validada. O site institucional, porém, já está preparado para receber esse acervo sem mudar o domínio público.
+O site público está ativo em `https://www.dosadvocacia.com.br`. O Wix permanece como painel editorial, enquanto `/blog` e `/post/[slug]` são renderizados pelo Next.js na Vercel. O cache editorial usa ISR e pode ser revalidado pela rota interna protegida quando um artigo é publicado ou editado.
 
 ## Voz e identidade
 
 - Nome profissional: **Drielle Pereira**.
+- Descritor profissional preferido: **advogada imobiliarista**. A marca **DOS Advocacia Imobiliária** e os slugs existentes permanecem inalterados.
 - Tipografia: **Urbanist**.
 - Paleta: `#0b1e47`, `#49596c`, `#8fabbc`, `#194951`, `#eb574d`, `#e4e5df`.
 - Voz principal em segunda pessoa, com primeira pessoa da Drielle em trechos de experiência.
@@ -69,13 +72,12 @@ O Wix continua sendo o único painel da redatora. Depois de publicar ou editar u
 
 Não compartilhar esse segredo, não criar links com ele e não chamar a rota pelo navegador. Enquanto não houver um evento Wix para edição/publicação, o ISR é a contingência; a operação sob demanda é o caminho para atualização imediata.
 
-## Próxima etapa: integração editorial Wix
+## Operação editorial Wix
 
-1. Criar/configurar a Custom App e a API Key de leitura do Wix Blog.
-2. Validar, com o acervo real, os 86 posts publicados e as URLs atuais `/post/[slug]`.
-3. Preservar cada slug exatamente como está, incluindo caracteres acentuados; não normalizar nem recriar URLs sem necessidade.
-4. Validar título, descrição, autora, datas, imagens, Rich Content, HTML, sitemap e eventuais redirecionamentos 301.
-5. Configurar os eventos de post criado, atualizado e excluído no endpoint público da Vercel.
-6. Testar em preview antes de qualquer alteração de DNS.
+1. A redatora publica ou edita o artigo no Wix.
+2. Um responsável autorizado chama `POST /api/revalidate/wix-blog` sem expor o segredo.
+3. Conferir o artigo, a listagem e o sitemap no domínio público.
+4. Preservar cada slug exatamente como está, incluindo caracteres acentuados; não normalizar nem recriar URLs sem necessidade.
+5. Validar title, description, autora, datas, imagens, Rich Content, canonical e `BlogPosting` em mudanças estruturais do renderer.
 
-Não houve deploy, alteração de domínio, DNS, Wix ou credenciais nesta migração.
+Pushes em `main` disparam o deploy de produção do projeto oficial na Vercel. Alterações de domínio, DNS, Wix, credenciais ou variáveis de ambiente continuam exigindo autorização explícita e validação específica.

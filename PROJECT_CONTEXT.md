@@ -159,11 +159,21 @@ npm run build
 - Repositório privado usa somente `main`; pushes nessa branch disparam publicação na Vercel.
 - Vercel Web Analytics e Speed Insights integrados ao layout; a coleta começa após o deploy válido e visitas reais.
 - CTAs de WhatsApp nas páginas de serviços e treinamentos usam mensagens pré-preenchidas com o contexto da página. Links globais de contato permanecem genéricos.
-- Domínio, DNS, GA4, Search Console e integração Wix ainda não configurados.
+- Domínio, DNS e integração Wix estão ativos em produção. O Search Console é a fonte da análise de CTR desta rodada; GA4 não está registrado como configurado neste documento.
 - A landing nacional funciona como página-mãe do cluster de advocacia imobiliária; a página de Curitiba permanece como satélite com links cruzados.
 - Home e landing nacional exibem um bloco sóbrio de reconhecimento com nota média 5,0, 11 avaliações e link para o perfil público do Google, sem reproduzir comentários de clientes.
+- O termo profissional preferido no conteúdo institucional é `advogada imobiliarista`; a marca oficial `DOS Advocacia Imobiliária` e os slugs indexados permanecem inalterados.
 
 ## 12. Alterações recentes
+
+### 2026-07-19 — Otimização de CTR e padronização imobiliarista
+
+- Atualizados title, meta description e Open Graph de `/due-diligence-imobiliaria`, `/advogada-imobiliaria` e `/advogada-imobiliaria-curitiba` com a redação aprovada para CTR; `/blog` recebeu title e description específicos para riscos, contratos e imóveis.
+- Padronizadas as ocorrências institucionais de `advogada imobiliária` e `advogado imobiliário` para o termo preferido `imobiliarista`, incluindo breadcrumbs, títulos, FAQs, dados estruturados e textos alternativos.
+- As mensagens pré-preenchidas de WhatsApp das landings nacional e Curitiba continuam identificando a origem do lead e agora exibem `Vim pela página Advogada Imobiliarista`.
+- Preservada uma ocorrência de `advogado imobiliário em Curitiba` como variação masculina solicitada para busca, além das formas sem acento `due diligence imobiliaria` e `due diligence na compra de imovel` na página correspondente.
+- Nenhum slug, canonical, layout, componente, dependência, página nova ou conteúdo do Wix foi alterado; a página B2B sugerida continua deliberadamente pendente de decisão.
+- `AGENTS.md` e `README.md` foram atualizados para registrar o descritor profissional preferido, a disciplina de testes de CTR, o estado ativo do blog Wix/Next e o fluxo atual de deploy e revalidação.
 
 ### 2026-07-17 — Reconhecimento público e âncora imobiliarista
 
@@ -286,5 +296,6 @@ npm run build
 - Tratar Curitiba como a primeira página-satélite; antes de abrir novas praças, validar demanda orgânica, conteúdo local próprio e links para `/advogada-imobiliaria`, sem duplicar a landing nacional por cidade.
 - Definir uma arquitetura de storage e sincronização antes de migrar imagens editoriais do Wix. Hoje `static.wixstatic.com` é a origem dinâmica do CMS; copiar URLs isoladamente sem sincronização criaria risco de imagens quebradas ou desatualizadas.
 - Revalidar periodicamente a nota e a quantidade de avaliações no Google antes de futuras publicações que alterem o bloco de reconhecimento; esses dados são factuais e podem mudar.
+- Acompanhar no Search Console o CTR e a posição das quatro páginas ajustadas por pelo menos 28 dias antes de uma nova rodada de titles ou descriptions, evitando mudanças simultâneas que prejudiquem a comparação.
 - Não criar outro CMS: a decisão atual é manter Wix Blog como painel editorial integrado ao Next/Vercel.
 - Antes de qualquer alteração de conteúdo no Wix, manter o procedimento de revalidação sob demanda. Reavaliar webhook somente se o catálogo Wix passar a oferecer evento de atualização/publicação ou se sua assinatura for validada novamente no ambiente alvo.

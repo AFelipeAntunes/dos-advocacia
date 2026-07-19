@@ -18,6 +18,7 @@ Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integ
 
 - Nome profissional canônico: **Drielle Pereira**. Nunca usar “Drielle Oliveira”.
 - Marca e domínio: **DOS Advocacia Imobiliária** / `dosadvocacia.com.br`.
+- Descritor profissional preferido no conteúdo: **advogada imobiliarista**; usar **advogado imobiliarista** quando a variação masculina for necessária. Não alterar a marca oficial nem os slugs indexados `/advogada-imobiliaria` e `/advogada-imobiliaria-curitiba`.
 - Tipografia: Urbanist.
 - Paleta: `#0b1e47`, `#49596c`, `#8fabbc`, `#194951`, `#eb574d`, `#e4e5df`.
 - A voz principal fala diretamente com **você**; Drielle fala em primeira pessoa quando relata experiência ou autoridade profissional.
@@ -31,6 +32,8 @@ Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integ
 - A arquitetura ativa é Next.js 16 App Router, React 19 e TypeScript; não recriar arquivos HTML na raiz.
 - O HTML institucional preservado está em `src/legacy-pages/`. Mudanças visuais devem preservar semântica, responsividade e acessibilidade.
 - Preserve títulos, descriptions, canonical, Open Graph, JSON-LD, `robots.ts` e `sitemap.ts` quando uma alteração afetar SEO.
+- Ao testar title ou meta description para CTR, manter a redação aprovada coerente em Open Graph e dados estruturados aplicáveis, registrar a data no `PROJECT_CONTEXT.md` e aguardar uma janela de medição no Search Console antes de uma nova rodada.
+- Não transformar automaticamente títulos ou conteúdo dos artigos Wix para padronizar termos; o acervo editorial deve ser revisado na origem e revalidado pelo fluxo seguro existente.
 - Toda nova imagem deve ser otimizada e ter `alt` descritivo.
 - Preserve a camada visual CSS-first: animar apenas `transform` e `opacity`, manter o LCP independente de JavaScript e respeitar `prefers-reduced-motion`.
 - Símbolos oficiais publicados estão em `public/assets/brand/`. Os wordmarks enviados ainda exibem “Drielle Oliveira” e foram isolados em `design-assets/brand-legacy/`; não os mova de volta para `public/` sem a correção gráfica.

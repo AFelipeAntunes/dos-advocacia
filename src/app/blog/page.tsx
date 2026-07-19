@@ -9,8 +9,9 @@ import { getPostDescription, getPostImageUrl } from "@/lib/wix/seo";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Blog de Direito Imobiliário | DOS Advocacia",
-  description: "Conteúdos sobre Direito Imobiliário, contratos, locação e prevenção de riscos.",
+  title: "Blog de Direito Imobiliário, Riscos e Contratos de Imóvel",
+  description:
+    "Direito imobiliário em linguagem direta. Contratos, locação, due diligence e os riscos que aparecem antes de assinar. Para compradores, investidores e imobiliárias.",
   alternates: { canonical: "/blog" }
 };
 
