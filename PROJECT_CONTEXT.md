@@ -38,9 +38,9 @@ O projeto usa **Next.js 16.2.10, React 19.2.7 e TypeScript** com App Router e pu
 | Metadados e schema institucional | Extraídos das páginas preservadas por `src/lib/legacy-pages.ts` |
 | Imagens, marca e manifesto | `public/assets/` e `public/site.webmanifest` |
 | SEO técnico | `src/app/robots.ts`, `src/app/sitemap.ts`, metadata do App Router e redirects em `next.config.ts` |
-| Blog futuro | `/blog`, `/post/[slug]`, `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/route.ts` |
+| Blog Wix | `/blog`, `/post/[slug]`, `src/lib/wix/` e revalidação segura em produção |
 
-Rotas institucionais: `/`, `/advogada-imobiliaria`, `/advogada-imobiliaria-curitiba`, `/sobre`, `/areas-de-atuacao`, `/contratos-imobiliarios`, `/assessoria-em-locacao`, `/conflitos-imobiliarios`, `/due-diligence-imobiliaria`, `/treinamentos`, `/conteudos`, `/contato` e `/politica-de-privacidade`.
+Rotas institucionais: `/`, `/advogada-imobiliaria`, `/advogada-imobiliaria-curitiba`, `/assessoria-juridica-compra-de-imovel`, `/sobre`, `/areas-de-atuacao`, `/contratos-imobiliarios`, `/assessoria-em-locacao`, `/conflitos-imobiliarios`, `/due-diligence-imobiliaria`, `/treinamentos`, `/conteudos`, `/contato` e `/politica-de-privacidade`.
 
 As antigas URLs `*.html` possuem redirecionamentos permanentes específicos para as rotas limpas. Não há redirecionamento genérico para a home.
 
@@ -73,6 +73,7 @@ O conteúdo foi estruturado a partir de `TREINAMENTOS.docx`. O treinamento prepa
 
 - Manter uma única `H1`, titles/descriptions específicos, canonical, Open Graph, Twitter Card e JSON-LD coerentes com o conteúdo visível.
 - Toda URL indexável deve entrar no sitemap gerado por `src/app/sitemap.ts`.
+- `/assessoria-juridica-compra-de-imovel` é a landing transacional para compradores, proprietários e investidores, ligada à página-mãe `/advogada-imobiliaria` e a `/due-diligence-imobiliaria`.
 - Usar HTML renderizado pelo servidor para posts, com data, autoria, links internos e resposta objetiva à intenção de busca.
 - Antes do corte, comparar títulos, descriptions, conteúdo, imagem, autora, datas e canonical do Wix com a nova renderização.
 - Validar schema no Rich Results Test, sitemap no Search Console e rotas no URL Inspection após publicação.
@@ -137,8 +138,8 @@ O handoff operacional completo, incluindo gates, segurança de credenciais, audi
 | Branch padrão | `main` |
 | Estratégia | Somente `main`; sem `develop` permanente |
 | Commit inicial | `729867e — feat(site): publica site institucional da Drielle Pereira` |
-| Deploy Vercel | Projeto configurado; publicação depende do push da migração para `main` |
-| Domínio e DNS | Permanecem no Wix; nenhuma alteração feita |
+| Deploy Vercel | Produção ativa; pushes em `main` disparam novo deployment |
+| Domínio e DNS | Site servido pela Vercel; registros web no Registro.br e Wix preservado como backoffice editorial |
 
 Comandos locais:
 
@@ -153,8 +154,8 @@ npm run build
 
 - Site institucional em Next.js com nova voz consultiva, copy orientada a situações reais de risco e experiência da Drielle apresentada em primeira pessoa.
 - Camada visual modernizada sem bibliotecas de animação: logo oficial, Urbanist via `next/font`, imagens WebP, entrada CSS do hero, microinterações, View Transitions nativas e suporte a `prefers-reduced-motion`.
-- Páginas, metadata, JSON-LD, assets e redirects de URLs HTML incluídos na nova estrutura, incluindo a landing nacional `/advogada-imobiliaria` e a página-satélite `/advogada-imobiliaria-curitiba`.
-- Base técnica de Wix Blog, rotas, sitemap dinâmico e webhook seguro implementada, porém **inativa por ausência intencional de credenciais Wix**.
+- Páginas, metadata, JSON-LD, assets e redirects de URLs HTML incluídos na nova estrutura, incluindo a landing nacional `/advogada-imobiliaria`, a página-satélite `/advogada-imobiliaria-curitiba` e a landing transacional `/assessoria-juridica-compra-de-imovel`.
+- Integração Wix Blog, rotas, sitemap dinâmico e revalidação segura estão ativas em produção; o Wix permanece somente como backoffice editorial.
 - Nome profissional padronizado para **Drielle Pereira**; fotos e treinamentos presentes; rodapé em 2024.
 - Repositório privado usa somente `main`; pushes nessa branch disparam publicação na Vercel.
 - Vercel Web Analytics e Speed Insights integrados ao layout; a coleta começa após o deploy válido e visitas reais.
@@ -163,8 +164,17 @@ npm run build
 - A landing nacional funciona como página-mãe do cluster de advocacia imobiliária; a página de Curitiba permanece como satélite com links cruzados.
 - Home e landing nacional exibem um bloco sóbrio de reconhecimento com nota média 5,0, 11 avaliações e link para o perfil público do Google, sem reproduzir comentários de clientes.
 - O termo profissional preferido no conteúdo institucional é `advogada imobiliarista`; a marca oficial `DOS Advocacia Imobiliária` e os slugs indexados permanecem inalterados.
+- A landing `/assessoria-juridica-compra-de-imovel` integra o cluster nacional com foco preventivo na análise do imóvel, do vendedor e do contrato antes da assinatura.
 
 ## 12. Alterações recentes
+
+### 2026-07-22 — Assessoria jurídica na compra de imóvel
+
+- Criada a landing `/assessoria-juridica-compra-de-imovel` para compradores, proprietários e investidores, reutilizando integralmente a estrutura visual e os componentes HTML das páginas institucionais existentes.
+- Incluídos title, description, canonical, Open Graph, `BreadcrumbList`, `FAQPage` e `LegalService` com atendimento em todo o Brasil, além da nova URL no sitemap institucional.
+- Adicionados links no menu, no rodapé e entre a nova landing, `/advogada-imobiliaria` e `/due-diligence-imobiliaria`, sem alterar os slugs existentes.
+- Nenhum layout, CSS, dependência, conteúdo Wix, post B2B, DNS, variável Vercel ou configuração de produção foi alterado.
+- `AGENTS.md`, `README.md` e `docs/ARCHITECTURE.md` registram a nova rota, seus vínculos no cluster SEO e a separação entre conteúdo B2C e posts B2B administrados no Wix.
 
 ### 2026-07-19 — Otimização de CTR e padronização imobiliarista
 
@@ -279,6 +289,9 @@ npm run build
 - Definida a estratégia Git: somente `main`.
 
 ## 13. Pendências e recomendações
+
+- Após a publicação autorizada da landing `/assessoria-juridica-compra-de-imovel`, solicitar sua indexação no Search Console e confirmar a URL no sitemap público.
+- Os novos títulos e parágrafos de abertura dos três posts B2C sobre cessão de direitos, Habite-se e procuração permanecem pendentes de edição no Wix pela Dra. Drielle; depois da alteração editorial, executar a revalidação segura e conferir a propagação no site público. Os posts B2B devem permanecer inalterados.
 
 ### Estado de produção confirmado — 13 de julho de 2026
 

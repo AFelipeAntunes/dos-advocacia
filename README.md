@@ -36,10 +36,13 @@ O checklist do projeto também inclui `npm audit --omit=dev`, QA visual em deskt
 - menu e scroll reveal em JavaScript nativo, sem hidratar um Client Component para interações simples;
 - metadados, canonical, Open Graph, JSON-LD, `robots.txt` e `sitemap.xml` gerados pelo App Router;
 - cluster SEO com `/advogada-imobiliaria` como página nacional e `/advogada-imobiliaria-curitiba` como página-satélite, mantendo os slugs já indexados;
+- landing `/assessoria-juridica-compra-de-imovel` para compradores, proprietários e investidores, ligada à página nacional e à due diligence sem alterar os slugs existentes;
 - redirecionamentos permanentes das antigas URLs `*.html` para as rotas limpas;
 - base segura para Wix Blog em `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/`.
 
 O site público está ativo em `https://www.dosadvocacia.com.br`. O Wix permanece como painel editorial, enquanto `/blog` e `/post/[slug]` são renderizados pelo Next.js na Vercel. O cache editorial usa ISR e pode ser revalidado pela rota interna protegida quando um artigo é publicado ou editado.
+
+As páginas institucionais estratégicas são `/advogada-imobiliaria`, como página nacional, `/advogada-imobiliaria-curitiba`, como satélite local, e `/assessoria-juridica-compra-de-imovel`, como landing transacional de compra. Menu, rodapé, canonical, Open Graph, JSON-LD e sitemap devem permanecer coerentes entre essas rotas.
 
 ## Voz e identidade
 
@@ -79,5 +82,7 @@ Não compartilhar esse segredo, não criar links com ele e não chamar a rota pe
 3. Conferir o artigo, a listagem e o sitemap no domínio público.
 4. Preservar cada slug exatamente como está, incluindo caracteres acentuados; não normalizar nem recriar URLs sem necessidade.
 5. Validar title, description, autora, datas, imagens, Rich Content, canonical e `BlogPosting` em mudanças estruturais do renderer.
+
+Posts B2B direcionados a imobiliárias e administradoras preservam esse posicionamento. Alterações de título e abertura dos posts B2C são feitas no Wix pela responsável editorial e exigem revalidação posterior; não devem ser reproduzidas como conteúdo estático no repositório.
 
 Pushes em `main` disparam o deploy de produção do projeto oficial na Vercel. Alterações de domínio, DNS, Wix, credenciais ou variáveis de ambiente continuam exigindo autorização explícita e validação específica.

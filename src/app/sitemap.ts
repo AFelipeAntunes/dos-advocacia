@@ -8,6 +8,7 @@ const legacyRoutes = [
   "/advogada-imobiliaria",
   "/advogada-imobiliaria-curitiba",
   "/areas-de-atuacao",
+  "/assessoria-juridica-compra-de-imovel",
   "/assessoria-em-locacao",
   "/conflitos-imobiliarios",
   "/contato",

@@ -8,6 +8,7 @@ import path from "node:path";
 export const legacyPageFiles = {
   advogadaImobiliaria: "advogada-imobiliaria.html",
   advogadaImobiliariaCuritiba: "advogada-imobiliaria-curitiba.html",
+  assessoriaCompraImovel: "assessoria-juridica-compra-de-imovel.html",
   home: "index.html",
   areas: "areas-de-atuacao.html",
   locacao: "assessoria-em-locacao.html",
@@ -63,32 +64,36 @@ function extractBody(source: string) {
     withoutLegacyScript
   );
 
-  return addNationalLandingLinks(normalizedLinks);
+  return addInstitutionalLinks(normalizedLinks);
 }
 
-const nationalLandingPath = "/advogada-imobiliaria";
-const nationalLandingLink = `<a href="${nationalLandingPath}">Advogada Imobiliarista</a>`;
+const institutionalLinks = [
+  { href: "/advogada-imobiliaria", label: "Advogada Imobiliarista" },
+  { href: "/assessoria-juridica-compra-de-imovel", label: "Compra de imóvel" }
+] as const;
 
-function addNationalLandingLinks(body: string) {
-  const withMenuLink = body.replace(
+function addInstitutionalLinks(body: string) {
+  const withMenuLinks = body.replace(
     /<nav\b[^>]*class=["'][^"']*\bmain-nav\b[^"']*["'][^>]*>[\s\S]*?<\/nav>/i,
-    (navigation) => {
-      if (navigation.includes(`href="${nationalLandingPath}"`)) return navigation;
+    (navigation) =>
+      institutionalLinks.reduce((result, { href, label }) => {
+        if (result.includes(`href="${href}"`)) return result;
 
-      return navigation.replace(
-        /(<a\b[^>]*class=["'][^"']*\bnav-contact\b)/i,
-        `${nationalLandingLink}$1`
-      );
-    }
+        return result.replace(
+          /(<a\b[^>]*class=["'][^"']*\bnav-contact\b)/i,
+          `<a href="${href}">${label}</a>$1`
+        );
+      }, navigation)
   );
 
-  return withMenuLink.replace(
+  return withMenuLinks.replace(
     /<div class="footer-column">\s*<p class="footer-label">Navegação<\/p>[\s\S]*?<\/div>/i,
-    (navigation) => {
-      if (navigation.includes(`href="${nationalLandingPath}"`)) return navigation;
+    (navigation) =>
+      institutionalLinks.reduce((result, { href, label }) => {
+        if (result.includes(`href="${href}"`)) return result;
 
-      return navigation.replace(/<\/div>$/i, `${nationalLandingLink}</div>`);
-    }
+        return result.replace(/<\/div>$/i, `<a href="${href}">${label}</a></div>`);
+      }, navigation)
   );
 }
 

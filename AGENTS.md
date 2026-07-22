@@ -34,6 +34,8 @@ Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integ
 - Preserve títulos, descriptions, canonical, Open Graph, JSON-LD, `robots.ts` e `sitemap.ts` quando uma alteração afetar SEO.
 - Ao testar title ou meta description para CTR, manter a redação aprovada coerente em Open Graph e dados estruturados aplicáveis, registrar a data no `PROJECT_CONTEXT.md` e aguardar uma janela de medição no Search Console antes de uma nova rodada.
 - Não transformar automaticamente títulos ou conteúdo dos artigos Wix para padronizar termos; o acervo editorial deve ser revisado na origem e revalidado pelo fluxo seguro existente.
+- A landing `/assessoria-juridica-compra-de-imovel` atende compradores, proprietários e investidores. Preserve seu canonical, seus schemas e os links com `/advogada-imobiliaria` e `/due-diligence-imobiliaria`.
+- Conteúdos B2B para imobiliárias e administradoras não devem ser retitulados ou reposicionados pelo ponto de vista do inquilino; mudanças editoriais nesses posts exigem decisão estratégica explícita.
 - Toda nova imagem deve ser otimizada e ter `alt` descritivo.
 - Preserve a camada visual CSS-first: animar apenas `transform` e `opacity`, manter o LCP independente de JavaScript e respeitar `prefers-reduced-motion`.
 - Símbolos oficiais publicados estão em `public/assets/brand/`. Os wordmarks enviados ainda exibem “Drielle Oliveira” e foram isolados em `design-assets/brand-legacy/`; não os mova de volta para `public/` sem a correção gráfica.
@@ -43,6 +45,7 @@ Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integ
 ## Wix Blog e Vercel
 
 - O Wix é o backoffice editorial; a Vercel serve o site público. Nunca usar iframe ou redirecionar leitores ao Wix.
+- Títulos e aberturas de posts são alterados no Wix pela responsável editorial e depois revalidados pelo fluxo seguro; não duplicar o conteúdo editorial no repositório.
 - O padrão de URL aprovado para o acervo é `/post/[slug]`. Existem 86 posts informados; validar a contagem e cada URL com a API antes do corte.
 - Slugs são case-sensitive e podem ter acentos. Preserve-os exatamente; apenas decodifique percent-encoding de forma segura para a consulta à API.
 - Chaves Wix ficam exclusivamente em `.env.local`/Vercel. Nunca em código cliente, log, commit ou documentação.

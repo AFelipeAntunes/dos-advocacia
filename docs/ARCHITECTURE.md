@@ -28,8 +28,8 @@ Não usar iframe, redirect de leitores ao Wix ou uma segunda origem para os arti
 
 ## Rotas e SEO
 
-- Institucional: `/`, `/advogada-imobiliaria`, `/advogada-imobiliaria-curitiba`, `/sobre`, `/areas-de-atuacao`, serviços, `/treinamentos` e `/contato`.
-- Cluster imobiliário: `/advogada-imobiliaria` é a página-mãe nacional vinculada no menu e no rodapé; `/advogada-imobiliaria-curitiba` é a primeira página-satélite. As duas rotas mantêm links cruzados descritivos.
+- Institucional: `/`, `/advogada-imobiliaria`, `/advogada-imobiliaria-curitiba`, `/assessoria-juridica-compra-de-imovel`, `/sobre`, `/areas-de-atuacao`, serviços, `/treinamentos` e `/contato`.
+- Cluster imobiliário: `/advogada-imobiliaria` é a página-mãe nacional vinculada no menu e no rodapé; `/advogada-imobiliaria-curitiba` é a primeira página-satélite; `/assessoria-juridica-compra-de-imovel` é a landing transacional para compradores, proprietários e investidores. As rotas mantêm links cruzados descritivos, incluindo a ligação com `/due-diligence-imobiliaria`.
 - Blog: `/blog` é a listagem editorial; cada artigo é `/post/[slug]`.
 - Compatibilidade: `/conteudos` e `/conteudos.html` redirecionam permanentemente para `/blog`.
 - Descoberta: `robots.ts` e `sitemap.ts` geram URLs com base em `SITE_URL`. O sitemap só inclui artigos quando a integração Wix estiver configurada.
