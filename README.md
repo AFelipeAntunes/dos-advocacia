@@ -40,7 +40,7 @@ O checklist do projeto também inclui `npm audit --omit=dev`, QA visual em deskt
 - redirecionamentos permanentes das antigas URLs `*.html` para as rotas limpas;
 - base segura para Wix Blog em `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/`.
 
-O site público está ativo em `https://www.dosadvocacia.com.br`. O Wix permanece como painel editorial, enquanto `/blog` e `/post/[slug]` são renderizados pelo Next.js na Vercel. O cache editorial usa ISR e pode ser revalidado pela rota interna protegida quando um artigo é publicado ou editado.
+O site público está ativo em `https://www.dosadvocacia.com.br`. O Wix permanece como painel editorial, enquanto `/blog` e `/post/[slug]` são renderizados pelo Next.js na Vercel. O cache editorial usa ISR de uma hora, está preparado para revalidação on-demand pelo webhook Wix Blog `Post Updated` e mantém uma rota interna protegida como contingência.
 
 As páginas institucionais estratégicas são `/advogada-imobiliaria`, como página nacional, `/advogada-imobiliaria-curitiba`, como satélite local, e `/assessoria-juridica-compra-de-imovel`, como landing transacional de compra. Menu, rodapé, canonical, Open Graph, JSON-LD e sitemap devem permanecer coerentes entre essas rotas.
 
@@ -73,15 +73,16 @@ As chaves são usadas apenas em módulos de servidor. O webhook valida a assinat
 
 O Wix continua sendo o único painel da redatora. Depois de publicar ou editar um artigo, ela pode solicitar ao responsável técnico: **"Revalide o blog Wix"**. O responsável usa a rota interna `POST /api/revalidate/wix-blog` com o segredo `WIX_REVALIDATION_SECRET`, armazenado apenas na Vercel. A rota invalida o cache do blog, dos artigos e do sitemap sem receber nem registrar o conteúdo do post.
 
-Não compartilhar esse segredo, não criar links com ele e não chamar a rota pelo navegador. Enquanto não houver um evento Wix para edição/publicação, o ISR é a contingência; a operação sob demanda é o caminho para atualização imediata.
+Não compartilhar esse segredo, não criar links com ele e não chamar a rota pelo navegador. O Wix oferece o evento Blog `Post Updated`; a Custom App deve assiná-lo com destino a `https://www.dosadvocacia.com.br/api/webhook/wix-blog`. O ISR e a rota interna permanecem como contingências se a entrega do webhook falhar.
 
 ## Operação editorial Wix
 
 1. A redatora publica ou edita o artigo no Wix.
-2. Um responsável autorizado chama `POST /api/revalidate/wix-blog` sem expor o segredo.
-3. Conferir o artigo, a listagem e o sitemap no domínio público.
-4. Preservar cada slug exatamente como está, incluindo caracteres acentuados; não normalizar nem recriar URLs sem necessidade.
-5. Validar title, description, autora, datas, imagens, Rich Content, canonical e `BlogPosting` em mudanças estruturais do renderer.
+2. O evento `Post Updated` chama `/api/webhook/wix-blog`, que valida a assinatura e invalida a tag do blog, a listagem, os artigos e o sitemap.
+3. Se o webhook não for entregue, um responsável autorizado chama `POST /api/revalidate/wix-blog` sem expor o segredo.
+4. Conferir o artigo, a listagem e o sitemap no domínio público.
+5. Preservar cada slug exatamente como está, incluindo caracteres acentuados; não normalizar nem recriar URLs sem necessidade.
+6. Validar title, description, autora, datas, imagens, Rich Content, canonical e `BlogPosting` em mudanças estruturais do renderer.
 
 Posts B2B direcionados a imobiliárias e administradoras preservam esse posicionamento. Alterações de título e abertura dos posts B2C são feitas no Wix pela responsável editorial e exigem revalidação posterior; não devem ser reproduzidas como conteúdo estático no repositório.
 

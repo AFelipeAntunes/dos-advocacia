@@ -277,6 +277,13 @@ npm run build
 - A rota foi validada em Preview com resposta HTTP 200 e sem exposição de segredo. `WIX_REVALIDATION_SECRET` está marcado como Sensitive e limitado a Preview; não há variável equivalente em Production.
 - Os webhooks temporários de criação e exclusão foram removidos do Wix após a validação. A Vercel Authentication de Preview foi reativada; Production, domínio, DNS, e-mail e posts Wix permaneceram inalterados.
 
+### 2026-07-23 - Revalidação Wix/Vercel após atualização editorial
+
+- Um redeploy pontual de Production foi disparado pelo commit vazio `777477b` para substituir o conteúdo Wix retido no cache do build.
+- O deployment Vercel `dpl_7mtJ7ajFAap9wU9oNW1Dsg6qwgZN` ficou `READY`. No post de vistoria de imóvel alugado, `article:modified_time` passou de `2026-05-17T20:10:16.291Z` para `2026-07-23T11:50:44.970Z`, confirmando a propagação do conteúdo publicado no Wix.
+- A documentação oficial atual do Wix confirma o evento Blog `Post Updated`. O handler de produção já existe em `POST /api/webhook/wix-blog`, valida a assinatura JWT RS256 e invalida a tag Wix, `/blog`, `/post/[slug]` e `/sitemap.xml` sem usar o payload como conteúdo.
+- A assinatura do evento na Custom App deve apontar para `https://www.dosadvocacia.com.br/api/webhook/wix-blog`. ISR de uma hora e `POST /api/revalidate/wix-blog` permanecem como contingências.
+
 ### 2026-07-13 - Conteúdos ligados ao blog e arquitetura registrada
 
 - `/conteudos` e a URL legada `/conteudos.html` agora direcionam permanentemente para `/blog`; links institucionais de Conteúdos também passam a levar à listagem real de artigos.
@@ -299,7 +306,7 @@ npm run build
 - No Registro.br, somente os registros web foram alterados: `A dosadvocacia.com.br -> 216.198.79.1` e `CNAME www.dosadvocacia.com.br -> 82aaee17cb676f6c.vercel-dns-017.com.`. MX Microsoft 365, SPF, verificações TXT e `autodiscover` foram preservados.
 - As variáveis Wix e `SITE_URL` foram configuradas em Production; `WIX_REVALIDATION_SECRET` é distinto do Preview e permanece Sensitive. Um redeploy de Production foi necessário após incluir as variáveis, pois elas são capturadas no build.
 - Smoke test público aprovado: home, blog, artigo real, sitemap e robots responderam 200; artigo possui canonical, description, Open Graph e `BlogPosting`; sitemap contém a URL do artigo.
-- Não há webhook Wix permanente em Production. O catálogo atual não oferece evento de edição/publicação; para alterações editoriais usar a revalidação segura sob demanda, conforme `docs/ARCHITECTURE.md`.
+- O handler do webhook está ativo em Production, mas a assinatura `Post Updated` na Custom App precisa ser confirmada no painel Wix. Até essa confirmação, usar a revalidação segura sob demanda após alterações editoriais, conforme `docs/ARCHITECTURE.md`.
 
 - Monitorar a propagação de DNS pelos resolvedores externos e as primeiras métricas de Vercel Analytics e Speed Insights.
 - Repetir Lighthouse e validar `BlogPosting` em um `/post/[slug]` real assim que as credenciais Wix forem habilitadas.
@@ -311,4 +318,4 @@ npm run build
 - Revalidar periodicamente a nota e a quantidade de avaliações no Google antes de futuras publicações que alterem o bloco de reconhecimento; esses dados são factuais e podem mudar.
 - Acompanhar no Search Console o CTR e a posição das quatro páginas ajustadas por pelo menos 28 dias antes de uma nova rodada de titles ou descriptions, evitando mudanças simultâneas que prejudiquem a comparação.
 - Não criar outro CMS: a decisão atual é manter Wix Blog como painel editorial integrado ao Next/Vercel.
-- Antes de qualquer alteração de conteúdo no Wix, manter o procedimento de revalidação sob demanda. Reavaliar webhook somente se o catálogo Wix passar a oferecer evento de atualização/publicação ou se sua assinatura for validada novamente no ambiente alvo.
+- Confirmar no painel da Custom App a assinatura do evento Wix Blog `Post Updated` para `https://www.dosadvocacia.com.br/api/webhook/wix-blog` e realizar um teste real de edição/publicação. Até essa evidência, manter o procedimento de revalidação sob demanda.

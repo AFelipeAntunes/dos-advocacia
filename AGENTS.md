@@ -49,7 +49,8 @@ Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integ
 - O padrão de URL aprovado para o acervo é `/post/[slug]`. Existem 86 posts informados; validar a contagem e cada URL com a API antes do corte.
 - Slugs são case-sensitive e podem ter acentos. Preserve-os exatamente; apenas decodifique percent-encoding de forma segura para a consulta à API.
 - Chaves Wix ficam exclusivamente em `.env.local`/Vercel. Nunca em código cliente, log, commit ou documentação.
-- O endpoint `/api/webhook/wix-blog` só pode revalidar após validar o JWT RS256, emissor e audiência. O evento é apenas gatilho: recarregue a fonte Wix, trate duplicatas de forma idempotente e nunca use o corpo do webhook como conteúdo.
+- O endpoint `/api/webhook/wix-blog` só pode revalidar após validar a assinatura JWT RS256 com a chave pública da Custom App. O evento `Post Updated` é apenas gatilho: recarregue a fonte Wix, trate reentregas de forma idempotente e nunca use o corpo do webhook como conteúdo.
+- A Custom App deve assinar o evento Wix Blog `Post Updated` apontando para `https://www.dosadvocacia.com.br/api/webhook/wix-blog`. A rota interna `POST /api/revalidate/wix-blog` permanece como contingência operacional.
 - Não ative `/blog`, `/post/[slug]`, sitemap de posts ou webhook em produção sem validar credenciais, conteúdo, imagens, schema e preview.
 
 ## Ações que exigem autorização explícita

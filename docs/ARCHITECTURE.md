@@ -9,7 +9,7 @@ O site público é uma aplicação **Next.js 16 App Router** publicada na **Verc
 ```text
 Redatora -> Wix Blog -> API Wix (somente servidor) -> Next.js/Vercel -> visitante e buscadores
                                               ^
-                           revalidação segura sob demanda
+                     webhook Post Updated + ISR
 ```
 
 Não usar iframe, redirect de leitores ao Wix ou uma segunda origem para os artigos. O contrato público é `/post/[slug]` e o slug deve ser preservado exatamente, inclusive acentos.
@@ -45,9 +45,9 @@ As imagens editoriais continuam sendo entregues por `static.wixstatic.com`, orig
 | --- | --- |
 | Listagem/leitura normal | ISR com revalidação de uma hora |
 | Webhook Wix válido | Invalida tag do blog, listagem, artigos e sitemap |
-| Edição/publicação sem evento nativo | Responsável autorizado chama `POST /api/revalidate/wix-blog` |
+| Falha/ausência de entrega do webhook | Responsável autorizado chama `POST /api/revalidate/wix-blog` |
 
-O catálogo Wix usado nesta integração disponibilizou eventos de criação e exclusão, mas não de edição/publicação. Por isso a revalidação sob demanda existe como fluxo operacional. A redatora não recebe segredo: publica no Wix e solicita ao responsável “Revalide o blog Wix”.
+O catálogo oficial Wix Blog oferece o evento `Post Updated`. A Custom App deve assiná-lo com destino a `https://www.dosadvocacia.com.br/api/webhook/wix-blog`; a rota valida a assinatura JWT RS256 e usa o evento somente como sinal para invalidar a tag do CMS, `/blog`, `/post/[slug]` e `/sitemap.xml`. A revalidação é idempotente, e o conteúdo sempre é relido da API Wix. A rota protegida `/api/revalidate/wix-blog` e o ISR de uma hora permanecem como contingências.
 
 ## Segredos e ambientes
 
@@ -90,4 +90,4 @@ O corte foi concluído no projeto oficial `dos-advocacia` da Vercel.
 - Após adicionar ou alterar variável de Production, executar um redeploy da Production antes de validar o blog: variáveis entram no build do deployment.
 - Verificação realizada no domínio público: home, `/blog`, artigo Wix real, `/sitemap.xml` e `/robots.txt` com HTTP 200; a raiz respondeu 308 para `www`; um artigo foi confirmado com canonical, description, Open Graph e `BlogPosting`.
 
-O Wix continua como backoffice. Como não existe evento de edição/publicação no catálogo atual, a rotina para alterações permanece: redatora publica/edita no Wix, solicita “Revalide o blog Wix”, e um responsável autorizado chama a rota segura de revalidação sem expor o segredo.
+O Wix continua como backoffice. A rotina alvo é automática pelo evento Blog `Post Updated`; se a entrega falhar, a redatora solicita “Revalide o blog Wix”, e um responsável autorizado chama a rota segura de contingência sem expor o segredo.
