@@ -171,7 +171,8 @@ npm run build
 ### 2026-07-23 — Consolidação SEO de posts duplicados
 
 - Doze URLs de posts com conteúdo concorrente receberam redirects HTTP 301 explícitos em `next.config.ts` para os artigos canônicos definidos por marketing.
-- As origens devem permanecer publicadas no Wix até a validação dos redirects em produção. Depois da confirmação de status permanente, destinos 200 e presença dos destinos no sitemap, marketing pode despublicar somente as doze origens.
+- O deploy de produção foi validado nos doze pares: todas as origens respondem 301 com `Location` exato, o redirecionamento termina em 200 e todos os destinos permanecem no sitemap.
+- Marketing pode despublicar somente as doze origens no Wix. Os artigos de destino devem permanecer publicados e com os slugs atuais.
 - A tabela de consolidação possui teste automatizado de quantidade, unicidade das origens, destino exato e permanência.
 
 ### 2026-07-22 — Assessoria jurídica na compra de imóvel
