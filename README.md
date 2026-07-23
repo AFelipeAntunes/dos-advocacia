@@ -21,6 +21,7 @@ Validações de produção:
 
 ```powershell
 npm run test:wix
+npm run test:analytics
 npm run typecheck
 npm run build
 ```
@@ -41,6 +42,8 @@ O checklist do projeto também inclui `npm audit --omit=dev`, QA visual em deskt
 - base segura para Wix Blog em `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/`.
 
 O site público está ativo em `https://www.dosadvocacia.com.br`. O Wix permanece como painel editorial, enquanto `/blog` e `/post/[slug]` são renderizados pelo Next.js na Vercel. O cache editorial usa ISR de uma hora, recebe revalidação on-demand pelo webhook Wix Blog `Post Updated` e mantém uma rota interna protegida como contingência.
+
+O GA4 usa o fluxo web `G-37RDFTHKL8`. Nos artigos, cliques em WhatsApp geram `click_whatsapp` com `post_slug`, `cta_position`, `link_url` e `cluster` quando inferível; links para serviços geram `click_cta_servico` com `post_slug`, `destino` e `cta_position`. O primeiro é a conversão principal e deve permanecer marcado como evento-chave no painel GA4.
 
 As páginas institucionais estratégicas são `/advogada-imobiliaria`, como página nacional, `/advogada-imobiliaria-curitiba`, como satélite local, e `/assessoria-juridica-compra-de-imovel`, como landing transacional de compra. Menu, rodapé, canonical, Open Graph, JSON-LD e sitemap devem permanecer coerentes entre essas rotas.
 

@@ -21,6 +21,7 @@ Não usar iframe, redirect de leitores ao Wix ou uma segunda origem para os arti
 | `src/legacy-pages/` | Conteúdo institucional preservado e semântica das páginas | Editar links sem atualizar SEO/redirects |
 | `src/app/` | Rotas, metadata, sitemap, robots e handlers de servidor | Inserir segredos ou chamadas Wix no cliente |
 | `src/lib/wix/` | Cliente Wix, tipos, Rich Content, SEO, assinatura e revalidação | Confiar no corpo do webhook como conteúdo |
+| `src/lib/analytics/` | ID público GA4, classificação de CTAs e regras testáveis de atribuição | Enviar PII, conteúdo jurídico ou parâmetros não aprovados |
 | `public/assets/` | Marca e imagens WebP otimizadas | Adicionar originais PNG pesados ou logos com nome antigo |
 | Vercel | Build, deploy, Analytics, Speed Insights, ambiente e domínio | Misturar segredos Preview e Production |
 | Wix | Backoffice dos artigos | Hospedar a experiência pública após o corte |
@@ -48,6 +49,17 @@ As imagens editoriais continuam sendo entregues por `static.wixstatic.com`, orig
 | Falha/ausência de entrega do webhook | Responsável autorizado chama `POST /api/revalidate/wix-blog` |
 
 O catálogo oficial Wix Blog oferece o evento `Post Updated`. A Custom App está assinada com destino a `https://www.dosadvocacia.com.br/api/webhook/wix-blog`; a rota valida a assinatura JWT RS256 e usa o evento somente como sinal para invalidar a tag do CMS, `/blog`, `/post/[slug]` e `/sitemap.xml`. A revalidação é idempotente, e o conteúdo sempre é relido da API Wix. A rota protegida `/api/revalidate/wix-blog` e o ISR de uma hora permanecem como contingências.
+
+## Analytics e conversão do blog
+
+O layout carrega a Google tag do fluxo GA4 `G-37RDFTHKL8`. Um Client Component pequeno observa somente links dentro de `.article__content`; o renderer Wix e a página continuam Server Components.
+
+| Evento | Disparo | Parâmetros |
+| --- | --- | --- |
+| `click_whatsapp` | `wa.me` ou `api.whatsapp.com` em um post | `post_slug`, `cluster` quando disponível, `cta_position=fim`, `link_url` |
+| `click_cta_servico` | Link interno aprovado para página de serviço | `post_slug`, `destino`, `cta_position=meio` |
+
+O cluster é inferido pelo destino de serviço presente no artigo: locação, due diligence, compra na planta ou contratos. Quando não há correspondência segura, o parâmetro é omitido. Não enviar nome, telefone, mensagem do WhatsApp, conteúdo jurídico ou outra PII ao GA4. `click_whatsapp` é o evento-chave principal; `click_cta_servico` pode ser usado como microconversão.
 
 ## Segredos e ambientes
 

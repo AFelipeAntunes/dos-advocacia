@@ -284,6 +284,14 @@ npm run build
 - A documentação oficial atual do Wix confirma o evento Blog `Post Updated`. O handler de produção já existe em `POST /api/webhook/wix-blog`, valida a assinatura JWT RS256 e invalida a tag Wix, `/blog`, `/post/[slug]` e `/sitemap.xml` sem usar o payload como conteúdo.
 - A assinatura do evento `Post Updated` foi salva na Custom App com destino a `https://www.dosadvocacia.com.br/api/webhook/wix-blog`. O teste nativo do Wix confirmou a entrega do payload de exemplo ao endpoint; o painel informa prazo de até 10 minutos para ativação. ISR de uma hora e `POST /api/revalidate/wix-blog` permanecem como contingências.
 
+### 2026-07-23 - Rastreamento de conversão GA4 no blog
+
+- Criada a propriedade GA4 **DOS Advocacia** e o fluxo web do domínio público com ID de medição `G-37RDFTHKL8`.
+- A Google tag foi adicionada ao layout global. O blog mede `click_whatsapp` como conversão principal e `click_cta_servico` como avanço para páginas de serviço, sem enviar PII ou conteúdo jurídico.
+- Os eventos carregam o slug de origem e a posição do CTA. WhatsApp inclui a URL completa e o cluster quando ele pode ser inferido com segurança pelo destino de serviço presente no artigo; links internos incluem o destino aprovado.
+- A classificação de hosts, destinos e clusters possui testes unitários em `src/lib/analytics/ga4.test.ts`.
+- Pendência operacional: validar os dois eventos no DebugView em três clusters e marcar `click_whatsapp` como evento-chave no painel GA4.
+
 ### 2026-07-13 - Conteúdos ligados ao blog e arquitetura registrada
 
 - `/conteudos` e a URL legada `/conteudos.html` agora direcionam permanentemente para `/blog`; links institucionais de Conteúdos também passam a levar à listagem real de artigos.

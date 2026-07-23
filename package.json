@@ -10,6 +10,7 @@
     "build": "next build",
     "start": "next start",
     "test:wix": "tsx --test src/lib/wix/*.test.ts",
+    "test:analytics": "tsx --test src/lib/analytics/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { BlogPostJsonLd } from "@/components/blog-post-json-ld";
+import { BlogCtaTracker } from "@/components/blog-cta-tracker";
 import { WixRichContent } from "@/components/wix-rich-content";
 import { getWixPostBySlug, isWixBlogConfigured, listWixPosts } from "@/lib/wix/blog";
 import { getPostDescription, getPostImageUrl } from "@/lib/wix/seo";
@@ -75,6 +76,7 @@ export default async function PostPage({ params }: PostPageProps) {
           {formatDate(post.firstPublishedDate)}
           {post.minutesToRead ? ` · ${post.minutesToRead} min de leitura` : ""}
         </p>
+        <BlogCtaTracker postSlug={post.slug} />
         <div className="article__content"><WixRichContent content={post.richContent} fallback={post.contentText ?? post.excerpt} /></div>
       </article>
     </main>
