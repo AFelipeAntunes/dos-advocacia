@@ -9,6 +9,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "test:redirects": "tsx --test src/lib/redirects.test.ts",
     "test:wix": "tsx --test src/lib/wix/*.test.ts",
     "test:analytics": "tsx --test src/lib/analytics/*.test.ts",
     "typecheck": "tsc --noEmit"

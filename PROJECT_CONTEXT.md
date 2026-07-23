@@ -168,6 +168,12 @@ npm run build
 
 ## 12. Alterações recentes
 
+### 2026-07-23 — Consolidação SEO de posts duplicados
+
+- Doze URLs de posts com conteúdo concorrente receberam redirects HTTP 301 explícitos em `next.config.ts` para os artigos canônicos definidos por marketing.
+- As origens devem permanecer publicadas no Wix até a validação dos redirects em produção. Depois da confirmação de status permanente, destinos 200 e presença dos destinos no sitemap, marketing pode despublicar somente as doze origens.
+- A tabela de consolidação possui teste automatizado de quantidade, unicidade das origens, destino exato e permanência.
+
 ### 2026-07-22 — Assessoria jurídica na compra de imóvel
 
 - Criada a landing `/assessoria-juridica-compra-de-imovel` para compradores, proprietários e investidores, reutilizando integralmente a estrutura visual e os componentes HTML das páginas institucionais existentes.
