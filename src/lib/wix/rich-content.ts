@@ -115,6 +115,16 @@ function isFaqHeading(text: string) {
   return text.toLocaleLowerCase("pt-BR").startsWith("perguntas frequentes");
 }
 
+function isFaqQuestion(block: Exclude<WixRichContentBlock, { kind: "image" }>) {
+  if (block.kind === "heading") return block.level === 3;
+
+  const text = textOfBlock(block);
+  return block.kind === "paragraph"
+    && text.endsWith("?")
+    && block.runs.length > 0
+    && block.runs.every((run) => run.bold);
+}
+
 const faqCtaDestinations = new Set([
   "/assessoria-em-locacao",
   "/assessoria-juridica-compra-de-imovel",
@@ -167,7 +177,7 @@ export function getWixFaqItems(content?: WixRichContent): WixFaqItem[] {
       break;
     }
 
-    if (block.kind === "heading" && block.level === 3) {
+    if (isFaqQuestion(block)) {
       finishQuestion();
       question = textOfBlock(block);
       continue;

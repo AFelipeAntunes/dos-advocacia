@@ -123,6 +123,23 @@ test("requires at least two FAQ pairs and excludes conversion paragraphs", () =>
   ]);
 });
 
+test("supports published Wix FAQs whose questions are bold paragraphs", () => {
+  const faqItems = getWixFaqItems({
+    nodes: [
+      heading("faq", 2, "Perguntas frequentes"),
+      boldParagraph("q1", "A primeira pergunta publicada?"),
+      paragraph("a1", "A primeira resposta publicada."),
+      boldParagraph("q2", "A segunda pergunta publicada?"),
+      paragraph("a2", "A segunda resposta publicada.")
+    ]
+  });
+
+  assert.deepEqual(faqItems, [
+    { answer: "A primeira resposta publicada.", question: "A primeira pergunta publicada?" },
+    { answer: "A segunda resposta publicada.", question: "A segunda pergunta publicada?" }
+  ]);
+});
+
 function heading(id: string, level: number, text: string) {
   return {
     headingData: { level },
@@ -150,6 +167,14 @@ function linkedParagraph(id: string, text: string, url: string) {
       },
       type: "TEXT"
     }],
+    type: "PARAGRAPH"
+  };
+}
+
+function boldParagraph(id: string, text: string) {
+  return {
+    id,
+    nodes: [{ textData: { decorations: [{ type: "BOLD" }], text }, type: "TEXT" }],
     type: "PARAGRAPH"
   };
 }
