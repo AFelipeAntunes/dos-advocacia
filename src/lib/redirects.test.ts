@@ -13,7 +13,7 @@ test("configura os 12 redirects de consolidação com status 301", async () => {
   for (const [source, destination] of postConsolidationRedirects) {
     assert.deepEqual(
       redirects.find((redirect) => redirect.source === encodeURI(source)),
-      { source: encodeURI(source), destination, statusCode: 301 }
+      { source: encodeURI(source), destination: encodeURI(destination), statusCode: 301 }
     );
   }
 });

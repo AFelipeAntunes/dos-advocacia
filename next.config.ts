@@ -78,7 +78,7 @@ const nextConfig: NextConfig = {
       })),
       ...postConsolidationRedirects.map(([source, destination]) => ({
         source: encodeURI(source),
-        destination,
+        destination: encodeURI(destination),
         statusCode: 301 as const
       }))
     ];
