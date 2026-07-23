@@ -20,6 +20,11 @@ export type WixRichContentBlock =
   | (TextBlock & { kind: "paragraph" })
   | { alt?: string; height?: number; id: string; kind: "image"; src?: string; width?: number };
 
+export type WixFaqItem = {
+  answer: string;
+  question: string;
+};
+
 function decorationsOf(node: WixRichContentNode) {
   return node.textData?.decorations ?? [];
 }
@@ -100,6 +105,82 @@ export function getWixRichContentBlocks(content?: WixRichContent, fallback?: str
       runs: [{ bold: false, italic: false, text: text.trim(), underline: false }]
     }))
     .filter((block) => block.runs[0].text.length > 0);
+}
+
+function textOfBlock(block: TextBlock) {
+  return block.runs.map((run) => run.text).join("").replace(/\s+/g, " ").trim();
+}
+
+function isFaqHeading(text: string) {
+  return text.toLocaleLowerCase("pt-BR").startsWith("perguntas frequentes");
+}
+
+const faqCtaDestinations = new Set([
+  "/assessoria-em-locacao",
+  "/assessoria-juridica-compra-de-imovel",
+  "/conflitos-imobiliarios",
+  "/contratos-imobiliarios",
+  "/due-diligence-imobiliaria"
+]);
+
+function isFaqCta(block: TextBlock) {
+  const text = textOfBlock(block).toLocaleLowerCase("pt-BR");
+  if (text.startsWith("leia também:") || text.startsWith("fale com a dra.")) return true;
+
+  return block.runs.some((run) => {
+    if (!run.href) return false;
+
+    try {
+      const url = new URL(run.href, "https://www.dosadvocacia.com.br");
+      return url.hostname === "wa.me"
+        || url.hostname === "api.whatsapp.com"
+        || faqCtaDestinations.has(url.pathname.replace(/\/+$/, ""));
+    } catch {
+      return false;
+    }
+  });
+}
+
+export function getWixFaqItems(content?: WixRichContent): WixFaqItem[] {
+  const blocks = getWixRichContentBlocks(content, "");
+  const faqStart = blocks.findIndex(
+    (block) => block.kind === "heading" && block.level === 2 && isFaqHeading(textOfBlock(block))
+  );
+  if (faqStart < 0) return [];
+
+  const items: WixFaqItem[] = [];
+  let question = "";
+  let answerParts: string[] = [];
+
+  const finishQuestion = () => {
+    const answer = answerParts.join(" ").replace(/\s+/g, " ").trim();
+    if (question && answer) items.push({ answer, question });
+    question = "";
+    answerParts = [];
+  };
+
+  for (const block of blocks.slice(faqStart + 1)) {
+    if (block.kind === "image") continue;
+
+    if (block.kind === "heading" && block.level === 2) {
+      finishQuestion();
+      break;
+    }
+
+    if (block.kind === "heading" && block.level === 3) {
+      finishQuestion();
+      question = textOfBlock(block);
+      continue;
+    }
+
+    if (!question || isFaqCta(block)) continue;
+
+    const text = textOfBlock(block);
+    if (text) answerParts.push(text);
+  }
+
+  finishQuestion();
+  return items.length >= 2 ? items : [];
 }
 
 export function resolveWixImageUrl(source?: string) {

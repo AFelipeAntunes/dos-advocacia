@@ -4,8 +4,10 @@ import { notFound } from "next/navigation";
 
 import { BlogPostJsonLd } from "@/components/blog-post-json-ld";
 import { BlogCtaTracker } from "@/components/blog-cta-tracker";
+import { FaqPageJsonLd } from "@/components/faq-page-json-ld";
 import { WixRichContent } from "@/components/wix-rich-content";
 import { getWixPostBySlug, isWixBlogConfigured, listWixPosts } from "@/lib/wix/blog";
+import { getWixFaqItems } from "@/lib/wix/rich-content";
 import { getPostDescription, getPostImageUrl } from "@/lib/wix/seo";
 
 type PostPageProps = {
@@ -62,11 +64,13 @@ export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
   const post = await getWixPostBySlug(slug);
   if (!post?.title || !post.slug) notFound();
+  const faqItems = getWixFaqItems(post.richContent);
 
   return (
     <main className="article-shell">
       <article className="article">
         <BlogPostJsonLd post={post} siteUrl={process.env.SITE_URL ?? "https://www.dosadvocacia.com.br"} />
+        <FaqPageJsonLd items={faqItems} />
         <Link className="text-link" href="/blog">
           <span aria-hidden="true">←</span> Ver todos os conteúdos
         </Link>

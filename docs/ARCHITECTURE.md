@@ -61,6 +61,12 @@ O layout carrega a Google tag do fluxo GA4 `G-37RDFTHKL8`. Um Client Component p
 
 O cluster é inferido pelo destino de serviço presente no artigo: locação, due diligence, compra na planta ou contratos. Quando não há correspondência segura, o parâmetro é omitido. Não enviar nome, telefone, mensagem do WhatsApp, conteúdo jurídico ou outra PII ao GA4. `click_whatsapp` é o evento-chave principal; `click_cta_servico` pode ser usado como microconversão.
 
+## FAQ estruturado
+
+Posts Wix que tenham um `H2` iniciado por “Perguntas frequentes” recebem um único `FAQPage` JSON-LD quando a seção contém pelo menos duas perguntas em `H3` com respostas visíveis. O parser usa os mesmos blocos de Rich Content renderizados na página, agrega o texto até o próximo `H3` ou `H2` e exclui CTAs e “Leia também”. Assim, o schema acompanha automaticamente a edição feita no Wix sem duplicar conteúdo no repositório.
+
+Páginas institucionais preservam o JSON-LD existente em `src/legacy-pages/`; não adicionar outro `FAQPage` quando a página já tiver esse tipo. O markup descreve o conteúdo visível e pode ajudar outros consumidores de dados estruturados, mas não garante destaque no Google.
+
 ## Segredos e ambientes
 
 Nunca commitar, exibir, colocar em URL, usar `NEXT_PUBLIC_` ou registrar em logs:

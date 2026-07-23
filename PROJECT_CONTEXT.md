@@ -168,6 +168,12 @@ npm run build
 
 ## 12. Alterações recentes
 
+### 2026-07-23 — FAQPage automático nos posts Wix
+
+- Posts com seção visível de perguntas frequentes em `H2`, perguntas em `H3` e pelo menos dois pares válidos passam a emitir um único `FAQPage` JSON-LD sincronizado ao Rich Content do Wix.
+- O parser interrompe respostas no próximo `H3` ou `H2` e exclui CTAs e “Leia também”. Posts sem estrutura suficiente não recebem o schema.
+- A landing `/assessoria-juridica-compra-de-imovel` já possuía um único `FAQPage` coerente com suas quatro perguntas visíveis e permaneceu sem duplicação.
+
 ### 2026-07-23 — Consolidação SEO de posts duplicados
 
 - Doze URLs de posts com conteúdo concorrente receberam redirects HTTP 301 explícitos em `next.config.ts` para os artigos canônicos definidos por marketing.
