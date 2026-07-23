@@ -47,7 +47,7 @@ As imagens editoriais continuam sendo entregues por `static.wixstatic.com`, orig
 | Webhook Wix válido | Invalida tag do blog, listagem, artigos e sitemap |
 | Falha/ausência de entrega do webhook | Responsável autorizado chama `POST /api/revalidate/wix-blog` |
 
-O catálogo oficial Wix Blog oferece o evento `Post Updated`. A Custom App deve assiná-lo com destino a `https://www.dosadvocacia.com.br/api/webhook/wix-blog`; a rota valida a assinatura JWT RS256 e usa o evento somente como sinal para invalidar a tag do CMS, `/blog`, `/post/[slug]` e `/sitemap.xml`. A revalidação é idempotente, e o conteúdo sempre é relido da API Wix. A rota protegida `/api/revalidate/wix-blog` e o ISR de uma hora permanecem como contingências.
+O catálogo oficial Wix Blog oferece o evento `Post Updated`. A Custom App está assinada com destino a `https://www.dosadvocacia.com.br/api/webhook/wix-blog`; a rota valida a assinatura JWT RS256 e usa o evento somente como sinal para invalidar a tag do CMS, `/blog`, `/post/[slug]` e `/sitemap.xml`. A revalidação é idempotente, e o conteúdo sempre é relido da API Wix. A rota protegida `/api/revalidate/wix-blog` e o ISR de uma hora permanecem como contingências.
 
 ## Segredos e ambientes
 
