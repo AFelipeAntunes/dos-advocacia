@@ -160,7 +160,7 @@ npm run build
 - Repositório privado usa somente `main`; pushes nessa branch disparam publicação na Vercel.
 - Vercel Web Analytics e Speed Insights integrados ao layout; a coleta começa após o deploy válido e visitas reais.
 - CTAs de WhatsApp nas páginas de serviços e treinamentos usam mensagens pré-preenchidas com o contexto da página. Links globais de contato permanecem genéricos.
-- Domínio, DNS e integração Wix estão ativos em produção. O Search Console é a fonte da análise de CTR desta rodada; GA4 não está registrado como configurado neste documento.
+- Domínio, DNS e integração Wix estão ativos em produção. O Search Console é a fonte da análise de CTR desta rodada; o GA4 complementa a leitura com eventos de conversão do blog.
 - A landing nacional funciona como página-mãe do cluster de advocacia imobiliária; a página de Curitiba permanece como satélite com links cruzados.
 - Home e landing nacional exibem um bloco sóbrio de reconhecimento com nota média 5,0, 11 avaliações e link para o perfil público do Google, sem reproduzir comentários de clientes.
 - O termo profissional preferido no conteúdo institucional é `advogada imobiliarista`; a marca oficial `DOS Advocacia Imobiliária` e os slugs indexados permanecem inalterados.
@@ -290,7 +290,9 @@ npm run build
 - A Google tag foi adicionada ao layout global. O blog mede `click_whatsapp` como conversão principal e `click_cta_servico` como avanço para páginas de serviço, sem enviar PII ou conteúdo jurídico.
 - Os eventos carregam o slug de origem e a posição do CTA. WhatsApp inclui a URL completa e o cluster quando ele pode ser inferido com segurança pelo destino de serviço presente no artigo; links internos incluem o destino aprovado.
 - A classificação de hosts, destinos e clusters possui testes unitários em `src/lib/analytics/ga4.test.ts`.
-- Pendência operacional: validar os dois eventos no DebugView em três clusters e marcar `click_whatsapp` como evento-chave no painel GA4.
+- O deploy de produção `70c3750` foi validado em desktop e mobile. Os hits de `click_whatsapp` chegaram ao endpoint `g/collect` com os parâmetros corretos em posts dos clusters `locacao`, `due-diligence` e `planta`; `click_cta_servico` também foi validado com destino e posição intermediária.
+- `click_whatsapp` foi criado antecipadamente no painel GA4 como evento principal, sem valor monetário padrão e com contagem a cada ocorrência.
+- Pendência operacional: o DebugView ainda não exibiu o dispositivo durante a janela imediata de QA, embora as requisições de coleta tenham sido confirmadas. Revalidar após o processamento inicial da nova propriedade; relatórios padrão podem levar até 24 horas para refletir a configuração.
 
 ### 2026-07-13 - Conteúdos ligados ao blog e arquitetura registrada
 
