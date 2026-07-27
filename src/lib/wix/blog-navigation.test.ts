@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   filterPostsByCategory,
   getBlogCategories,
+  getBlogCategoryTabs,
   getPostCategory,
   getRelatedPosts
 } from "@/lib/wix/blog-navigation";
@@ -16,14 +17,22 @@ const wixCategories: WixBlogCategory[] = [
   { id: "litigios", label: "Litígios Imobiliários", slug: "litígios-imobiliários" }
 ];
 
-test("keeps the approved tab order and hides categories without posts", () => {
-  const posts = [post("a", "assessoria", "2026-07-20"), post("d", "due", "2026-07-19")];
+test("keeps the approved tab order and hides categories with fewer than three posts", () => {
+  const posts = [
+    post("a-1", "assessoria", "2026-07-20"),
+    post("a-2", "assessoria", "2026-07-19"),
+    post("a-3", "assessoria", "2026-07-18"),
+    post("d", "due", "2026-07-17")
+  ];
 
   const categories = getBlogCategories(posts, wixCategories);
 
   assert.deepEqual(categories.map((category) => ({ postCount: category.postCount, slug: category.slug })), [
-    { postCount: 1, slug: "assessoria-para-imobiliárias" },
+    { postCount: 3, slug: "assessoria-para-imobiliárias" },
     { postCount: 1, slug: "due-diligence-imobiliária" }
+  ]);
+  assert.deepEqual(getBlogCategoryTabs(categories).map((category) => category.slug), [
+    "assessoria-para-imobiliárias"
   ]);
 });
 
@@ -71,12 +80,56 @@ test("fills due diligence related posts with the correlated contracts category",
   ]);
 });
 
-function post(slug: string, categoryId: string, firstPublishedDate: string): WixBlogPost {
+test("prioritizes shared Wix tags and the same title subject before publication date", () => {
+  const current = post("current", "assessoria", "2026-07-20", {
+    tagIds: ["vistoria"],
+    title: "Vistoria de entrada e danos"
+  });
+  const posts = [
+    current,
+    post("newest-unrelated", "assessoria", "2026-07-19", { title: "Fiador e garantia locatícia" }),
+    post("same-subject", "assessoria", "2026-07-18", { title: "Vistoria de saída e cobrança de danos" }),
+    post("same-tag", "assessoria", "2026-07-10", { tagIds: ["vistoria"], title: "Rotina operacional" })
+  ];
+  const categories = getBlogCategories(posts, wixCategories);
+
+  assert.deepEqual(getRelatedPosts(current, posts, categories).map((item) => item.slug), [
+    "same-tag",
+    "same-subject",
+    "newest-unrelated"
+  ]);
+});
+
+test("does not repeat post slugs already cited in Leia também", () => {
+  const current = post("current", "due", "2026-07-20");
+  const posts = [
+    current,
+    post("already-cited", "due", "2026-07-19"),
+    post("second", "due", "2026-07-18"),
+    post("third", "due", "2026-07-17"),
+    post("fourth", "due", "2026-07-16")
+  ];
+  const categories = getBlogCategories(posts, wixCategories);
+
+  assert.deepEqual(getRelatedPosts(current, posts, categories, ["already-cited"]).map((item) => item.slug), [
+    "second",
+    "third",
+    "fourth"
+  ]);
+});
+
+function post(
+  slug: string,
+  categoryId: string,
+  firstPublishedDate: string,
+  overrides: Partial<WixBlogPost> = {}
+): WixBlogPost {
   return {
+    ...overrides,
     categoryIds: [categoryId],
     firstPublishedDate,
     id: slug,
     slug,
-    title: slug
+    title: overrides.title ?? slug
   };
 }

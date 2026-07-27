@@ -31,7 +31,7 @@ Não usar iframe, redirect de leitores ao Wix ou uma segunda origem para os arti
 
 - Institucional: `/`, `/advogada-imobiliaria`, `/advogada-imobiliaria-curitiba`, `/assessoria-juridica-compra-de-imovel`, `/sobre`, `/areas-de-atuacao`, serviços, `/treinamentos` e `/contato`.
 - Cluster imobiliário: `/advogada-imobiliaria` é a página-mãe nacional vinculada no menu e no rodapé; `/advogada-imobiliaria-curitiba` é a primeira página-satélite; `/assessoria-juridica-compra-de-imovel` é a landing transacional para compradores, proprietários e investidores. As rotas mantêm links cruzados descritivos, incluindo a ligação com `/due-diligence-imobiliaria`.
-- Blog: `/blog` é a listagem editorial; cada artigo é `/post/[slug]`. A listagem aceita `?categoria=<slug>` para filtros indexáveis e compartilháveis, mantendo canonical próprio somente para as quatro categorias editoriais aprovadas.
+- Blog: `/blog` é a listagem editorial; cada artigo é `/post/[slug]`. A listagem aceita `?categoria=<slug>` para filtros indexáveis e compartilháveis, mantendo canonical próprio somente para as categorias editoriais aprovadas que tenham ao menos três posts publicados. Filtro ausente ou abaixo desse limite redireciona para `/blog`.
 - Compatibilidade: `/conteudos` e `/conteudos.html` redirecionam permanentemente para `/blog`.
 - Descoberta: `robots.ts` e `sitemap.ts` geram URLs com base em `SITE_URL`. O sitemap só inclui artigos quando a integração Wix estiver configurada.
 - Artigos devem preservar metadata, canonical, Open Graph, Twitter e `BlogPosting` JSON-LD. A autoria canônica exibida é **Drielle Pereira**.
@@ -40,7 +40,7 @@ Não usar iframe, redirect de leitores ao Wix ou uma segunda origem para os arti
 
 O servidor consulta a Wix Blog API com os fieldsets de texto, Rich Content, SEO e URL, além do catálogo de categorias. A renderização de Rich Content é deliberadamente segura: não usa HTML bruto de terceiros.
 
-As abas de `/blog` usam os `categoryIds` de cada post como chave e cruzam esses IDs com as categorias Wix aprovadas: Assessoria para Imobiliárias, Due Diligence Imobiliária, Contratos Imobiliários e Litígios Imobiliários. Categorias sem posts ficam ocultas. No fim do artigo, três cards relacionados priorizam a mesma categoria e, quando necessário, completam com a categoria correlata configurada; o bloco textual editorial “Leia também” continua sendo responsabilidade do Rich Content do Wix.
+As abas de `/blog` usam os `categoryIds` de cada post como chave e cruzam esses IDs com as categorias Wix aprovadas: Assessoria para Imobiliárias, Due Diligence Imobiliária, Contratos Imobiliários e Litígios Imobiliários. Uma categoria só ganha aba com pelo menos três posts publicados; o catálogo continua disponível para rotular os cards. No fim do artigo, três cards relacionados priorizam a mesma categoria e, quando necessário, completam com a categoria correlata configurada. Dentro de cada grupo, `tagIds` e hashtags Wix em comum têm prioridade, seguidos por termos específicos do título e, por fim, pela data. O Rich Content preserva o bloco textual editorial “Leia também”; seus links internos para posts são extraídos apenas para não repetir os mesmos destinos nos cards.
 
 As imagens editoriais continuam sendo entregues por `static.wixstatic.com`, origem controlada pelo CMS e permitida em `next.config.ts`. Uma migração para storage próprio exige definir destino, sincronização, atualização e rollback antes de remover essa origem.
 
@@ -62,6 +62,8 @@ O layout carrega a Google tag do fluxo GA4 `G-37RDFTHKL8`. Um Client Component p
 | `click_cta_servico` | Link interno aprovado para página de serviço | `post_slug`, `destino`, `cta_position=meio` |
 
 O cluster é inferido pelo destino de serviço presente no artigo: locação, due diligence, compra na planta ou contratos. Quando não há correspondência segura, o parâmetro é omitido. Não enviar nome, telefone, mensagem do WhatsApp, conteúdo jurídico ou outra PII ao GA4. `click_whatsapp` é o evento-chave principal; `click_cta_servico` pode ser usado como microconversão.
+
+Depois de uma janela estável de coleta, o responsável pelo GA4 deve registrar as dimensões personalizadas de escopo de evento `post_slug`, `cluster`, `cta_position` e `destino` no painel. Elas já são parâmetros dos eventos; não criar evento, parâmetro ou dependência adicional para esse cadastro.
 
 ## FAQ estruturado
 

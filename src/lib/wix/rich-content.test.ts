@@ -1,7 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { getWixFaqItems, getWixRichContentBlocks, resolveWixImageUrl } from "@/lib/wix/rich-content";
+import {
+  getWixFaqItems,
+  getWixRelatedPostSlugs,
+  getWixRichContentBlocks,
+  resolveWixImageUrl
+} from "@/lib/wix/rich-content";
 
 test("renders the audited simple text shape as a paragraph", () => {
   const blocks = getWixRichContentBlocks({
@@ -138,6 +143,34 @@ test("supports published Wix FAQs whose questions are bold paragraphs", () => {
     { answer: "A primeira resposta publicada.", question: "A primeira pergunta publicada?" },
     { answer: "A segunda resposta publicada.", question: "A segunda pergunta publicada?" }
   ]);
+});
+
+test("extracts the post slugs cited in the Wix Leia também block", () => {
+  const slugs = getWixRelatedPostSlugs({
+    nodes: [{
+      id: "related",
+      nodes: [
+        { textData: { decorations: [{ type: "BOLD" }], text: "Leia também:" }, type: "TEXT" },
+        {
+          textData: {
+            decorations: [{ linkData: { link: { url: "/post/vistoria-de-sa%C3%ADda" } }, type: "LINK" }],
+            text: " Vistoria de saída"
+          },
+          type: "TEXT"
+        },
+        {
+          textData: {
+            decorations: [{ linkData: { link: { url: "https://www.dosadvocacia.com.br/post/danos-na-loca%C3%A7%C3%A3o" } }, type: "LINK" }],
+            text: " · Danos na locação"
+          },
+          type: "TEXT"
+        }
+      ],
+      type: "PARAGRAPH"
+    }]
+  });
+
+  assert.deepEqual(slugs, ["vistoria-de-saída", "danos-na-locação"]);
 });
 
 function heading(id: string, level: number, text: string) {

@@ -9,7 +9,7 @@ import { FaqPageJsonLd } from "@/components/faq-page-json-ld";
 import { WixRichContent } from "@/components/wix-rich-content";
 import { getBlogCategories, getPostCategory, getRelatedPosts } from "@/lib/wix/blog-navigation";
 import { getWixPostBySlug, isWixBlogConfigured, listWixCategories, listWixPosts } from "@/lib/wix/blog";
-import { getWixFaqItems } from "@/lib/wix/rich-content";
+import { getWixFaqItems, getWixRelatedPostSlugs } from "@/lib/wix/rich-content";
 import { getPostDescription, getPostImageUrl } from "@/lib/wix/seo";
 
 type PostPageProps = {
@@ -68,7 +68,7 @@ export default async function PostPage({ params }: PostPageProps) {
   if (!post?.title || !post.slug) notFound();
   const [posts, wixCategories] = await Promise.all([listWixPosts(), listWixCategories()]);
   const categories = getBlogCategories(posts, wixCategories);
-  const relatedPosts = getRelatedPosts(post, posts, categories);
+  const relatedPosts = getRelatedPosts(post, posts, categories, getWixRelatedPostSlugs(post.richContent));
   const faqItems = getWixFaqItems(post.richContent);
 
   return (
@@ -90,7 +90,6 @@ export default async function PostPage({ params }: PostPageProps) {
       </article>
       {relatedPosts.length ? (
         <section className="related-posts" aria-labelledby="related-posts-heading">
-          <p className="eyebrow">Continue a leitura</p>
           <h2 id="related-posts-heading">Conteúdos relacionados</h2>
           <div className="blog-grid">
             {relatedPosts.map((relatedPost) => (

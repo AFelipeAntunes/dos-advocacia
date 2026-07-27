@@ -57,6 +57,7 @@ export type WixBlogPost = {
   contentText?: string;
   excerpt?: string;
   firstPublishedDate?: string;
+  hashtags?: string[];
   id?: string;
   lastPublishedDate?: string;
   media?: WixPostMedia;
@@ -64,6 +65,7 @@ export type WixBlogPost = {
   richContent?: WixRichContent;
   seoData?: WixSeoData;
   slug?: string;
+  tagIds?: string[];
   title?: string;
   url?: { base?: string; path?: string };
 };

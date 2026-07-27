@@ -39,6 +39,8 @@ Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integ
 - Toda nova imagem deve ser otimizada e ter `alt` descritivo.
 - Preserve a camada visual CSS-first: animar apenas `transform` e `opacity`, manter o LCP independente de JavaScript e respeitar `prefers-reduced-motion`.
 - Eventos GA4 do blog ficam restritos a `click_whatsapp` e `click_cta_servico`, conforme `docs/ARCHITECTURE.md`. Nunca enviar PII, mensagem do WhatsApp ou conteúdo jurídico; preserve nomes e parâmetros para manter a série histórica.
+- As abas de `/blog` usam somente as quatro categorias editoriais aprovadas pelo Wix e só podem aparecer com pelo menos três posts publicados. Filtros sem aba visível devem voltar à listagem canônica; não criar taxonomia paralela.
+- Em cada artigo, o bloco editorial “Leia também” do Rich Content Wix deve permanecer. Os cards de “Conteúdos relacionados” precisam excluir os posts já citados nele, sem alterar o conteúdo Wix; priorize tags/hashtags Wix e, na falta delas, a proximidade do assunto no título, sempre no servidor.
 - Símbolos oficiais publicados estão em `public/assets/brand/`. Os wordmarks enviados ainda exibem “Drielle Oliveira” e foram isolados em `design-assets/brand-legacy/`; não os mova de volta para `public/` sem a correção gráfica.
 - Fotos otimizadas em WebP ficam em `public/assets/images/`. Não versionar os PNGs originais de alta resolução.
 - URLs `*.html` antigas devem continuar com redirecionamento 301 específico; não redirecionar todo o acervo para a home.

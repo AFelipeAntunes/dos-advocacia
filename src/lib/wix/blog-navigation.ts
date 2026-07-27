@@ -16,6 +16,8 @@ export type BlogCategory = {
   slug: BlogCategorySlug;
 };
 
+export const MINIMUM_POSTS_PER_CATEGORY_TAB = 3;
+
 const RELATED_CATEGORY_SLUGS: Record<BlogCategorySlug, readonly BlogCategorySlug[]> = {
   "assessoria-para-imobiliárias": ["contratos-imobiliários"],
   "due-diligence-imobiliária": ["contratos-imobiliários"],
@@ -44,10 +46,6 @@ export function getBlogCategories(posts: WixBlogPost[], wixCategories: WixBlogCa
   });
 }
 
-export function getBlogCategoryBySlug(slug?: string) {
-  return BLOG_CATEGORY_DEFINITIONS.find((category) => category.slug === slug);
-}
-
 export function getPostCategory(post: WixBlogPost, categories: BlogCategory[]) {
   return categories.find((category) => post.categoryIds?.includes(category.id));
 }
@@ -58,18 +56,32 @@ export function filterPostsByCategory(posts: WixBlogPost[], category?: BlogCateg
   return posts.filter((post) => post.categoryIds?.includes(category.id));
 }
 
-export function getRelatedPosts(post: WixBlogPost, posts: WixBlogPost[], categories: BlogCategory[]) {
+export function getBlogCategoryTabs(categories: BlogCategory[]) {
+  return categories.filter((category) => category.postCount >= MINIMUM_POSTS_PER_CATEGORY_TAB);
+}
+
+export function getRelatedPosts(
+  post: WixBlogPost,
+  posts: WixBlogPost[],
+  categories: BlogCategory[],
+  excludedSlugs: Iterable<string> = []
+) {
   const currentCategory = getPostCategory(post, categories);
   if (!currentCategory) return [];
 
-  const candidates = posts.filter((candidate) => !isSamePost(candidate, post));
+  const exclusions = new Set(excludedSlugs);
+  const candidates = posts.filter((candidate) => !isSamePost(candidate, post)
+    && (!candidate.slug || !exclusions.has(candidate.slug)));
   const sameCategoryPosts = filterPostsByCategory(candidates, currentCategory);
   const correlatedCategories = RELATED_CATEGORY_SLUGS[currentCategory.slug]
     .map((slug) => categories.find((category) => category.slug === slug))
     .filter((category): category is BlogCategory => Boolean(category));
   const correlatedPosts = correlatedCategories.flatMap((category) => filterPostsByCategory(candidates, category));
 
-  return distinctPosts([...sortByMostRecent(sameCategoryPosts), ...sortByMostRecent(correlatedPosts)]).slice(0, 3);
+  return distinctPosts([
+    ...sortByRelevanceAndMostRecent(post, sameCategoryPosts),
+    ...sortByRelevanceAndMostRecent(post, correlatedPosts)
+  ]).slice(0, 3);
 }
 
 function distinctPosts(posts: WixBlogPost[]) {
@@ -89,8 +101,40 @@ function isSamePost(left: WixBlogPost, right: WixBlogPost) {
   return left.slug === right.slug;
 }
 
-function sortByMostRecent(posts: WixBlogPost[]) {
-  return [...posts].sort((left, right) => getPublishedTime(right) - getPublishedTime(left));
+function sortByRelevanceAndMostRecent(post: WixBlogPost, posts: WixBlogPost[]) {
+  return [...posts].sort((left, right) => {
+    const relevance = getRelatedScore(post, right) - getRelatedScore(post, left);
+    return relevance || getPublishedTime(right) - getPublishedTime(left);
+  });
+}
+
+function getRelatedScore(post: WixBlogPost, candidate: WixBlogPost) {
+  return sharedCount(post.tagIds, candidate.tagIds) * 100
+    + sharedCount(post.hashtags, candidate.hashtags) * 20
+    + sharedCount(getTopicTerms(post.title), getTopicTerms(candidate.title));
+}
+
+const TOPIC_STOPWORDS = new Set([
+  "a", "ao", "aos", "as", "com", "como", "da", "das", "de", "do", "dos", "e", "em", "imobiliaria",
+  "imovel", "na", "nas", "no", "nos", "o", "os", "para", "por", "que", "quem", "risco", "riscos", "um", "uma"
+]);
+
+function getTopicTerms(value?: string) {
+  return new Set(
+    (value ?? "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLocaleLowerCase("pt-BR")
+      .split(/[^a-z0-9]+/)
+      .filter((term) => term.length >= 3 && !TOPIC_STOPWORDS.has(term))
+  );
+}
+
+function sharedCount<T>(left?: Iterable<T>, right?: Iterable<T>) {
+  if (!left || !right) return 0;
+
+  const values = new Set(left);
+  return [...right].filter((value) => values.has(value)).length;
 }
 
 function getPublishedTime(post: WixBlogPost) {

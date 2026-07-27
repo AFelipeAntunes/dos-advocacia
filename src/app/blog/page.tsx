@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { BlogPostCard } from "@/components/blog-post-card";
 import {
   filterPostsByCategory,
   getBlogCategories,
-  getBlogCategoryBySlug,
+  getBlogCategoryTabs,
   getPostCategory
 } from "@/lib/wix/blog-navigation";
 import { isWixBlogConfigured, listWixCategories, listWixPosts } from "@/lib/wix/blog";
@@ -27,7 +27,11 @@ const blogMetadata: Metadata = {
 export async function generateMetadata({ searchParams }: BlogPageProps): Promise<Metadata> {
   const { categoria } = await searchParams;
   const requestedCategory = getRequestedCategory(categoria);
-  const category = getBlogCategoryBySlug(requestedCategory);
+  if (!requestedCategory || !isWixBlogConfigured()) return blogMetadata;
+
+  const [posts, wixCategories] = await Promise.all([listWixPosts(), listWixCategories()]);
+  const category = getBlogCategoryTabs(getBlogCategories(posts, wixCategories))
+    .find((item) => item.slug === requestedCategory);
 
   return {
     ...blogMetadata,
@@ -45,8 +49,11 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     listWixPosts(),
     listWixCategories()
   ]);
-  const categories = getBlogCategories(posts, wixCategories);
-  const activeCategory = categories.find((category) => category.slug === getRequestedCategory(categoria));
+  const allCategories = getBlogCategories(posts, wixCategories);
+  const categories = getBlogCategoryTabs(allCategories);
+  const requestedCategory = getRequestedCategory(categoria);
+  const activeCategory = categories.find((category) => category.slug === requestedCategory);
+  if (requestedCategory && !activeCategory) redirect("/blog");
   const filteredPosts = filterPostsByCategory(posts, activeCategory);
 
   return (
@@ -79,7 +86,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       <section className="blog-grid" aria-label="Publicações do blog">
         {filteredPosts.map((post) => (
           <BlogPostCard
-            categoryLabel={getPostCategory(post, categories)?.label}
+            categoryLabel={getPostCategory(post, allCategories)?.label}
             key={post.id ?? post.slug}
             post={post}
           />

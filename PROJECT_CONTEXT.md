@@ -161,12 +161,20 @@ npm run build
 - Vercel Web Analytics e Speed Insights integrados ao layout; a coleta começa após o deploy válido e visitas reais.
 - CTAs de WhatsApp nas páginas de serviços e treinamentos usam mensagens pré-preenchidas com o contexto da página. Links globais de contato permanecem genéricos.
 - Domínio, DNS e integração Wix estão ativos em produção. O Search Console é a fonte da análise de CTR desta rodada; o GA4 complementa a leitura com eventos de conversão do blog.
+- A descoberta do blog mantém as quatro categorias editoriais Wix aprovadas, mas expõe uma aba somente quando ela tiver ao menos três posts publicados. Os cards relacionados preservam o “Leia também” editorial e não repetem seus links.
 - A landing nacional funciona como página-mãe do cluster de advocacia imobiliária; a página de Curitiba permanece como satélite com links cruzados.
 - Home e landing nacional exibem um bloco sóbrio de reconhecimento com nota média 5,0, 11 avaliações e link para o perfil público do Google, sem reproduzir comentários de clientes.
 - O termo profissional preferido no conteúdo institucional é `advogada imobiliarista`; a marca oficial `DOS Advocacia Imobiliária` e os slugs indexados permanecem inalterados.
 - A landing `/assessoria-juridica-compra-de-imovel` integra o cluster nacional com foco preventivo na análise do imóvel, do vendedor e do contrato antes da assinatura.
 
 ## 12. Alterações recentes
+
+### 2026-07-27 — Polimento de descoberta e deduplicação editorial do blog
+
+- As abas indexáveis de `/blog` continuam derivadas de `categoryIds` e do catálogo Wix aprovado, porém categorias com menos de três posts publicados deixam de ser expostas. Um filtro ausente ou abaixo desse limite volta para `/blog`, preservando a canonical da listagem e evitando uma página de filtro fraca.
+- Os três cards de “Conteúdos relacionados” passam a ordenar primeiro por `tagIds` e hashtags em comum da Wix e, como fallback, por termos específicos do título; a data continua sendo o desempate. A categoria do post e as correlações configuradas continuam delimitando a seleção.
+- O parser do Rich Content identifica links internos em “Leia também” e os exclui dos cards relacionados. O bloco textual editorial não é removido e o rótulo visual solto “Continue a leitura” foi retirado.
+- Cobertura unitária adicionada para limite mínimo de abas, prioridade temática e deduplicação de links do Rich Content, sem nova dependência, alteração de conteúdo Wix, slugs, sitemap, Open Graph ou JSON-LD.
 
 ### 2026-07-26 — Navegação editorial por categoria e conteúdos relacionados
 
@@ -327,6 +335,7 @@ npm run build
 
 ## 13. Pendências e recomendações
 
+- Após estabilizar a coleta do GA4, cadastrar no painel as dimensões personalizadas de escopo de evento `post_slug`, `cluster`, `cta_position` e `destino`. Os parâmetros já são enviados pelos dois eventos do blog; esta é uma configuração operacional externa, sem mudança de código.
 - Após a publicação autorizada da landing `/assessoria-juridica-compra-de-imovel`, solicitar sua indexação no Search Console e confirmar a URL no sitemap público.
 - Os novos títulos e parágrafos de abertura dos três posts B2C sobre cessão de direitos, Habite-se e procuração permanecem pendentes de edição no Wix pela Dra. Drielle; depois da alteração editorial, executar a revalidação segura e conferir a propagação no site público. Os posts B2B devem permanecer inalterados.
 

@@ -193,6 +193,33 @@ export function getWixFaqItems(content?: WixRichContent): WixFaqItem[] {
   return items.length >= 2 ? items : [];
 }
 
+export function getWixRelatedPostSlugs(content?: WixRichContent) {
+  return getWixRichContentBlocks(content, "")
+    .filter((block): block is TextBlock & { kind: "paragraph" } => (
+      block.kind === "paragraph" && textOfBlock(block).toLocaleLowerCase("pt-BR").startsWith("leia também")
+    ))
+    .flatMap((block) => block.runs.map((run) => getPostSlugFromHref(run.href)).filter(Boolean))
+    .filter((slug, index, slugs): slug is string => slugs.indexOf(slug) === index);
+}
+
+function getPostSlugFromHref(href?: string) {
+  if (!href) return undefined;
+
+  try {
+    const url = new URL(href, "https://www.dosadvocacia.com.br");
+    const match = url.pathname.match(/^\/post\/([^/]+)\/?$/);
+    if (!match?.[1]) return undefined;
+
+    try {
+      return decodeURIComponent(match[1]);
+    } catch {
+      return match[1];
+    }
+  } catch {
+    return undefined;
+  }
+}
+
 export function resolveWixImageUrl(source?: string) {
   if (!source) return undefined;
   if (/^https:\/\//i.test(source)) {
