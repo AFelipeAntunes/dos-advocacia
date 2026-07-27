@@ -100,6 +100,27 @@ test("prioritizes the same title subject and uses Wix tags before publication da
   ]);
 });
 
+test("does not let generic category terms outrank a specific subtopic", () => {
+  const current = post("current", "assessoria", "2026-07-20", {
+    tagIds: ["locacao", "imobiliaria"],
+    title: "Vistoria de entrada e danos"
+  });
+  const posts = [
+    current,
+    post("generic", "assessoria", "2026-07-19", {
+      tagIds: ["locacao", "imobiliaria"],
+      title: "O locatário não pagou o aluguel"
+    }),
+    post("specific", "assessoria", "2026-07-18", { title: "Danos na vistoria de saída" })
+  ];
+  const categories = getBlogCategories(posts, wixCategories);
+
+  assert.deepEqual(getRelatedPosts(current, posts, categories).map((item) => item.slug), [
+    "specific",
+    "generic"
+  ]);
+});
+
 test("does not repeat post slugs already cited in Leia também", () => {
   const current = post("current", "due", "2026-07-20");
   const posts = [

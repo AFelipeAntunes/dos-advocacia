@@ -109,14 +109,16 @@ function sortByRelevanceAndMostRecent(post: WixBlogPost, posts: WixBlogPost[]) {
 }
 
 function getRelatedScore(post: WixBlogPost, candidate: WixBlogPost) {
-  return sharedCount(getTopicTerms(post.title), getTopicTerms(candidate.title)) * 100
+  return sharedCount(getTopicTerms(post.title), getTopicTerms(candidate.title)) * 1000
     + sharedCount(post.tagIds, candidate.tagIds) * 50
     + sharedCount(post.hashtags, candidate.hashtags) * 20;
 }
 
 const TOPIC_STOPWORDS = new Set([
-  "a", "ao", "aos", "as", "com", "como", "da", "das", "de", "do", "dos", "e", "em", "imobiliaria",
-  "imovel", "na", "nas", "no", "nos", "o", "os", "para", "por", "que", "quem", "risco", "riscos", "um", "uma"
+  "a", "administradora", "advocacia", "advogada", "ao", "aos", "as", "com", "como", "comprador", "contrato",
+  "da", "das", "de", "do", "dos", "e", "em", "imobiliaria", "imovel", "juridica", "juridico", "locacao",
+  "locatario", "na", "nas", "no", "nos", "o", "os", "para", "por", "proprietario", "que", "quem", "risco",
+  "riscos", "um", "uma", "vendedor"
 ]);
 
 function getTopicTerms(value?: string) {
