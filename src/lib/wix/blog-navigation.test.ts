@@ -103,13 +103,13 @@ test("prioritizes the same title subject and uses Wix tags before publication da
 test("does not let generic category terms outrank a specific subtopic", () => {
   const current = post("current", "assessoria", "2026-07-20", {
     tagIds: ["locacao", "imobiliaria"],
-    title: "Vistoria de entrada e danos"
+    title: "Vistoria não prova danos"
   });
   const posts = [
     current,
     post("generic", "assessoria", "2026-07-19", {
       tagIds: ["locacao", "imobiliaria"],
-      title: "O locatário não pagou o aluguel"
+      title: "A imobiliária não respondeu ao proprietário"
     }),
     post("specific", "assessoria", "2026-07-18", { title: "Danos na vistoria de saída" })
   ];

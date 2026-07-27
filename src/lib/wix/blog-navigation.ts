@@ -117,7 +117,7 @@ function getRelatedScore(post: WixBlogPost, candidate: WixBlogPost) {
 const TOPIC_STOPWORDS = new Set([
   "a", "administradora", "advocacia", "advogada", "ao", "aos", "as", "com", "como", "comprador", "contrato",
   "da", "das", "de", "do", "dos", "e", "em", "imobiliaria", "imovel", "juridica", "juridico", "locacao",
-  "locatario", "na", "nas", "no", "nos", "o", "os", "para", "por", "proprietario", "que", "quem", "risco",
+  "locatario", "na", "nao", "nas", "no", "nos", "o", "os", "para", "por", "proprietario", "que", "quem", "risco",
   "riscos", "um", "uma", "vendedor"
 ]);
 
