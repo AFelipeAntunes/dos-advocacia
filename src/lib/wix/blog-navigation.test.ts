@@ -80,7 +80,7 @@ test("fills due diligence related posts with the correlated contracts category",
   ]);
 });
 
-test("prioritizes shared Wix tags and the same title subject before publication date", () => {
+test("prioritizes the same title subject and uses Wix tags before publication date", () => {
   const current = post("current", "assessoria", "2026-07-20", {
     tagIds: ["vistoria"],
     title: "Vistoria de entrada e danos"
@@ -94,8 +94,8 @@ test("prioritizes shared Wix tags and the same title subject before publication 
   const categories = getBlogCategories(posts, wixCategories);
 
   assert.deepEqual(getRelatedPosts(current, posts, categories).map((item) => item.slug), [
-    "same-tag",
     "same-subject",
+    "same-tag",
     "newest-unrelated"
   ]);
 });

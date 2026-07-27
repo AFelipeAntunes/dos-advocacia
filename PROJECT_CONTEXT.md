@@ -172,7 +172,7 @@ npm run build
 ### 2026-07-27 — Polimento de descoberta e deduplicação editorial do blog
 
 - As abas indexáveis de `/blog` continuam derivadas de `categoryIds` e do catálogo Wix aprovado, porém categorias com menos de três posts publicados deixam de ser expostas. Um filtro ausente ou abaixo desse limite volta para `/blog`, preservando a canonical da listagem e evitando uma página de filtro fraca.
-- Os três cards de “Conteúdos relacionados” passam a ordenar primeiro por `tagIds` e hashtags em comum da Wix e, como fallback, por termos específicos do título; a data continua sendo o desempate. A categoria do post e as correlações configuradas continuam delimitando a seleção.
+- Os três cards de “Conteúdos relacionados” combinam `tagIds`, hashtags e termos específicos do título da Wix; a proximidade do subtema no título prevalece sobre uma tag ampla, e a data continua sendo o desempate. A categoria do post e as correlações configuradas continuam delimitando a seleção.
 - O parser do Rich Content identifica links internos em “Leia também” e os exclui dos cards relacionados. O bloco textual editorial não é removido e o rótulo visual solto “Continue a leitura” foi retirado.
 - Cobertura unitária adicionada para limite mínimo de abas, prioridade temática e deduplicação de links do Rich Content, sem nova dependência, alteração de conteúdo Wix, slugs, sitemap, Open Graph ou JSON-LD.
 

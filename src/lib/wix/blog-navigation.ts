@@ -109,9 +109,9 @@ function sortByRelevanceAndMostRecent(post: WixBlogPost, posts: WixBlogPost[]) {
 }
 
 function getRelatedScore(post: WixBlogPost, candidate: WixBlogPost) {
-  return sharedCount(post.tagIds, candidate.tagIds) * 100
-    + sharedCount(post.hashtags, candidate.hashtags) * 20
-    + sharedCount(getTopicTerms(post.title), getTopicTerms(candidate.title));
+  return sharedCount(getTopicTerms(post.title), getTopicTerms(candidate.title)) * 100
+    + sharedCount(post.tagIds, candidate.tagIds) * 50
+    + sharedCount(post.hashtags, candidate.hashtags) * 20;
 }
 
 const TOPIC_STOPWORDS = new Set([
