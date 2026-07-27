@@ -31,14 +31,16 @@ Não usar iframe, redirect de leitores ao Wix ou uma segunda origem para os arti
 
 - Institucional: `/`, `/advogada-imobiliaria`, `/advogada-imobiliaria-curitiba`, `/assessoria-juridica-compra-de-imovel`, `/sobre`, `/areas-de-atuacao`, serviços, `/treinamentos` e `/contato`.
 - Cluster imobiliário: `/advogada-imobiliaria` é a página-mãe nacional vinculada no menu e no rodapé; `/advogada-imobiliaria-curitiba` é a primeira página-satélite; `/assessoria-juridica-compra-de-imovel` é a landing transacional para compradores, proprietários e investidores. As rotas mantêm links cruzados descritivos, incluindo a ligação com `/due-diligence-imobiliaria`.
-- Blog: `/blog` é a listagem editorial; cada artigo é `/post/[slug]`.
+- Blog: `/blog` é a listagem editorial; cada artigo é `/post/[slug]`. A listagem aceita `?categoria=<slug>` para filtros indexáveis e compartilháveis, mantendo canonical próprio somente para as quatro categorias editoriais aprovadas.
 - Compatibilidade: `/conteudos` e `/conteudos.html` redirecionam permanentemente para `/blog`.
 - Descoberta: `robots.ts` e `sitemap.ts` geram URLs com base em `SITE_URL`. O sitemap só inclui artigos quando a integração Wix estiver configurada.
 - Artigos devem preservar metadata, canonical, Open Graph, Twitter e `BlogPosting` JSON-LD. A autoria canônica exibida é **Drielle Pereira**.
 
 ## Conteúdo Wix e cache
 
-O servidor consulta a Wix Blog API com os fieldsets de texto, Rich Content, SEO e URL. A renderização de Rich Content é deliberadamente segura: não usa HTML bruto de terceiros.
+O servidor consulta a Wix Blog API com os fieldsets de texto, Rich Content, SEO e URL, além do catálogo de categorias. A renderização de Rich Content é deliberadamente segura: não usa HTML bruto de terceiros.
+
+As abas de `/blog` usam os `categoryIds` de cada post como chave e cruzam esses IDs com as categorias Wix aprovadas: Assessoria para Imobiliárias, Due Diligence Imobiliária, Contratos Imobiliários e Litígios Imobiliários. Categorias sem posts ficam ocultas. No fim do artigo, três cards relacionados priorizam a mesma categoria e, quando necessário, completam com a categoria correlata configurada; o bloco textual editorial “Leia também” continua sendo responsabilidade do Rich Content do Wix.
 
 As imagens editoriais continuam sendo entregues por `static.wixstatic.com`, origem controlada pelo CMS e permitida em `next.config.ts`. Uma migração para storage próprio exige definir destino, sincronização, atualização e rollback antes de remover essa origem.
 

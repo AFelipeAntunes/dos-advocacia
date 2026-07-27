@@ -1,24 +1,53 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { isWixBlogConfigured, listWixPosts } from "@/lib/wix/blog";
-import { getPostDescription, getPostImageUrl } from "@/lib/wix/seo";
+import { BlogPostCard } from "@/components/blog-post-card";
+import {
+  filterPostsByCategory,
+  getBlogCategories,
+  getBlogCategoryBySlug,
+  getPostCategory
+} from "@/lib/wix/blog-navigation";
+import { isWixBlogConfigured, listWixCategories, listWixPosts } from "@/lib/wix/blog";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+type BlogPageProps = {
+  searchParams: Promise<{ categoria?: string | string[] }>;
+};
+
+const blogMetadata: Metadata = {
   title: "Blog de Direito Imobiliário, Riscos e Contratos de Imóvel",
   description:
     "Direito imobiliário em linguagem direta. Contratos, locação, due diligence e os riscos que aparecem antes de assinar. Para compradores, investidores e imobiliárias.",
   alternates: { canonical: "/blog" }
 };
 
-export default async function BlogPage() {
+export async function generateMetadata({ searchParams }: BlogPageProps): Promise<Metadata> {
+  const { categoria } = await searchParams;
+  const requestedCategory = getRequestedCategory(categoria);
+  const category = getBlogCategoryBySlug(requestedCategory);
+
+  return {
+    ...blogMetadata,
+    alternates: {
+      canonical: category ? `/blog?categoria=${encodeURIComponent(category.slug)}` : "/blog"
+    }
+  };
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
   if (!isWixBlogConfigured()) notFound();
 
-  const posts = await listWixPosts();
+  const [{ categoria }, posts, wixCategories] = await Promise.all([
+    searchParams,
+    listWixPosts(),
+    listWixCategories()
+  ]);
+  const categories = getBlogCategories(posts, wixCategories);
+  const activeCategory = categories.find((category) => category.slug === getRequestedCategory(categoria));
+  const filteredPosts = filterPostsByCategory(posts, activeCategory);
 
   return (
     <main className="blog-shell">
@@ -31,39 +60,35 @@ export default async function BlogPage() {
         </p>
       </section>
 
+      <nav className="blog-category-tabs" aria-label="Filtrar conteúdos por categoria">
+        <Link aria-current={activeCategory ? undefined : "page"} className="blog-category-tab" href="/blog">
+          Todos
+        </Link>
+        {categories.map((category) => (
+          <Link
+            aria-current={activeCategory?.slug === category.slug ? "page" : undefined}
+            className="blog-category-tab"
+            href={{ pathname: "/blog", query: { categoria: category.slug } }}
+            key={category.id}
+          >
+            {category.label}
+          </Link>
+        ))}
+      </nav>
+
       <section className="blog-grid" aria-label="Publicações do blog">
-        {posts.map((post) => (
-          <article className="blog-card" key={post.id ?? post.slug}>
-            {getPostImageUrl(post) ? (
-              <Image
-                alt={`Capa do artigo: ${post.title}`}
-                className="blog-card__image"
-                height={480}
-                sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw"
-                src={getPostImageUrl(post) ?? ""}
-                width={760}
-              />
-            ) : null}
-            <p className="blog-card__date">{formatDate(post.firstPublishedDate)}</p>
-            <h2>
-              <Link href={`/post/${encodeURIComponent(post.slug ?? "")}`}>{post.title}</Link>
-            </h2>
-            <p>{getPostDescription(post)}</p>
-            <Link className="text-link" href={`/post/${encodeURIComponent(post.slug ?? "")}`}>
-              Ler artigo <span aria-hidden="true">→</span>
-            </Link>
-          </article>
+        {filteredPosts.map((post) => (
+          <BlogPostCard
+            categoryLabel={getPostCategory(post, categories)?.label}
+            key={post.id ?? post.slug}
+            post={post}
+          />
         ))}
       </section>
     </main>
   );
 }
 
-function formatDate(value?: string) {
-  if (!value) return "Conteúdo jurídico";
-
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return "Conteúdo jurídico";
-
-  return new Intl.DateTimeFormat("pt-BR", { dateStyle: "long" }).format(date);
+function getRequestedCategory(value?: string | string[]) {
+  return typeof value === "string" ? value : undefined;
 }

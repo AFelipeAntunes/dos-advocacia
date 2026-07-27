@@ -491,7 +491,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 .blog-intro {
   max-width: 760px;
-  margin-bottom: 3.25rem;
+  margin-bottom: 2.25rem;
 }
 
 .blog-intro h1,
@@ -514,6 +514,41 @@ h1, h2, h3 { text-wrap: balance; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.25rem;
+}
+
+.blog-category-tabs {
+  display: flex;
+  gap: .65rem;
+  overflow-x: auto;
+  margin: 0 0 2rem;
+  padding: 0 0 .5rem;
+  scrollbar-width: thin;
+}
+
+.blog-category-tab {
+  flex: 0 0 auto;
+  padding: .65rem .9rem;
+  border: 1px solid rgba(11, 30, 71, .16);
+  border-radius: 999px;
+  color: var(--navy);
+  background: white;
+  font-size: .84rem;
+  font-weight: 750;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.blog-category-tab:hover,
+.blog-category-tab:focus-visible {
+  border-color: var(--coral);
+  color: var(--coral);
+}
+
+.blog-category-tab[aria-current="page"] {
+  border-color: var(--coral);
+  color: var(--navy);
+  background: var(--coral);
 }
 
 .blog-card {
@@ -539,7 +574,7 @@ h1, h2, h3 { text-wrap: balance; }
   text-decoration: none;
 }
 
-.blog-card > p:not(.blog-card__date) {
+.blog-card > p:not(.blog-card__date):not(.blog-card__category) {
   color: var(--ink-soft);
   line-height: 1.6;
   margin: 0 0 1.25rem;
@@ -554,6 +589,19 @@ h1, h2, h3 { text-wrap: balance; }
   text-transform: uppercase;
 }
 
+.blog-card__date {
+  margin: 0;
+}
+
+.blog-card__category {
+  margin: .5rem 0 0;
+  color: var(--coral);
+  font-size: .73rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
 .text-link {
   color: var(--teal);
   font-weight: 800;
@@ -562,6 +610,22 @@ h1, h2, h3 { text-wrap: balance; }
 
 .article {
   max-width: 780px;
+}
+
+.related-posts {
+  margin-top: clamp(4rem, 8vw, 7rem);
+  padding-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+
+.related-posts h2 {
+  max-width: 680px;
+  margin: 0 0 2rem;
+  color: var(--navy);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -.05em;
+  line-height: 1.03;
 }
 
 .article > .text-link {
@@ -585,3 +649,15 @@ h1, h2, h3 { text-wrap: balance; }
 .article__content a { color: var(--teal); font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: .18em; }
 .article__figure { margin: 2rem 0; }
 .article__figure img { width: 100%; height: auto; border-radius: 1rem; }
+
+@media (max-width: 760px) {
+  .blog-shell,
+  .article-shell {
+    padding-top: 7.25rem;
+  }
+
+  .blog-category-tabs {
+    margin-right: -1.5rem;
+    padding-right: 1.5rem;
+  }
+}

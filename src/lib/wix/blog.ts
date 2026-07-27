@@ -1,8 +1,8 @@
 import "server-only";
 
-import type { WixBlogPost } from "@/lib/wix/types";
+import type { WixBlogCategory, WixBlogPost } from "@/lib/wix/types";
 
-export type { WixBlogPost } from "@/lib/wix/types";
+export type { WixBlogCategory, WixBlogPost } from "@/lib/wix/types";
 
 export const WIX_BLOG_TAG = "wix-blog";
 const WIX_POST_FIELDSETS = ["CONTENT_TEXT", "RICH_CONTENT", "SEO", "URL"];
@@ -13,6 +13,10 @@ type WixListPostsResponse = {
 
 type WixGetPostResponse = {
   post?: WixBlogPost;
+};
+
+type WixListCategoriesResponse = {
+  categories?: WixBlogCategory[];
 };
 
 type WixApiConfig = {
@@ -71,6 +75,11 @@ export async function listWixPosts() {
     `/v3/posts?paging.limit=100&${fieldsetsQuery()}`
   );
   return response?.posts?.filter((post) => Boolean(post.slug && post.title)) ?? [];
+}
+
+export async function listWixCategories() {
+  const response = await wixFetch<WixListCategoriesResponse>("/blog/v3/categories?paging.limit=100");
+  return response?.categories?.filter((category) => Boolean(category.id && category.label && category.slug)) ?? [];
 }
 
 export async function getWixPostBySlug(rawSlug: string) {

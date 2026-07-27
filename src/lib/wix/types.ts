@@ -67,3 +67,10 @@ export type WixBlogPost = {
   title?: string;
   url?: { base?: string; path?: string };
 };
+
+export type WixBlogCategory = {
+  id?: string;
+  label?: string;
+  postCount?: number;
+  slug?: string;
+};

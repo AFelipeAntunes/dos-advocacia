@@ -4,9 +4,11 @@ import { notFound } from "next/navigation";
 
 import { BlogPostJsonLd } from "@/components/blog-post-json-ld";
 import { BlogCtaTracker } from "@/components/blog-cta-tracker";
+import { BlogPostCard } from "@/components/blog-post-card";
 import { FaqPageJsonLd } from "@/components/faq-page-json-ld";
 import { WixRichContent } from "@/components/wix-rich-content";
-import { getWixPostBySlug, isWixBlogConfigured, listWixPosts } from "@/lib/wix/blog";
+import { getBlogCategories, getPostCategory, getRelatedPosts } from "@/lib/wix/blog-navigation";
+import { getWixPostBySlug, isWixBlogConfigured, listWixCategories, listWixPosts } from "@/lib/wix/blog";
 import { getWixFaqItems } from "@/lib/wix/rich-content";
 import { getPostDescription, getPostImageUrl } from "@/lib/wix/seo";
 
@@ -64,6 +66,9 @@ export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
   const post = await getWixPostBySlug(slug);
   if (!post?.title || !post.slug) notFound();
+  const [posts, wixCategories] = await Promise.all([listWixPosts(), listWixCategories()]);
+  const categories = getBlogCategories(posts, wixCategories);
+  const relatedPosts = getRelatedPosts(post, posts, categories);
   const faqItems = getWixFaqItems(post.richContent);
 
   return (
@@ -83,6 +88,21 @@ export default async function PostPage({ params }: PostPageProps) {
         <BlogCtaTracker postSlug={post.slug} />
         <div className="article__content"><WixRichContent content={post.richContent} fallback={post.contentText ?? post.excerpt} /></div>
       </article>
+      {relatedPosts.length ? (
+        <section className="related-posts" aria-labelledby="related-posts-heading">
+          <p className="eyebrow">Continue a leitura</p>
+          <h2 id="related-posts-heading">Conteúdos relacionados</h2>
+          <div className="blog-grid">
+            {relatedPosts.map((relatedPost) => (
+              <BlogPostCard
+                categoryLabel={getPostCategory(relatedPost, categories)?.label}
+                key={relatedPost.id ?? relatedPost.slug}
+                post={relatedPost}
+              />
+            ))}
+          </div>
+        </section>
+      ) : null}
     </main>
   );
 }

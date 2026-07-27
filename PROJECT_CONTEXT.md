@@ -168,6 +168,13 @@ npm run build
 
 ## 12. Alterações recentes
 
+### 2026-07-26 — Navegação editorial por categoria e conteúdos relacionados
+
+- `/blog` passou a expor abas indexáveis e compartilháveis em `?categoria=<slug>`, mantendo `Todos` e mostrando somente as quatro categorias editoriais aprovadas que tenham posts publicados.
+- A filtragem cruza o `categoryIds` de cada post com o catálogo da API Wix; não há taxonomia paralela no repositório. Cada URL de categoria aprovada recebe canonical próprio, sem alterar slugs de posts, sitemap, Open Graph ou JSON-LD.
+- O mesmo card visual da listagem é reutilizado em uma seção de três conteúdos relacionados ao fim de cada artigo. A seleção exclui o post atual, prioriza a categoria do artigo e completa com categoria correlata quando necessário; o bloco editorial “Leia também” no Rich Content Wix permanece inalterado.
+- A atualização é coberta por testes do mapeamento de IDs, ordem e ocultação das abas, filtro, exclusão do artigo atual, ordenação por publicação e complemento Due Diligence/Contratos.
+
 ### 2026-07-23 — FAQPage automático nos posts Wix
 
 - Posts com seção visível de perguntas frequentes em `H2`, perguntas em `H3` e pelo menos dois pares válidos passam a emitir um único `FAQPage` JSON-LD sincronizado ao Rich Content do Wix.
