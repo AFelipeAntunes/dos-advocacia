@@ -35,6 +35,7 @@ Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integ
 - Ao testar title ou meta description para CTR, manter a redação aprovada coerente em Open Graph e dados estruturados aplicáveis, registrar a data no `PROJECT_CONTEXT.md` e aguardar uma janela de medição no Search Console antes de uma nova rodada.
 - Não transformar automaticamente títulos ou conteúdo dos artigos Wix para padronizar termos; o acervo editorial deve ser revisado na origem e revalidado pelo fluxo seguro existente.
 - A landing `/assessoria-juridica-compra-de-imovel` atende compradores, proprietários e investidores. Preserve seu canonical, seus schemas e os links com `/advogada-imobiliaria` e `/due-diligence-imobiliaria`.
+- A página `/conflitos-imobiliarios` atende proprietários, imobiliárias e administradoras em conflitos relacionados a imóveis. Não a reposicione pelo ponto de vista do inquilino, não apresente atuação contra proprietário ou administradora e não inclua conflitos condominiais sem decisão estratégica explícita.
 - Conteúdos B2B para imobiliárias e administradoras não devem ser retitulados ou reposicionados pelo ponto de vista do inquilino; mudanças editoriais nesses posts exigem decisão estratégica explícita.
 - Toda nova imagem deve ser otimizada e ter `alt` descritivo.
 - Preserve a camada visual CSS-first: animar apenas `transform` e `opacity`, manter o LCP independente de JavaScript e respeitar `prefers-reduced-motion`.

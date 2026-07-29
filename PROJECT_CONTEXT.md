@@ -166,8 +166,15 @@ npm run build
 - Home e landing nacional exibem um bloco sóbrio de reconhecimento com nota média 5,0, 11 avaliações e link para o perfil público do Google, sem reproduzir comentários de clientes.
 - O termo profissional preferido no conteúdo institucional é `advogada imobiliarista`; a marca oficial `DOS Advocacia Imobiliária` e os slugs indexados permanecem inalterados.
 - A landing `/assessoria-juridica-compra-de-imovel` integra o cluster nacional com foco preventivo na análise do imóvel, do vendedor e do contrato antes da assinatura.
+- A página `/conflitos-imobiliarios` foi reescrita para proprietários, imobiliárias e administradoras, com foco em inadimplência, despejo, danos ao imóvel, rescisão de locação, distrato e atraso de obra. Ela mantém o slug, os metadados completos, `FAQPage`, `LegalService`, `BreadcrumbList`, a listagem em `/areas-de-atuacao` e links internos com as páginas de compra e da advogada imobiliarista.
 
 ## 12. Alterações recentes
+
+### 2026-07-29 — Reescrita de conflitos imobiliários
+
+- Reescrita integral de `/conflitos-imobiliarios` na arquitetura de HTML institucional preservado, sem alteração de layout, componentes, dependências, slugs, sitemap ou redirects.
+- A página passou a usar title e description específicos, canonical, Open Graph, `BreadcrumbList`, `FAQPage` e `LegalService` coerentes com o conteúdo visível. O posicionamento é exclusivo para proprietários, imobiliárias e administradoras, sem escopo de conflitos condominiais ou defesa de inquilinos contra proprietário ou administradora.
+- Inseridos links para conteúdos Wix publicados sobre despejo, rescisão antecipada, vistoria de saída, distrato, atraso de obra, recuperação judicial de incorporadora e benfeitorias. A landing de compra recebeu link descritivo para a página de conflitos no trecho de problema na entrega.
 
 ### 2026-07-27 — Polimento de descoberta e deduplicação editorial do blog
 
@@ -337,6 +344,7 @@ npm run build
 
 - Após estabilizar a coleta do GA4, cadastrar no painel as dimensões personalizadas de escopo de evento `post_slug`, `cluster`, `cta_position` e `destino`. Os parâmetros já são enviados pelos dois eventos do blog; esta é uma configuração operacional externa, sem mudança de código.
 - Após a publicação autorizada da landing `/assessoria-juridica-compra-de-imovel`, solicitar sua indexação no Search Console e confirmar a URL no sitemap público.
+- Após o deploy da reescrita de `/conflitos-imobiliarios`, solicitar a indexação da URL no Search Console e confirmar a atualização do title, description e dados estruturados no URL Inspection.
 - Os novos títulos e parágrafos de abertura dos três posts B2C sobre cessão de direitos, Habite-se e procuração permanecem pendentes de edição no Wix pela Dra. Drielle; depois da alteração editorial, executar a revalidação segura e conferir a propagação no site público. Os posts B2B devem permanecer inalterados.
 
 ### Estado de produção confirmado — 13 de julho de 2026

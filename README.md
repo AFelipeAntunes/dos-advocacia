@@ -38,6 +38,7 @@ O checklist do projeto também inclui `npm audit --omit=dev`, QA visual em deskt
 - metadados, canonical, Open Graph, JSON-LD, `robots.txt` e `sitemap.xml` gerados pelo App Router;
 - cluster SEO com `/advogada-imobiliaria` como página nacional e `/advogada-imobiliaria-curitiba` como página-satélite, mantendo os slugs já indexados;
 - landing `/assessoria-juridica-compra-de-imovel` para compradores, proprietários e investidores, ligada à página nacional e à due diligence sem alterar os slugs existentes;
+- página `/conflitos-imobiliarios` para proprietários, imobiliárias e administradoras, com foco em conflitos de locação e imóvel na planta, ligada à página de compra e à página nacional;
 - redirecionamentos permanentes das antigas URLs `*.html` para as rotas limpas;
 - base segura para Wix Blog em `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/`.
 
@@ -47,7 +48,7 @@ Em `/blog`, as abas compartilháveis usam somente as quatro categorias editoriai
 
 O GA4 usa o fluxo web `G-37RDFTHKL8`. Nos artigos, cliques em WhatsApp geram `click_whatsapp` com `post_slug`, `cta_position`, `link_url` e `cluster` quando inferível; links para serviços geram `click_cta_servico` com `post_slug`, `destino` e `cta_position`. O primeiro é a conversão principal e deve permanecer marcado como evento-chave no painel GA4. Após estabilizar a coleta, cadastrar no painel as dimensões personalizadas de evento `post_slug`, `cluster`, `cta_position` e `destino`; não é necessário nem autorizado alterar o código para isso.
 
-As páginas institucionais estratégicas são `/advogada-imobiliaria`, como página nacional, `/advogada-imobiliaria-curitiba`, como satélite local, e `/assessoria-juridica-compra-de-imovel`, como landing transacional de compra. Menu, rodapé, canonical, Open Graph, JSON-LD e sitemap devem permanecer coerentes entre essas rotas.
+As páginas institucionais estratégicas são `/advogada-imobiliaria`, como página nacional, `/advogada-imobiliaria-curitiba`, como satélite local, `/assessoria-juridica-compra-de-imovel`, como landing transacional de compra, e `/conflitos-imobiliarios`, para proprietários, imobiliárias e administradoras. Menu, rodapé, canonical, Open Graph, JSON-LD e sitemap devem permanecer coerentes entre essas rotas.
 
 ## Voz e identidade
 
