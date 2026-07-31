@@ -167,8 +167,15 @@ npm run build
 - O termo profissional preferido no conteúdo institucional é `advogada imobiliarista`; a marca oficial `DOS Advocacia Imobiliária` e os slugs indexados permanecem inalterados.
 - A landing `/assessoria-juridica-compra-de-imovel` integra o cluster nacional com foco preventivo na análise do imóvel, do vendedor e do contrato antes da assinatura.
 - A página `/conflitos-imobiliarios` foi reescrita para proprietários, imobiliárias e administradoras, com foco em inadimplência, despejo, danos ao imóvel, rescisão de locação, distrato e atraso de obra. Ela mantém o slug, os metadados completos, `FAQPage`, `LegalService`, `BreadcrumbList`, a listagem em `/areas-de-atuacao` e links internos com as páginas de compra e da advogada imobiliarista.
+- A página `/advogada-imobiliaria-curitiba` mantém o slug e o layout, reforça uma ocorrência natural de `escritório de advocacia imobiliária em Curitiba` e inclui a FAQ aprovada sobre como escolher um advogado imobiliário em Curitiba. Seu `LegalService` agora descreve imagem, NAP, coordenadas do Batel, horário, Curitiba e região, Brasil para atendimento remoto, entidade `Person` da Drielle e `sameAs` apenas para o Google Business e perfis oficiais verificados.
 
 ## 12. Alterações recentes
+
+### 2026-07-31 — Cobertura local e entidade da página de Curitiba
+
+- Atualizada somente a página existente `/advogada-imobiliaria-curitiba`, sem nova rota, alteração visual, dependência ou mudança de slug.
+- Adicionada a FAQ aprovada com a pergunta `Como escolher um advogado imobiliário em Curitiba?` e reforço pontual do termo neutro `escritório de advocacia imobiliária em Curitiba` no corpo, mantendo a voz feminina quando a referência é à Drielle e evitando repetição artificial.
+- Ampliado o `LegalService` com imagem, NAP no mesmo formato do rodapé, `GeoCoordinates` do endereço do Batel, `openingHours`, `areaServed` local/remoto, `founder` como `Person` com OAB/PR 76.982 e `sameAs` do perfil Google Business já usado pelo site e do Instagram oficial.
 
 ### 2026-07-29 — Reescrita de conflitos imobiliários
 
@@ -345,6 +352,7 @@ npm run build
 - Após estabilizar a coleta do GA4, cadastrar no painel as dimensões personalizadas de escopo de evento `post_slug`, `cluster`, `cta_position` e `destino`. Os parâmetros já são enviados pelos dois eventos do blog; esta é uma configuração operacional externa, sem mudança de código.
 - Após a publicação autorizada da landing `/assessoria-juridica-compra-de-imovel`, solicitar sua indexação no Search Console e confirmar a URL no sitemap público.
 - Após o deploy da reescrita de `/conflitos-imobiliarios`, solicitar a indexação da URL no Search Console e confirmar a atualização do title, description e dados estruturados no URL Inspection.
+- Confirmar no Google Business Profile e nos diretórios externos que nome, endereço e telefone permanecem idênticos aos exibidos no site. A URL curta do perfil Google usada no `sameAs` foi encontrada no próprio site; qualquer alteração futura do perfil deve atualizar o schema e ser validada no Rich Results Test.
 - Os novos títulos e parágrafos de abertura dos três posts B2C sobre cessão de direitos, Habite-se e procuração permanecem pendentes de edição no Wix pela Dra. Drielle; depois da alteração editorial, executar a revalidação segura e conferir a propagação no site público. Os posts B2B devem permanecer inalterados.
 
 ### Estado de produção confirmado — 13 de julho de 2026

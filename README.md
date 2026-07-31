@@ -39,6 +39,7 @@ O checklist do projeto também inclui `npm audit --omit=dev`, QA visual em deskt
 - cluster SEO com `/advogada-imobiliaria` como página nacional e `/advogada-imobiliaria-curitiba` como página-satélite, mantendo os slugs já indexados;
 - landing `/assessoria-juridica-compra-de-imovel` para compradores, proprietários e investidores, ligada à página nacional e à due diligence sem alterar os slugs existentes;
 - página `/conflitos-imobiliarios` para proprietários, imobiliárias e administradoras, com foco em conflitos de locação e imóvel na planta, ligada à página de compra e à página nacional;
+- landing `/advogada-imobiliaria-curitiba` como página local única, com cobertura semântica controlada e `LegalService` enriquecido por NAP, área atendida, horário, entidade profissional e perfis oficiais verificados;
 - redirecionamentos permanentes das antigas URLs `*.html` para as rotas limpas;
 - base segura para Wix Blog em `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/`.
 

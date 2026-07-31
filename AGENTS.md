@@ -36,6 +36,7 @@ Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integ
 - Não transformar automaticamente títulos ou conteúdo dos artigos Wix para padronizar termos; o acervo editorial deve ser revisado na origem e revalidado pelo fluxo seguro existente.
 - A landing `/assessoria-juridica-compra-de-imovel` atende compradores, proprietários e investidores. Preserve seu canonical, seus schemas e os links com `/advogada-imobiliaria` e `/due-diligence-imobiliaria`.
 - A página `/conflitos-imobiliarios` atende proprietários, imobiliárias e administradoras em conflitos relacionados a imóveis. Não a reposicione pelo ponto de vista do inquilino, não apresente atuação contra proprietário ou administradora e não inclua conflitos condominiais sem decisão estratégica explícita.
+- A página `/advogada-imobiliaria-curitiba` é a única landing local do cluster. Fortaleça seus textos sem criar páginas para variações masculinas ou neutras, preserve o slug e mantenha `LegalService`, `FAQPage`, NAP e `sameAs` coerentes. Use somente perfis públicos, coordenadas e dados de horário verificados; não invente URLs de Google Business ou diretórios.
 - Conteúdos B2B para imobiliárias e administradoras não devem ser retitulados ou reposicionados pelo ponto de vista do inquilino; mudanças editoriais nesses posts exigem decisão estratégica explícita.
 - Toda nova imagem deve ser otimizada e ter `alt` descritivo.
 - Preserve a camada visual CSS-first: animar apenas `transform` e `opacity`, manter o LCP independente de JavaScript e respeitar `prefers-reduced-motion`.
