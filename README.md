@@ -40,6 +40,7 @@ O checklist do projeto também inclui `npm audit --omit=dev`, QA visual em deskt
 - landing `/assessoria-juridica-compra-de-imovel` para compradores, proprietários e investidores, ligada à página nacional e à due diligence sem alterar os slugs existentes;
 - página `/conflitos-imobiliarios` para proprietários, imobiliárias e administradoras, com foco em conflitos de locação e imóvel na planta, ligada à página de compra e à página nacional;
 - landing `/advogada-imobiliaria-curitiba` como página local única, com cobertura semântica controlada e `LegalService` enriquecido por NAP, área atendida, horário, entidade profissional e perfis oficiais verificados;
+- landings nacional e de Curitiba com titles orientados à categoria `advogado imobiliário`, FAQs comerciais aprovadas, caminhos de ICP para compra/investimento e operações de locação/intermediação, e mensagens de WhatsApp segmentadas sem alterar os slugs;
 - redirecionamentos permanentes das antigas URLs `*.html` para as rotas limpas;
 - base segura para Wix Blog em `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/`.
 

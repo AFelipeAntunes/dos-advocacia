@@ -163,6 +163,7 @@ npm run build
 - Domínio, DNS e integração Wix estão ativos em produção. O Search Console é a fonte da análise de CTR desta rodada; o GA4 complementa a leitura com eventos de conversão do blog.
 - A descoberta do blog mantém as quatro categorias editoriais Wix aprovadas, mas expõe uma aba somente quando ela tiver ao menos três posts publicados. Os cards relacionados preservam o “Leia também” editorial e não repetem seus links.
 - A landing nacional funciona como página-mãe do cluster de advocacia imobiliária; a página de Curitiba permanece como satélite com links cruzados.
+- As landings nacional e de Curitiba usam a categoria de serviço `advogado imobiliário` nos titles e metadados, mantendo a identidade pessoal feminina no H1 e no corpo. Ambas exibem FAQ comercial aprovada, dois caminhos de ICP com links para compra/locação e mensagens de WhatsApp segmentadas.
 - Home e landing nacional exibem um bloco sóbrio de reconhecimento com nota média 5,0, 11 avaliações e link para o perfil público do Google, sem reproduzir comentários de clientes.
 - O termo profissional preferido no conteúdo institucional é `advogada imobiliarista`; a marca oficial `DOS Advocacia Imobiliária` e os slugs indexados permanecem inalterados.
 - A landing `/assessoria-juridica-compra-de-imovel` integra o cluster nacional com foco preventivo na análise do imóvel, do vendedor e do contrato antes da assinatura.
@@ -170,6 +171,16 @@ npm run build
 - A página `/advogada-imobiliaria-curitiba` mantém o slug e o layout, reforça uma ocorrência natural de `escritório de advocacia imobiliária em Curitiba` e inclui a FAQ aprovada sobre como escolher um advogado imobiliário em Curitiba. Seu `LegalService` agora descreve imagem, NAP, coordenadas do Batel, horário, Curitiba e região, Brasil para atendimento remoto, entidade `Person` da Drielle e `sameAs` apenas para o Google Business e perfis oficiais verificados.
 
 ## 12. Alterações recentes
+
+### 2026-08-02 — Captura nacional e conversão por ICP
+
+- Atualizados title e description, com Open Graph coerente, nas landings nacional, Curitiba, due diligence, compra de imóvel, contratos, locação e conflitos. As strings foram mantidas exatamente como aprovadas no handoff, mesmo quando a meta fica abaixo de 150 caracteres.
+- A landing nacional recebeu alcance nacional explícito, o H2 `O que faz um advogado imobiliário` e a lista de demandas atendidas com links internos para serviços existentes.
+- Nacional e Curitiba receberam dois caminhos reutilizando `content-guide`/`topic-list`: compra, venda ou investimento; e administração de locações ou intermediação. Os cards têm links de serviço e mensagens de WhatsApp segmentadas por ICP.
+- As duas FAQs institucionais receberam as quatro perguntas comerciais aprovadas sobre atendimento remoto, honorários, prazo de retorno e contratação; o mesmo conjunto foi refletido no `FAQPage` JSON-LD.
+- O `LegalService` nacional foi enriquecido com imagem, NAP, geolocalização, horário, `Person` da Drielle e `sameAs` públicos já verificados. O schema local passou a incluir o link Google também na entidade `Person`; não foi inventado perfil LinkedIn inexistente no repositório.
+- Nenhum slug, layout global, dependência, sitemap, rota Wix ou conteúdo editorial de post foi alterado.
+- O tracker GA4 continua deliberadamente restrito aos artigos Wix (`post_slug`/clusters). Os novos CTAs institucionais usam atribuição qualitativa na mensagem; instrumentação quantitativa dessas páginas exige contrato de evento separado.
 
 ### 2026-07-31 — Cobertura local e entidade da página de Curitiba
 
@@ -353,6 +364,8 @@ npm run build
 - Após a publicação autorizada da landing `/assessoria-juridica-compra-de-imovel`, solicitar sua indexação no Search Console e confirmar a URL no sitemap público.
 - Após o deploy da reescrita de `/conflitos-imobiliarios`, solicitar a indexação da URL no Search Console e confirmar a atualização do title, description e dados estruturados no URL Inspection.
 - Confirmar no Google Business Profile e nos diretórios externos que nome, endereço e telefone permanecem idênticos aos exibidos no site. A URL curta do perfil Google usada no `sameAs` foi encontrada no próprio site; qualquer alteração futura do perfil deve atualizar o schema e ser validada no Rich Results Test.
+- Validar no Rich Results Test os schemas `LegalService`, `Person`, `sameAs`, `BreadcrumbList` e `FAQPage` das landings nacional e Curitiba; o teste público pode exigir login/reCAPTCHA.
+- Definir separadamente o contrato GA4 para CTAs de páginas institucionais antes de ampliar o tracker do blog; não reutilizar `post_slug` para rotas que não são artigos.
 - Os novos títulos e parágrafos de abertura dos três posts B2C sobre cessão de direitos, Habite-se e procuração permanecem pendentes de edição no Wix pela Dra. Drielle; depois da alteração editorial, executar a revalidação segura e conferir a propagação no site público. Os posts B2B devem permanecer inalterados.
 
 ### Estado de produção confirmado — 13 de julho de 2026
