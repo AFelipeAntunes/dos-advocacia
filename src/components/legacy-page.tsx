@@ -1,7 +1,26 @@
+import { InstitutionalCtaTracker } from "@/components/institutional-cta-tracker";
 import { getLegacyPage, type LegacyPageKey } from "@/lib/legacy-pages";
 
 type LegacyPageProps = {
   page: LegacyPageKey;
+};
+
+const legacyPageSlugs: Record<LegacyPageKey, string> = {
+  home: "home",
+  advogadaImobiliaria: "advogada-imobiliaria",
+  advogadaImobiliariaCuritiba: "advogada-imobiliaria-curitiba",
+  assessoriaCompraImovel: "assessoria-juridica-compra-de-imovel",
+  areas: "areas-de-atuacao",
+  locacao: "assessoria-em-locacao",
+  conflitos: "conflitos-imobiliarios",
+  contato: "contato",
+  conteudos: "blog",
+  contratos: "contratos-imobiliarios",
+  dueDiligence: "due-diligence-imobiliaria",
+  notFound: "404",
+  treinamentos: "treinamentos",
+  sobre: "sobre",
+  privacidade: "politica-de-privacidade"
 };
 
 export async function LegacyPage({ page }: LegacyPageProps) {
@@ -17,6 +36,7 @@ export async function LegacyPage({ page }: LegacyPageProps) {
         />
       ))}
       <div dangerouslySetInnerHTML={{ __html: legacyPage.body }} />
+      <InstitutionalCtaTracker pageSlug={legacyPageSlugs[page]} />
       <script src="/site-interactions.js" />
     </>
   );

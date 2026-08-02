@@ -3,6 +3,7 @@ import test from "node:test";
 
 import {
   getClusterFromDestination,
+  getInstitutionalPostDestination,
   getServiceDestination,
   isWhatsAppUrl
 } from "@/lib/analytics/ga4";
@@ -14,6 +15,23 @@ test("recognizes only approved internal service destinations", () => {
   assert.equal(getServiceDestination(`${origin}/due-diligence-imobiliaria`, origin), "due-diligence-imobiliaria");
   assert.equal(getServiceDestination("https://example.com/contratos-imobiliarios", origin), null);
   assert.equal(getServiceDestination("/blog", origin), null);
+});
+
+test("recognizes opted-in institutional post destinations and preserves accents", () => {
+  const origin = "https://www.dosadvocacia.com.br";
+
+  assert.equal(
+    getInstitutionalPostDestination(
+      "/post/compra-de-im%C3%B3vel-em-invent%C3%A1rio-riscos-que-ningu%C3%A9m-te-conta",
+      origin
+    ),
+    "compra-de-imóvel-em-inventário-riscos-que-ninguém-te-conta"
+  );
+  assert.equal(
+    getInstitutionalPostDestination("https://example.com/post/fora-do-site", origin),
+    null
+  );
+  assert.equal(getInstitutionalPostDestination("/blog", origin), null);
 });
 
 test("maps service destinations to the available marketing clusters", () => {

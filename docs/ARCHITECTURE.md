@@ -63,7 +63,9 @@ O layout carrega a Google tag do fluxo GA4 `G-37RDFTHKL8`. Um Client Component p
 
 O cluster é inferido pelo destino de serviço presente no artigo: locação, due diligence, compra na planta ou contratos. Quando não há correspondência segura, o parâmetro é omitido. Não enviar nome, telefone, mensagem do WhatsApp, conteúdo jurídico ou outra PII ao GA4. `click_whatsapp` é o evento-chave principal; `click_cta_servico` pode ser usado como microconversão.
 
-Depois de uma janela estável de coleta, o responsável pelo GA4 deve registrar as dimensões personalizadas de escopo de evento `post_slug`, `cluster`, `cta_position` e `destino` no painel. Elas já são parâmetros dos eventos; não criar evento, parâmetro ou dependência adicional para esse cadastro.
+As páginas institucionais também usam os mesmos dois nomes de evento por meio de `InstitutionalCtaTracker`, montado somente por `LegacyPage`, sem duplicar os cliques dos artigos. `click_whatsapp` envia `page_slug`, `page_type=institucional`, `cta_position` e `icp`; `click_cta_servico` envia esses campos e `destino`. Os links 03–10 do bloco nacional de demandas usam a mesma conversão de serviço com o slug do post como `destino`, mediante marcação explícita. Nesses eventos institucionais não enviar `post_slug`, `link_url`, mensagem do WhatsApp, conteúdo jurídico ou outra PII.
+
+Depois de uma janela estável de coleta, o responsável pelo GA4 deve registrar as dimensões personalizadas de escopo de evento `post_slug`, `page_slug`, `page_type`, `cluster`, `cta_position`, `icp` e `destino` no painel. Elas já são parâmetros dos eventos; não criar evento, parâmetro ou dependência adicional para esse cadastro.
 
 ## FAQ estruturado
 

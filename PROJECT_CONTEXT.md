@@ -160,7 +160,7 @@ npm run build
 - Repositório privado usa somente `main`; pushes nessa branch disparam publicação na Vercel.
 - Vercel Web Analytics e Speed Insights integrados ao layout; a coleta começa após o deploy válido e visitas reais.
 - CTAs de WhatsApp nas páginas de serviços e treinamentos usam mensagens pré-preenchidas com o contexto da página. Links globais de contato permanecem genéricos.
-- Domínio, DNS e integração Wix estão ativos em produção. O Search Console é a fonte da análise de CTR desta rodada; o GA4 complementa a leitura com eventos de conversão do blog.
+- Domínio, DNS e integração Wix estão ativos em produção. O Search Console é a fonte da análise de CTR desta rodada; o GA4 complementa a leitura com eventos de conversão do blog e das páginas institucionais.
 - A descoberta do blog mantém as quatro categorias editoriais Wix aprovadas, mas expõe uma aba somente quando ela tiver ao menos três posts publicados. Os cards relacionados preservam o “Leia também” editorial e não repetem seus links.
 - A landing nacional funciona como página-mãe do cluster de advocacia imobiliária; a página de Curitiba permanece como satélite com links cruzados.
 - As landings nacional e de Curitiba usam a categoria de serviço `advogado imobiliário` nos titles e metadados, mantendo a identidade pessoal feminina no H1 e no corpo. Ambas exibem FAQ comercial aprovada, dois caminhos de ICP com links para compra/locação e mensagens de WhatsApp segmentadas.
@@ -180,7 +180,14 @@ npm run build
 - As duas FAQs institucionais receberam as quatro perguntas comerciais aprovadas sobre atendimento remoto, honorários, prazo de retorno e contratação; o mesmo conjunto foi refletido no `FAQPage` JSON-LD.
 - O `LegalService` nacional foi enriquecido com imagem, NAP, geolocalização, horário, `Person` da Drielle e `sameAs` públicos já verificados. O schema local passou a incluir o link Google também na entidade `Person`; não foi inventado perfil LinkedIn inexistente no repositório.
 - Nenhum slug, layout global, dependência, sitemap, rota Wix ou conteúdo editorial de post foi alterado.
-- O tracker GA4 continua deliberadamente restrito aos artigos Wix (`post_slug`/clusters). Os novos CTAs institucionais usam atribuição qualitativa na mensagem; instrumentação quantitativa dessas páginas exige contrato de evento separado.
+- O tracker GA4 dos artigos preserva `post_slug`/clusters. O novo `InstitutionalCtaTracker`, montado somente por `LegacyPage`, mede os mesmos eventos nas páginas institucionais com `page_slug`, `page_type=institucional`, posição e ICP, sem duplicar eventos dos artigos.
+
+### 2026-08-02 — Follow-up da captura nacional
+
+- Linkadas as demandas 03–10 de `/advogada-imobiliaria` aos oito posts Wix mantidos, preservando exatamente os textos e os slugs acentuados. Os 13 itens do bloco agora têm destino e os links 03–10 também medem interesse editorial como `click_cta_servico` opcional, com o slug do post em `destino`.
+- Corrigida a duplicação de alcance no parágrafo de abertura nacional: a frase final agora concentra a atuação como advogado imobiliário para clientes de qualquer estado, com atendimento remoto e presencial em Curitiba.
+- CTAs WhatsApp institucionais passaram a enviar `click_whatsapp` com `page_slug`, `page_type=institucional`, `cta_position` e `icp`; links para serviços enviam `click_cta_servico` com `destino`. O rastreador cobre hero, cards de ICP, atendimento, CTA final e rodapé sem enviar `link_url`, mensagens ou PII.
+- A extração de destino de posts institucionais foi coberta por teste unitário e mantém acentos após decodificação segura. Não houve alteração de layout, slug, metadata, JSON-LD, sitemap, dependência ou conteúdo editorial no Wix.
 
 ### 2026-07-31 — Cobertura local e entidade da página de Curitiba
 
@@ -360,12 +367,12 @@ npm run build
 
 ## 13. Pendências e recomendações
 
-- Após estabilizar a coleta do GA4, cadastrar no painel as dimensões personalizadas de escopo de evento `post_slug`, `cluster`, `cta_position` e `destino`. Os parâmetros já são enviados pelos dois eventos do blog; esta é uma configuração operacional externa, sem mudança de código.
+- Após estabilizar a coleta do GA4, cadastrar no painel as dimensões personalizadas de escopo de evento `post_slug`, `page_slug`, `page_type`, `cluster`, `cta_position`, `icp` e `destino`. Os parâmetros já são enviados pelos dois eventos do blog e pelas páginas institucionais; esta é uma configuração operacional externa, sem mudança de código.
 - Após a publicação autorizada da landing `/assessoria-juridica-compra-de-imovel`, solicitar sua indexação no Search Console e confirmar a URL no sitemap público.
 - Após o deploy da reescrita de `/conflitos-imobiliarios`, solicitar a indexação da URL no Search Console e confirmar a atualização do title, description e dados estruturados no URL Inspection.
 - Confirmar no Google Business Profile e nos diretórios externos que nome, endereço e telefone permanecem idênticos aos exibidos no site. A URL curta do perfil Google usada no `sameAs` foi encontrada no próprio site; qualquer alteração futura do perfil deve atualizar o schema e ser validada no Rich Results Test.
 - Validar no Rich Results Test os schemas `LegalService`, `Person`, `sameAs`, `BreadcrumbList` e `FAQPage` das landings nacional e Curitiba; o teste público pode exigir login/reCAPTCHA.
-- Definir separadamente o contrato GA4 para CTAs de páginas institucionais antes de ampliar o tracker do blog; não reutilizar `post_slug` para rotas que não são artigos.
+- Confirmar no DebugView os eventos institucionais do hero, dos dois ICPs e do CTA final nacional, além de manter `click_whatsapp` como evento-chave. A validação depende do acesso à propriedade GA4; a instrumentação local e os parâmetros já estão cobertos no código.
 - Os novos títulos e parágrafos de abertura dos três posts B2C sobre cessão de direitos, Habite-se e procuração permanecem pendentes de edição no Wix pela Dra. Drielle; depois da alteração editorial, executar a revalidação segura e conferir a propagação no site público. Os posts B2B devem permanecer inalterados.
 
 ### Estado de produção confirmado — 13 de julho de 2026

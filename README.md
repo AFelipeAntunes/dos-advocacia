@@ -41,6 +41,7 @@ O checklist do projeto também inclui `npm audit --omit=dev`, QA visual em deskt
 - página `/conflitos-imobiliarios` para proprietários, imobiliárias e administradoras, com foco em conflitos de locação e imóvel na planta, ligada à página de compra e à página nacional;
 - landing `/advogada-imobiliaria-curitiba` como página local única, com cobertura semântica controlada e `LegalService` enriquecido por NAP, área atendida, horário, entidade profissional e perfis oficiais verificados;
 - landings nacional e de Curitiba com titles orientados à categoria `advogado imobiliário`, FAQs comerciais aprovadas, caminhos de ICP para compra/investimento e operações de locação/intermediação, e mensagens de WhatsApp segmentadas sem alterar os slugs;
+- rastreamento GA4 compartilhado entre artigos e páginas institucionais: os artigos preservam `post_slug`, enquanto CTAs institucionais usam `page_slug`, `page_type=institucional`, posição e ICP; os links das demandas nacionais também medem interesse editorial sem enviar a mensagem do WhatsApp;
 - redirecionamentos permanentes das antigas URLs `*.html` para as rotas limpas;
 - base segura para Wix Blog em `src/lib/wix/` e webhook em `src/app/api/webhook/wix-blog/`.
 

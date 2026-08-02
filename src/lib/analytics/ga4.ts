@@ -22,6 +22,20 @@ export function getServiceDestination(href: string, origin: string) {
   }
 }
 
+export function getInstitutionalPostDestination(href: string, origin: string) {
+  try {
+    const url = new URL(href, origin);
+    if (url.origin !== origin) return null;
+
+    const match = url.pathname.match(/^\/post\/([^/]+)\/?$/);
+    if (!match) return null;
+
+    return decodeURIComponent(match[1]);
+  } catch {
+    return null;
+  }
+}
+
 export function getClusterFromDestination(destination: string): BlogCluster | undefined {
   const clusters: Partial<Record<string, BlogCluster>> = {
     "assessoria-em-locacao": "locacao",
