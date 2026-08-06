@@ -152,6 +152,10 @@ npm run build
 
 ## 11. Status atual
 
+- Formulário de contato real implementado em `/contato` e nas sete páginas de serviço, com validação server-side em `POST /api/contato`, envio Resend para o escritório, confirmação automática ao visitante, estados acessíveis e evento GA4 `generate_lead` somente após sucesso.
+- A proteção de aplicação combina honeypot + tempo mínimo de três segundos com a regra publicada no Vercel Firewall `Rate limit /api/contato`: `POST /api/contato`, cinco requisições por IP em janela fixa de dez minutos e HTTP 429 no excedente. Não há contador em memória nem dependência de Redis.
+- A variável `RESEND_API_KEY` está confirmada em Preview e Production, sempre server-only. A política de privacidade aprovada foi publicada junto com o formulário no deployment de Production.
+
 - Site institucional em Next.js com nova voz consultiva, copy orientada a situações reais de risco e experiência da Drielle apresentada em primeira pessoa.
 - Camada visual modernizada sem bibliotecas de animação: logo oficial, Urbanist via `next/font`, imagens WebP, entrada CSS do hero, microinterações, View Transitions nativas e suporte a `prefers-reduced-motion`.
 - Páginas, metadata, JSON-LD, assets e redirects de URLs HTML incluídos na nova estrutura, incluindo a landing nacional `/advogada-imobiliaria`, a página-satélite `/advogada-imobiliaria-curitiba` e a landing transacional `/assessoria-juridica-compra-de-imovel`.
@@ -169,6 +173,22 @@ npm run build
 - A landing `/assessoria-juridica-compra-de-imovel` integra o cluster nacional com foco preventivo na análise do imóvel, do vendedor e do contrato antes da assinatura.
 - A página `/conflitos-imobiliarios` foi reescrita para proprietários, imobiliárias e administradoras, com foco em inadimplência, despejo, danos ao imóvel, rescisão de locação, distrato e atraso de obra. Ela mantém o slug, os metadados completos, `FAQPage`, `LegalService`, `BreadcrumbList`, a listagem em `/areas-de-atuacao` e links internos com as páginas de compra e da advogada imobiliarista.
 - A página `/advogada-imobiliaria-curitiba` mantém o slug e o layout, reforça uma ocorrência natural de `escritório de advocacia imobiliária em Curitiba` e inclui a FAQ aprovada sobre como escolher um advogado imobiliário em Curitiba. Seu `LegalService` agora descreve imagem, NAP, coordenadas do Batel, horário, Curitiba e região, Brasil para atendimento remoto, entidade `Person` da Drielle e `sameAs` apenas para o Google Business e perfis oficiais verificados.
+
+### 2026-08-06 — Formulário de contato real
+
+- Substituído o fluxo de e-mail do navegador por uma route handler server-side com Zod e Resend. O escritório recebe os campos da demanda, origem e data/hora; o visitante recebe confirmação automática com o aviso de que ela não constitui orientação jurídica.
+- Adicionados formulário completo em `/contato`, formulários compactos nas páginas de serviço e link discreto `Prefere escrever? Fale por e-mail` no fim dos artigos Wix. O conteúdo editorial do Wix não foi alterado.
+- O JavaScript nativo preserva o HTML institucional, trata validação, honeypot, tempo mínimo, estados de envio/erro e evento GA4 `generate_lead` sem PII. O rate limit por IP é aplicado no Vercel Firewall.
+- A política de privacidade aprovada foi publicada junto com o formulário; o e-mail interno registra `Consentimento LGPD` com a data e hora do envio, e o checkbox permanece obrigatório e não pré-marcado.
+- `npm audit --omit=dev` reportou cinco entradas de pacote high (Next.js, PostCSS e sharp, com os pacotes Vercel afetados por Next). A correção automática só propõe `next@16.3.0` fora da faixa atual; nenhum upgrade foi aplicado. O projeto não usa middleware, Server Actions, rewrites ou servidor customizado, mas usa otimização de imagens via Next e deve revisar a atualização do framework antes da próxima janela técnica.
+- O projeto oficial Vercel foi confirmado pelo conector na equipe `DOS Advocacia`, com `www.dosadvocacia.com.br` associado e deployment de Production `READY`. A listagem nominal de secrets não é exposta pelo conector; valores não foram lidos nem alterados.
+
+### 2026-08-06 — Publicação do formulário e proteção do endpoint
+
+- O PR `#1` foi promovido para `main` após os testes locais, o build e o envio real no Preview. O formulário e a Política de Privacidade foram publicados juntos em Production.
+- A regra do Vercel Firewall `Rate limit /api/contato` está ativa e publicada: `Request Path = /api/contato`, `Method = POST`, janela fixa de 600 segundos, limite de cinco requisições por IP e resposta HTTP 429.
+- O envio real confirmou HTTP 200 no endpoint, notificação entregue ao escritório, autoresposta entregue ao lead, remetente `contato@dosadvocacia.com.br`, `Reply-To` do lead e registro de consentimento LGPD.
+- O agente de navegador deve repetir em Production o teste do GA4 DebugView para `generate_lead` e confirmar os parâmetros `page_slug`, `tipo_demanda`, `icp` e `form_location`, além de exercitar a sexta requisição inválida para confirmar o 429.
 
 ## 12. Alterações recentes
 
@@ -366,6 +386,10 @@ npm run build
 - Definida a estratégia Git: somente `main`.
 
 ## 13. Pendências e recomendações
+
+- Confirmar no GA4 `generate_lead` no DebugView em `/contato`, com `page_slug`, `tipo_demanda`, `icp` e `form_location`; a instrumentação e o envio real já foram confirmados, faltando a comprovação visual no painel após a publicação.
+- Exercitar o Vercel Firewall com cinco requisições inválidas e confirmar HTTP 429 na sexta, sem consumir a cota do Resend; aguardar dez minutos e confirmar a liberação.
+- Marcar `generate_lead` como evento-chave no painel GA4, se essa for a decisão de marketing.
 
 - Após estabilizar a coleta do GA4, cadastrar no painel as dimensões personalizadas de escopo de evento `post_slug`, `page_slug`, `page_type`, `cluster`, `cta_position`, `icp` e `destino`. Os parâmetros já são enviados pelos dois eventos do blog e pelas páginas institucionais; esta é uma configuração operacional externa, sem mudança de código.
 - Após a publicação autorizada da landing `/assessoria-juridica-compra-de-imovel`, solicitar sua indexação no Search Console e confirmar a URL no sitemap público.

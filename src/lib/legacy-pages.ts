@@ -5,6 +5,8 @@ import { cache } from "react";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
+import { getContactFormMarkup } from "@/lib/contact-form";
+
 export const legacyPageFiles = {
   advogadaImobiliaria: "advogada-imobiliaria.html",
   advogadaImobiliariaCuritiba: "advogada-imobiliaria-curitiba.html",
@@ -52,7 +54,7 @@ function matchValue(source: string, expression: RegExp) {
   return expression.exec(source)?.[1]?.trim();
 }
 
-function extractBody(source: string) {
+function extractBody(source: string, key: LegacyPageKey) {
   const body = matchValue(source, /<body[^>]*>([\s\S]*?)<\/body>/i) ?? "";
   const withoutLegacyScript = body.replace(
     /<script\b[^>]*src=["']\/script\.js["'][^>]*><\/script>/gi,
@@ -64,7 +66,18 @@ function extractBody(source: string) {
     withoutLegacyScript
   );
 
-  return addInstitutionalLinks(normalizedLinks);
+  const withInstitutionalLinks = addInstitutionalLinks(normalizedLinks);
+  const formMarkup = getContactFormMarkup(key);
+  if (!formMarkup) return withInstitutionalLinks;
+
+  if (key === "contato") {
+    return withInstitutionalLinks.replace("<!-- contact-form -->", formMarkup).replace(
+      /<form\b[^>]*class=["'][^"']*\bcontact-form\b[^"']*["'][^>]*>[\s\S]*?<\/form>/i,
+      formMarkup
+    );
+  }
+
+  return withInstitutionalLinks.replace(/<\/main>/i, `${formMarkup}</main>`);
 }
 
 const institutionalLinks = [
@@ -108,7 +121,7 @@ const loadLegacyPage = cache(async (key: LegacyPageKey): Promise<LegacyPage> => 
   const source = await readFile(path.join(process.cwd(), "src", "legacy-pages", file), "utf8");
 
   return {
-    body: extractBody(source),
+    body: extractBody(source, key),
     canonical: matchValue(source, /<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i),
     description: matchValue(source, /<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i),
     jsonLd: extractJsonLd(source),

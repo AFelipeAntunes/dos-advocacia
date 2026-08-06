@@ -12,6 +12,7 @@
     "test:redirects": "tsx --test src/lib/redirects.test.ts",
     "test:wix": "tsx --test src/lib/wix/*.test.ts",
     "test:analytics": "tsx --test src/lib/analytics/*.test.ts",
+    "test:contact": "tsx --test src/app/api/contato/route.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -20,7 +21,9 @@
     "jose": "6.2.3",
     "next": "16.2.10",
     "react": "19.2.7",
-    "react-dom": "19.2.7"
+    "react-dom": "19.2.7",
+    "resend": "^6.18.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "24.10.1",
