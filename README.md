@@ -57,9 +57,9 @@ As páginas institucionais estratégicas são `/advogada-imobiliaria`, como pág
 
 ## Formulário de contato
 
-O contato real é enviado por `POST /api/contato`, com validação Zod e entrega via Resend. A chave `RESEND_API_KEY` é exclusiva do servidor e deve existir no ambiente da Vercel antes de ativar o formulário em produção. Os formulários usam honeypot e tempo mínimo de preenchimento de três segundos como proteção sem dependência externa.
+O contato real é enviado por `POST /api/contato`, com validação Zod e entrega via Resend. A chave `RESEND_API_KEY` está confirmada em Preview e Production, é exclusiva do servidor e nunca entra no bundle cliente. Os formulários usam honeypot e tempo mínimo de preenchimento de três segundos; o Vercel Firewall também limita `POST /api/contato` a cinco requisições por IP em dez minutos e responde HTTP 429 ao excedente.
 
-O formulário completo fica em `/contato`; versões compactas aparecem nas páginas de serviço. Depois de um envio aceito, o site registra o evento GA4 `generate_lead` com `page_slug`, `tipo_demanda`, `icp` e `form_location`, sem enviar PII. A política de privacidade precisa estar aprovada e publicada antes da ativação em Production.
+O formulário completo fica em `/contato`; versões compactas aparecem nas páginas de serviço. Depois de um envio aceito, o site registra o evento GA4 `generate_lead` com `page_slug`, `tipo_demanda`, `icp` e `form_location`, sem enviar PII. A Política de Privacidade aprovada foi publicada junto com o formulário em Production. A confirmação visual no DebugView e o teste de HTTP 429 permanecem no checklist pós-publicação.
 
 - Nome profissional: **Drielle Pereira**.
 - Descritor profissional preferido: **advogada imobiliarista**. A marca **DOS Advocacia Imobiliária** e os slugs existentes permanecem inalterados.

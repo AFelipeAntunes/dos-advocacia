@@ -76,7 +76,8 @@ Não faça sem pedido explícito do usuário:
 - Os formulários institucionais são montados a partir de `src/lib/contact-form.ts` durante a renderização de `LegacyPage`; a interação e o estado de envio ficam em `public/site-interactions.js`.
 - Não usar o protocolo de e-mail do navegador como mecanismo de envio de formulário. Os endereços institucionais em texto continuam sendo canais alternativos explícitos.
 - O evento GA4 `generate_lead` só pode ser emitido depois de resposta de sucesso da API e deve conter apenas `page_slug`, `tipo_demanda`, `icp` e `form_location`, sem mensagem, telefone ou outro dado pessoal.
-- A proteção sem dependência externa usa honeypot e tempo mínimo de três segundos; não apresentar isso como rate limit por IP. A ativação em Production depende da política de privacidade aprovada e publicada.
+- A proteção de aplicação combina honeypot + tempo mínimo de três segundos com a regra publicada no Vercel Firewall `Rate limit /api/contato`: cinco requisições por IP em janela fixa de dez minutos e HTTP 429 no excedente. Não há contador em memória nem dependência de Redis.
+- A política de privacidade aprovada deve ser publicada no mesmo deployment do formulário. Após a publicação, validar o fluxo real, `generate_lead` no DebugView e a resposta 429 antes de encerrar o rollout.
 
 ## Git
 
