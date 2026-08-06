@@ -43,7 +43,8 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
             function gtag(){dataLayer.push(arguments);}
             window.gtag = gtag;
             gtag('js', new Date());
-            const debugMode = new URLSearchParams(window.location.search).has('gtm_debug');
+            const debugParams = new URLSearchParams(window.location.search);
+            const debugMode = debugParams.has('_dbg') || debugParams.has('gtm_debug');
             gtag('config', '${GA_MEASUREMENT_ID}', debugMode ? { debug_mode: true } : {});
           `}
         </Script>
