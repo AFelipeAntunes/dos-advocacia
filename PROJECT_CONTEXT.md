@@ -180,6 +180,7 @@ npm run build
 - Adicionados formulário completo em `/contato`, formulários compactos nas páginas de serviço e link discreto `Prefere escrever? Fale por e-mail` no fim dos artigos Wix. O conteúdo editorial do Wix não foi alterado.
 - O JavaScript nativo preserva o HTML institucional, trata validação, honeypot, tempo mínimo, estados de envio/erro e evento GA4 `generate_lead` sem PII. Não foi introduzido rate limit por IP nesta rodada.
 - A política de privacidade aprovada foi incorporada à branch de Preview; o e-mail interno registra `Consentimento LGPD` com a data e hora do envio, e o checkbox permanece obrigatório e não pré-marcado.
+- `npm audit --omit=dev` reportou cinco entradas de pacote high (Next.js, PostCSS e sharp, com os pacotes Vercel afetados por Next). A correção automática só propõe `next@16.3.0` fora da faixa atual; nenhum upgrade foi aplicado. O projeto não usa middleware, Server Actions, rewrites ou servidor customizado, mas usa otimização de imagens via Next e deve revisar a atualização do framework antes da próxima janela técnica.
 - O projeto oficial Vercel foi confirmado pelo conector na equipe `DOS Advocacia`, com `www.dosadvocacia.com.br` associado e deployment de Production `READY`. A listagem nominal de secrets não é exposta pelo conector; valores não foram lidos nem alterados.
 
 ## 12. Alterações recentes
