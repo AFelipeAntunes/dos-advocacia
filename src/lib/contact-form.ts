@@ -88,7 +88,7 @@ function sharedFields(config: ContactFormConfig, includeDemand: boolean) {
     ${config.formLocation === "contato" ? `<div class="form-field"><label for="cidade">Cidade</label><input id="cidade" name="city" autocomplete="address-level2"></div><div class="form-field"><label for="estado">Estado</label><input id="estado" name="state" autocomplete="address-level1" maxlength="2"></div>` : ""}
     <div class="form-field full"><label for="mensagem">O que você precisa compreender antes de decidir?</label><textarea aria-describedby="message-error" id="mensagem" name="message" required></textarea>${errorSlot("message")}</div>
   </div>
-  <label class="consent-field"><input aria-describedby="consent-error" name="consent" type="checkbox" required><span>Li e concordo com a <a href="/politica-de-privacidade">Política de Privacidade</a>.</span></label>${errorSlot("consent")}
+  <label class="consent-field"><input aria-describedby="consent-error" name="consent" type="checkbox" required><span>Autorizo o contato do escritório sobre esta solicitação e declaro estar ciente da <a href="/politica-de-privacidade">política de privacidade</a>.</span></label>${errorSlot("consent")}
   <input aria-hidden="true" autocomplete="off" class="form-honeypot" name="website" tabindex="-1" type="text">
   <input name="startedAt" type="hidden" value="">`;
 }

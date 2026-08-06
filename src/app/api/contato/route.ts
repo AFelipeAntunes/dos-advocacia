@@ -49,6 +49,7 @@ function buildNotification(data: ContactData, receivedAt: string) {
     `Local do formulário: ${data.formLocation}`,
     `ICP: ${data.icp || "Não informado"}`,
     `Recebido em: ${receivedAt}`,
+    `Consentimento LGPD: autorizado em ${receivedAt}`,
     "",
     "Mensagem:",
     data.message

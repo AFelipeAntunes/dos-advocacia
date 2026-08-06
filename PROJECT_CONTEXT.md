@@ -154,7 +154,7 @@ npm run build
 
 - Formulário de contato real implementado em `/contato` e nas sete páginas de serviço, com validação server-side em `POST /api/contato`, envio Resend para o escritório, confirmação automática ao visitante, estados acessíveis e evento GA4 `generate_lead` somente após sucesso.
 - A proteção adotada nesta rodada é honeypot + tempo mínimo de três segundos, sem dependência de Redis. A variável `RESEND_API_KEY` deve permanecer server-only na Vercel.
-- A publicação em Production fica condicionada à revisão e publicação da política de privacidade pela responsável; Preview e testes podem validar o fluxo antes disso.
+- O texto final da política de privacidade foi aprovado e incorporado à branch de Preview; a publicação em Production deve levar a política e o formulário no mesmo deploy.
 
 - Site institucional em Next.js com nova voz consultiva, copy orientada a situações reais de risco e experiência da Drielle apresentada em primeira pessoa.
 - Camada visual modernizada sem bibliotecas de animação: logo oficial, Urbanist via `next/font`, imagens WebP, entrada CSS do hero, microinterações, View Transitions nativas e suporte a `prefers-reduced-motion`.
@@ -179,6 +179,7 @@ npm run build
 - Substituído o fluxo de e-mail do navegador por uma route handler server-side com Zod e Resend. O escritório recebe os campos da demanda, origem e data/hora; o visitante recebe confirmação automática com o aviso de que ela não constitui orientação jurídica.
 - Adicionados formulário completo em `/contato`, formulários compactos nas páginas de serviço e link discreto `Prefere escrever? Fale por e-mail` no fim dos artigos Wix. O conteúdo editorial do Wix não foi alterado.
 - O JavaScript nativo preserva o HTML institucional, trata validação, honeypot, tempo mínimo, estados de envio/erro e evento GA4 `generate_lead` sem PII. Não foi introduzido rate limit por IP nesta rodada.
+- A política de privacidade aprovada foi incorporada à branch de Preview; o e-mail interno registra `Consentimento LGPD` com a data e hora do envio, e o checkbox permanece obrigatório e não pré-marcado.
 - O projeto oficial Vercel foi confirmado pelo conector na equipe `DOS Advocacia`, com `www.dosadvocacia.com.br` associado e deployment de Production `READY`. A listagem nominal de secrets não é exposta pelo conector; valores não foram lidos nem alterados.
 
 ## 12. Alterações recentes
@@ -378,7 +379,7 @@ npm run build
 
 ## 13. Pendências e recomendações
 
-- Publicar a versão final da Política de Privacidade antes de ativar o formulário em Production; a página atual ainda descreve o protótipo sem envio server-side.
+- Publicar em Production, no mesmo deploy do formulário, a versão final da Política de Privacidade aprovada nesta rodada; não promover a implementação isoladamente.
 - Confirmar na equipe Vercel `DOS Advocacia` que `RESEND_API_KEY` está presente em Production e Preview, sem expor o valor. Validar um envio real para o escritório e a confirmação automática ao visitante após a política estar publicada.
 - No GA4, validar `generate_lead` no DebugView em `/contato` e em pelo menos duas páginas de serviço; marcar o evento como evento-chave no painel, se essa for a decisão de marketing.
 
