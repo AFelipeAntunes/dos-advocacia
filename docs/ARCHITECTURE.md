@@ -73,6 +73,12 @@ Posts Wix que tenham um `H2` iniciado por “Perguntas frequentes” recebem um 
 
 Páginas institucionais preservam o JSON-LD existente em `src/legacy-pages/`; não adicionar outro `FAQPage` quando a página já tiver esse tipo. O markup descreve o conteúdo visível e pode ajudar outros consumidores de dados estruturados, mas não garante destaque no Google.
 
+## Formulário de contato e conversão
+
+`/contato` e as páginas de serviço usam o HTML institucional preservado, com o markup do formulário gerado por `src/lib/contact-form.ts`. `public/site-interactions.js` envia JSON para `POST /api/contato`; a route valida os campos com Zod e envia duas mensagens pelo Resend: notificação para o escritório e confirmação automática para o visitante. `RESEND_API_KEY` é server-only.
+
+O formulário não abre o aplicativo de e-mail do navegador. Honeypot e tempo mínimo de três segundos são a proteção sem dependência externa adotada nesta rodada. Após resposta HTTP de sucesso, o navegador registra `generate_lead` no GA4 com `page_slug`, `tipo_demanda`, `icp` e `form_location`; falhas de validação ou envio não geram evento. O link discreto para contato no fim de cada post não altera o Rich Content Wix.
+
 ## Segredos e ambientes
 
 Nunca commitar, exibir, colocar em URL, usar `NEXT_PUBLIC_` ou registrar em logs:
@@ -81,7 +87,7 @@ Nunca commitar, exibir, colocar em URL, usar `NEXT_PUBLIC_` ou registrar em logs
 - `WIX_WEBHOOK_PUBLIC_KEY`
 - `WIX_REVALIDATION_SECRET`
 
-Variáveis esperadas: `WIX_API_KEY`, `WIX_SITE_ID`, `WIX_APP_ID`, `WIX_WEBHOOK_PUBLIC_KEY`, `WIX_REVALIDATION_SECRET` e `SITE_URL`.
+Variáveis esperadas: `WIX_API_KEY`, `WIX_SITE_ID`, `WIX_APP_ID`, `WIX_WEBHOOK_PUBLIC_KEY`, `WIX_REVALIDATION_SECRET`, `SITE_URL` e `RESEND_API_KEY`.
 
 - **Preview:** usado para validação isolada. Deve permanecer protegido por Vercel Authentication quando não houver teste em andamento.
 - **Production:** exige valores próprios e `SITE_URL=https://www.dosadvocacia.com.br`; não copiar o segredo de revalidação do Preview.

@@ -35,7 +35,7 @@ export async function LegacyPage({ page }: LegacyPageProps) {
           dangerouslySetInnerHTML={{ __html: schema }}
         />
       ))}
-      <div dangerouslySetInnerHTML={{ __html: legacyPage.body }} />
+      <div dangerouslySetInnerHTML={{ __html: legacyPage.body }} suppressHydrationWarning />
       <InstitutionalCtaTracker pageSlug={legacyPageSlugs[page]} />
       <script src="/site-interactions.js" />
     </>

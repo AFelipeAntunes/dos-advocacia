@@ -70,6 +70,14 @@ Não faça sem pedido explícito do usuário:
 - alteração de registros MX, SPF, DKIM, TXT ou dados publicados no Wix;
 - inclusão de analytics, formulários externos ou dependências de terceiros.
 
+## Formulário de contato
+
+- O formulário usa a route handler server-side `POST /api/contato`, Zod e Resend. A chave `RESEND_API_KEY` é somente de servidor e nunca pode aparecer no cliente, nos logs ou em documentação.
+- Os formulários institucionais são montados a partir de `src/lib/contact-form.ts` durante a renderização de `LegacyPage`; a interação e o estado de envio ficam em `public/site-interactions.js`.
+- Não usar o protocolo de e-mail do navegador como mecanismo de envio de formulário. Os endereços institucionais em texto continuam sendo canais alternativos explícitos.
+- O evento GA4 `generate_lead` só pode ser emitido depois de resposta de sucesso da API e deve conter apenas `page_slug`, `tipo_demanda`, `icp` e `form_location`, sem mensagem, telefone ou outro dado pessoal.
+- A proteção sem dependência externa usa honeypot e tempo mínimo de três segundos; não apresentar isso como rate limit por IP. A ativação em Production depende da política de privacidade aprovada e publicada.
+
 ## Git
 
 - Repositório: `AFelipeAntunes/dos-advocacia` (privado).

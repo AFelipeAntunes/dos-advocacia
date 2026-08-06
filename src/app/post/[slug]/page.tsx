@@ -87,6 +87,9 @@ export default async function PostPage({ params }: PostPageProps) {
         </p>
         <BlogCtaTracker postSlug={post.slug} />
         <div className="article__content"><WixRichContent content={post.richContent} fallback={post.contentText ?? post.excerpt} /></div>
+        <Link className="article-contact-link" href="/contato">
+          Prefere escrever? Fale por e-mail <span aria-hidden="true">↗</span>
+        </Link>
       </article>
       {relatedPosts.length ? (
         <section className="related-posts" aria-labelledby="related-posts-heading">

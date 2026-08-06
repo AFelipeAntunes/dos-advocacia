@@ -152,6 +152,10 @@ npm run build
 
 ## 11. Status atual
 
+- Formulário de contato real implementado em `/contato` e nas sete páginas de serviço, com validação server-side em `POST /api/contato`, envio Resend para o escritório, confirmação automática ao visitante, estados acessíveis e evento GA4 `generate_lead` somente após sucesso.
+- A proteção adotada nesta rodada é honeypot + tempo mínimo de três segundos, sem dependência de Redis. A variável `RESEND_API_KEY` deve permanecer server-only na Vercel.
+- A publicação em Production fica condicionada à revisão e publicação da política de privacidade pela responsável; Preview e testes podem validar o fluxo antes disso.
+
 - Site institucional em Next.js com nova voz consultiva, copy orientada a situações reais de risco e experiência da Drielle apresentada em primeira pessoa.
 - Camada visual modernizada sem bibliotecas de animação: logo oficial, Urbanist via `next/font`, imagens WebP, entrada CSS do hero, microinterações, View Transitions nativas e suporte a `prefers-reduced-motion`.
 - Páginas, metadata, JSON-LD, assets e redirects de URLs HTML incluídos na nova estrutura, incluindo a landing nacional `/advogada-imobiliaria`, a página-satélite `/advogada-imobiliaria-curitiba` e a landing transacional `/assessoria-juridica-compra-de-imovel`.
@@ -169,6 +173,13 @@ npm run build
 - A landing `/assessoria-juridica-compra-de-imovel` integra o cluster nacional com foco preventivo na análise do imóvel, do vendedor e do contrato antes da assinatura.
 - A página `/conflitos-imobiliarios` foi reescrita para proprietários, imobiliárias e administradoras, com foco em inadimplência, despejo, danos ao imóvel, rescisão de locação, distrato e atraso de obra. Ela mantém o slug, os metadados completos, `FAQPage`, `LegalService`, `BreadcrumbList`, a listagem em `/areas-de-atuacao` e links internos com as páginas de compra e da advogada imobiliarista.
 - A página `/advogada-imobiliaria-curitiba` mantém o slug e o layout, reforça uma ocorrência natural de `escritório de advocacia imobiliária em Curitiba` e inclui a FAQ aprovada sobre como escolher um advogado imobiliário em Curitiba. Seu `LegalService` agora descreve imagem, NAP, coordenadas do Batel, horário, Curitiba e região, Brasil para atendimento remoto, entidade `Person` da Drielle e `sameAs` apenas para o Google Business e perfis oficiais verificados.
+
+### 2026-08-06 — Formulário de contato real
+
+- Substituído o fluxo de e-mail do navegador por uma route handler server-side com Zod e Resend. O escritório recebe os campos da demanda, origem e data/hora; o visitante recebe confirmação automática com o aviso de que ela não constitui orientação jurídica.
+- Adicionados formulário completo em `/contato`, formulários compactos nas páginas de serviço e link discreto `Prefere escrever? Fale por e-mail` no fim dos artigos Wix. O conteúdo editorial do Wix não foi alterado.
+- O JavaScript nativo preserva o HTML institucional, trata validação, honeypot, tempo mínimo, estados de envio/erro e evento GA4 `generate_lead` sem PII. Não foi introduzido rate limit por IP nesta rodada.
+- O projeto oficial Vercel foi confirmado pelo conector na equipe `DOS Advocacia`, com `www.dosadvocacia.com.br` associado e deployment de Production `READY`. A listagem nominal de secrets não é exposta pelo conector; valores não foram lidos nem alterados.
 
 ## 12. Alterações recentes
 
@@ -366,6 +377,10 @@ npm run build
 - Definida a estratégia Git: somente `main`.
 
 ## 13. Pendências e recomendações
+
+- Publicar a versão final da Política de Privacidade antes de ativar o formulário em Production; a página atual ainda descreve o protótipo sem envio server-side.
+- Confirmar na equipe Vercel `DOS Advocacia` que `RESEND_API_KEY` está presente em Production e Preview, sem expor o valor. Validar um envio real para o escritório e a confirmação automática ao visitante após a política estar publicada.
+- No GA4, validar `generate_lead` no DebugView em `/contato` e em pelo menos duas páginas de serviço; marcar o evento como evento-chave no painel, se essa for a decisão de marketing.
 
 - Após estabilizar a coleta do GA4, cadastrar no painel as dimensões personalizadas de escopo de evento `post_slug`, `page_slug`, `page_type`, `cluster`, `cta_position`, `icp` e `destino`. Os parâmetros já são enviados pelos dois eventos do blog e pelas páginas institucionais; esta é uma configuração operacional externa, sem mudança de código.
 - Após a publicação autorizada da landing `/assessoria-juridica-compra-de-imovel`, solicitar sua indexação no Search Console e confirmar a URL no sitemap público.
