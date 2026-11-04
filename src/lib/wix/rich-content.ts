@@ -205,7 +205,7 @@ export function getWixRelatedPostSlugs(content?: WixRichContent) {
 
     const isMarker = textOfBlock(block).toLocaleLowerCase("pt-BR").startsWith("leia também");
     const linkedSlugs = block.runs
-      .map((run) => getPostSlugFromHref(run.href))
+      .map((run: WixRichTextRun) => getPostSlugFromHref(run.href))
       .filter((slug): slug is string => Boolean(slug));
 
     if (isMarker) inRelatedBlock = true;
