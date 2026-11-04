@@ -121,7 +121,10 @@
           }
 
           trackLead(form, payload);
-          form.innerHTML = '<div class="form-success" role="status"><p class="eyebrow">Mensagem recebida</p><h2>Mensagem enviada.</h2><p>O retorno acontece em até 24 horas úteis. Se for urgente, o WhatsApp é o caminho mais rápido.</p><a class="button button-coral" href="https://wa.me/5541987926468?text=Olá%2C+enviei+uma+mensagem+pelo+site+e+gostaria+de+dar+sequência+ao+atendimento." target="_blank" rel="noopener">Falar pelo WhatsApp <span aria-hidden="true">↗</span></a></div>';
+          const whatsappMessage = payload.pageSlug === "assessoria-juridica-para-imobiliarias"
+            ? "Olá, Drielle! Vim pela página de Assessoria Jurídica para Imobiliárias, já enviei o formulário e quero conversar sobre a contratação da assessoria para a minha imobiliária."
+            : "Olá, enviei uma mensagem pelo site e gostaria de dar sequência ao atendimento.";
+          form.innerHTML = `<div class="form-success" role="status"><p class="eyebrow">Mensagem recebida</p><h2>Mensagem enviada.</h2><p>O retorno acontece em até 24 horas úteis. Se for urgente, o WhatsApp é o caminho mais rápido.</p><a class="button button-coral" href="https://wa.me/5541987926468?text=${encodeURIComponent(whatsappMessage)}" target="_blank" rel="noopener">Falar pelo WhatsApp <span aria-hidden="true">↗</span></a></div>`;
         } catch {
           setStatus(form, "Não foi possível enviar agora. Fale pelo e-mail drielle@dosadvocacia.com.br ou pelo WhatsApp.", true);
           restoreSubmit(submit);
