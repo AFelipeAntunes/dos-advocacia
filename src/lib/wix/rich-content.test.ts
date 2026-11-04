@@ -173,6 +173,28 @@ test("extracts the post slugs cited in the Wix Leia também block", () => {
   assert.deepEqual(slugs, ["vistoria-de-saída", "danos-na-locação"]);
 });
 
+test("extracts Leia também links under a separate heading and stops at the next section", () => {
+  const slugs = getWixRelatedPostSlugs({ nodes: [
+    linkedParagraph("body", "Texto antes do bloco", "/post/nao-excluir"),
+    heading("read-also", 3, "Leia também"),
+    linkedParagraph("first", "Primeiro artigo", "/post/primeiro-artigo"),
+    linkedParagraph("second", "Segundo artigo", "https://www.dosadvocacia.com.br/post/segundo-artigo"),
+    heading("next", 2, "Outra seção"),
+    linkedParagraph("after", "Link da outra seção", "/post/tambem-nao-excluir")
+  ] });
+  assert.deepEqual(slugs, ["primeiro-artigo", "segundo-artigo"]);
+});
+
+test("extracts links following a standalone Leia também paragraph without consuming later prose", () => {
+  const slugs = getWixRelatedPostSlugs({ nodes: [
+    paragraph("marker", "Leia também:"),
+    linkedParagraph("first", "Artigo indicado", "/post/artigo-indicado"),
+    paragraph("end", "O conteúdo continua aqui."),
+    linkedParagraph("after", "Outro contexto", "/post/fora-do-bloco")
+  ] });
+  assert.deepEqual(slugs, ["artigo-indicado"]);
+});
+
 function heading(id: string, level: number, text: string) {
   return {
     headingData: { level },

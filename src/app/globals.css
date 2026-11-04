@@ -664,7 +664,7 @@ h1, h2, h3 { text-wrap: balance; }
   border-top: 1px solid var(--line);
 }
 
-.related-posts h2 {
+.related-posts > h2 {
   max-width: 680px;
   margin: 0 0 2rem;
   color: var(--navy);
