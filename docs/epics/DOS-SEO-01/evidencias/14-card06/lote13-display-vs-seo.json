@@ -1,0 +1,110 @@
+{
+  "source": "payloads-locais-r1r3-20261104 request_documental.draftPost; no credentials",
+  "count": 13,
+  "rows": [
+    {
+      "item": "A1",
+      "slug": "garantias-locatícias-o-que-a-imobiliária-precisa-saber-antes-de-aceitar",
+      "display": "Garantias locatícias: o que a imobiliária precisa saber antes de aceitar",
+      "seo": "Garantias locatícias: o que avaliar antes de aceitar",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "A2",
+      "slug": "imóvel-irregular-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+      "display": "Imóvel irregular: riscos jurídicos que o comprador precisa conhecer",
+      "seo": "Imóvel irregular: riscos jurídicos que o comprador precisa conhecer",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "A3",
+      "slug": "a-imobiliária-responde-por-dano-que-o-locatário-causou",
+      "display": "A imobiliária responde por dano que o locatário causou?",
+      "seo": "A imobiliária responde por dano que o locatário causou? | Drielle Pereira Advocacia",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "A4",
+      "slug": "o-imóvel-foi-vendido-o-inquilino-não-foi-notificado-a-imobiliária-está-no-meio",
+      "display": "O imóvel foi vendido. O inquilino não foi notificado. A imobiliária está no meio.",
+      "seo": "Direito de preferência do locatário: quando a imobiliária responde | Drielle Pereira Advocacia",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "A5",
+      "slug": "a-garantia-venceu-e-o-locatário-ainda-está-no-imóvel-a-imobiliária-percebeu",
+      "display": "A garantia venceu - e o locatário ainda está no imóvel. A imobiliária percebeu?",
+      "seo": "Garantia Locatícia Vencida: o risco que a imobiliária assume sem perceber | Drielle Pereira",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "A6",
+      "slug": "o-imóvel-foi-entregue-com-defeito-o-comprador-só-descobriu-depois-de-assinar-a-escritura",
+      "display": "O imóvel foi entregue com defeito. O comprador só descobriu depois de assinar a escritura.",
+      "seo": "Defeito oculto no imóvel: direitos depois da escritura",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "A7",
+      "slug": "consórcio-imobiliário-parece-simples-o-contrato-não-é",
+      "display": "Consórcio imobiliário parece simples. O contrato não é.",
+      "seo": "Consórcio imobiliário: o que analisar antes de assinar",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "F1",
+      "slug": "a-imobiliária-pode-ser-responsabilizada-em-uma-ação-de-despejo",
+      "display": "A imobiliária pode ser responsabilizada em uma ação de despejo?",
+      "seo": "A imobiliária pode ser responsabilizada em ação de despejo",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "F2",
+      "slug": "sublocação-não-autorizada-o-risco-que-a-imobiliária-assume-sem-perceber",
+      "display": "Sublocação não autorizada: o risco que a imobiliária assume sem perceber",
+      "seo": "Sublocação não autorizada: o risco da imobiliária",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "F3",
+      "slug": "dívida-de-condomínio-e-iptu-na-compra-de-imóvel-quem-paga-a-conta",
+      "display": "Dívida de condomínio e IPTU na compra de imóvel: quem paga a conta?",
+      "seo": "Dívida de condomínio e IPTU na compra: quem paga?",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "F8",
+      "slug": "alienação-fiduciária-de-imóvel-o-risco-real-que-ninguém-te-conta-antes-de-financiar",
+      "display": "Alienação fiduciária de imóvel: o risco real que ninguém te conta antes de financiar",
+      "seo": "Alienação fiduciária: o risco antes de financiar",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "F9",
+      "slug": "compra-de-imóvel-em-inventário-riscos-que-ninguém-te-conta",
+      "display": "Compra de imóvel em inventário: riscos que ninguém te conta",
+      "seo": "Compra de imóvel em inventário: riscos e cuidados",
+      "disabled": false,
+      "custom": false
+    },
+    {
+      "item": "F11",
+      "slug": "due-diligence-imobiliária-o-que-é-e-por-que-você-precisa-fazer-antes-de-qualquer-compra",
+      "display": "Due Diligence Imobiliária: o que é e por que você precisa fazer antes de qualquer compra",
+      "seo": "Due diligence imobiliária: o que é e quando fazer",
+      "disabled": false,
+      "custom": false
+    }
+  ]
+}

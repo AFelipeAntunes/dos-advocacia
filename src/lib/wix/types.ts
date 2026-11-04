@@ -46,7 +46,8 @@ export type WixPostMedia = {
 
 export type WixSeoData = {
   tags?: Array<{
-    children?: Array<{ children?: string[]; props?: Record<string, string> }>;
+    children?: string;
+    disabled?: boolean;
     props?: Record<string, string>;
     type?: string;
   }>;
