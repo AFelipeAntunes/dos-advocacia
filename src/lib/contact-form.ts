@@ -51,6 +51,12 @@ const serviceForms: Record<string, ContactFormConfig> = {
     icp: "comprador",
     pageSlug: "due-diligence-imobiliaria"
   },
+  imobiliarias: {
+    demandType: "Locação / imobiliária",
+    formLocation: "servico",
+    icp: "imobiliaria",
+    pageSlug: "assessoria-juridica-para-imobiliarias"
+  },
   locacao: {
     demandType: "Locação / imobiliária",
     formLocation: "servico",

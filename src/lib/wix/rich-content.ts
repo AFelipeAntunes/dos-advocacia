@@ -194,12 +194,27 @@ export function getWixFaqItems(content?: WixRichContent): WixFaqItem[] {
 }
 
 export function getWixRelatedPostSlugs(content?: WixRichContent) {
-  return getWixRichContentBlocks(content, "")
-    .filter((block): block is TextBlock & { kind: "paragraph" } => (
-      block.kind === "paragraph" && textOfBlock(block).toLocaleLowerCase("pt-BR").startsWith("leia também")
-    ))
-    .flatMap((block) => block.runs.map((run) => getPostSlugFromHref(run.href)).filter(Boolean))
-    .filter((slug, index, slugs): slug is string => slugs.indexOf(slug) === index);
+  const slugs = new Set<string>();
+  let inRelatedBlock = false;
+
+  for (const block of getWixRichContentBlocks(content, "")) {
+    if (block.kind !== "paragraph" && block.kind !== "heading") {
+      inRelatedBlock = false;
+      continue;
+    }
+
+    const isMarker = textOfBlock(block).toLocaleLowerCase("pt-BR").startsWith("leia também");
+    const linkedSlugs = block.runs
+      .map((run: WixRichTextRun) => getPostSlugFromHref(run.href))
+      .filter((slug): slug is string => Boolean(slug));
+
+    if (isMarker) inRelatedBlock = true;
+    else if (block.kind === "heading" || !linkedSlugs.length) inRelatedBlock = false;
+
+    if (inRelatedBlock) linkedSlugs.forEach((slug) => slugs.add(slug));
+  }
+
+  return [...slugs];
 }
 
 function getPostSlugFromHref(href?: string) {

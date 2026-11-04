@@ -11,6 +11,7 @@ const legacyPageSlugs: Record<LegacyPageKey, string> = {
   advogadaImobiliariaCuritiba: "advogada-imobiliaria-curitiba",
   assessoriaCompraImovel: "assessoria-juridica-compra-de-imovel",
   areas: "areas-de-atuacao",
+  imobiliarias: "assessoria-juridica-para-imobiliarias",
   locacao: "assessoria-em-locacao",
   conflitos: "conflitos-imobiliarios",
   contato: "contato",

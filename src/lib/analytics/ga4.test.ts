@@ -13,8 +13,18 @@ test("recognizes only approved internal service destinations", () => {
 
   assert.equal(getServiceDestination("/assessoria-em-locacao", origin), "assessoria-em-locacao");
   assert.equal(getServiceDestination(`${origin}/due-diligence-imobiliaria`, origin), "due-diligence-imobiliaria");
+  assert.equal(
+    getServiceDestination("/assessoria-juridica-para-imobiliarias", origin),
+    "assessoria-juridica-para-imobiliarias"
+  );
+  assert.equal(
+    getServiceDestination(`${origin}/assessoria-juridica-para-imobiliarias/`, origin),
+    "assessoria-juridica-para-imobiliarias"
+  );
   assert.equal(getServiceDestination("https://example.com/contratos-imobiliarios", origin), null);
+  assert.equal(getServiceDestination("https://example.com/assessoria-juridica-para-imobiliarias", origin), null);
   assert.equal(getServiceDestination("/blog", origin), null);
+  assert.equal(getServiceDestination("http://[", origin), null);
 });
 
 test("recognizes opted-in institutional post destinations and preserves accents", () => {
@@ -40,6 +50,7 @@ test("maps service destinations to the available marketing clusters", () => {
   assert.equal(getClusterFromDestination("assessoria-juridica-compra-de-imovel"), "planta");
   assert.equal(getClusterFromDestination("contratos-imobiliarios"), "contratos");
   assert.equal(getClusterFromDestination("conflitos-imobiliarios"), undefined);
+  assert.equal(getClusterFromDestination("assessoria-juridica-para-imobiliarias"), undefined);
 });
 
 test("recognizes the approved WhatsApp hosts", () => {
