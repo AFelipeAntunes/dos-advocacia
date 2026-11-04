@@ -4,6 +4,7 @@ export const SERVICE_DESTINATIONS = new Set([
   "assessoria-em-locacao",
   "due-diligence-imobiliaria",
   "assessoria-juridica-compra-de-imovel",
+  "assessoria-juridica-para-imobiliarias",
   "contratos-imobiliarios",
   "conflitos-imobiliarios"
 ]);

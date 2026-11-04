@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { BlogPostJsonLd } from "@/components/blog-post-json-ld";
 import { BlogCtaTracker } from "@/components/blog-cta-tracker";
 import { BlogPostCard } from "@/components/blog-post-card";
+import { BlogServiceCta } from "@/components/blog-service-cta";
 import { FaqPageJsonLd } from "@/components/faq-page-json-ld";
 import { WixRichContent } from "@/components/wix-rich-content";
 import { getBlogCategories, getPostCategory, getRelatedPosts } from "@/lib/wix/blog-navigation";
@@ -87,6 +88,7 @@ export default async function PostPage({ params }: PostPageProps) {
         </p>
         <BlogCtaTracker postSlug={post.slug} />
         <div className="article__content"><WixRichContent content={post.richContent} fallback={post.contentText ?? post.excerpt} /></div>
+        <BlogServiceCta categories={categories} post={post} />
         <Link className="article-contact-link" href="/contato">
           Prefere escrever? Fale por e-mail <span aria-hidden="true">↗</span>
         </Link>

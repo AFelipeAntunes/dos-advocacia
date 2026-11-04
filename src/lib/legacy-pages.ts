@@ -6,6 +6,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 import { getContactFormMarkup } from "@/lib/contact-form";
+import { addInstitutionalLinks, normalizeLegacyLinks } from "@/lib/legacy-navigation";
 
 export const legacyPageFiles = {
   advogadaImobiliaria: "advogada-imobiliaria.html",
@@ -13,6 +14,7 @@ export const legacyPageFiles = {
   assessoriaCompraImovel: "assessoria-juridica-compra-de-imovel.html",
   home: "index.html",
   areas: "areas-de-atuacao.html",
+  imobiliarias: "assessoria-juridica-para-imobiliarias.html",
   locacao: "assessoria-em-locacao.html",
   conflitos: "conflitos-imobiliarios.html",
   contato: "contato.html",
@@ -37,19 +39,6 @@ type LegacyPage = {
   title: string;
 };
 
-const legacyLinkMap: Record<string, string> = {
-  "/areas-de-atuacao.html": "/areas-de-atuacao",
-  "/assessoria-em-locacao.html": "/assessoria-em-locacao",
-  "/conflitos-imobiliarios.html": "/conflitos-imobiliarios",
-  "/contato.html": "/contato",
-  "/conteudos.html": "/blog",
-  "/contratos-imobiliarios.html": "/contratos-imobiliarios",
-  "/due-diligence-imobiliaria.html": "/due-diligence-imobiliaria",
-  "/politica-de-privacidade.html": "/politica-de-privacidade",
-  "/sobre.html": "/sobre",
-  "/treinamentos.html": "/treinamentos"
-};
-
 function matchValue(source: string, expression: RegExp) {
   return expression.exec(source)?.[1]?.trim();
 }
@@ -61,12 +50,9 @@ function extractBody(source: string, key: LegacyPageKey) {
     ""
   );
 
-  const normalizedLinks = Object.entries(legacyLinkMap).reduce(
-    (html, [legacyPath, routePath]) => html.replaceAll(legacyPath, routePath),
-    withoutLegacyScript
-  );
-
-  const withInstitutionalLinks = addInstitutionalLinks(normalizedLinks);
+  const normalizedLinks = normalizeLegacyLinks(withoutLegacyScript);
+  const currentPath = `/${legacyPageFiles[key].replace(/\.html$/, "")}`;
+  const withInstitutionalLinks = addInstitutionalLinks(normalizedLinks, currentPath);
   const formMarkup = getContactFormMarkup(key);
   if (!formMarkup) return withInstitutionalLinks;
 
@@ -78,36 +64,6 @@ function extractBody(source: string, key: LegacyPageKey) {
   }
 
   return withInstitutionalLinks.replace(/<\/main>/i, `${formMarkup}</main>`);
-}
-
-const institutionalLinks = [
-  { href: "/advogada-imobiliaria", label: "Advogada Imobiliarista" },
-  { href: "/assessoria-juridica-compra-de-imovel", label: "Compra de imóvel" }
-] as const;
-
-function addInstitutionalLinks(body: string) {
-  const withMenuLinks = body.replace(
-    /<nav\b[^>]*class=["'][^"']*\bmain-nav\b[^"']*["'][^>]*>[\s\S]*?<\/nav>/i,
-    (navigation) =>
-      institutionalLinks.reduce((result, { href, label }) => {
-        if (result.includes(`href="${href}"`)) return result;
-
-        return result.replace(
-          /(<a\b[^>]*class=["'][^"']*\bnav-contact\b)/i,
-          `<a href="${href}">${label}</a>$1`
-        );
-      }, navigation)
-  );
-
-  return withMenuLinks.replace(
-    /<div class="footer-column">\s*<p class="footer-label">Navegação<\/p>[\s\S]*?<\/div>/i,
-    (navigation) =>
-      institutionalLinks.reduce((result, { href, label }) => {
-        if (result.includes(`href="${href}"`)) return result;
-
-        return result.replace(/<\/div>$/i, `<a href="${href}">${label}</a></div>`);
-      }, navigation)
-  );
 }
 
 function extractJsonLd(source: string) {

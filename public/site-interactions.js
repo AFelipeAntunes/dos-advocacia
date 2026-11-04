@@ -2,10 +2,14 @@
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const menu = document.querySelector("[data-menu]");
   const menuLabel = menuToggle?.querySelector(".sr-only");
+  const navGroups = [...document.querySelectorAll("[data-nav-group]")];
+
+  const closeNavGroups = () => navGroups.forEach((group) => { group.open = false; });
 
   const setMenuState = (isOpen) => {
     menuToggle?.setAttribute("aria-expanded", String(isOpen));
     menu?.classList.toggle("is-open", isOpen);
+    if (!isOpen) closeNavGroups();
     if (menuLabel) menuLabel.textContent = isOpen ? "Fechar menu" : "Abrir menu";
   };
 
@@ -16,7 +20,25 @@
     link.addEventListener("click", () => setMenuState(false));
   });
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") setMenuState(false);
+    if (event.key !== "Escape") return;
+    const openGroup = navGroups.find((group) => group.open);
+    if (openGroup) {
+      openGroup.open = false;
+      openGroup.querySelector("summary")?.focus();
+    } else if (menuToggle?.getAttribute("aria-expanded") === "true") {
+      setMenuState(false);
+      menuToggle.focus();
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Node)) return;
+    if (!menu?.contains(event.target) && !menuToggle?.contains(event.target)) setMenuState(false);
+  });
+  document.addEventListener("focusin", (event) => {
+    if (!(event.target instanceof Node)) return;
+    navGroups.forEach((group) => {
+      if (!group.contains(event.target)) group.open = false;
+    });
   });
 
   const revealItems = [...document.querySelectorAll(".reveal")];

@@ -5,8 +5,10 @@ import {
   filterPostsByCategory,
   getBlogCategories,
   getBlogCategoryTabs,
+  getImobiliariasCategory,
   getPostCategory,
-  getRelatedPosts
+  getRelatedPosts,
+  isImobiliariasPost
 } from "@/lib/wix/blog-navigation";
 import type { WixBlogCategory, WixBlogPost } from "@/lib/wix/types";
 
@@ -139,13 +141,42 @@ test("does not repeat post slugs already cited in Leia também", () => {
   ]);
 });
 
+test("enables the imobiliárias block only with the approved Wix category ID", () => {
+  const b2b = post("b2b", "assessoria", "2026-07-20");
+  const b2c = post("b2c", "due", "2026-07-19");
+  const multiCategory: WixBlogPost = {
+    ...post("multi", "due", "2026-07-18"),
+    categoryIds: ["due", "assessoria"]
+  };
+  const noCategory: WixBlogPost = { ...post("sem-categoria", "due", "2026-07-17"), categoryIds: [] };
+  const unknownCategory: WixBlogPost = { ...post("desconhecida", "desconhecida", "2026-07-16") };
+  const posts = [b2b, b2c, multiCategory, noCategory, unknownCategory];
+  const categories = getBlogCategories(posts, wixCategories);
+
+  assert.equal(getImobiliariasCategory(categories)?.id, "assessoria");
+  assert.equal(isImobiliariasPost(b2b, categories), true);
+  assert.equal(isImobiliariasPost(b2c, categories), false);
+  assert.equal(isImobiliariasPost(multiCategory, categories), true);
+  assert.equal(isImobiliariasPost(noCategory, categories), false);
+  assert.equal(isImobiliariasPost(unknownCategory, categories), false);
+});
+
+test("does not enable the imobiliárias block when the approved category is missing", () => {
+  const posts = [post("b2b", "assessoria", "2026-07-20")];
+  const catalogWithoutApprovedCategory = wixCategories.filter((category) => category.id !== "assessoria");
+  const categories = getBlogCategories(posts, catalogWithoutApprovedCategory);
+
+  assert.equal(getImobiliariasCategory(categories), undefined);
+  assert.equal(isImobiliariasPost(posts[0], categories), false);
+  assert.equal(isImobiliariasPost({ ...posts[0], categoryIds: undefined }, getBlogCategories(posts, wixCategories)), false);
+});
+
 function post(
   slug: string,
   categoryId: string,
   firstPublishedDate: string,
   overrides: Partial<WixBlogPost> = {}
-): WixBlogPost {
-  return {
+): WixBlogPost {  return {
     ...overrides,
     categoryIds: [categoryId],
     firstPublishedDate,

@@ -72,6 +72,15 @@ button { cursor: pointer; }
 .nav-contact { padding: .72rem 1.05rem !important; border: 1px solid var(--navy); transition: background .2s ease, color .2s ease; }
 .nav-contact:hover { color: white; background: var(--navy); }
 .menu-toggle { display: none; border: 0; background: transparent; }
+.nav-group { position: relative; color: var(--navy); }
+.nav-group > summary { display: flex; align-items: center; gap: .5rem; padding: .5rem 0; cursor: pointer; list-style: none; white-space: nowrap; }
+.nav-group > summary::-webkit-details-marker { display: none; }
+.nav-group > summary::after { content: ""; width: .4rem; height: .4rem; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: translateY(-2px) rotate(45deg); }
+.nav-group[open] > summary::after { transform: translateY(1px) rotate(225deg); }
+.nav-group[open] > summary, .nav-group:has([aria-current="page"]) > summary { text-decoration: underline; text-decoration-color: var(--coral); text-underline-offset: .6rem; }
+.nav-submenu { position: absolute; top: calc(100% + .75rem); left: -1rem; z-index: 21; display: grid; width: max-content; min-width: 250px; padding: .5rem; border: 1px solid var(--line); background: var(--paper); box-shadow: var(--shadow); }
+.nav-submenu > a { padding: .8rem; }
+.nav-submenu > a:hover, .nav-submenu > a:focus-visible, .nav-submenu > a[aria-current="page"] { background: var(--stone); }
 
 .hero { position: relative; min-height: min(760px, calc(100vh - 92px)); overflow: hidden; color: white; background: var(--navy) url("/assets/images/hero-dos-advocacia.webp") center / cover no-repeat; }
 .hero-wash { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5, 15, 33, .95) 0%, rgba(7, 22, 43, .82) 35%, rgba(8, 22, 36, .22) 70%, rgba(8, 22, 36, .1) 100%); }
@@ -137,6 +146,9 @@ h1, h2, h3 { text-wrap: balance; }
 .practice-card p { max-width: 410px; margin-bottom: 0; color: var(--slate); font-size: .95rem; line-height: 1.55; transition: color .25s ease; }
 .practice-card:hover p { color: rgba(255,255,255,.72); }
 .card-arrow { position: absolute; top: 2rem; right: 2rem; color: var(--coral); font-size: 1.45rem; }
+.practice-card-wide { grid-column: 1 / -1; min-height: 0; }
+.practice-card-wide .practice-number { margin-bottom: 1.4rem; }
+.practice-card-wide h3, .practice-card-wide p { max-width: 620px; }
 
 .process-panel { position: relative; overflow: hidden; padding: var(--section) 0; color: white; background: var(--navy); }
 .process-panel::before { position: absolute; top: -20%; right: -8%; width: min(50vw, 650px); aspect-ratio: 1; border: 1px solid rgba(143,171,188,.2); border-radius: 50%; content: ""; }
@@ -162,6 +174,8 @@ h1, h2, h3 { text-wrap: balance; }
 .training-collage { position: relative; min-height: 0; }
 .training-collage-main { width: 100%; margin: 0; overflow: hidden; box-shadow: 0 30px 80px rgba(5,15,33,.3); }
 .training-collage-main img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.imobiliarias-portrait { align-self: start; }
+.imobiliarias-portrait img { aspect-ratio: 1; }
 
 .editorial { background: #f3f4f1; }
 .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
@@ -217,6 +231,13 @@ h1, h2, h3 { text-wrap: balance; }
 .module-card p { margin-bottom: 0; color: var(--slate); font-size: .9rem; line-height: 1.55; }
 .module-card-feature { color: white; background: var(--teal); }
 .module-card-feature p { color: rgba(255,255,255,.72); }
+
+/* The service overview keeps its content at the top and fills both rows. */
+.module-grid.imobiliarias-module-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.imobiliarias-module-grid > .module-card { min-height: 0; }
+.imobiliarias-module-grid > .module-card:nth-child(n+4) { grid-column: span 3; }
+.imobiliarias-module-grid > .module-card > span { margin-bottom: 1rem; }
+.imobiliarias-module-grid > .module-card h3 { min-height: 2.16em; }
 
 .training-experience { color: white; background: var(--navy); }
 .training-experience-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, .42fr); align-items: end; gap: 3rem; margin-bottom: clamp(3rem, 6vw, 5rem); }
@@ -401,19 +422,25 @@ h1, h2, h3 { text-wrap: balance; }
 .trainer-photo:hover img { transform: scale(1.025); }
 
 @media (max-width: 960px) {
-  :root { --shell: min(100% - 40px, 1200px); }
-  .hero { background-image: url("/assets/images/hero-dos-advocacia-900.webp"); }
   .header-inner { position: relative; min-height: 78px; flex-wrap: wrap; }
   .brand { width: auto; }
   .menu-toggle { position: relative; z-index: 31; display: grid; width: 42px; height: 42px; padding: 0; place-content: center; gap: 6px; }
   .menu-toggle span:not(.sr-only) { display: block; width: 24px; height: 1px; background: var(--navy); transition: transform .2s ease; }
-  .menu-toggle[aria-expanded="true"] span:nth-of-type(1) { transform: translateY(3.5px) rotate(45deg); }
-  .menu-toggle[aria-expanded="true"] span:nth-of-type(2) { transform: translateY(-3.5px) rotate(-45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-of-type(2) { transform: translateY(3.5px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-of-type(3) { transform: translateY(-3.5px) rotate(-45deg); }
   .main-nav { position: static; display: none; width: 100%; flex-basis: 100%; gap: 0; padding: 0 0 1.5rem; border-top: 1px solid rgba(11,30,71,.08); background: var(--paper); }
   .main-nav.is-open { display: grid; }
   .main-nav > a { padding: 1rem 0; }
   .main-nav > a:not(:last-child) { border-bottom: 1px solid var(--line); }
+  .nav-group { border-bottom: 1px solid var(--line); }
+  .nav-group > summary { justify-content: space-between; padding: 1rem 0; }
+  .nav-submenu { position: static; width: auto; min-width: 0; margin: 0 0 1rem; padding: 0 0 0 .75rem; border: 0; border-left: 1px solid var(--line); box-shadow: none; }
   .nav-contact { margin-top: .8rem; text-align: center; }
+}
+
+@media (max-width: 960px) {
+  :root { --shell: min(100% - 40px, 1200px); }
+  .hero { background-image: url("/assets/images/hero-dos-advocacia-900.webp"); }
   .hero { min-height: 700px; }
   .hero::after { right: -12%; width: 52vw; }
   .intro-layout, .process-layout, .about-layout, .content-guide, .contact-layout, .founder-feature-grid, .training-teaser-grid, .training-intro-grid, .training-format-grid, .trainer-profile-grid, .training-faq-grid { grid-template-columns: 1fr; }
@@ -439,6 +466,9 @@ h1, h2, h3 { text-wrap: balance; }
   .module-grid { grid-template-columns: repeat(2, 1fr); }
   .module-card, .module-card:nth-child(4) { grid-column: auto; }
   .module-card:last-child { grid-column: 1 / -1; }
+  .module-grid.imobiliarias-module-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .imobiliarias-module-grid > .module-card:nth-child(n) { grid-column: auto; }
+  .imobiliarias-module-grid > .module-card:last-child { grid-column: 1 / -1; }
   .training-experience-heading { grid-template-columns: 1fr; }
   .training-gallery { min-height: auto; grid-template-columns: 1fr 1fr; grid-template-rows: 480px 480px; }
   .gallery-wide { grid-column: 1 / -1; }
@@ -484,6 +514,9 @@ h1, h2, h3 { text-wrap: balance; }
   .training-proof-bar span:nth-child(3), .training-proof-bar span:nth-child(4) { border-top: 0; }
   .module-grid { grid-template-columns: 1fr; }
   .module-card, .module-card:last-child { min-height: 280px; grid-column: auto; }
+  .module-grid.imobiliarias-module-grid { grid-template-columns: minmax(0, 1fr); }
+  .imobiliarias-module-grid > .module-card:nth-child(n) { min-height: 0; grid-column: 1 / -1; }
+  .imobiliarias-module-grid > .module-card h3 { min-height: 0; }
   .training-gallery { grid-template-columns: 1fr; grid-template-rows: repeat(3, 470px); }
   .gallery-wide { grid-column: auto; }
   .training-steps li { grid-template-columns: 40px 1fr; }
@@ -657,6 +690,10 @@ h1, h2, h3 { text-wrap: balance; }
   text-underline-offset: .18em;
 }
 .article-contact-link:hover { color: var(--coral); }
+
+.article-service-cta { margin-top: 2.5rem; padding: clamp(1.8rem, 4vw, 2.6rem); color: white; background: var(--navy); }
+.article-service-cta h2 { max-width: 560px; margin: .5rem 0 .9rem; color: white; font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 500; letter-spacing: -.04em; line-height: 1.1; }
+.article-service-cta__lead { max-width: 52ch; margin: 0 0 1.4rem; color: rgba(255,255,255,.78); font-size: 1rem; line-height: 1.6; }
 
 .article__content {
   margin-top: 2rem;

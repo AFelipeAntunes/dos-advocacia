@@ -1,7 +1,9 @@
 import type { WixBlogCategory, WixBlogPost } from "@/lib/wix/types";
 
+export const IMOBILIARIAS_CATEGORY_SLUG = "assessoria-para-imobiliárias";
+
 export const BLOG_CATEGORY_DEFINITIONS = [
-  { label: "Assessoria para Imobiliárias", slug: "assessoria-para-imobiliárias" },
+  { label: "Assessoria para Imobiliárias", slug: IMOBILIARIAS_CATEGORY_SLUG },
   { label: "Due Diligence Imobiliária", slug: "due-diligence-imobiliária" },
   { label: "Contratos Imobiliários", slug: "contratos-imobiliários" },
   { label: "Litígios Imobiliários", slug: "litígios-imobiliários" }
@@ -48,6 +50,15 @@ export function getBlogCategories(posts: WixBlogPost[], wixCategories: WixBlogCa
 
 export function getPostCategory(post: WixBlogPost, categories: BlogCategory[]) {
   return categories.find((category) => post.categoryIds?.includes(category.id));
+}
+
+export function getImobiliariasCategory(categories: BlogCategory[]) {
+  return categories.find((category) => category.slug === IMOBILIARIAS_CATEGORY_SLUG);
+}
+
+export function isImobiliariasPost(post: WixBlogPost, categories: BlogCategory[]) {
+  const category = getImobiliariasCategory(categories);
+  return Boolean(category?.id && post.categoryIds?.includes(category.id));
 }
 
 export function filterPostsByCategory(posts: WixBlogPost[], category?: BlogCategory) {
