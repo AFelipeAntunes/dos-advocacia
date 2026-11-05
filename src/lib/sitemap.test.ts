@@ -66,12 +66,12 @@ test("inclui a landing de imobiliárias exatamente uma vez com a data comprovada
   assert.equal(iso(landingEntries[0].lastModified), "2026-11-04T00:00:00.000Z");
 });
 
-test("exclui as 18 origens de consolidação quando o CMS devolve o mesmo slug", () => {
+test("exclui as 19 origens de consolidação quando o CMS devolve o mesmo slug", () => {
   const posts = [...redirectOrigins, ...redirectDestinations].map((path) => post(slugFromPath(path)));
   const entries = buildSitemapEntries({ siteUrl, posts });
   const paths = postPaths(entries);
 
-  assert.equal(redirectOrigins.length, 18);
+  assert.equal(redirectOrigins.length, 19);
 
   for (const origin of redirectOrigins) {
     // A URL emitida é a mesma forma que o Next configura para a origem.
