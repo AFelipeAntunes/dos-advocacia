@@ -12,6 +12,7 @@ Manter uma presença digital premium para advocacia imobiliária, com foco em co
 | --- | --- |
 | Nome profissional | **Drielle Pereira** |
 | Nome público | Drielle Pereira Advocacia Imobiliária |
+| Razão social | Drielle Pereira Sociedade Individual de Advocacia |
 | Domínio canônico planejado | `https://www.dosadvocacia.com.br` |
 | Atuação | Curitiba/PR e atendimento em todo o Brasil |
 | Tipografia | Urbanist |
@@ -152,9 +153,9 @@ npm run build
 
 ## 11. Status atual
 
-**Revisão do CMO (05/11/2026):** correções de marca, FAQ da landing e sitemap preparadas na branch `qa/dos-revisao-cmo`.
+**DOS-SEO-01 em produção em 05/11/2026 (PRs #5 a #10).** O domínio oficial serve a landing B2B, a locação reposicionada, sete fusões e sete aprofundamentos. As sete origens foram despublicadas no Wix e preservadas como rascunhos com redirects 301 ativos. Quatro pares ficaram fora das fusões. O sitemap público conferido tem 121 URLs e 106 posts. O feed antigo segue em 404 por decisão editorial e os seis redirects legados confirmados estão ativos.
 
-- **04/11/2026 — Candidato integrado card06 + seis redirects:** branch `qa/dos-seo-01-integration`, base f5a4e56. Authorização de Felipe no chat abrange branch/commit/push/PR/Preview, sem merge/produção/despublicação. Testes integrados96/96, typecheck/build23. Title SEO bruto com fallback; redirects18+11 e F7 fora. Validação real de Preview pendente; registros anteriores abaixo são históricos quando conflitarem.
+A PR #10 (merge `e7c125d`) publicou a marca pública, sete H3 no FAQ e datas de 04/11 nas cinco páginas com novos links. Os três pontos foram conferidos no domínio oficial. Registros anteriores de Preview ou bloqueio desses lotes são históricos.
 
 - Formulário de contato real implementado em `/contato` e nas sete páginas de serviço, com validação server-side em `POST /api/contato`, envio Resend para o escritório, confirmação automática ao visitante, estados acessíveis e evento GA4 `generate_lead` somente após sucesso.
 - A proteção de aplicação combina honeypot + tempo mínimo de três segundos com a regra publicada no Vercel Firewall `Rate limit /api/contato`: `POST /api/contato`, cinco requisições por IP em janela fixa de dez minutos e HTTP 429 no excedente. Não há contador em memória nem dependência de Redis.
@@ -173,7 +174,7 @@ npm run build
 - A landing nacional funciona como página-mãe do cluster de advocacia imobiliária; a página de Curitiba permanece como satélite com links cruzados.
 - As landings nacional e de Curitiba usam a categoria de serviço `advogado imobiliário` nos titles e metadados, mantendo a identidade pessoal feminina no H1 e no corpo. Ambas exibem FAQ comercial aprovada, dois caminhos de ICP com links para compra/locação e mensagens de WhatsApp segmentadas.
 - Home e landing nacional exibem um bloco sóbrio de reconhecimento com nota média 5,0, 11 avaliações e link para o perfil público do Google, sem reproduzir comentários de clientes.
-- O termo profissional preferido no conteúdo institucional é `advogada imobiliarista`; a marca oficial `DOS Advocacia Imobiliária` e os slugs indexados permanecem inalterados.
+- O termo profissional preferido no conteúdo institucional é `advogada imobiliarista`; os slugs indexados são preservados.
 - A landing `/assessoria-juridica-compra-de-imovel` integra o cluster nacional com foco preventivo na análise do imóvel, do vendedor e do contrato antes da assinatura.
 - A página `/conflitos-imobiliarios` foi reescrita para proprietários, imobiliárias e administradoras, com foco em inadimplência, despejo, danos ao imóvel, rescisão de locação, distrato e atraso de obra. Ela mantém o slug, os metadados completos, `FAQPage`, `LegalService`, `BreadcrumbList`, a listagem em `/areas-de-atuacao` e links internos com as páginas de compra e da advogada imobiliarista.
 - A página `/advogada-imobiliaria-curitiba` mantém o slug e o layout, reforça uma ocorrência natural de `escritório de advocacia imobiliária em Curitiba` e inclui a FAQ aprovada sobre como escolher um advogado imobiliário em Curitiba. Seu `LegalService` agora descreve imagem, NAP, coordenadas do Batel, horário, Curitiba e região, Brasil para atendimento remoto, entidade `Person` da Drielle e `sameAs` apenas para o Google Business e perfis oficiais verificados.
@@ -195,6 +196,8 @@ npm run build
 - O agente de navegador deve repetir em Production o teste do GA4 DebugView para `generate_lead` e confirmar os parâmetros `page_slug`, `tipo_demanda`, `icp` e `form_location`, além de exercitar a sexta requisição inválida para confirmar o 429.
 
 ## 12. Alterações recentes
+
+- **05/11/2026 — LegalService:** o Teste de pesquisa aprimorada apontou ausência de `legalName` na Home, Curitiba e landing para imobiliárias. Razão social adicionada no módulo compartilhado. Correção preparada localmente.
 
 - Nome público no rodapé institucional, metadados de compartilhamento e aplicativo; sete H3 no FAQ da landing; datas do deploy de 04/11 nas cinco rotas institucionais com novos links.
 
@@ -395,9 +398,9 @@ npm run build
 
 ## 13. Pendências e recomendações
 
-- Revisar e publicar o lote de correções do CMO pelo fluxo de PR. Depois, conferir rodapé, FAQ e sitemap no domínio público.
-
-- Validar Preview protegido deste candidato com Wix real: titles/fallback, seis301/destinos200, sitemap sem18origens, F7 sem regra. Sem autorização de merge/produção ou despublicação de origens. Revalidar base/checks e obter autorização específica antes de promover.
+- Publicar a correção de `legalName` pelo fluxo autorizado de PR e repetir a verificação nas três páginas públicas.
+- Search Console: sitemap processado, indexação da landing solicitada e validação iniciada. Acompanhar o resultado e comparar consultas, CTR e cliques em 4 a 6 semanas.
+- Rodapé: confirmar o ano correto antes de alterar o © 2024.
 
 - Confirmar no GA4 `generate_lead` no DebugView em `/contato`, com `page_slug`, `tipo_demanda`, `icp` e `form_location`; a instrumentação e o envio real já foram confirmados, faltando a comprovação visual no painel após a publicação.
 - Exercitar o Vercel Firewall com cinco requisições inválidas e confirmar HTTP 429 na sexta, sem consumir a cota do Resend; aguardar dez minutos e confirmar a liberação.

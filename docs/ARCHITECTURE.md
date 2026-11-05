@@ -29,7 +29,8 @@ Não usar iframe, redirect de leitores ao Wix ou uma segunda origem para os arti
 
 ## Rotas e SEO
 
-- Candidato de 04/11/2026: document title dos posts lê tag SEO title habilitada com children string; na ausência mantém `${post.title} | DOS Advocacia Imobiliária`. H1/OG/Twitter/headline permanecem editoriais. Seis fusões1/2/3/8/9/11 adicionam301 à fonte compartilhada (18posts+11HTML); sitemap exclui as origens exatas. F7 fora. Alteração preparada para Preview, não declaração de publicação em Production.
+- Em produção, o title dos posts usa a tag SEO habilitada do Wix com valor string e preserva o fallback anterior. H1, OG, Twitter e headline usam o título editorial. O sitemap exclui as origens exatas das 19 consolidações ativas (12 anteriores e sete da rodada, incluindo F7).
+- `src/lib/office-schema.ts` centraliza a identidade de `LegalService` no HTML institucional e no schema de artigos. `name` representa o nome público, `legalName` guarda a razão social, e CEP e `sameAs` apontam para a identidade verificada do escritório.
 
 - Institucional: `/`, `/advogada-imobiliaria`, `/advogada-imobiliaria-curitiba`, `/assessoria-juridica-compra-de-imovel`, `/conflitos-imobiliarios`, `/sobre`, `/areas-de-atuacao`, serviços, `/treinamentos` e `/contato`.
 - Cluster imobiliário: `/advogada-imobiliaria` é a página-mãe nacional vinculada no menu e no rodapé; `/advogada-imobiliaria-curitiba` é a primeira página-satélite; `/assessoria-juridica-compra-de-imovel` é a landing transacional para compradores, proprietários e investidores; `/conflitos-imobiliarios` atende proprietários, imobiliárias e administradoras. As rotas mantêm links cruzados descritivos, incluindo a ligação com `/due-diligence-imobiliaria` e, entre compra e conflitos, situações de problema na entrega.
