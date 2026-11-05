@@ -1,6 +1,8 @@
 import type { WixBlogPost } from "@/lib/wix/types";
 import { getPostDescription, getPostImageUrl } from "@/lib/wix/seo";
 
+import { officeLegalService } from "@/lib/office-schema";
+
 type BlogPostJsonLdProps = {
   post: WixBlogPost;
   siteUrl: string;
@@ -25,8 +27,7 @@ export function BlogPostJsonLd({ post, siteUrl }: BlogPostJsonLdProps) {
     image: image ? [image] : undefined,
     mainEntityOfPage: { "@id": url, "@type": "WebPage" },
     publisher: {
-      "@type": "LegalService",
-      name: "DOS Advocacia Imobiliária",
+      ...officeLegalService,
       url: siteUrl
     },
     url
