@@ -54,7 +54,7 @@ test("sem Wix configurado o sitemap institucional é válido e não cria posts",
   }
 });
 
-test("inclui a landing de imobiliárias exatamente uma vez e sem data inventada", () => {
+test("inclui a landing de imobiliárias exatamente uma vez com a data comprovada do deploy", () => {
   const entries = buildSitemapEntries({ siteUrl });
   const landingEntries = entries.filter(
     (entry) => pathOf(entry.url) === "/assessoria-juridica-para-imobiliarias"
@@ -63,7 +63,7 @@ test("inclui a landing de imobiliárias exatamente uma vez e sem data inventada"
   assert.equal(landingEntries.length, 1);
   assert.equal(landingEntries[0].priority, 0.8);
   assert.equal(landingEntries[0].changeFrequency, "monthly");
-  assert.ok(!("lastModified" in landingEntries[0]));
+  assert.equal(iso(landingEntries[0].lastModified), "2026-11-04T00:00:00.000Z");
 });
 
 test("exclui as 18 origens de consolidação quando o CMS devolve o mesmo slug", () => {
@@ -201,12 +201,13 @@ test("datas institucionais são por rota e não mudam entre execuções", () => 
   const byPath = new Map(first.map((entry) => [pathOf(entry.url), entry]));
 
   assert.deepEqual(first, second);
+  assert.equal(iso(byPath.get("/assessoria-em-locacao")?.lastModified), "2026-11-04T00:00:00.000Z");
   assert.equal(iso(byPath.get("/sobre")?.lastModified), "2026-07-10T00:00:00.000Z");
   assert.equal(iso(byPath.get("/contato")?.lastModified), "2026-08-06T00:00:00.000Z");
   assert.equal(iso(byPath.get("/due-diligence-imobiliaria")?.lastModified), "2026-08-02T00:00:00.000Z");
 
   // Rotas com alteração local ainda não publicada: sem data até o rollout.
-  for (const route of ["/", "/advogada-imobiliaria", "/advogada-imobiliaria-curitiba", "/areas-de-atuacao", "/treinamentos", "/assessoria-em-locacao", "/assessoria-juridica-para-imobiliarias"]) {
+  for (const route of ["/", "/advogada-imobiliaria", "/advogada-imobiliaria-curitiba", "/areas-de-atuacao", "/treinamentos"]) {
     assert.ok(!("lastModified" in byPath.get(route)!), route);
   }
 });
