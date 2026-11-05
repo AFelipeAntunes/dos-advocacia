@@ -1,3 +1,4 @@
+import { officeName } from "@/lib/office-schema";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       publishedTime: post.firstPublishedDate,
       modifiedTime: post.lastPublishedDate,
       locale: "pt_BR",
-      siteName: "DOS Advocacia Imobiliária",
+      siteName: officeName,
       images: image ? [image] : undefined
     },
     twitter: {

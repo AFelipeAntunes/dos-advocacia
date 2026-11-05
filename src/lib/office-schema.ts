@@ -1,4 +1,4 @@
-const officeName = "Drielle Pereira Advocacia Imobiliária";
+export const officeName = "Drielle Pereira Advocacia Imobiliária";
 const googleProfile = "https://share.google/HDZRAYV5GDRVEH6Fa";
 
 export const officeLegalService = {

@@ -274,6 +274,7 @@ h1, h2, h3 { text-wrap: balance; }
 .faq-list { border-top: 1px solid rgba(11,30,71,.25); }
 .faq-list details { border-bottom: 1px solid rgba(11,30,71,.25); }
 .faq-list summary { position: relative; padding: 1.5rem 3rem 1.5rem 0; color: var(--navy); cursor: pointer; font-size: 1.08rem; font-weight: 700; list-style: none; }
+.faq-list summary > h3 { margin: 0; font: inherit; text-wrap: inherit; }
 .faq-list summary::-webkit-details-marker { display: none; }
 .faq-list summary::after { position: absolute; top: 1.45rem; right: .2rem; color: var(--coral); font-size: 1.3rem; content: "+"; }
 .faq-list details[open] summary::after { content: "−"; }

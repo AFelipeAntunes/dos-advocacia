@@ -5,6 +5,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import { officeName } from "@/lib/office-schema";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics/ga4";
 
 import "./globals.css";
@@ -17,7 +18,7 @@ const urbanist = Urbanist({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.SITE_URL ?? "https://www.dosadvocacia.com.br"),
-  applicationName: "DOS Advocacia Imobiliária",
+  applicationName: officeName,
   manifest: "/site.webmanifest",
   icons: {
     icon: "/assets/brand/symbol.svg"
