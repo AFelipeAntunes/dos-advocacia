@@ -16,8 +16,9 @@ Antes de analisar, alterar, publicar ou recomendar qualquer mudança, leia integ
 
 ## Marca e conteúdo
 
+- Razão social no `LegalService.legalName`: **Drielle Pereira Sociedade Individual de Advocacia**. Centralize a identidade do schema em `src/lib/office-schema.ts`.
 - Nome profissional canônico: **Drielle Pereira**. Nunca usar “Drielle Oliveira”.
-- Marca e domínio: **DOS Advocacia Imobiliária** / `dosadvocacia.com.br`.
+- Nome público: **Drielle Pereira Advocacia Imobiliária**. Domínio: `dosadvocacia.com.br`.
 - Descritor profissional preferido no conteúdo: **advogada imobiliarista**; usar **advogado imobiliarista** quando a variação masculina for necessária. Não alterar a marca oficial nem os slugs indexados `/advogada-imobiliaria` e `/advogada-imobiliaria-curitiba`.
 - Tipografia: Urbanist.
 - Paleta: `#0b1e47`, `#49596c`, `#8fabbc`, `#194951`, `#eb574d`, `#e4e5df`.

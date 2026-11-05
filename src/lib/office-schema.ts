@@ -4,6 +4,7 @@ const googleProfile = "https://share.google/HDZRAYV5GDRVEH6Fa";
 export const officeLegalService = {
   "@type": "LegalService",
   name: officeName,
+  legalName: "Drielle Pereira Sociedade Individual de Advocacia",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Av. do Batel, 1230, Conj. 508, Batel",
