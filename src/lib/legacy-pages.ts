@@ -8,6 +8,8 @@ import path from "node:path";
 import { getContactFormMarkup } from "@/lib/contact-form";
 import { addInstitutionalLinks, normalizeLegacyLinks } from "@/lib/legacy-navigation";
 
+import { alignOfficeJsonLd } from "@/lib/office-schema";
+
 export const legacyPageFiles = {
   advogadaImobiliaria: "advogada-imobiliaria.html",
   advogadaImobiliariaCuritiba: "advogada-imobiliaria-curitiba.html",
@@ -69,7 +71,8 @@ function extractBody(source: string, key: LegacyPageKey) {
 function extractJsonLd(source: string) {
   return [...source.matchAll(/<script\s+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)]
     .map((match) => match[1].trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    .map(alignOfficeJsonLd);
 }
 
 const loadLegacyPage = cache(async (key: LegacyPageKey): Promise<LegacyPage> => {
