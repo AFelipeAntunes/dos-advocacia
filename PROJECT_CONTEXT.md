@@ -152,6 +152,8 @@ npm run build
 
 ## 11. Status atual
 
+- **04/11/2026 — Candidato integrado card06 + seis redirects:** branch `qa/dos-seo-01-integration`, base f5a4e56. Authorização de Felipe no chat abrange branch/commit/push/PR/Preview, sem merge/produção/despublicação. Testes integrados96/96, typecheck/build23. Title SEO bruto com fallback; redirects18+11 e F7 fora. Validação real de Preview pendente; registros anteriores abaixo são históricos quando conflitarem.
+
 - Formulário de contato real implementado em `/contato` e nas sete páginas de serviço, com validação server-side em `POST /api/contato`, envio Resend para o escritório, confirmação automática ao visitante, estados acessíveis e evento GA4 `generate_lead` somente após sucesso.
 - A proteção de aplicação combina honeypot + tempo mínimo de três segundos com a regra publicada no Vercel Firewall `Rate limit /api/contato`: `POST /api/contato`, cinco requisições por IP em janela fixa de dez minutos e HTTP 429 no excedente. Não há contador em memória nem dependência de Redis.
 - A variável `RESEND_API_KEY` está confirmada em Preview e Production, sempre server-only. A política de privacidade aprovada foi publicada junto com o formulário no deployment de Production.
@@ -191,6 +193,8 @@ npm run build
 - O agente de navegador deve repetir em Production o teste do GA4 DebugView para `generate_lead` e confirmar os parâmetros `page_slug`, `tipo_demanda`, `icp` e `form_location`, além de exercitar a sexta requisição inválida para confirmar o 429.
 
 ## 12. Alterações recentes
+
+- **04/11/2026:** integrados parser/title SEO, testes/fixture lote13 e seis redirects1/2/3/8/9/11 com testes de grafo/sitemap. Sem novo fetch/JS cliente/dependência; nenhuma alteração editorial Wix.
 
 ### 2026-08-02 — Captura nacional e conversão por ICP
 
@@ -386,6 +390,8 @@ npm run build
 - Definida a estratégia Git: somente `main`.
 
 ## 13. Pendências e recomendações
+
+- Validar Preview protegido deste candidato com Wix real: titles/fallback, seis301/destinos200, sitemap sem18origens, F7 sem regra. Sem autorização de merge/produção ou despublicação de origens. Revalidar base/checks e obter autorização específica antes de promover.
 
 - Confirmar no GA4 `generate_lead` no DebugView em `/contato`, com `page_slug`, `tipo_demanda`, `icp` e `form_location`; a instrumentação e o envio real já foram confirmados, faltando a comprovação visual no painel após a publicação.
 - Exercitar o Vercel Firewall com cinco requisições inválidas e confirmar HTTP 429 na sexta, sem consumir a cota do Resend; aguardar dez minutos e confirmar a liberação.

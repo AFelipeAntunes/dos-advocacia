@@ -9,7 +9,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "test:redirects": "tsx --test src/lib/redirects.test.ts",
+    "test:redirects": "tsx --test src/lib/redirects.test.ts src/lib/redirect-graph.test.ts",
     "test:navigation": "tsx --test src/lib/legacy-navigation.test.ts",
     "test:sitemap": "tsx --test src/lib/sitemap.test.ts",
     "test:wix": "tsx --test src/lib/wix/*.test.ts",

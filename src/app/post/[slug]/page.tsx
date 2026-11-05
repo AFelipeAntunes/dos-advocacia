@@ -11,7 +11,7 @@ import { WixRichContent } from "@/components/wix-rich-content";
 import { getBlogCategories, getPostCategory, getRelatedPosts } from "@/lib/wix/blog-navigation";
 import { getWixPostBySlug, isWixBlogConfigured, listWixCategories, listWixPosts } from "@/lib/wix/blog";
 import { getWixFaqItems, getWixRelatedPostSlugs } from "@/lib/wix/rich-content";
-import { getPostDescription, getPostImageUrl } from "@/lib/wix/seo";
+import { getPostDescription, getPostImageUrl, getPostSeoTitle } from "@/lib/wix/seo";
 
 type PostPageProps = {
   params: Promise<{ slug: string }>;
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   const image = getPostImageUrl(post);
 
   return {
-    title: `${post.title} | DOS Advocacia Imobiliária`,
+    title: getPostSeoTitle(post) ?? `${post.title} | DOS Advocacia Imobiliária`,
     description,
     alternates: { canonical: `/post/${canonicalSlug}` },
     openGraph: {

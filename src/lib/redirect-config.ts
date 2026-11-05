@@ -72,5 +72,30 @@ export const postConsolidationRedirects = [
   [
     "/post/distrato-de-imóvel-na-planta-em-2026-quanto-você-tem-direito-a-receber-de-volta",
     "/post/distrato-de-imóvel-na-planta-a-construtora-quis-reter-50-o-stj-disse-que-não"
+  ],
+  // Lote editorial 1/2/3/8/9/11 — preparação local; F7 fora deste lote.
+  [
+    "/post/o-inquilino-não-paga-não-sai-e-a-imobiliária-fica-no-meio-o-que-fazer-numa-ação-de-despejo",
+    "/post/a-imobiliária-pode-ser-responsabilizada-em-uma-ação-de-despejo"
+  ],
+  [
+    "/post/o-inquilino-sublocou-o-imóvel-sem-avisar-e-a-imobiliária-foi-acionada-pelo-locador",
+    "/post/sublocação-não-autorizada-o-risco-que-a-imobiliária-assume-sem-perceber"
+  ],
+  [
+    "/post/a-dívida-de-condomínio-era-do-vendedor-e-agora-é-sua",
+    "/post/dívida-de-condomínio-e-iptu-na-compra-de-imóvel-quem-paga-a-conta"
+  ],
+  [
+    "/post/financiou-o-imóvel-está-pagando-mas-a-propriedade-ainda-não-é-sua",
+    "/post/alienação-fiduciária-de-imóvel-o-risco-real-que-ninguém-te-conta-antes-de-financiar"
+  ],
+  [
+    "/post/o-imóvel-era-da-herança-foi-vendido-antes-da-partilha",
+    "/post/compra-de-imóvel-em-inventário-riscos-que-ninguém-te-conta"
+  ],
+  [
+    "/post/passivo-oculto-em-imóvel-o-risco-que-ninguém-conta-antes-da-assinatura",
+    "/post/due-diligence-imobiliária-o-que-é-e-por-que-você-precisa-fazer-antes-de-qualquer-compra"
   ]
 ] as const;
