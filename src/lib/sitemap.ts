@@ -35,8 +35,8 @@ const DEFAULT_SITE_URL = "https://www.dosadvocacia.com.br";
  * em 2026-08-06) não elevam a data de todas as páginas.
  *
  * Rotas sem comprovação ficam sem `lastModified`:
- * - Home, nacional, Curitiba, Áreas, Treinamentos, locação e a landing têm
- *   alterações do lote ainda não publicadas; registrar a data real no rollout.
+ * - Home, nacional, Curitiba, Áreas e Treinamentos ficam sem data comprovada.
+ * Locação e a landing usam a data do deploy da PR #5.
  */
 const institutionalRoutes: readonly InstitutionalRoute[] = [
   { path: "/", changeFrequency: "weekly", priority: 1 },
@@ -44,8 +44,8 @@ const institutionalRoutes: readonly InstitutionalRoute[] = [
   { path: "/advogada-imobiliaria-curitiba", changeFrequency: "monthly", priority: 0.8 },
   { path: "/areas-de-atuacao", changeFrequency: "monthly", priority: 0.8 },
   { path: "/assessoria-juridica-compra-de-imovel", lastModified: "2026-08-02", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/assessoria-em-locacao", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/assessoria-juridica-para-imobiliarias", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/assessoria-em-locacao", lastModified: "2026-11-04", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/assessoria-juridica-para-imobiliarias", lastModified: "2026-11-04", changeFrequency: "monthly", priority: 0.8 },
   { path: "/conflitos-imobiliarios", lastModified: "2026-08-02", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contato", lastModified: "2026-08-06", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contratos-imobiliarios", lastModified: "2026-08-02", changeFrequency: "monthly", priority: 0.8 },
