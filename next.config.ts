@@ -7,6 +7,8 @@ import { legacyRedirects, postConsolidationRedirects } from "./src/lib/redirect-
 export { postConsolidationRedirects };
 
 const wixLegacyRedirects = [
+  ["/blog/categories/litígios-imobiliários", "/blog"],
+  ["/blog/categories/contratos-imobiliários", "/blog"],
   ["/compradores-e-investidores", "/assessoria-juridica-compra-de-imovel"],
   ["/compradores-e-investidores-1-1", "/assessoria-juridica-compra-de-imovel"],
   ["/compradores-e-investidores-1-2", "/assessoria-juridica-compra-de-imovel"],
