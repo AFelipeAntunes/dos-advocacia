@@ -56,19 +56,9 @@ export const loteSeisPares = [
   }
 ] as const satisfies readonly LoteSeisPar[];
 
-export const loteForaEscopo = {
-  semFusao: [4, 5] as const,
-  retidos: [6, 10] as const,
-  excluidoDesteLote: [7] as const
-} as const;
-
 /** Redirect histórico que já aponta ao destino do par 9 (sem cadeia). */
 export const inventarioHistoricalOrigin =
   "/post/compra-de-imóvel-em-inventário-o-risco-que-ninguém-te-conta-antes-de-assinar" as const;
 
 export const inventarioSharedDestination =
   "/post/compra-de-imóvel-em-inventário-riscos-que-ninguém-te-conta" as const;
-
-/** Origem F7 — deve permanecer fora da configuração ativa neste lote. */
-export const f7OriginExcluded =
-  "/post/o-vendedor-tinha-dívida-a-compra-foi-feita-o-risco-é-seu" as const;

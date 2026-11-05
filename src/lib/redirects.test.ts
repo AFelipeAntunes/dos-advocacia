@@ -3,10 +3,8 @@ import test from "node:test";
 
 import nextConfig, { postConsolidationRedirects } from "../../next.config";
 import {
-  f7OriginExcluded,
   inventarioHistoricalOrigin,
   inventarioSharedDestination,
-  loteForaEscopo,
   loteSeisPares
 } from "@/lib/redirect-lote-seis";
 import { legacyRedirects, postConsolidationRedirects as configPairs } from "@/lib/redirect-config";
@@ -75,14 +73,14 @@ const EXPECTED_HISTORICAL: readonly PathPair[] = [
 
 const EXPECTED_LOTE_SEIS: readonly PathPair[] = loteSeisPares.map((p) => [p.origem, p.destino]);
 
-const EXPECTED_ACTIVE: readonly PathPair[] = [...EXPECTED_HISTORICAL, ...EXPECTED_LOTE_SEIS];
+const EXPECTED_ACTIVE: readonly PathPair[] = [...EXPECTED_HISTORICAL, ...EXPECTED_LOTE_SEIS, ["/post/o-vendedor-tinha-dívida-a-compra-foi-feita-o-risco-é-seu","/post/fraude-à-execução-no-imóvel-o-risco-que-pode-te-custar-tudo"]];
 
-test("preserva os 12 históricos e adiciona exatamente os 6 pares do lote (18 total)", async () => {
-  assert.equal(postConsolidationRedirects.length, 18);
-  assert.equal(configPairs.length, 18);
+test("preserva os 12 históricos e adiciona os seis pares do lote e a Fusão 7 (19 total)", async () => {
+  assert.equal(postConsolidationRedirects.length, 19);
+  assert.equal(configPairs.length, 19);
   assert.deepEqual([...configPairs], [...EXPECTED_ACTIVE]);
   assert.deepEqual([...configPairs.slice(0, 12)], [...EXPECTED_HISTORICAL]);
-  assert.equal(new Set(postConsolidationRedirects.map(([source]) => source)).size, 18);
+  assert.equal(new Set(postConsolidationRedirects.map(([source]) => source)).size, 19);
   assert.deepEqual(selfLoops(EXPECTED_ACTIVE), []);
   assert.deepEqual(duplicateSources(EXPECTED_ACTIVE), []);
   assert.deepEqual(destinationIsAlsoSource(EXPECTED_ACTIVE), []);
@@ -125,18 +123,6 @@ test("lote seis: identidades literais NFC iguais ao manifesto e encodeURI estáv
     assert.equal(encodeURI(pair.destino), encodeURI(decodeURI(encodeURI(pair.destino))));
     assert.match(encodeURI(pair.origem), /%C3%/i);
   }
-});
-
-test("F7 e pares 4/5/6/10 permanecem fora do runtime", async () => {
-  assert.deepEqual([...loteForaEscopo.semFusao], [4, 5]);
-  assert.deepEqual([...loteForaEscopo.retidos], [6, 10]);
-  assert.deepEqual([...loteForaEscopo.excluidoDesteLote], [7]);
-
-  const redirects = await nextConfig.redirects?.();
-  assert.ok(redirects);
-  const sources = new Set(redirects.map((r) => r.source));
-  assert.equal(sources.has(encodeURI(f7OriginExcluded)), false);
-  assert.equal(sources.has(f7OriginExcluded), false);
 });
 
 test("grafo ativo: um salto, sem ciclo; par 9 compartilha destino de inventário", () => {

@@ -73,7 +73,7 @@ export const postConsolidationRedirects = [
     "/post/distrato-de-imóvel-na-planta-em-2026-quanto-você-tem-direito-a-receber-de-volta",
     "/post/distrato-de-imóvel-na-planta-a-construtora-quis-reter-50-o-stj-disse-que-não"
   ],
-  // Lote editorial 1/2/3/8/9/11 — preparação local; F7 fora deste lote.
+  // Lote editorial 1/2/3/8/9/11.
   [
     "/post/o-inquilino-não-paga-não-sai-e-a-imobiliária-fica-no-meio-o-que-fazer-numa-ação-de-despejo",
     "/post/a-imobiliária-pode-ser-responsabilizada-em-uma-ação-de-despejo"
@@ -97,5 +97,10 @@ export const postConsolidationRedirects = [
   [
     "/post/passivo-oculto-em-imóvel-o-risco-que-ninguém-conta-antes-da-assinatura",
     "/post/due-diligence-imobiliária-o-que-é-e-por-que-você-precisa-fazer-antes-de-qualquer-compra"
+  ],
+  // Fusão 7
+  [
+    "/post/o-vendedor-tinha-dívida-a-compra-foi-feita-o-risco-é-seu",
+    "/post/fraude-à-execução-no-imóvel-o-risco-que-pode-te-custar-tudo"
   ]
 ] as const;
