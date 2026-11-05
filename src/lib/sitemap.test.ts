@@ -206,9 +206,8 @@ test("datas institucionais são por rota e não mudam entre execuções", () => 
   assert.equal(iso(byPath.get("/contato")?.lastModified), "2026-08-06T00:00:00.000Z");
   assert.equal(iso(byPath.get("/due-diligence-imobiliaria")?.lastModified), "2026-08-02T00:00:00.000Z");
 
-  // Rotas com alteração local ainda não publicada: sem data até o rollout.
   for (const route of ["/", "/advogada-imobiliaria", "/advogada-imobiliaria-curitiba", "/areas-de-atuacao", "/treinamentos"]) {
-    assert.ok(!("lastModified" in byPath.get(route)!), route);
+    assert.equal(iso(byPath.get(route)?.lastModified), "2026-11-04T00:00:00.000Z", route);
   }
 });
 

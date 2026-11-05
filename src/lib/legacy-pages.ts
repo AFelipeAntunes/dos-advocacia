@@ -8,7 +8,7 @@ import path from "node:path";
 import { getContactFormMarkup } from "@/lib/contact-form";
 import { addInstitutionalLinks, normalizeLegacyLinks } from "@/lib/legacy-navigation";
 
-import { alignOfficeJsonLd } from "@/lib/office-schema";
+import { alignOfficeJsonLd, officeName } from "@/lib/office-schema";
 
 export const legacyPageFiles = {
   advogadaImobiliaria: "advogada-imobiliaria.html",
@@ -86,7 +86,7 @@ const loadLegacyPage = cache(async (key: LegacyPageKey): Promise<LegacyPage> => 
     jsonLd: extractJsonLd(source),
     ogImage: matchValue(source, /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/i),
     ogTitle: matchValue(source, /<meta\s+property=["']og:title["']\s+content=["']([^"']+)["']/i),
-    title: matchValue(source, /<title>([\s\S]*?)<\/title>/i) ?? "DOS Advocacia Imobiliária"
+    title: matchValue(source, /<title>([\s\S]*?)<\/title>/i) ?? officeName
   };
 });
 
@@ -107,7 +107,7 @@ export async function getLegacyMetadata(key: LegacyPageKey): Promise<Metadata> {
       title: page.ogTitle ?? page.title,
       description: page.description,
       url: page.canonical,
-      siteName: "DOS Advocacia Imobiliária",
+      siteName: officeName,
       images: page.ogImage ? [{ url: page.ogImage }] : undefined
     },
     twitter: {

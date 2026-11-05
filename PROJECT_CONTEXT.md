@@ -11,7 +11,7 @@ Manter uma presença digital premium para advocacia imobiliária, com foco em co
 | Item | Decisão atual |
 | --- | --- |
 | Nome profissional | **Drielle Pereira** |
-| Marca | DOS Advocacia Imobiliária |
+| Nome público | Drielle Pereira Advocacia Imobiliária |
 | Domínio canônico planejado | `https://www.dosadvocacia.com.br` |
 | Atuação | Curitiba/PR e atendimento em todo o Brasil |
 | Tipografia | Urbanist |
@@ -152,6 +152,8 @@ npm run build
 
 ## 11. Status atual
 
+**Revisão do CMO (05/11/2026):** correções de marca, FAQ da landing e sitemap preparadas na branch `qa/dos-revisao-cmo`.
+
 - **04/11/2026 — Candidato integrado card06 + seis redirects:** branch `qa/dos-seo-01-integration`, base f5a4e56. Authorização de Felipe no chat abrange branch/commit/push/PR/Preview, sem merge/produção/despublicação. Testes integrados96/96, typecheck/build23. Title SEO bruto com fallback; redirects18+11 e F7 fora. Validação real de Preview pendente; registros anteriores abaixo são históricos quando conflitarem.
 
 - Formulário de contato real implementado em `/contato` e nas sete páginas de serviço, com validação server-side em `POST /api/contato`, envio Resend para o escritório, confirmação automática ao visitante, estados acessíveis e evento GA4 `generate_lead` somente após sucesso.
@@ -193,6 +195,8 @@ npm run build
 - O agente de navegador deve repetir em Production o teste do GA4 DebugView para `generate_lead` e confirmar os parâmetros `page_slug`, `tipo_demanda`, `icp` e `form_location`, além de exercitar a sexta requisição inválida para confirmar o 429.
 
 ## 12. Alterações recentes
+
+- Nome público no rodapé institucional, metadados de compartilhamento e aplicativo; sete H3 no FAQ da landing; datas do deploy de 04/11 nas cinco rotas institucionais com novos links.
 
 - **04/11/2026:** integrados parser/title SEO, testes/fixture lote13 e seis redirects1/2/3/8/9/11 com testes de grafo/sitemap. Sem novo fetch/JS cliente/dependência; nenhuma alteração editorial Wix.
 
@@ -390,6 +394,8 @@ npm run build
 - Definida a estratégia Git: somente `main`.
 
 ## 13. Pendências e recomendações
+
+- Revisar e publicar o lote de correções do CMO pelo fluxo de PR. Depois, conferir rodapé, FAQ e sitemap no domínio público.
 
 - Validar Preview protegido deste candidato com Wix real: titles/fallback, seis301/destinos200, sitemap sem18origens, F7 sem regra. Sem autorização de merge/produção ou despublicação de origens. Revalidar base/checks e obter autorização específica antes de promover.
 
