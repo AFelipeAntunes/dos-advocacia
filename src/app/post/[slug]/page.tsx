@@ -6,12 +6,17 @@ import { notFound } from "next/navigation";
 import { BlogPostJsonLd } from "@/components/blog-post-json-ld";
 import { BlogCtaTracker } from "@/components/blog-cta-tracker";
 import { BlogPostCard } from "@/components/blog-post-card";
-import { BlogServiceCta } from "@/components/blog-service-cta";
+import { BlogDueDiligenceCompactCta, BlogServiceCta, getBlogServiceCtaPlan } from "@/components/blog-service-cta";
 import { FaqPageJsonLd } from "@/components/faq-page-json-ld";
 import { WixRichContent } from "@/components/wix-rich-content";
 import { getBlogCategories, getPostCategory, getRelatedPosts } from "@/lib/wix/blog-navigation";
 import { getWixPostBySlug, isWixBlogConfigured, listWixCategories, listWixPosts } from "@/lib/wix/blog";
-import { getWixFaqItems, getWixRelatedPostSlugs } from "@/lib/wix/rich-content";
+import {
+  findDueDiligenceCompactInsertionIndex,
+  getWixFaqItems,
+  getWixRelatedPostSlugs,
+  getWixRichContentBlocks
+} from "@/lib/wix/rich-content";
 import { getPostDescription, getPostImageUrl, getPostSeoTitle } from "@/lib/wix/seo";
 
 type PostPageProps = {
@@ -72,6 +77,11 @@ export default async function PostPage({ params }: PostPageProps) {
   const categories = getBlogCategories(posts, wixCategories);
   const relatedPosts = getRelatedPosts(post, posts, categories, getWixRelatedPostSlugs(post.richContent));
   const faqItems = getWixFaqItems(post.richContent);
+  const ctaPlan = getBlogServiceCtaPlan(post, categories);
+  const contentBlocks = getWixRichContentBlocks(post.richContent, post.contentText ?? post.excerpt);
+  const compactAfterBlockIndex = ctaPlan?.kind === "due-diligence"
+    ? findDueDiligenceCompactInsertionIndex(contentBlocks)
+    : null;
 
   return (
     <main className="article-shell">
@@ -88,7 +98,14 @@ export default async function PostPage({ params }: PostPageProps) {
           {post.minutesToRead ? ` · ${post.minutesToRead} min de leitura` : ""}
         </p>
         <BlogCtaTracker postSlug={post.slug} />
-        <div className="article__content"><WixRichContent content={post.richContent} fallback={post.contentText ?? post.excerpt} /></div>
+        <div className="article__content">
+          <WixRichContent
+            content={post.richContent}
+            fallback={post.contentText ?? post.excerpt}
+            compactAfterBlockIndex={compactAfterBlockIndex}
+            compactCta={compactAfterBlockIndex === null ? undefined : <BlogDueDiligenceCompactCta />}
+          />
+        </div>
         <BlogServiceCta categories={categories} post={post} />
         <Link className="article-contact-link" href="/contato">
           Prefere escrever? Fale por e-mail <span aria-hidden="true">↗</span>

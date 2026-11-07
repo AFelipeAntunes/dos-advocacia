@@ -1,0 +1,10 @@
+﻿# hashes DOS-DD-02.01 — 2026-11-07T13:58:55.1844197-03:00
+8391593d0693690068986e273e4959f6eee8122586deaece22af935603caf27b  relatorio-auditoria.md
+658ff2cf8c76304b1766d6220756dc74c3915c8daabe7deded6beb41e4f94b22  matriz-artigos.csv
+18e56767a2c935dd3dd1dd7641cebad4b7fef07be5ed67b1747ec64e118577f7  mapa-links.md
+96996b4eac5c30c977508c05525bc9ad9f99a614362f11e10f7cad4a61dd19ff  contrato-cta.md
+1bdfee3faa2ee7512c08a9b6abda793dfd5cd7e81cf3ba74f2e0440e923b6511  evidencias/01-auditoria/landing-capture.json
+52697b5d1e9bfb66e1034010bfce742fa5b13a83405732a4a3076803d106e382  evidencias/01-auditoria/titulos-06-11-verificacao.json
+93c6924ff3e20043a4bf6e0954b446444f6d7b8eb6da4865ba9e685c3255609c  evidencias/01-auditoria/categorias-wix.json
+ceb0c44e161dc06556c433984436c4f24a0d1597c4e3f27378a62fbfc0164a18  evidencias/01-auditoria/blog-card-id-map.csv
+8d1034e63afb977b2c1d4d90965475fc58c753d6ba8a5eaee60c40fc25352fa1  evidencias/01-auditoria/README.md

@@ -1,0 +1,53 @@
+[
+    {
+        "source":  "production HTML title",
+        "slug":  "imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+        "id":  "74602f53-b7bb-4051-91e4-f0970329db8b",
+        "capturedAt":  "2026-11-07T13:56:48.0397652-03:00",
+        "prefix":  "74602f53",
+        "liveTitle":  "Imóvel sem habite-se pode ser financiado? Riscos na compra",
+        "liveOg":  "Comprar imóvel sem Habite-se: o risco que aparece depois da escritura",
+        "status":  "CONFIRMADO_TITLE_SEO",
+        "reportedNew":  "Imóvel sem habite-se pode ser financiado? Riscos na compra"
+    },
+    {
+        "id":  "33142df0-712f-4cf2-a026-408433fad408",
+        "liveTitle":  "Caução em dinheiro na locação: regras para a imobiliária",
+        "prefix":  "33142df0",
+        "source":  "production HTML title",
+        "status":  "CONFIRMADO_TITLE_SEO",
+        "slug":  "caução-em-dinheiro-na-locação-a-imobiliária-sabe-o-que-a-lei-exige-dela",
+        "liveOg":  "Caução em dinheiro na locação: a imobiliária sabe o que a lei exige dela?",
+        "reportedNew":  "Caução em dinheiro na locação: regras para a imobiliária"
+    },
+    {
+        "id":  "2ec331ee-e88c-4ff8-ab87-6cefca96c3e8",
+        "liveTitle":  "Venda de imóvel sem assinatura do cônjuge pode ser anulada?",
+        "prefix":  "2ec331ee",
+        "source":  "production HTML title",
+        "status":  "CONFIRMADO_TITLE_SEO",
+        "slug":  "o-imóvel-foi-vendido-o-cônjuge-não-assinou-e-a-venda-pode-ser-desfeita",
+        "liveOg":  "O imóvel foi vendido. O cônjuge não assinou. E a venda pode ser desfeita.",
+        "reportedNew":  "Venda de imóvel sem assinatura do cônjuge pode ser anulada?"
+    },
+    {
+        "id":  "b121964f-f50e-4499-b71d-effa4479e40e",
+        "liveTitle":  "Vistoria de imóvel alugado: responsabilidade da imobiliária",
+        "prefix":  "b121964f",
+        "source":  "production HTML title",
+        "status":  "CONFIRMADO_TITLE_SEO",
+        "slug":  "vistoria-de-imóvel-alugado-a-responsabilidade-da-imobiliária",
+        "liveOg":  "Vistoria de imóvel alugado: a responsabilidade da imobiliária",
+        "reportedNew":  "Vistoria de imóvel alugado: responsabilidade da imobiliária"
+    },
+    {
+        "id":  "2fd857fc-c52f-4a57-af51-9547394af405",
+        "liveTitle":  "Inadimplência do aluguel: o que a imobiliária pode fazer",
+        "prefix":  "2fd857fc",
+        "source":  "production HTML title",
+        "status":  "CONFIRMADO_TITLE_SEO",
+        "slug":  "inadimplência-do-locatário-o-que-a-imobiliária-pode-e-não-pode-fazer",
+        "liveOg":  "Inadimplência do locatário: o que a imobiliária pode e não pode fazer",
+        "reportedNew":  "Inadimplência do aluguel: o que a imobiliária pode fazer"
+    }
+]

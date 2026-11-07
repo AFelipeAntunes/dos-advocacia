@@ -1,0 +1,34 @@
+{
+  "probedAt": "2026-11-07T18:18:24.022Z",
+  "url": "https://www.dosadvocacia.com.br/post/due-diligence-imobili%C3%A1ria-o-que-%C3%A9-e-por-que-voc%C3%AA-precisa-fazer-antes-de-qualquer-compra",
+  "httpStatusFirst": 200,
+  "location": null,
+  "title": "O que é due diligence imobiliária e o que ela verifica",
+  "h1": "Due diligence imobiliária: o que é e o que ela verifica antes da compra",
+  "canonical": "https://www.dosadvocacia.com.br/post/due-diligence-imobili%C3%A1ria-o-que-%C3%A9-e-por-que-voc%C3%AA-precisa-fazer-antes-de-qualquer-compra",
+  "faqJsonLdHits": 1,
+  "faqQuestions": [
+    "Due diligence imobiliária é obrigatória por lei?",
+    "Quanto tempo leva uma due diligence imobiliária?",
+    "Matrícula limpa garante que o imóvel é seguro?",
+    "Due diligence serve só para compra de imóvel?",
+    "Posso exigir que o vendedor quite as dívidas antes da assinatura?",
+    "O que acontece se a due diligence encontrar um problema?"
+  ],
+  "faqQuestionCount": 6,
+  "dueDiligenceHrefs": [
+    "https://www.dosadvocacia.com.br/due-diligence-imobiliaria"
+  ],
+  "dueDiligenceHrefCount": 1,
+  "expectedCmo": {
+    "titleSeo": "O que é due diligence imobiliária e o que ela verifica",
+    "faqCount": 6,
+    "linksToServiceMin": 2
+  },
+  "matches": {
+    "titleMatchesCmo": true,
+    "titleLooksPrevious": false,
+    "faqCountIsSix": true,
+    "hasAtLeastTwoServiceLinks": false
+  }
+}

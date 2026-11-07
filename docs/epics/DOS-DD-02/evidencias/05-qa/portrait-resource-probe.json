@@ -1,0 +1,246 @@
+{
+  "probedAt": "2026-11-07T18:32:33.629Z",
+  "note": "Scroll até #metodo-title para forçar lazy load do retrato profissional.",
+  "cells": [
+    {
+      "profile": "desktop",
+      "origin": "candidate",
+      "samples": [
+        {
+          "status": 200,
+          "sectionPresent": true,
+          "visible": true,
+          "imgPresent": true,
+          "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+          "alt": "Drielle Pereira, advogada imobiliarista",
+          "width": "1600",
+          "height": "1600",
+          "loading": "lazy",
+          "portraitFound": true,
+          "portraitTransferKb": 144.09,
+          "portraitDurationMs": 7,
+          "drielleWebpResources": [
+            {
+              "name": "drielle-pereira-retrato-profissional.webp",
+              "transferKb": 144.09,
+              "durationMs": 7
+            }
+          ]
+        },
+        {
+          "status": 200,
+          "sectionPresent": true,
+          "visible": true,
+          "imgPresent": true,
+          "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+          "alt": "Drielle Pereira, advogada imobiliarista",
+          "width": "1600",
+          "height": "1600",
+          "loading": "lazy",
+          "portraitFound": true,
+          "portraitTransferKb": 144.09,
+          "portraitDurationMs": 3,
+          "drielleWebpResources": [
+            {
+              "name": "drielle-pereira-retrato-profissional.webp",
+              "transferKb": 144.09,
+              "durationMs": 3
+            }
+          ]
+        },
+        {
+          "status": 200,
+          "sectionPresent": true,
+          "visible": true,
+          "imgPresent": true,
+          "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+          "alt": "Drielle Pereira, advogada imobiliarista",
+          "width": "1600",
+          "height": "1600",
+          "loading": "lazy",
+          "portraitFound": true,
+          "portraitTransferKb": 144.09,
+          "portraitDurationMs": 5,
+          "drielleWebpResources": [
+            {
+              "name": "drielle-pereira-retrato-profissional.webp",
+              "transferKb": 144.09,
+              "durationMs": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "origin": "baseline",
+      "samples": [
+        {
+          "status": 200,
+          "sectionPresent": false,
+          "visible": false,
+          "imgPresent": false,
+          "src": null,
+          "alt": null,
+          "width": null,
+          "height": null,
+          "loading": null,
+          "portraitFound": false,
+          "portraitTransferKb": null,
+          "portraitDurationMs": null,
+          "drielleWebpResources": []
+        },
+        {
+          "status": 200,
+          "sectionPresent": false,
+          "visible": false,
+          "imgPresent": false,
+          "src": null,
+          "alt": null,
+          "width": null,
+          "height": null,
+          "loading": null,
+          "portraitFound": false,
+          "portraitTransferKb": null,
+          "portraitDurationMs": null,
+          "drielleWebpResources": []
+        },
+        {
+          "status": 200,
+          "sectionPresent": false,
+          "visible": false,
+          "imgPresent": false,
+          "src": null,
+          "alt": null,
+          "width": null,
+          "height": null,
+          "loading": null,
+          "portraitFound": false,
+          "portraitTransferKb": null,
+          "portraitDurationMs": null,
+          "drielleWebpResources": []
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "origin": "candidate",
+      "samples": [
+        {
+          "status": 200,
+          "sectionPresent": true,
+          "visible": true,
+          "imgPresent": true,
+          "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+          "alt": "Drielle Pereira, advogada imobiliarista",
+          "width": "1600",
+          "height": "1600",
+          "loading": "lazy",
+          "portraitFound": true,
+          "portraitTransferKb": 144.09,
+          "portraitDurationMs": 889,
+          "drielleWebpResources": [
+            {
+              "name": "drielle-pereira-retrato-profissional.webp",
+              "transferKb": 144.09,
+              "durationMs": 889
+            }
+          ]
+        },
+        {
+          "status": 200,
+          "sectionPresent": true,
+          "visible": true,
+          "imgPresent": true,
+          "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+          "alt": "Drielle Pereira, advogada imobiliarista",
+          "width": "1600",
+          "height": "1600",
+          "loading": "lazy",
+          "portraitFound": true,
+          "portraitTransferKb": 144.09,
+          "portraitDurationMs": 890,
+          "drielleWebpResources": [
+            {
+              "name": "drielle-pereira-retrato-profissional.webp",
+              "transferKb": 144.09,
+              "durationMs": 890
+            }
+          ]
+        },
+        {
+          "status": 200,
+          "sectionPresent": true,
+          "visible": true,
+          "imgPresent": true,
+          "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+          "alt": "Drielle Pereira, advogada imobiliarista",
+          "width": "1600",
+          "height": "1600",
+          "loading": "lazy",
+          "portraitFound": true,
+          "portraitTransferKb": 144.09,
+          "portraitDurationMs": 877,
+          "drielleWebpResources": [
+            {
+              "name": "drielle-pereira-retrato-profissional.webp",
+              "transferKb": 144.09,
+              "durationMs": 877
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "origin": "baseline",
+      "samples": [
+        {
+          "status": 200,
+          "sectionPresent": false,
+          "visible": false,
+          "imgPresent": false,
+          "src": null,
+          "alt": null,
+          "width": null,
+          "height": null,
+          "loading": null,
+          "portraitFound": false,
+          "portraitTransferKb": null,
+          "portraitDurationMs": null,
+          "drielleWebpResources": []
+        },
+        {
+          "status": 200,
+          "sectionPresent": false,
+          "visible": false,
+          "imgPresent": false,
+          "src": null,
+          "alt": null,
+          "width": null,
+          "height": null,
+          "loading": null,
+          "portraitFound": false,
+          "portraitTransferKb": null,
+          "portraitDurationMs": null,
+          "drielleWebpResources": []
+        },
+        {
+          "status": 200,
+          "sectionPresent": false,
+          "visible": false,
+          "imgPresent": false,
+          "src": null,
+          "alt": null,
+          "width": null,
+          "height": null,
+          "loading": null,
+          "portraitFound": false,
+          "portraitTransferKb": null,
+          "portraitDurationMs": null,
+          "drielleWebpResources": []
+        }
+      ]
+    }
+  ]
+}

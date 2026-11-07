@@ -1,0 +1,102 @@
+{
+  "probedAt": "2026-11-07T19:14:35.143Z",
+  "chrome": "156.0.8078.81",
+  "asset": "drielle-pereira-retrato-profissional.webp",
+  "note": "CLS zero no cold load sem scroll não prova ausência de shift no lazy load; esta sonda acompanha shifts no scroll/decodificação.",
+  "samples": [
+    {
+      "label": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "mobile": false,
+      "sectionExists": true,
+      "imgMeta": {
+        "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+        "alt": "Drielle Pereira, advogada imobiliarista",
+        "widthAttr": "1600",
+        "heightAttr": "1600",
+        "loading": "lazy",
+        "decoding": "async",
+        "naturalWidth": 1600,
+        "naturalHeight": 1600,
+        "complete": true,
+        "clientWidth": 504,
+        "clientHeight": 504
+      },
+      "resource": {
+        "name": "http://127.0.0.1:3025/assets/images/drielle-pereira-retrato-profissional.webp",
+        "transferKb": 144.09,
+        "encodedBodyKb": 143.79,
+        "durationMs": 7
+      },
+      "observerSupport": true,
+      "clsBeforeScroll": 0,
+      "clsAfterScrollDecode": 0,
+      "shiftCountBefore": 0,
+      "shiftCountAfter": 0,
+      "shiftsDuringProbe": [],
+      "dimensionsReserved": true
+    },
+    {
+      "label": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "mobile": true,
+      "sectionExists": true,
+      "imgMeta": {
+        "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+        "alt": "Drielle Pereira, advogada imobiliarista",
+        "widthAttr": "1600",
+        "heightAttr": "1600",
+        "loading": "lazy",
+        "decoding": "async",
+        "naturalWidth": 1600,
+        "naturalHeight": 1600,
+        "complete": true,
+        "clientWidth": 358,
+        "clientHeight": 358
+      },
+      "resource": {
+        "name": "http://127.0.0.1:3025/assets/images/drielle-pereira-retrato-profissional.webp",
+        "transferKb": 144.09,
+        "encodedBodyKb": 143.79,
+        "durationMs": 3
+      },
+      "observerSupport": true,
+      "clsBeforeScroll": 0,
+      "clsAfterScrollDecode": 0,
+      "shiftCountBefore": 0,
+      "shiftCountAfter": 0,
+      "shiftsDuringProbe": [],
+      "dimensionsReserved": true
+    },
+    {
+      "label": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "mobile": false,
+      "sectionExists": false,
+      "imgMeta": null,
+      "resource": null,
+      "observerSupport": true,
+      "clsBeforeScroll": 0,
+      "clsAfterScrollDecode": 0,
+      "shiftCountBefore": 0,
+      "shiftCountAfter": 0,
+      "shiftsDuringProbe": [],
+      "dimensionsReserved": false
+    },
+    {
+      "label": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "mobile": true,
+      "sectionExists": false,
+      "imgMeta": null,
+      "resource": null,
+      "observerSupport": true,
+      "clsBeforeScroll": 0,
+      "clsAfterScrollDecode": 0,
+      "shiftCountBefore": 0,
+      "shiftCountAfter": 0,
+      "shiftsDuringProbe": [],
+      "dimensionsReserved": false
+    }
+  ]
+}

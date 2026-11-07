@@ -1,0 +1,56 @@
+{
+  "captures": [
+    {
+      "file": "metodo-portrait-desktop-1440.png",
+      "meta": {
+        "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+        "alt": "Drielle Pereira, advogada imobiliarista",
+        "width": "1600",
+        "height": "1600",
+        "loading": "lazy",
+        "naturalWidth": 1600,
+        "naturalHeight": 1600,
+        "complete": true
+      },
+      "layout": {
+        "columns": "504px 616px",
+        "figureTop": 403.5054016113281,
+        "copyTop": 407.578125,
+        "figureLeft": 120,
+        "copyLeft": 704,
+        "photoAboveText": false,
+        "photoBesideText": true
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "file": "metodo-portrait-mobile-390.png",
+      "meta": {
+        "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+        "alt": "Drielle Pereira, advogada imobiliarista",
+        "width": "1600",
+        "height": "1600",
+        "loading": "lazy",
+        "naturalWidth": 1600,
+        "naturalHeight": 1600,
+        "complete": true
+      },
+      "layout": {
+        "columns": "358px",
+        "figureTop": 598.2146606445312,
+        "copyTop": 970.828125,
+        "figureLeft": 16,
+        "copyLeft": 16,
+        "photoAboveText": true,
+        "photoBesideText": false
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ]
+}

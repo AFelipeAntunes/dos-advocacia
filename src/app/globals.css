@@ -311,6 +311,11 @@ h1, h2, h3 { text-wrap: balance; }
 .breadcrumb a:hover { color: white; }
 .page-hero h1 { max-width: 850px; margin-bottom: 1.3rem; font-size: clamp(3rem, 6.3vw, 6rem); font-weight: 500; letter-spacing: -.065em; line-height: .98; }
 .page-hero h1 em { color: var(--coral); font-style: italic; font-weight: 400; }
+/* CTO 16 R1: content-visibility only on due diligence (scoped by .dd-lcp-opt). */
+.dd-lcp-opt main > .page-hero ~ section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
 .page-lead { max-width: 650px; margin-bottom: 0; color: rgba(255,255,255,.75); font-size: clamp(1.05rem, 1.65vw, 1.25rem); line-height: 1.6; }
 .page-hero-stone { color: var(--navy); background: var(--stone); }
 .page-hero-stone .breadcrumb { color: var(--slate); }
@@ -355,6 +360,11 @@ h1, h2, h3 { text-wrap: balance; }
 .content-guide { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(3rem, 10vw, 9rem); }
 .content-guide h2 { margin-bottom: 1.35rem; font-size: clamp(2.25rem, 4vw, 3.8rem); font-weight: 500; letter-spacing: -.055em; line-height: 1.04; }
 .content-guide > div > p { max-width: 560px; color: var(--slate); font-size: 1.05rem; line-height: 1.65; }
+.dd-method-layout { display: grid; grid-template-columns: minmax(260px, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); }
+.dd-method-portrait { margin: 0; overflow: hidden; }
+.dd-method-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: center top; }
+.dd-method-copy h2 { margin-bottom: 1.35rem; font-size: clamp(2.25rem, 4vw, 3.8rem); font-weight: 500; letter-spacing: -.055em; line-height: 1.04; }
+.dd-method-copy > p { max-width: 560px; color: var(--slate); font-size: 1.05rem; line-height: 1.65; }
 .topic-list { border-top: 1px solid var(--line); }
 .topic-item { display: grid; grid-template-columns: 55px 1fr; gap: 1rem; padding: 1.65rem 0; border-bottom: 1px solid var(--line); }
 .topic-item span { color: var(--coral); font-size: .75rem; font-weight: 800; }
@@ -444,7 +454,7 @@ h1, h2, h3 { text-wrap: balance; }
   .hero { background-image: url("/assets/images/hero-dos-advocacia-900.webp"); }
   .hero { min-height: 700px; }
   .hero::after { right: -12%; width: 52vw; }
-  .intro-layout, .process-layout, .about-layout, .content-guide, .contact-layout, .founder-feature-grid, .training-teaser-grid, .training-intro-grid, .training-format-grid, .trainer-profile-grid, .training-faq-grid { grid-template-columns: 1fr; }
+  .intro-layout, .process-layout, .about-layout, .content-guide, .dd-method-layout, .contact-layout, .founder-feature-grid, .training-teaser-grid, .training-intro-grid, .training-format-grid, .trainer-profile-grid, .training-faq-grid { grid-template-columns: 1fr; }
   .intro-layout { gap: .5rem; }
   .process-layout { gap: 3.5rem; }
   .section-heading { align-items: flex-start; flex-direction: column; }
@@ -695,6 +705,39 @@ h1, h2, h3 { text-wrap: balance; }
 .article-service-cta { margin-top: 2.5rem; padding: clamp(1.8rem, 4vw, 2.6rem); color: white; background: var(--navy); }
 .article-service-cta h2 { max-width: 560px; margin: .5rem 0 .9rem; color: white; font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 500; letter-spacing: -.04em; line-height: 1.1; }
 .article-service-cta__lead { max-width: 52ch; margin: 0 0 1.4rem; color: rgba(255,255,255,.78); font-size: 1rem; line-height: 1.6; }
+.article-service-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .9rem 1.25rem;
+  align-items: center;
+}
+.article-service-cta--compact {
+  margin: 0 0 1.8rem;
+  padding: 1.15rem 1.25rem;
+  color: var(--navy);
+  background: var(--stone);
+  border-left: 3px solid var(--coral);
+}
+.article-service-cta--compact p {
+  margin: 0 0 .85rem;
+  color: var(--slate);
+  font-size: 1rem;
+  line-height: 1.55;
+  max-width: 58ch;
+}
+.article-service-cta--compact .text-link {
+  color: var(--teal);
+  font-weight: 750;
+}
+.article-service-cta--due-diligence .text-link-light {
+  color: rgba(255,255,255,.88);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+.article-service-cta--due-diligence .text-link-light:hover {
+  color: white;
+}
 
 .article__content {
   margin-top: 2rem;

@@ -1,0 +1,34 @@
+{
+  "comparedAt": "2026-11-07T18:31:24.229Z",
+  "portraitAsset": "/assets/images/drielle-pereira-retrato-profissional.webp",
+  "cells": {
+    "desktop-cold:candidate": {
+      "foundCount": 0,
+      "total": 5,
+      "transferKbAvg": null,
+      "durationMsAvg": null,
+      "note": "lazy below-fold: resource often absent in cold load without scroll"
+    },
+    "desktop-cold:baseline": {
+      "foundCount": 0,
+      "total": 5,
+      "transferKbAvg": null,
+      "durationMsAvg": null,
+      "note": "lazy below-fold: resource often absent in cold load without scroll"
+    },
+    "mobile-cold:candidate": {
+      "foundCount": 0,
+      "total": 5,
+      "transferKbAvg": null,
+      "durationMsAvg": null,
+      "note": "lazy below-fold: resource often absent in cold load without scroll"
+    },
+    "mobile-cold:baseline": {
+      "foundCount": 0,
+      "total": 5,
+      "transferKbAvg": null,
+      "durationMsAvg": null,
+      "note": "lazy below-fold: resource often absent in cold load without scroll"
+    }
+  }
+}

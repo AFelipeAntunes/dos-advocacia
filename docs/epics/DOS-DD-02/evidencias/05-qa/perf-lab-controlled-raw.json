@@ -1,0 +1,7513 @@
+{
+  "method": "DOS-DD-02.05 controlled lab (CTO 13 R1/R2)",
+  "invalidatesPriorLab": {
+    "note": "LCP/CLS da bateria anterior (localhost×CDN, getEntriesByType/FCP fallback) são inválidos. Arquivos preservados com prefixo INVALIDATED-.",
+    "files": [
+      "INVALIDATED-perf-lab-raw.json",
+      "INVALIDATED-perf-lab-summary.json",
+      "INVALIDATED-perf-lab-console.txt",
+      "INVALIDATED-perf-lab-run.log"
+    ]
+  },
+  "candidateOrigin": "http://127.0.0.1:3025",
+  "baselineOrigin": "http://127.0.0.1:3024",
+  "candidateLabel": "qa/dos-dd-02-05 worktree uncommitted @ base 7fec6b2 (manifesto fechado)",
+  "baselineLabel": "isolated worktree detached 7fec6b2 production build",
+  "chrome": "156.0.8078.81",
+  "runsPerCell": 5,
+  "order": "alternating baseline/candidate by run parity",
+  "blockedExternal": [
+    "googletagmanager",
+    "google-analytics",
+    "vercel-insights",
+    "va.vercel-scripts"
+  ],
+  "startedAt": "2026-11-07T18:47:11.010Z",
+  "finishedAt": "2026-11-07T18:52:38.077Z",
+  "durationMs": 327066,
+  "raw": [
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2192,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 9,
+      "loadMs": 345,
+      "lcpMs": 572,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia.webp",
+      "lcpSize": 1147680,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 572,
+          "size": 1147680,
+          "url": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 3,
+      "longTasks": [
+        {
+          "start": 290,
+          "dur": 53
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2161,
+      "documentTransferBytes": 10237,
+      "transferBytes": 379615,
+      "encodedBytes": 374815,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 187008,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 1,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2209,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 105,
+      "loadMs": 378,
+      "lcpMs": 404,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia.webp",
+      "lcpSize": 1147680,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 404,
+          "size": 1147680,
+          "url": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 0,
+      "longTasks": [],
+      "longTaskCount": 0,
+      "measuredUntilMs": 2191,
+      "documentTransferBytes": 10225,
+      "transferBytes": 379811,
+      "encodedBytes": 375011,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 187008,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 1,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2123,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 14,
+      "loadMs": 291,
+      "lcpMs": 312,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia.webp",
+      "lcpSize": 1147680,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 312,
+          "size": 1147680,
+          "url": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 90,
+      "longTasks": [
+        {
+          "start": 84,
+          "dur": 140
+        },
+        {
+          "start": 240,
+          "dur": 50
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2103,
+      "documentTransferBytes": 10225,
+      "transferBytes": 379811,
+      "encodedBytes": 375011,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 187008,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 2,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2060,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 11,
+      "loadMs": 225,
+      "lcpMs": 244,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia.webp",
+      "lcpSize": 1147680,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 244,
+          "size": 1147680,
+          "url": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 0,
+      "longTasks": [],
+      "longTaskCount": 0,
+      "measuredUntilMs": 2046,
+      "documentTransferBytes": 10237,
+      "transferBytes": 379615,
+      "encodedBytes": 374815,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 187008,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 2,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2092,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 9,
+      "loadMs": 257,
+      "lcpMs": 276,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia.webp",
+      "lcpSize": 1147680,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 276,
+          "size": 1147680,
+          "url": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 76,
+      "longTasks": [
+        {
+          "start": 66,
+          "dur": 126
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2078,
+      "documentTransferBytes": 10237,
+      "transferBytes": 379615,
+      "encodedBytes": 374815,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 187008,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 3,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2062,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 10,
+      "loadMs": 235,
+      "lcpMs": 256,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia.webp",
+      "lcpSize": 1147680,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 256,
+          "size": 1147680,
+          "url": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 69,
+      "longTasks": [
+        {
+          "start": 59,
+          "dur": 119
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2046,
+      "documentTransferBytes": 10225,
+      "transferBytes": 379811,
+      "encodedBytes": 375011,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 187008,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 3,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2134,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 12,
+      "loadMs": 300,
+      "lcpMs": 308,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia.webp",
+      "lcpSize": 1147680,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 308,
+          "size": 1147680,
+          "url": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 111,
+      "longTasks": [
+        {
+          "start": 67,
+          "dur": 145
+        },
+        {
+          "start": 231,
+          "dur": 66
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2118,
+      "documentTransferBytes": 10225,
+      "transferBytes": 379811,
+      "encodedBytes": 375011,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 187008,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 4,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2181,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 17,
+      "loadMs": 349,
+      "lcpMs": 376,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia.webp",
+      "lcpSize": 1147680,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 376,
+          "size": 1147680,
+          "url": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 7,
+      "longTasks": [
+        {
+          "start": 290,
+          "dur": 57
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2164,
+      "documentTransferBytes": 10237,
+      "transferBytes": 379615,
+      "encodedBytes": 374815,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 187008,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 4,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2104,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 11,
+      "loadMs": 271,
+      "lcpMs": 300,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia.webp",
+      "lcpSize": 1147680,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 300,
+          "size": 1147680,
+          "url": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 79,
+      "longTasks": [
+        {
+          "start": 77,
+          "dur": 127
+        },
+        {
+          "start": 211,
+          "dur": 52
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2085,
+      "documentTransferBytes": 10237,
+      "transferBytes": 379615,
+      "encodedBytes": 374815,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 187008,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 5,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2242,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 86,
+      "loadMs": 404,
+      "lcpMs": 416,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia.webp",
+      "lcpSize": 1147680,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 416,
+          "size": 1147680,
+          "url": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 5,
+      "longTasks": [
+        {
+          "start": 347,
+          "dur": 55
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2224,
+      "documentTransferBytes": 10225,
+      "transferBytes": 379811,
+      "encodedBytes": 375011,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 187008,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 5,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2078,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 37,
+      "loadMs": 253,
+      "lcpMs": 232,
+      "lcpElement": "H1 :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpUrl": null,
+      "lcpSize": 238210,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 232,
+          "size": 238210,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 54,
+      "longTasks": [
+        {
+          "start": 73,
+          "dur": 103
+        },
+        {
+          "start": 194,
+          "dur": 51
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2063,
+      "documentTransferBytes": 7947,
+      "transferBytes": 194147,
+      "encodedBytes": 189947,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 1,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2261,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 57,
+      "loadMs": 436,
+      "lcpMs": 424,
+      "lcpElement": "H1 :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpUrl": null,
+      "lcpSize": 237636,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 424,
+          "size": 237636,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 147,
+      "longTasks": [
+        {
+          "start": 119,
+          "dur": 197
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2246,
+      "documentTransferBytes": 14068,
+      "transferBytes": 200476,
+      "encodedBytes": 196276,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 1,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2157,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 9,
+      "loadMs": 333,
+      "lcpMs": 312,
+      "lcpElement": "H1 :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpUrl": null,
+      "lcpSize": 237636,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 312,
+          "size": 237636,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 118,
+      "longTasks": [
+        {
+          "start": 47,
+          "dur": 156
+        },
+        {
+          "start": 264,
+          "dur": 62
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2142,
+      "documentTransferBytes": 14068,
+      "transferBytes": 200476,
+      "encodedBytes": 196276,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 2,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2158,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 9,
+      "loadMs": 327,
+      "lcpMs": 316,
+      "lcpElement": "H1 :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpUrl": null,
+      "lcpSize": 238210,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 316,
+          "size": 238210,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 105,
+      "longTasks": [
+        {
+          "start": 64,
+          "dur": 155
+        },
+        {
+          "start": 270,
+          "dur": 50
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2140,
+      "documentTransferBytes": 7947,
+      "transferBytes": 194147,
+      "encodedBytes": 189947,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 2,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2075,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 11,
+      "loadMs": 239,
+      "lcpMs": 208,
+      "lcpElement": "H1 :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpUrl": null,
+      "lcpSize": 238210,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 208,
+          "size": 238210,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 2,
+      "longTasks": [
+        {
+          "start": 184,
+          "dur": 52
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2060,
+      "documentTransferBytes": 7947,
+      "transferBytes": 194147,
+      "encodedBytes": 189947,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 3,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2135,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 8,
+      "loadMs": 291,
+      "lcpMs": 284,
+      "lcpElement": "H1 :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpUrl": null,
+      "lcpSize": 237636,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 284,
+          "size": 237636,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 83,
+      "longTasks": [
+        {
+          "start": 60,
+          "dur": 133
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2116,
+      "documentTransferBytes": 14068,
+      "transferBytes": 200476,
+      "encodedBytes": 196276,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 3,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2167,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 37,
+      "loadMs": 330,
+      "lcpMs": 284,
+      "lcpElement": "H1 :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpUrl": null,
+      "lcpSize": 237636,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 284,
+          "size": 237636,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 14,
+      "longTasks": [
+        {
+          "start": 258,
+          "dur": 64
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2149,
+      "documentTransferBytes": 14068,
+      "transferBytes": 200476,
+      "encodedBytes": 196276,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 4,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2085,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 10,
+      "loadMs": 251,
+      "lcpMs": 224,
+      "lcpElement": "H1 :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpUrl": null,
+      "lcpSize": 238210,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 224,
+          "size": 238210,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 72,
+      "longTasks": [
+        {
+          "start": 52,
+          "dur": 116
+        },
+        {
+          "start": 187,
+          "dur": 56
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2070,
+      "documentTransferBytes": 7947,
+      "transferBytes": 194147,
+      "encodedBytes": 189947,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 4,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2204,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 9,
+      "loadMs": 364,
+      "lcpMs": 356,
+      "lcpElement": "H1 :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpUrl": null,
+      "lcpSize": 238210,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 356,
+          "size": 238210,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 132,
+      "longTasks": [
+        {
+          "start": 62,
+          "dur": 168
+        },
+        {
+          "start": 292,
+          "dur": 64
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2185,
+      "documentTransferBytes": 7947,
+      "transferBytes": 194147,
+      "encodedBytes": 189947,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 5,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2261,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 32,
+      "loadMs": 425,
+      "lcpMs": 404,
+      "lcpElement": "H1 :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpUrl": null,
+      "lcpSize": 237636,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 404,
+          "size": 237636,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 138,
+      "longTasks": [
+        {
+          "start": 109,
+          "dur": 178
+        },
+        {
+          "start": 357,
+          "dur": 60
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2244,
+      "documentTransferBytes": 14068,
+      "transferBytes": 200476,
+      "encodedBytes": 196276,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 5,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2159,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 43,
+      "loadMs": 324,
+      "lcpMs": 288,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 305688,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 288,
+          "size": 305688,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 103,
+      "longTasks": [
+        {
+          "start": 86,
+          "dur": 135
+        },
+        {
+          "start": 244,
+          "dur": 68
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2140,
+      "documentTransferBytes": 16293,
+      "transferBytes": 376657,
+      "encodedBytes": 372157,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 1,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2175,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 71,
+      "loadMs": 335,
+      "lcpMs": 304,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 305688,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 304,
+          "size": 305688,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 84,
+      "longTasks": [
+        {
+          "start": 117,
+          "dur": 121
+        },
+        {
+          "start": 259,
+          "dur": 63
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2157,
+      "documentTransferBytes": 16290,
+      "transferBytes": 376862,
+      "encodedBytes": 372362,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 1,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2087,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 10,
+      "loadMs": 262,
+      "lcpMs": 244,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 305688,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 244,
+          "size": 305688,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 1,
+      "longTasks": [
+        {
+          "start": 209,
+          "dur": 51
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2073,
+      "documentTransferBytes": 16290,
+      "transferBytes": 376862,
+      "encodedBytes": 372362,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 2,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2086,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 9,
+      "loadMs": 262,
+      "lcpMs": 256,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 305688,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 256,
+          "size": 305688,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 92,
+      "longTasks": [
+        {
+          "start": 42,
+          "dur": 136
+        },
+        {
+          "start": 195,
+          "dur": 56
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2074,
+      "documentTransferBytes": 16293,
+      "transferBytes": 376657,
+      "encodedBytes": 372157,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 2,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2029,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 14,
+      "loadMs": 206,
+      "lcpMs": 204,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 305688,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 204,
+          "size": 305688,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 46,
+      "longTasks": [
+        {
+          "start": 49,
+          "dur": 96
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2017,
+      "documentTransferBytes": 16293,
+      "transferBytes": 376657,
+      "encodedBytes": 372157,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 3,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2346,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 12,
+      "loadMs": 249,
+      "lcpMs": 236,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 305688,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 236,
+          "size": 305688,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 83,
+      "longTasks": [
+        {
+          "start": 48,
+          "dur": 128
+        },
+        {
+          "start": 192,
+          "dur": 55
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2153,
+      "documentTransferBytes": 16290,
+      "transferBytes": 376862,
+      "encodedBytes": 372362,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 3,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2204,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 13,
+      "loadMs": 374,
+      "lcpMs": 356,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 305688,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 356,
+          "size": 305688,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 140,
+      "longTasks": [
+        {
+          "start": 56,
+          "dur": 188
+        },
+        {
+          "start": 311,
+          "dur": 52
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 2186,
+      "documentTransferBytes": 16290,
+      "transferBytes": 376862,
+      "encodedBytes": 372362,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 4,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2218,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 9,
+      "loadMs": 386,
+      "lcpMs": 348,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 312080,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 348,
+          "size": 312080,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0.0008,
+      "shiftCount": 1,
+      "shiftWindows": [
+        {
+          "start": 376.80000001192093,
+          "end": 376.80000001192093,
+          "value": 0.000792263957208076
+        }
+      ],
+      "shiftsRaw": [
+        {
+          "t": 376.80000001192093,
+          "v": 0.000792263957208076,
+          "hadInput": false
+        }
+      ],
+      "proxyMs": 133,
+      "longTasks": [
+        {
+          "start": 96,
+          "dur": 183
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2203,
+      "documentTransferBytes": 16293,
+      "transferBytes": 376657,
+      "encodedBytes": 372157,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 4,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2115,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 282,
+      "lcpMs": 284,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 305688,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 284,
+          "size": 305688,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 73,
+      "longTasks": [
+        {
+          "start": 50,
+          "dur": 123
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2101,
+      "documentTransferBytes": 16293,
+      "transferBytes": 376657,
+      "encodedBytes": 372157,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 5,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1993,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 174,
+      "lcpMs": 176,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 305688,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 176,
+          "size": 305688,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 32,
+      "longTasks": [
+        {
+          "start": 39,
+          "dur": 82
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 1981,
+      "documentTransferBytes": 16290,
+      "transferBytes": 376862,
+      "encodedBytes": 372362,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 5,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2025,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 26,
+      "loadMs": 208,
+      "lcpMs": 204,
+      "lcpElement": "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois",
+      "lcpUrl": null,
+      "lcpSize": 315088,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 204,
+          "size": 315088,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 0,
+      "longTasks": [],
+      "longTaskCount": 0,
+      "measuredUntilMs": 2013,
+      "documentTransferBytes": 11304,
+      "transferBytes": 197504,
+      "encodedBytes": 193304,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 1,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2207,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 30,
+      "loadMs": 347,
+      "lcpMs": 336,
+      "lcpElement": "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois",
+      "lcpUrl": null,
+      "lcpSize": 315088,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 336,
+          "size": 315088,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 114,
+      "longTasks": [
+        {
+          "start": 58,
+          "dur": 164
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2179,
+      "documentTransferBytes": 11308,
+      "transferBytes": 197716,
+      "encodedBytes": 193516,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 1,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2108,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 289,
+      "lcpMs": 260,
+      "lcpElement": "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois",
+      "lcpUrl": null,
+      "lcpSize": 315088,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 260,
+          "size": 315088,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 6,
+      "longTasks": [
+        {
+          "start": 229,
+          "dur": 56
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2096,
+      "documentTransferBytes": 11308,
+      "transferBytes": 197716,
+      "encodedBytes": 193516,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 2,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2106,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 277,
+      "lcpMs": 272,
+      "lcpElement": "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois",
+      "lcpUrl": null,
+      "lcpSize": 315088,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 272,
+          "size": 315088,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 89,
+      "longTasks": [
+        {
+          "start": 38,
+          "dur": 139
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2092,
+      "documentTransferBytes": 11304,
+      "transferBytes": 197504,
+      "encodedBytes": 193304,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 2,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2042,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 223,
+      "lcpMs": 204,
+      "lcpElement": "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois",
+      "lcpUrl": null,
+      "lcpSize": 315088,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 204,
+          "size": 315088,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 0,
+      "longTasks": [],
+      "longTaskCount": 0,
+      "measuredUntilMs": 2029,
+      "documentTransferBytes": 11304,
+      "transferBytes": 197504,
+      "encodedBytes": 193304,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 3,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2094,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 267,
+      "lcpMs": 272,
+      "lcpElement": "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois",
+      "lcpUrl": null,
+      "lcpSize": 315088,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 272,
+          "size": 315088,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 83,
+      "longTasks": [
+        {
+          "start": 43,
+          "dur": 133
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2081,
+      "documentTransferBytes": 11308,
+      "transferBytes": 197716,
+      "encodedBytes": 193516,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 3,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2010,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 8,
+      "loadMs": 191,
+      "lcpMs": 184,
+      "lcpElement": "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois",
+      "lcpUrl": null,
+      "lcpSize": 315088,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 184,
+          "size": 315088,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 0,
+      "longTasks": [],
+      "longTaskCount": 0,
+      "measuredUntilMs": 1997,
+      "documentTransferBytes": 11308,
+      "transferBytes": 197716,
+      "encodedBytes": 193516,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 4,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2100,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 269,
+      "lcpMs": 264,
+      "lcpElement": "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois",
+      "lcpUrl": null,
+      "lcpSize": 315088,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 264,
+          "size": 315088,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 77,
+      "longTasks": [
+        {
+          "start": 37,
+          "dur": 127
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2086,
+      "documentTransferBytes": 11304,
+      "transferBytes": 197504,
+      "encodedBytes": 193304,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 4,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2224,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 403,
+      "lcpMs": 444,
+      "lcpElement": "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois",
+      "lcpUrl": null,
+      "lcpSize": 315088,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 444,
+          "size": 315088,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 144,
+      "longTasks": [
+        {
+          "start": 106,
+          "dur": 194
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2208,
+      "documentTransferBytes": 11304,
+      "transferBytes": 197504,
+      "encodedBytes": 193304,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 5,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2085,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 256,
+      "lcpMs": 260,
+      "lcpElement": "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois",
+      "lcpUrl": null,
+      "lcpSize": 315088,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 260,
+          "size": 315088,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 84,
+      "longTasks": [
+        {
+          "start": 33,
+          "dur": 134
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 2072,
+      "documentTransferBytes": 11308,
+      "transferBytes": 197716,
+      "encodedBytes": 193516,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 5,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5548,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 2007,
+      "lcpMs": 1584,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia-900.webp",
+      "lcpSize": 273780,
+      "lcpEntryCount": 2,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1380,
+          "size": 69510,
+          "url": null,
+          "id": "hero-title"
+        },
+        {
+          "startTime": 1584,
+          "size": 273780,
+          "url": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia-900.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 173,
+      "longTasks": [
+        {
+          "start": 1572,
+          "dur": 223
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 5530,
+      "documentTransferBytes": 10237,
+      "transferBytes": 329645,
+      "encodedBytes": 324845,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 137038,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 1,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5700,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 5,
+      "loadMs": 2148,
+      "lcpMs": 1724,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia-900.webp",
+      "lcpSize": 273780,
+      "lcpEntryCount": 2,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1436,
+          "size": 69510,
+          "url": null,
+          "id": "hero-title"
+        },
+        {
+          "startTime": 1724,
+          "size": 273780,
+          "url": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia-900.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 228,
+      "longTasks": [
+        {
+          "start": 1714,
+          "dur": 278
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 5677,
+      "documentTransferBytes": 10225,
+      "transferBytes": 329841,
+      "encodedBytes": 325041,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 137038,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 1,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 6126,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 2551,
+      "lcpMs": 1948,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia-900.webp",
+      "lcpSize": 273780,
+      "lcpEntryCount": 2,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1496,
+          "size": 69510,
+          "url": null,
+          "id": "hero-title"
+        },
+        {
+          "startTime": 1948,
+          "size": 273780,
+          "url": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia-900.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 472,
+      "longTasks": [
+        {
+          "start": 1971,
+          "dur": 522
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 6103,
+      "documentTransferBytes": 10225,
+      "transferBytes": 329841,
+      "encodedBytes": 325041,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 137038,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 2,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5590,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 2036,
+      "lcpMs": 1576,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia-900.webp",
+      "lcpSize": 273780,
+      "lcpEntryCount": 2,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1368,
+          "size": 69510,
+          "url": null,
+          "id": "hero-title"
+        },
+        {
+          "startTime": 1576,
+          "size": 273780,
+          "url": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia-900.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 137,
+      "longTasks": [
+        {
+          "start": 1557,
+          "dur": 187
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 5565,
+      "documentTransferBytes": 10237,
+      "transferBytes": 329645,
+      "encodedBytes": 324845,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 137038,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 2,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 6378,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 11,
+      "loadMs": 2829,
+      "lcpMs": 2444,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia-900.webp",
+      "lcpSize": 273780,
+      "lcpEntryCount": 2,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 2100,
+          "size": 69510,
+          "url": null,
+          "id": "hero-title"
+        },
+        {
+          "startTime": 2444,
+          "size": 273780,
+          "url": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia-900.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 323,
+      "longTasks": [
+        {
+          "start": 729,
+          "dur": 58
+        },
+        {
+          "start": 2426,
+          "dur": 365
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 6358,
+      "documentTransferBytes": 10237,
+      "transferBytes": 329645,
+      "encodedBytes": 324845,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 137038,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 3,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5621,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 2080,
+      "lcpMs": 1704,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia-900.webp",
+      "lcpSize": 273780,
+      "lcpEntryCount": 2,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1440,
+          "size": 69510,
+          "url": null,
+          "id": "hero-title"
+        },
+        {
+          "startTime": 1704,
+          "size": 273780,
+          "url": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia-900.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 164,
+      "longTasks": [
+        {
+          "start": 1672,
+          "dur": 214
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 5598,
+      "documentTransferBytes": 10225,
+      "transferBytes": 329841,
+      "encodedBytes": 325041,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 137038,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 3,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5584,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 2044,
+      "lcpMs": 1604,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia-900.webp",
+      "lcpSize": 273780,
+      "lcpEntryCount": 2,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1376,
+          "size": 69510,
+          "url": null,
+          "id": "hero-title"
+        },
+        {
+          "startTime": 1604,
+          "size": 273780,
+          "url": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia-900.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 165,
+      "longTasks": [
+        {
+          "start": 1591,
+          "dur": 215
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 5559,
+      "documentTransferBytes": 10225,
+      "transferBytes": 329841,
+      "encodedBytes": 325041,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 137038,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 4,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5577,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 2034,
+      "lcpMs": 1632,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia-900.webp",
+      "lcpSize": 273780,
+      "lcpEntryCount": 2,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1332,
+          "size": 69510,
+          "url": null,
+          "id": "hero-title"
+        },
+        {
+          "startTime": 1632,
+          "size": 273780,
+          "url": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia-900.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 197,
+      "longTasks": [
+        {
+          "start": 1624,
+          "dur": 247
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 5557,
+      "documentTransferBytes": 10237,
+      "transferBytes": 329645,
+      "encodedBytes": 324845,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 137038,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 4,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5608,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 2071,
+      "lcpMs": 1696,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia-900.webp",
+      "lcpSize": 273780,
+      "lcpEntryCount": 2,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1412,
+          "size": 69510,
+          "url": null,
+          "id": "hero-title"
+        },
+        {
+          "startTime": 1696,
+          "size": 273780,
+          "url": "http://127.0.0.1:3024/assets/images/hero-dos-advocacia-900.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 152,
+      "longTasks": [
+        {
+          "start": 1685,
+          "dur": 202
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 5590,
+      "documentTransferBytes": 10237,
+      "transferBytes": 329645,
+      "encodedBytes": 324845,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 137038,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 5,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5919,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 2373,
+      "lcpMs": 2020,
+      "lcpElement": "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con",
+      "lcpUrl": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia-900.webp",
+      "lcpSize": 273780,
+      "lcpEntryCount": 2,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1680,
+          "size": 69510,
+          "url": null,
+          "id": "hero-title"
+        },
+        {
+          "startTime": 2020,
+          "size": 273780,
+          "url": "http://127.0.0.1:3025/assets/images/hero-dos-advocacia-900.webp",
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 286,
+      "longTasks": [
+        {
+          "start": 2004,
+          "dur": 336
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 5896,
+      "documentTransferBytes": 10225,
+      "transferBytes": 329841,
+      "encodedBytes": 325041,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 137038,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 18,
+      "portraitFound": false,
+      "page": "home",
+      "run": 5,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5234,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1687,
+      "lcpMs": 1272,
+      "lcpElement": "H1 :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpUrl": null,
+      "lcpSize": 72570,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1272,
+          "size": 72570,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 713,
+      "longTasks": [
+        {
+          "start": 599,
+          "dur": 571
+        },
+        {
+          "start": 1427,
+          "dur": 242
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5211,
+      "documentTransferBytes": 7947,
+      "transferBytes": 194147,
+      "encodedBytes": 189947,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 1,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5396,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 1846,
+      "lcpMs": 1380,
+      "lcpElement": "H1 :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpUrl": null,
+      "lcpSize": 64476,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1380,
+          "size": 64476,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 736,
+      "longTasks": [
+        {
+          "start": 732,
+          "dur": 562
+        },
+        {
+          "start": 1557,
+          "dur": 274
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5373,
+      "documentTransferBytes": 14068,
+      "transferBytes": 200476,
+      "encodedBytes": 196276,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 1,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5406,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 13,
+      "loadMs": 1840,
+      "lcpMs": 1604,
+      "lcpElement": "H1 :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpUrl": null,
+      "lcpSize": 64078,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1604,
+          "size": 64078,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 764,
+      "longTasks": [
+        {
+          "start": 628,
+          "dur": 635
+        },
+        {
+          "start": 1595,
+          "dur": 229
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5382,
+      "documentTransferBytes": 14068,
+      "transferBytes": 200476,
+      "encodedBytes": 196276,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 2,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5161,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1618,
+      "lcpMs": 1212,
+      "lcpElement": "H1 :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpUrl": null,
+      "lcpSize": 72570,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1212,
+          "size": 72570,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 636,
+      "longTasks": [
+        {
+          "start": 622,
+          "dur": 504
+        },
+        {
+          "start": 1373,
+          "dur": 232
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5137,
+      "documentTransferBytes": 7947,
+      "transferBytes": 194147,
+      "encodedBytes": 189947,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 2,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5187,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1627,
+      "lcpMs": 1252,
+      "lcpElement": "H1 :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpUrl": null,
+      "lcpSize": 72570,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1252,
+          "size": 72570,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 670,
+      "longTasks": [
+        {
+          "start": 630,
+          "dur": 536
+        },
+        {
+          "start": 1382,
+          "dur": 234
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5159,
+      "documentTransferBytes": 7947,
+      "transferBytes": 194147,
+      "encodedBytes": 189947,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 3,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5407,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 1867,
+      "lcpMs": 1580,
+      "lcpElement": "H1 :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpUrl": null,
+      "lcpSize": 64078,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1580,
+          "size": 64078,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 891,
+      "longTasks": [
+        {
+          "start": 624,
+          "dur": 702
+        },
+        {
+          "start": 1565,
+          "dur": 289
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5386,
+      "documentTransferBytes": 14068,
+      "transferBytes": 200476,
+      "encodedBytes": 196276,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 3,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5316,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 1774,
+      "lcpMs": 1540,
+      "lcpElement": "H1 :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpUrl": null,
+      "lcpSize": 64078,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1540,
+          "size": 64078,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 768,
+      "longTasks": [
+        {
+          "start": 636,
+          "dur": 640
+        },
+        {
+          "start": 1533,
+          "dur": 228
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5291,
+      "documentTransferBytes": 14068,
+      "transferBytes": 200476,
+      "encodedBytes": 196276,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 4,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5481,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 1935,
+      "lcpMs": 1636,
+      "lcpElement": "H1 :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpUrl": null,
+      "lcpSize": 72324,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1636,
+          "size": 72324,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 874,
+      "longTasks": [
+        {
+          "start": 645,
+          "dur": 692
+        },
+        {
+          "start": 1632,
+          "dur": 282
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5458,
+      "documentTransferBytes": 7947,
+      "transferBytes": 194147,
+      "encodedBytes": 189947,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 4,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5351,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 1802,
+      "lcpMs": 1540,
+      "lcpElement": "H1 :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpUrl": null,
+      "lcpSize": 72324,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1540,
+          "size": 72324,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 825,
+      "longTasks": [
+        {
+          "start": 632,
+          "dur": 667
+        },
+        {
+          "start": 1528,
+          "dur": 258
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5330,
+      "documentTransferBytes": 7947,
+      "transferBytes": 194147,
+      "encodedBytes": 189947,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 5,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5359,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 8,
+      "loadMs": 1818,
+      "lcpMs": 1324,
+      "lcpElement": "H1 :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpUrl": null,
+      "lcpSize": 64476,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1324,
+          "size": 64476,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 777,
+      "longTasks": [
+        {
+          "start": 641,
+          "dur": 591
+        },
+        {
+          "start": 1505,
+          "dur": 286
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5340,
+      "documentTransferBytes": 14068,
+      "transferBytes": 200476,
+      "encodedBytes": 196276,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "due-diligence",
+      "run": 5,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 6125,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 2580,
+      "lcpMs": 1580,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 84132,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1580,
+          "size": 84132,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 824,
+      "longTasks": [
+        {
+          "start": 616,
+          "dur": 684
+        },
+        {
+          "start": 1561,
+          "dur": 240
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 6102,
+      "documentTransferBytes": 16293,
+      "transferBytes": 376657,
+      "encodedBytes": 372157,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 1,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5815,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 2264,
+      "lcpMs": 1284,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 84378,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1284,
+          "size": 84378,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 145,
+      "longTasks": [
+        {
+          "start": 1495,
+          "dur": 195
+        }
+      ],
+      "longTaskCount": 1,
+      "measuredUntilMs": 5793,
+      "documentTransferBytes": 16290,
+      "transferBytes": 376862,
+      "encodedBytes": 372362,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 1,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5739,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 2194,
+      "lcpMs": 1220,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 84378,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1220,
+          "size": 84378,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 655,
+      "longTasks": [
+        {
+          "start": 601,
+          "dur": 545
+        },
+        {
+          "start": 1398,
+          "dur": 210
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5720,
+      "documentTransferBytes": 16290,
+      "transferBytes": 376862,
+      "encodedBytes": 372362,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 2,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 6043,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 2511,
+      "lcpMs": 1504,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 84132,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1504,
+          "size": 84132,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 816,
+      "longTasks": [
+        {
+          "start": 608,
+          "dur": 590
+        },
+        {
+          "start": 1508,
+          "dur": 326
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 6026,
+      "documentTransferBytes": 16293,
+      "transferBytes": 376657,
+      "encodedBytes": 372157,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 2,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5901,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 2367,
+      "lcpMs": 1376,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 84378,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1376,
+          "size": 84378,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 683,
+      "longTasks": [
+        {
+          "start": 735,
+          "dur": 581
+        },
+        {
+          "start": 1564,
+          "dur": 202
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5882,
+      "documentTransferBytes": 16293,
+      "transferBytes": 376657,
+      "encodedBytes": 372157,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 3,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5740,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 2202,
+      "lcpMs": 1228,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 84378,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1228,
+          "size": 84378,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 675,
+      "longTasks": [
+        {
+          "start": 592,
+          "dur": 551
+        },
+        {
+          "start": 1394,
+          "dur": 224
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5723,
+      "documentTransferBytes": 16290,
+      "transferBytes": 376862,
+      "encodedBytes": 372362,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 3,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 6117,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 2580,
+      "lcpMs": 1600,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 84132,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1600,
+          "size": 84132,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 840,
+      "longTasks": [
+        {
+          "start": 603,
+          "dur": 699
+        },
+        {
+          "start": 1589,
+          "dur": 241
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 6100,
+      "documentTransferBytes": 16290,
+      "transferBytes": 376862,
+      "encodedBytes": 372362,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 4,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5770,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 2222,
+      "lcpMs": 1248,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 84378,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1248,
+          "size": 84378,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 686,
+      "longTasks": [
+        {
+          "start": 615,
+          "dur": 560
+        },
+        {
+          "start": 1438,
+          "dur": 226
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5750,
+      "documentTransferBytes": 16293,
+      "transferBytes": 376657,
+      "encodedBytes": 372157,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 4,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5896,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 2353,
+      "lcpMs": 1384,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 84132,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1384,
+          "size": 84132,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 656,
+      "longTasks": [
+        {
+          "start": 596,
+          "dur": 559
+        },
+        {
+          "start": 1387,
+          "dur": 197
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5878,
+      "documentTransferBytes": 16293,
+      "transferBytes": 376657,
+      "encodedBytes": 372157,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 5,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5755,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 7,
+      "loadMs": 2211,
+      "lcpMs": 1232,
+      "lcpElement": "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária",
+      "lcpUrl": null,
+      "lcpSize": 84378,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1232,
+          "size": 84378,
+          "url": null,
+          "id": "page-title"
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 643,
+      "longTasks": [
+        {
+          "start": 617,
+          "dur": 543
+        },
+        {
+          "start": 1421,
+          "dur": 200
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5735,
+      "documentTransferBytes": 16290,
+      "transferBytes": 376862,
+      "encodedBytes": 372362,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 177994,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 17,
+      "portraitFound": false,
+      "page": "imobiliarias",
+      "run": 5,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5268,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1727,
+      "lcpMs": 1520,
+      "lcpElement": "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem ",
+      "lcpUrl": null,
+      "lcpSize": 101790,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1520,
+          "size": 101790,
+          "url": null,
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 749,
+      "longTasks": [
+        {
+          "start": 618,
+          "dur": 658
+        },
+        {
+          "start": 1520,
+          "dur": 191
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5244,
+      "documentTransferBytes": 11304,
+      "transferBytes": 197504,
+      "encodedBytes": 193304,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 1,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5184,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1648,
+      "lcpMs": 1436,
+      "lcpElement": "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem ",
+      "lcpUrl": null,
+      "lcpSize": 101790,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1436,
+          "size": 101790,
+          "url": null,
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 696,
+      "longTasks": [
+        {
+          "start": 620,
+          "dur": 589
+        },
+        {
+          "start": 1426,
+          "dur": 207
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5164,
+      "documentTransferBytes": 11308,
+      "transferBytes": 197716,
+      "encodedBytes": 193516,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 1,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5313,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1768,
+      "lcpMs": 1364,
+      "lcpElement": "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem ",
+      "lcpUrl": null,
+      "lcpSize": 104040,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1364,
+          "size": 104040,
+          "url": null,
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 659,
+      "longTasks": [
+        {
+          "start": 725,
+          "dur": 567
+        },
+        {
+          "start": 1368,
+          "dur": 192
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5294,
+      "documentTransferBytes": 11308,
+      "transferBytes": 197716,
+      "encodedBytes": 193516,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 2,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5515,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1970,
+      "lcpMs": 1460,
+      "lcpElement": "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem ",
+      "lcpUrl": null,
+      "lcpSize": 104040,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1460,
+          "size": 104040,
+          "url": null,
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 796,
+      "longTasks": [
+        {
+          "start": 717,
+          "dur": 652
+        },
+        {
+          "start": 1710,
+          "dur": 244
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5494,
+      "documentTransferBytes": 11304,
+      "transferBytes": 197504,
+      "encodedBytes": 193304,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 2,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5283,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1737,
+      "lcpMs": 1532,
+      "lcpElement": "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem ",
+      "lcpUrl": null,
+      "lcpSize": 101790,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1532,
+          "size": 101790,
+          "url": null,
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 770,
+      "longTasks": [
+        {
+          "start": 626,
+          "dur": 664
+        },
+        {
+          "start": 1515,
+          "dur": 206
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5258,
+      "documentTransferBytes": 11304,
+      "transferBytes": 197504,
+      "encodedBytes": 193304,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 3,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5225,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1681,
+      "lcpMs": 1248,
+      "lcpElement": "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem ",
+      "lcpUrl": null,
+      "lcpSize": 104040,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1248,
+          "size": 104040,
+          "url": null,
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 673,
+      "longTasks": [
+        {
+          "start": 620,
+          "dur": 558
+        },
+        {
+          "start": 1451,
+          "dur": 215
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5206,
+      "documentTransferBytes": 11308,
+      "transferBytes": 197716,
+      "encodedBytes": 193516,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 3,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5314,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1774,
+      "lcpMs": 1572,
+      "lcpElement": "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem ",
+      "lcpUrl": null,
+      "lcpSize": 101790,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1572,
+          "size": 101790,
+          "url": null,
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 780,
+      "longTasks": [
+        {
+          "start": 628,
+          "dur": 681
+        },
+        {
+          "start": 1560,
+          "dur": 199
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5293,
+      "documentTransferBytes": 11308,
+      "transferBytes": 197716,
+      "encodedBytes": 193516,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 4,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5312,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 8,
+      "loadMs": 1774,
+      "lcpMs": 1396,
+      "lcpElement": "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem ",
+      "lcpUrl": null,
+      "lcpSize": 104040,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1396,
+          "size": 104040,
+          "url": null,
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 675,
+      "longTasks": [
+        {
+          "start": 743,
+          "dur": 587
+        },
+        {
+          "start": 1395,
+          "dur": 188
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5297,
+      "documentTransferBytes": 11304,
+      "transferBytes": 197504,
+      "encodedBytes": 193304,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 4,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5331,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1792,
+      "lcpMs": 1544,
+      "lcpElement": "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem ",
+      "lcpUrl": null,
+      "lcpSize": 101790,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1544,
+          "size": 101790,
+          "url": null,
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 790,
+      "longTasks": [
+        {
+          "start": 604,
+          "dur": 651
+        },
+        {
+          "start": 1539,
+          "dur": 239
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5313,
+      "documentTransferBytes": 11304,
+      "transferBytes": 197504,
+      "encodedBytes": 193304,
+      "jsTransferBytes": 144764,
+      "jsEncodedBytes": 142364,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 5,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5264,
+      "collectionValid": true,
+      "invalidReason": null,
+      "support": {
+        "lcp": true,
+        "layoutShift": true,
+        "longtask": true
+      },
+      "observerErrors": [],
+      "ttfbMs": 6,
+      "loadMs": 1717,
+      "lcpMs": 1328,
+      "lcpElement": "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem ",
+      "lcpUrl": null,
+      "lcpSize": 104040,
+      "lcpEntryCount": 1,
+      "lcpEntriesRaw": [
+        {
+          "startTime": 1328,
+          "size": 104040,
+          "url": null,
+          "id": null
+        }
+      ],
+      "cls": 0,
+      "shiftCount": 0,
+      "shiftWindows": [],
+      "shiftsRaw": [],
+      "proxyMs": 634,
+      "longTasks": [
+        {
+          "start": 714,
+          "dur": 543
+        },
+        {
+          "start": 1509,
+          "dur": 191
+        }
+      ],
+      "longTaskCount": 2,
+      "measuredUntilMs": 5245,
+      "documentTransferBytes": 11308,
+      "transferBytes": 197716,
+      "encodedBytes": 193516,
+      "jsTransferBytes": 144806,
+      "jsEncodedBytes": 142406,
+      "cssTransferBytes": 9660,
+      "cssEncodedBytes": 9360,
+      "imageTransferBytes": 3830,
+      "transferZeroSuspectCount": 0,
+      "resourceCount": 16,
+      "portraitFound": false,
+      "page": "compra",
+      "run": 5,
+      "orderPosition": 2
+    }
+  ],
+  "summary": [
+    {
+      "page": "home",
+      "profile": "desktop-cold",
+      "originLabel": "baseline",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 300,
+        "mean": 353.6,
+        "min": 244,
+        "max": 572,
+        "sd": 117.56,
+        "samples": [
+          572,
+          244,
+          276,
+          376,
+          300
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 7,
+        "mean": 33,
+        "min": 0,
+        "max": 79,
+        "sd": 36.41,
+        "samples": [
+          3,
+          0,
+          76,
+          7,
+          79
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 11,
+        "mean": 11.4,
+        "min": 9,
+        "max": 17,
+        "sd": 2.94,
+        "samples": [
+          9,
+          11,
+          9,
+          17,
+          11
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 370.72,
+        "mean": 370.72,
+        "min": 370.72,
+        "max": 370.72,
+        "sd": 0,
+        "samples": [
+          370.7177734375,
+          370.7177734375,
+          370.7177734375,
+          370.7177734375,
+          370.7177734375
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.37,
+        "mean": 141.37,
+        "min": 141.37,
+        "max": 141.37,
+        "sd": 0,
+        "samples": [
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.03,
+        "mean": 139.03,
+        "min": 139.03,
+        "max": 139.03,
+        "sd": 0,
+        "samples": [
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.27,
+        "mean": 9.27,
+        "min": 9.27,
+        "max": 9.27,
+        "sd": 0,
+        "samples": [
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 182.63,
+        "mean": 182.63,
+        "min": 182.63,
+        "max": 182.63,
+        "sd": 0,
+        "samples": [
+          182.625,
+          182.625,
+          182.625,
+          182.625,
+          182.625
+        ]
+      },
+      "lcpElements": [
+        "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "home",
+      "profile": "desktop-cold",
+      "originLabel": "candidate",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 312,
+        "mean": 339.2,
+        "min": 256,
+        "max": 416,
+        "sd": 61.21,
+        "samples": [
+          404,
+          312,
+          256,
+          308,
+          416
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 69,
+        "mean": 55,
+        "min": 0,
+        "max": 111,
+        "sd": 44.9,
+        "samples": [
+          0,
+          90,
+          69,
+          111,
+          5
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 14,
+        "mean": 45.4,
+        "min": 10,
+        "max": 105,
+        "sd": 41.36,
+        "samples": [
+          105,
+          14,
+          10,
+          12,
+          86
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 370.91,
+        "mean": 370.91,
+        "min": 370.91,
+        "max": 370.91,
+        "sd": 0,
+        "samples": [
+          370.9091796875,
+          370.9091796875,
+          370.9091796875,
+          370.9091796875,
+          370.9091796875
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.41,
+        "mean": 141.41,
+        "min": 141.41,
+        "max": 141.41,
+        "sd": 0,
+        "samples": [
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.07,
+        "mean": 139.07,
+        "min": 139.07,
+        "max": 139.07,
+        "sd": 0,
+        "samples": [
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.43,
+        "mean": 9.43,
+        "min": 9.43,
+        "max": 9.43,
+        "sd": 0,
+        "samples": [
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 182.63,
+        "mean": 182.63,
+        "min": 182.63,
+        "max": 182.63,
+        "sd": 0,
+        "samples": [
+          182.625,
+          182.625,
+          182.625,
+          182.625,
+          182.625
+        ]
+      },
+      "lcpElements": [
+        "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "due-diligence",
+      "profile": "desktop-cold",
+      "originLabel": "baseline",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 232,
+        "mean": 267.2,
+        "min": 208,
+        "max": 356,
+        "sd": 58.1,
+        "samples": [
+          232,
+          316,
+          208,
+          224,
+          356
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 72,
+        "mean": 73,
+        "min": 2,
+        "max": 132,
+        "sd": 44.52,
+        "samples": [
+          54,
+          105,
+          2,
+          72,
+          132
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 10,
+        "mean": 15.2,
+        "min": 9,
+        "max": 37,
+        "sd": 10.93,
+        "samples": [
+          37,
+          9,
+          11,
+          10,
+          9
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 189.6,
+        "mean": 189.6,
+        "min": 189.6,
+        "max": 189.6,
+        "sd": 0,
+        "samples": [
+          189.5966796875,
+          189.5966796875,
+          189.5966796875,
+          189.5966796875,
+          189.5966796875
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.37,
+        "mean": 141.37,
+        "min": 141.37,
+        "max": 141.37,
+        "sd": 0,
+        "samples": [
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.03,
+        "mean": 139.03,
+        "min": 139.03,
+        "max": 139.03,
+        "sd": 0,
+        "samples": [
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.27,
+        "mean": 9.27,
+        "min": 9.27,
+        "max": 9.27,
+        "sd": 0,
+        "samples": [
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 3.74,
+        "mean": 3.74,
+        "min": 3.74,
+        "max": 3.74,
+        "sd": 0,
+        "samples": [
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375
+        ]
+      },
+      "lcpElements": [
+        "H1 :: O imóvel parece certo. Os documentos podem contar outra história."
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "due-diligence",
+      "profile": "desktop-cold",
+      "originLabel": "candidate",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 312,
+        "mean": 341.6,
+        "min": 284,
+        "max": 424,
+        "sd": 60.32,
+        "samples": [
+          424,
+          312,
+          284,
+          284,
+          404
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 118,
+        "mean": 100,
+        "min": 14,
+        "max": 147,
+        "sd": 48.29,
+        "samples": [
+          147,
+          118,
+          83,
+          14,
+          138
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 32,
+        "mean": 28.6,
+        "min": 8,
+        "max": 57,
+        "sd": 18.42,
+        "samples": [
+          57,
+          9,
+          8,
+          37,
+          32
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 195.78,
+        "mean": 195.78,
+        "min": 195.78,
+        "max": 195.78,
+        "sd": 0,
+        "samples": [
+          195.77734375,
+          195.77734375,
+          195.77734375,
+          195.77734375,
+          195.77734375
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.41,
+        "mean": 141.41,
+        "min": 141.41,
+        "max": 141.41,
+        "sd": 0,
+        "samples": [
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.07,
+        "mean": 139.07,
+        "min": 139.07,
+        "max": 139.07,
+        "sd": 0,
+        "samples": [
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.43,
+        "mean": 9.43,
+        "min": 9.43,
+        "max": 9.43,
+        "sd": 0,
+        "samples": [
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 3.74,
+        "mean": 3.74,
+        "min": 3.74,
+        "max": 3.74,
+        "sd": 0,
+        "samples": [
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375
+        ]
+      },
+      "lcpElements": [
+        "H1 :: Due diligence imobiliária antes de comprar, vender ou investir"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "imobiliarias",
+      "profile": "desktop-cold",
+      "originLabel": "baseline",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 284,
+        "mean": 276,
+        "min": 204,
+        "max": 348,
+        "sd": 46.85,
+        "samples": [
+          288,
+          256,
+          204,
+          348,
+          284
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0.0008,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 92,
+        "mean": 89.4,
+        "min": 46,
+        "max": 133,
+        "sd": 29.14,
+        "samples": [
+          103,
+          92,
+          46,
+          133,
+          73
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 9,
+        "mean": 16.4,
+        "min": 7,
+        "max": 43,
+        "sd": 13.5,
+        "samples": [
+          43,
+          9,
+          14,
+          9,
+          7
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 367.83,
+        "mean": 367.83,
+        "min": 367.83,
+        "max": 367.83,
+        "sd": 0,
+        "samples": [
+          367.8291015625,
+          367.8291015625,
+          367.8291015625,
+          367.8291015625,
+          367.8291015625
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.37,
+        "mean": 141.37,
+        "min": 141.37,
+        "max": 141.37,
+        "sd": 0,
+        "samples": [
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.03,
+        "mean": 139.03,
+        "min": 139.03,
+        "max": 139.03,
+        "sd": 0,
+        "samples": [
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.27,
+        "mean": 9.27,
+        "min": 9.27,
+        "max": 9.27,
+        "sd": 0,
+        "samples": [
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 173.82,
+        "mean": 173.82,
+        "min": 173.82,
+        "max": 173.82,
+        "sd": 0,
+        "samples": [
+          173.822265625,
+          173.822265625,
+          173.822265625,
+          173.822265625,
+          173.822265625
+        ]
+      },
+      "lcpElements": [
+        "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "imobiliarias",
+      "profile": "desktop-cold",
+      "originLabel": "candidate",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 244,
+        "mean": 263.2,
+        "min": 176,
+        "max": 356,
+        "sd": 61.63,
+        "samples": [
+          304,
+          244,
+          236,
+          356,
+          176
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 83,
+        "mean": 68,
+        "min": 1,
+        "max": 140,
+        "sd": 47.85,
+        "samples": [
+          84,
+          1,
+          83,
+          140,
+          32
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 12,
+        "mean": 22.6,
+        "min": 7,
+        "max": 71,
+        "sd": 24.29,
+        "samples": [
+          71,
+          10,
+          12,
+          13,
+          7
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 368.03,
+        "mean": 368.03,
+        "min": 368.03,
+        "max": 368.03,
+        "sd": 0,
+        "samples": [
+          368.029296875,
+          368.029296875,
+          368.029296875,
+          368.029296875,
+          368.029296875
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.41,
+        "mean": 141.41,
+        "min": 141.41,
+        "max": 141.41,
+        "sd": 0,
+        "samples": [
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.07,
+        "mean": 139.07,
+        "min": 139.07,
+        "max": 139.07,
+        "sd": 0,
+        "samples": [
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.43,
+        "mean": 9.43,
+        "min": 9.43,
+        "max": 9.43,
+        "sd": 0,
+        "samples": [
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 173.82,
+        "mean": 173.82,
+        "min": 173.82,
+        "max": 173.82,
+        "sd": 0,
+        "samples": [
+          173.822265625,
+          173.822265625,
+          173.822265625,
+          173.822265625,
+          173.822265625
+        ]
+      },
+      "lcpElements": [
+        "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "compra",
+      "profile": "desktop-cold",
+      "originLabel": "baseline",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 264,
+        "mean": 277.6,
+        "min": 204,
+        "max": 444,
+        "sd": 88.02,
+        "samples": [
+          204,
+          272,
+          204,
+          264,
+          444
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 77,
+        "mean": 62,
+        "min": 0,
+        "max": 144,
+        "sd": 55.44,
+        "samples": [
+          0,
+          89,
+          0,
+          77,
+          144
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 7,
+        "mean": 10.4,
+        "min": 6,
+        "max": 26,
+        "sd": 7.81,
+        "samples": [
+          26,
+          6,
+          6,
+          7,
+          7
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 192.88,
+        "mean": 192.88,
+        "min": 192.88,
+        "max": 192.88,
+        "sd": 0,
+        "samples": [
+          192.875,
+          192.875,
+          192.875,
+          192.875,
+          192.875
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.37,
+        "mean": 141.37,
+        "min": 141.37,
+        "max": 141.37,
+        "sd": 0,
+        "samples": [
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.03,
+        "mean": 139.03,
+        "min": 139.03,
+        "max": 139.03,
+        "sd": 0,
+        "samples": [
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.27,
+        "mean": 9.27,
+        "min": 9.27,
+        "max": 9.27,
+        "sd": 0,
+        "samples": [
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 3.74,
+        "mean": 3.74,
+        "min": 3.74,
+        "max": 3.74,
+        "sd": 0,
+        "samples": [
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375
+        ]
+      },
+      "lcpElements": [
+        "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "compra",
+      "profile": "desktop-cold",
+      "originLabel": "candidate",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 260,
+        "mean": 262.4,
+        "min": 184,
+        "max": 336,
+        "sd": 48.31,
+        "samples": [
+          336,
+          260,
+          272,
+          184,
+          260
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 83,
+        "mean": 57.4,
+        "min": 0,
+        "max": 114,
+        "sd": 45.83,
+        "samples": [
+          114,
+          6,
+          83,
+          0,
+          84
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 7,
+        "mean": 11.4,
+        "min": 6,
+        "max": 30,
+        "sd": 9.33,
+        "samples": [
+          30,
+          7,
+          6,
+          8,
+          6
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 193.08,
+        "mean": 193.08,
+        "min": 193.08,
+        "max": 193.08,
+        "sd": 0,
+        "samples": [
+          193.08203125,
+          193.08203125,
+          193.08203125,
+          193.08203125,
+          193.08203125
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.41,
+        "mean": 141.41,
+        "min": 141.41,
+        "max": 141.41,
+        "sd": 0,
+        "samples": [
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.07,
+        "mean": 139.07,
+        "min": 139.07,
+        "max": 139.07,
+        "sd": 0,
+        "samples": [
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.43,
+        "mean": 9.43,
+        "min": 9.43,
+        "max": 9.43,
+        "sd": 0,
+        "samples": [
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 3.74,
+        "mean": 3.74,
+        "min": 3.74,
+        "max": 3.74,
+        "sd": 0,
+        "samples": [
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375
+        ]
+      },
+      "lcpElements": [
+        "H1 :: Assessoria jurídica na compra de imóvel, para você não descobrir o problema depois"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "home",
+      "profile": "mobile-cold",
+      "originLabel": "baseline",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 1632,
+        "mean": 1786.4,
+        "min": 1576,
+        "max": 2444,
+        "sd": 331.57,
+        "samples": [
+          1584,
+          1576,
+          2444,
+          1632,
+          1696
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 173,
+        "mean": 196.4,
+        "min": 137,
+        "max": 323,
+        "sd": 66.45,
+        "samples": [
+          173,
+          137,
+          323,
+          197,
+          152
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 6,
+        "mean": 7,
+        "min": 6,
+        "max": 11,
+        "sd": 2,
+        "samples": [
+          6,
+          6,
+          11,
+          6,
+          6
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 321.92,
+        "mean": 321.92,
+        "min": 321.92,
+        "max": 321.92,
+        "sd": 0,
+        "samples": [
+          321.9189453125,
+          321.9189453125,
+          321.9189453125,
+          321.9189453125,
+          321.9189453125
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.37,
+        "mean": 141.37,
+        "min": 141.37,
+        "max": 141.37,
+        "sd": 0,
+        "samples": [
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.03,
+        "mean": 139.03,
+        "min": 139.03,
+        "max": 139.03,
+        "sd": 0,
+        "samples": [
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.27,
+        "mean": 9.27,
+        "min": 9.27,
+        "max": 9.27,
+        "sd": 0,
+        "samples": [
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 133.83,
+        "mean": 133.83,
+        "min": 133.83,
+        "max": 133.83,
+        "sd": 0,
+        "samples": [
+          133.826171875,
+          133.826171875,
+          133.826171875,
+          133.826171875,
+          133.826171875
+        ]
+      },
+      "lcpElements": [
+        "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "home",
+      "profile": "mobile-cold",
+      "originLabel": "candidate",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 1724,
+        "mean": 1800,
+        "min": 1604,
+        "max": 2020,
+        "sd": 157.3,
+        "samples": [
+          1724,
+          1948,
+          1704,
+          1604,
+          2020
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 228,
+        "mean": 263,
+        "min": 164,
+        "max": 472,
+        "sd": 113.88,
+        "samples": [
+          228,
+          472,
+          164,
+          165,
+          286
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 6,
+        "mean": 6.2,
+        "min": 5,
+        "max": 7,
+        "sd": 0.75,
+        "samples": [
+          5,
+          6,
+          7,
+          6,
+          7
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 322.11,
+        "mean": 322.11,
+        "min": 322.11,
+        "max": 322.11,
+        "sd": 0,
+        "samples": [
+          322.1103515625,
+          322.1103515625,
+          322.1103515625,
+          322.1103515625,
+          322.1103515625
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.41,
+        "mean": 141.41,
+        "min": 141.41,
+        "max": 141.41,
+        "sd": 0,
+        "samples": [
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.07,
+        "mean": 139.07,
+        "min": 139.07,
+        "max": 139.07,
+        "sd": 0,
+        "samples": [
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.43,
+        "mean": 9.43,
+        "min": 9.43,
+        "max": 9.43,
+        "sd": 0,
+        "samples": [
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 133.83,
+        "mean": 133.83,
+        "min": 133.83,
+        "max": 133.83,
+        "sd": 0,
+        "samples": [
+          133.826171875,
+          133.826171875,
+          133.826171875,
+          133.826171875,
+          133.826171875
+        ]
+      },
+      "lcpElements": [
+        "SECTION.hero :: \n        \n        \n          Advocacia imobiliária · Curitiba e Brasil\n          Antes de assinar, verifique o que o con"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "due-diligence",
+      "profile": "mobile-cold",
+      "originLabel": "baseline",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 1272,
+        "mean": 1382.4,
+        "min": 1212,
+        "max": 1636,
+        "sd": 171.69,
+        "samples": [
+          1272,
+          1212,
+          1252,
+          1636,
+          1540
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 713,
+        "mean": 743.6,
+        "min": 636,
+        "max": 874,
+        "sd": 91.17,
+        "samples": [
+          713,
+          636,
+          670,
+          874,
+          825
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 6,
+        "mean": 6.4,
+        "min": 6,
+        "max": 7,
+        "sd": 0.49,
+        "samples": [
+          6,
+          6,
+          6,
+          7,
+          7
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 189.6,
+        "mean": 189.6,
+        "min": 189.6,
+        "max": 189.6,
+        "sd": 0,
+        "samples": [
+          189.5966796875,
+          189.5966796875,
+          189.5966796875,
+          189.5966796875,
+          189.5966796875
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.37,
+        "mean": 141.37,
+        "min": 141.37,
+        "max": 141.37,
+        "sd": 0,
+        "samples": [
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.03,
+        "mean": 139.03,
+        "min": 139.03,
+        "max": 139.03,
+        "sd": 0,
+        "samples": [
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.27,
+        "mean": 9.27,
+        "min": 9.27,
+        "max": 9.27,
+        "sd": 0,
+        "samples": [
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 3.74,
+        "mean": 3.74,
+        "min": 3.74,
+        "max": 3.74,
+        "sd": 0,
+        "samples": [
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375
+        ]
+      },
+      "lcpElements": [
+        "H1 :: O imóvel parece certo. Os documentos podem contar outra história."
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "due-diligence",
+      "profile": "mobile-cold",
+      "originLabel": "candidate",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 1540,
+        "mean": 1485.6,
+        "min": 1324,
+        "max": 1604,
+        "sd": 112.39,
+        "samples": [
+          1380,
+          1604,
+          1580,
+          1540,
+          1324
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 768,
+        "mean": 787.2,
+        "min": 736,
+        "max": 891,
+        "sd": 53.68,
+        "samples": [
+          736,
+          764,
+          891,
+          768,
+          777
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 7,
+        "mean": 8.4,
+        "min": 7,
+        "max": 13,
+        "sd": 2.33,
+        "samples": [
+          7,
+          13,
+          7,
+          7,
+          8
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 195.78,
+        "mean": 195.78,
+        "min": 195.78,
+        "max": 195.78,
+        "sd": 0,
+        "samples": [
+          195.77734375,
+          195.77734375,
+          195.77734375,
+          195.77734375,
+          195.77734375
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.41,
+        "mean": 141.41,
+        "min": 141.41,
+        "max": 141.41,
+        "sd": 0,
+        "samples": [
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.07,
+        "mean": 139.07,
+        "min": 139.07,
+        "max": 139.07,
+        "sd": 0,
+        "samples": [
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.43,
+        "mean": 9.43,
+        "min": 9.43,
+        "max": 9.43,
+        "sd": 0,
+        "samples": [
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 3.74,
+        "mean": 3.74,
+        "min": 3.74,
+        "max": 3.74,
+        "sd": 0,
+        "samples": [
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375
+        ]
+      },
+      "lcpElements": [
+        "H1 :: Due diligence imobiliária antes de comprar, vender ou investir"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "imobiliarias",
+      "profile": "mobile-cold",
+      "originLabel": "baseline",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 1384,
+        "mean": 1418.4,
+        "min": 1248,
+        "max": 1580,
+        "sd": 114.42,
+        "samples": [
+          1580,
+          1504,
+          1376,
+          1248,
+          1384
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 686,
+        "mean": 733,
+        "min": 656,
+        "max": 824,
+        "sd": 71.84,
+        "samples": [
+          824,
+          816,
+          683,
+          686,
+          656
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 7,
+        "mean": 6.8,
+        "min": 6,
+        "max": 7,
+        "sd": 0.4,
+        "samples": [
+          7,
+          6,
+          7,
+          7,
+          7
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 367.83,
+        "mean": 367.83,
+        "min": 367.83,
+        "max": 367.83,
+        "sd": 0,
+        "samples": [
+          367.8291015625,
+          367.8291015625,
+          367.8291015625,
+          367.8291015625,
+          367.8291015625
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.37,
+        "mean": 141.37,
+        "min": 141.37,
+        "max": 141.37,
+        "sd": 0,
+        "samples": [
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.03,
+        "mean": 139.03,
+        "min": 139.03,
+        "max": 139.03,
+        "sd": 0,
+        "samples": [
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.27,
+        "mean": 9.27,
+        "min": 9.27,
+        "max": 9.27,
+        "sd": 0,
+        "samples": [
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 173.82,
+        "mean": 173.82,
+        "min": 173.82,
+        "max": 173.82,
+        "sd": 0,
+        "samples": [
+          173.822265625,
+          173.822265625,
+          173.822265625,
+          173.822265625,
+          173.822265625
+        ]
+      },
+      "lcpElements": [
+        "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "imobiliarias",
+      "profile": "mobile-cold",
+      "originLabel": "candidate",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 1232,
+        "mean": 1312.8,
+        "min": 1220,
+        "max": 1600,
+        "sd": 145.36,
+        "samples": [
+          1284,
+          1220,
+          1228,
+          1600,
+          1232
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 655,
+        "mean": 591.6,
+        "min": 145,
+        "max": 840,
+        "sd": 234.42,
+        "samples": [
+          145,
+          655,
+          675,
+          840,
+          643
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 6,
+        "mean": 6.4,
+        "min": 6,
+        "max": 7,
+        "sd": 0.49,
+        "samples": [
+          6,
+          6,
+          6,
+          7,
+          7
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 368.03,
+        "mean": 368.03,
+        "min": 368.03,
+        "max": 368.03,
+        "sd": 0,
+        "samples": [
+          368.029296875,
+          368.029296875,
+          368.029296875,
+          368.029296875,
+          368.029296875
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.41,
+        "mean": 141.41,
+        "min": 141.41,
+        "max": 141.41,
+        "sd": 0,
+        "samples": [
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.07,
+        "mean": 139.07,
+        "min": 139.07,
+        "max": 139.07,
+        "sd": 0,
+        "samples": [
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.43,
+        "mean": 9.43,
+        "min": 9.43,
+        "max": 9.43,
+        "sd": 0,
+        "samples": [
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 173.82,
+        "mean": 173.82,
+        "min": 173.82,
+        "max": 173.82,
+        "sd": 0,
+        "samples": [
+          173.822265625,
+          173.822265625,
+          173.822265625,
+          173.822265625,
+          173.822265625
+        ]
+      },
+      "lcpElements": [
+        "H1 :: Assessoria jurídica para imobiliárias, por quem já trabalhou dentro de uma imobiliária"
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "compra",
+      "profile": "mobile-cold",
+      "originLabel": "baseline",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 1520,
+        "mean": 1490.4,
+        "min": 1396,
+        "max": 1544,
+        "sd": 55.34,
+        "samples": [
+          1520,
+          1460,
+          1532,
+          1396,
+          1544
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 770,
+        "mean": 756,
+        "min": 675,
+        "max": 796,
+        "sd": 43.73,
+        "samples": [
+          749,
+          796,
+          770,
+          675,
+          790
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 6,
+        "mean": 6.4,
+        "min": 6,
+        "max": 8,
+        "sd": 0.8,
+        "samples": [
+          6,
+          6,
+          6,
+          8,
+          6
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 192.88,
+        "mean": 192.88,
+        "min": 192.88,
+        "max": 192.88,
+        "sd": 0,
+        "samples": [
+          192.875,
+          192.875,
+          192.875,
+          192.875,
+          192.875
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.37,
+        "mean": 141.37,
+        "min": 141.37,
+        "max": 141.37,
+        "sd": 0,
+        "samples": [
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375,
+          141.37109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.03,
+        "mean": 139.03,
+        "min": 139.03,
+        "max": 139.03,
+        "sd": 0,
+        "samples": [
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375,
+          139.02734375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.27,
+        "mean": 9.27,
+        "min": 9.27,
+        "max": 9.27,
+        "sd": 0,
+        "samples": [
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375,
+          9.271484375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 3.74,
+        "mean": 3.74,
+        "min": 3.74,
+        "max": 3.74,
+        "sd": 0,
+        "samples": [
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375
+        ]
+      },
+      "lcpElements": [
+        "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem "
+      ],
+      "transferZeroSuspectMax": 0
+    },
+    {
+      "page": "compra",
+      "profile": "mobile-cold",
+      "originLabel": "candidate",
+      "runs": 5,
+      "validRuns": 5,
+      "invalidRuns": 0,
+      "lcp": {
+        "n": 5,
+        "median": 1364,
+        "mean": 1389.6,
+        "min": 1248,
+        "max": 1572,
+        "sd": 109.47,
+        "samples": [
+          1436,
+          1364,
+          1248,
+          1572,
+          1328
+        ]
+      },
+      "cls": {
+        "n": 5,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "proxyMs": {
+        "n": 5,
+        "median": 673,
+        "mean": 688.4,
+        "min": 634,
+        "max": 780,
+        "sd": 50.02,
+        "samples": [
+          696,
+          659,
+          673,
+          780,
+          634
+        ]
+      },
+      "ttfbMs": {
+        "n": 5,
+        "median": 6,
+        "mean": 6,
+        "min": 6,
+        "max": 6,
+        "sd": 0,
+        "samples": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "transferKb": {
+        "n": 5,
+        "median": 193.08,
+        "mean": 193.08,
+        "min": 193.08,
+        "max": 193.08,
+        "sd": 0,
+        "samples": [
+          193.08203125,
+          193.08203125,
+          193.08203125,
+          193.08203125,
+          193.08203125
+        ]
+      },
+      "jsTransferKb": {
+        "n": 5,
+        "median": 141.41,
+        "mean": 141.41,
+        "min": 141.41,
+        "max": 141.41,
+        "sd": 0,
+        "samples": [
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375,
+          141.412109375
+        ]
+      },
+      "jsEncodedKb": {
+        "n": 5,
+        "median": 139.07,
+        "mean": 139.07,
+        "min": 139.07,
+        "max": 139.07,
+        "sd": 0,
+        "samples": [
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375,
+          139.068359375
+        ]
+      },
+      "cssTransferKb": {
+        "n": 5,
+        "median": 9.43,
+        "mean": 9.43,
+        "min": 9.43,
+        "max": 9.43,
+        "sd": 0,
+        "samples": [
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375,
+          9.43359375
+        ]
+      },
+      "imageTransferKb": {
+        "n": 5,
+        "median": 3.74,
+        "mean": 3.74,
+        "min": 3.74,
+        "max": 3.74,
+        "sd": 0,
+        "samples": [
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375,
+          3.740234375
+        ]
+      },
+      "lcpElements": [
+        "P.page-lead :: Comprar um imóvel é, para a maioria das pessoas, a maior decisão financeira da vida. E é também onde mais se assina sem "
+      ],
+      "transferZeroSuspectMax": 0
+    }
+  ],
+  "rows": [
+    {
+      "page": "home",
+      "profile": "desktop-cold",
+      "lcpCandidateMedian": 312,
+      "lcpBaselineMedian": 300,
+      "lcpDeltaMedian": 12,
+      "lcpCandidateRange": [
+        256,
+        416
+      ],
+      "lcpBaselineRange": [
+        244,
+        572
+      ],
+      "lcpCandidateSd": 61.21,
+      "lcpBaselineSd": 117.56,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 69,
+      "proxyBaselineMedian": 7,
+      "ttfbCandidateMedian": 14,
+      "ttfbBaselineMedian": 11,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 370.91,
+      "transferBaselineMedianKb": 370.72,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "home",
+      "profile": "mobile-cold",
+      "lcpCandidateMedian": 1724,
+      "lcpBaselineMedian": 1632,
+      "lcpDeltaMedian": 92,
+      "lcpCandidateRange": [
+        1604,
+        2020
+      ],
+      "lcpBaselineRange": [
+        1576,
+        2444
+      ],
+      "lcpCandidateSd": 157.3,
+      "lcpBaselineSd": 331.57,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 228,
+      "proxyBaselineMedian": 173,
+      "ttfbCandidateMedian": 6,
+      "ttfbBaselineMedian": 6,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 322.11,
+      "transferBaselineMedianKb": 321.92,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "due-diligence",
+      "profile": "desktop-cold",
+      "lcpCandidateMedian": 312,
+      "lcpBaselineMedian": 232,
+      "lcpDeltaMedian": 80,
+      "lcpCandidateRange": [
+        284,
+        424
+      ],
+      "lcpBaselineRange": [
+        208,
+        356
+      ],
+      "lcpCandidateSd": 60.32,
+      "lcpBaselineSd": 58.1,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 118,
+      "proxyBaselineMedian": 72,
+      "ttfbCandidateMedian": 32,
+      "ttfbBaselineMedian": 10,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 195.78,
+      "transferBaselineMedianKb": 189.6,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "due-diligence",
+      "profile": "mobile-cold",
+      "lcpCandidateMedian": 1540,
+      "lcpBaselineMedian": 1272,
+      "lcpDeltaMedian": 268,
+      "lcpCandidateRange": [
+        1324,
+        1604
+      ],
+      "lcpBaselineRange": [
+        1212,
+        1636
+      ],
+      "lcpCandidateSd": 112.39,
+      "lcpBaselineSd": 171.69,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 768,
+      "proxyBaselineMedian": 713,
+      "ttfbCandidateMedian": 7,
+      "ttfbBaselineMedian": 6,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 195.78,
+      "transferBaselineMedianKb": 189.6,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "imobiliarias",
+      "profile": "desktop-cold",
+      "lcpCandidateMedian": 244,
+      "lcpBaselineMedian": 284,
+      "lcpDeltaMedian": -40,
+      "lcpCandidateRange": [
+        176,
+        356
+      ],
+      "lcpBaselineRange": [
+        204,
+        348
+      ],
+      "lcpCandidateSd": 61.63,
+      "lcpBaselineSd": 46.85,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 83,
+      "proxyBaselineMedian": 92,
+      "ttfbCandidateMedian": 12,
+      "ttfbBaselineMedian": 9,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 368.03,
+      "transferBaselineMedianKb": 367.83,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "imobiliarias",
+      "profile": "mobile-cold",
+      "lcpCandidateMedian": 1232,
+      "lcpBaselineMedian": 1384,
+      "lcpDeltaMedian": -152,
+      "lcpCandidateRange": [
+        1220,
+        1600
+      ],
+      "lcpBaselineRange": [
+        1248,
+        1580
+      ],
+      "lcpCandidateSd": 145.36,
+      "lcpBaselineSd": 114.42,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 655,
+      "proxyBaselineMedian": 686,
+      "ttfbCandidateMedian": 6,
+      "ttfbBaselineMedian": 7,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 368.03,
+      "transferBaselineMedianKb": 367.83,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "compra",
+      "profile": "desktop-cold",
+      "lcpCandidateMedian": 260,
+      "lcpBaselineMedian": 264,
+      "lcpDeltaMedian": -4,
+      "lcpCandidateRange": [
+        184,
+        336
+      ],
+      "lcpBaselineRange": [
+        204,
+        444
+      ],
+      "lcpCandidateSd": 48.31,
+      "lcpBaselineSd": 88.02,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 83,
+      "proxyBaselineMedian": 77,
+      "ttfbCandidateMedian": 7,
+      "ttfbBaselineMedian": 7,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 193.08,
+      "transferBaselineMedianKb": 192.88,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "compra",
+      "profile": "mobile-cold",
+      "lcpCandidateMedian": 1364,
+      "lcpBaselineMedian": 1520,
+      "lcpDeltaMedian": -156,
+      "lcpCandidateRange": [
+        1248,
+        1572
+      ],
+      "lcpBaselineRange": [
+        1396,
+        1544
+      ],
+      "lcpCandidateSd": 109.47,
+      "lcpBaselineSd": 55.34,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 673,
+      "proxyBaselineMedian": 770,
+      "ttfbCandidateMedian": 6,
+      "ttfbBaselineMedian": 6,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 193.08,
+      "transferBaselineMedianKb": 192.88,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    }
+  ]
+}

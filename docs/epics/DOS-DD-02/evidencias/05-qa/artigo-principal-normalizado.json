@@ -1,0 +1,29 @@
+{
+  "probedAt": "2026-11-07T18:45:42.320Z",
+  "url": "https://www.dosadvocacia.com.br/post/due-diligence-imobili%C3%A1ria-o-que-%C3%A9-e-por-que-voc%C3%AA-precisa-fazer-antes-de-qualquer-compra",
+  "httpStatus": 200,
+  "title": "O que é due diligence imobiliária e o que ela verifica",
+  "faqQuestionCount": 6,
+  "faqQuestions": [
+    "Due diligence imobiliária é obrigatória por lei?",
+    "Quanto tempo leva uma due diligence imobiliária?",
+    "Matrícula limpa garante que o imóvel é seguro?",
+    "Due diligence serve só para compra de imóvel?",
+    "Posso exigir que o vendedor quite as dívidas antes da assinatura?",
+    "O que acontece se a due diligence encontrar um problema?"
+  ],
+  "pageDueDiligenceHrefsNormalized": [
+    "https://www.dosadvocacia.com.br/due-diligence-imobiliaria"
+  ],
+  "pageDueDiligenceHrefCount": 1,
+  "articleBodyDueDiligenceHrefsNormalized": [
+    "https://www.dosadvocacia.com.br/due-diligence-imobiliaria"
+  ],
+  "articleBodyDueDiligenceHrefCount": 1,
+  "articleElementFound": true,
+  "ctaMarkers": {
+    "blogServiceCtaPresent": false,
+    "compactCtaPresent": false
+  },
+  "note": "Contagem normalizada absolute/relative. Dois registros de serviceLinks na página inteira podem incluir fora do corpo; corpo editorial e CTA SSR ficam separados. Cards 03/04 ainda não estão em produção."
+}

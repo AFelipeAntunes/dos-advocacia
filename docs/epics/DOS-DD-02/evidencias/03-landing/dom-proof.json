@@ -1,0 +1,75 @@
+{
+  "capturedAt": "2026-11-07T17:40:00Z",
+  "environment": "local build + next start :3013",
+  "url": "http://127.0.0.1:3013/due-diligence-imobiliaria",
+  "copyFinalSha256": "9af22a5932ff9a15f96b1354cdb9f6431d60f0b19a17f7573a2b34c1a00e7165",
+  "metadata": {
+    "title": "Due diligence imobiliária | Curitiba e todo o Brasil",
+    "canonical": "https://www.dosadvocacia.com.br/due-diligence-imobiliaria",
+    "description": "Due diligence imobiliária antes de comprar ou investir. Análise da matrícula, do vendedor e dos riscos que não aparecem no anúncio. Curitiba e todo o Brasil.",
+    "ogTitle": "Due diligence imobiliária | Curitiba e todo o Brasil",
+    "ogDescription": "Due diligence imobiliária antes de comprar ou investir. Análise da matrícula, do vendedor e dos riscos que não aparecem no anúncio. Curitiba e todo o Brasil.",
+    "ogUrl": "https://www.dosadvocacia.com.br/due-diligence-imobiliaria"
+  },
+  "h1": "Due diligence imobiliária antes de comprar, vender ou investir",
+  "faqVisibleCount": 6,
+  "faqQuestions": [
+    "O que é due diligence imobiliária?",
+    "A due diligence imobiliária é obrigatória por lei?",
+    "Quanto tempo leva a análise?",
+    "A due diligence substitui as certidões e a escritura?",
+    "A imobiliária pode contratar a due diligence de um negócio que intermedeia?",
+    "A análise atende imóveis fora de Curitiba?"
+  ],
+  "schema": {
+    "legalServiceId": "https://www.dosadvocacia.com.br/#organization",
+    "legalName": "Drielle Pereira Sociedade Individual de Advocacia",
+    "postalCode": "80420-907",
+    "sameAsIncludesGoogle": true,
+    "serviceProviderByReference": true,
+    "serviceAreaServed": ["Curitiba", "Brasil"],
+    "faqPageQuestions": 6,
+    "breadcrumbPositions": 3
+  },
+  "form": {
+    "pageSlug": "due-diligence-imobiliaria",
+    "icp": "comprador",
+    "formLocation": "servico",
+    "demandType": "Compra, venda ou investimento"
+  },
+  "whatsappLanding": "Olá, Drielle! Vim pelo site e quero conversar sobre uma due diligence imobiliária.",
+  "whatsappFormSuccessIntercepted": "Olá, Drielle! Vim pela página de Due diligence imobiliária, já enviei o formulário e quero conversar sobre a análise do imóvel.",
+  "serviceLinksOnLanding": [
+    "/post/imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+    "/post/fraude-à-execução-no-imóvel-o-risco-que-pode-te-custar-tudo",
+    "/post/compra-de-imóvel-em-inventário-riscos-que-ninguém-te-conta",
+    "/assessoria-juridica-compra-de-imovel",
+    "/contratos-imobiliarios"
+  ],
+  "institutionalAnchors": {
+    "home": [{ "href": "/due-diligence-imobiliaria", "textContains": "Due diligence imobiliária" }],
+    "compra": [{ "href": "/due-diligence-imobiliaria", "text": "análise completa do imóvel e das partes antes da compra" }],
+    "nacional": [
+      { "href": "/due-diligence-imobiliaria", "text": "Due diligence imobiliária" },
+      { "href": "/due-diligence-imobiliaria", "text": "Due diligence imobiliária →" }
+    ],
+    "curitiba": [{ "href": "/due-diligence-imobiliaria", "text": "Due diligence imobiliária →" }]
+  },
+  "overflowX": {
+    "1440x900": false,
+    "1000x900": false,
+    "768x1024": false,
+    "390x844": false
+  },
+  "productionPostsHead": [
+    { "url": "https://www.dosadvocacia.com.br/post/imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer", "status": 200, "redirect": null },
+    { "url": "https://www.dosadvocacia.com.br/post/fraude-à-execução-no-imóvel-o-risco-que-pode-te-custar-tudo", "status": 200, "redirect": null },
+    { "url": "https://www.dosadvocacia.com.br/post/compra-de-imóvel-em-inventário-riscos-que-ninguém-te-conta", "status": 200, "redirect": null }
+  ],
+  "sitemapLastModifiedPreserved": "2026-08-02",
+  "notes": [
+    "Formulário: interceptação rotulada de POST /api/contato (sem envio real Resend/WhatsApp).",
+    "office-schema.ts alinhou legalName, CEP e sameAs Google no LegalService renderizado.",
+    "lastModified do sitemap NÃO foi alterado (só no release)."
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "probedAt": "2026-11-07T20:34:15.479Z",
+  "chrome": "156.0.8078.81",
+  "candidateOrigin": "http://127.0.0.1:3025",
+  "scopePass": true,
+  "scope": {
+    "dueDiligence": {
+      "path": "/due-diligence-imobiliaria",
+      "hasDdLcpOpt": true,
+      "jsonLdBeforeH1": false,
+      "h1Index": 4974,
+      "jsonLdIndex": 22236,
+      "siteInteractionsDefer": true,
+      "belowFoldSectionCount": 9,
+      "contentVisibilityValues": [
+        "auto"
+      ]
+    },
+    "controls": {
+      "locacao": {
+        "path": "/assessoria-em-locacao",
+        "hasDdLcpOpt": false,
+        "jsonLdBeforeH1": true,
+        "h1Index": 5664,
+        "jsonLdIndex": 2629,
+        "siteInteractionsDefer": false,
+        "belowFoldSectionCount": 3,
+        "contentVisibilityValues": [
+          "visible"
+        ]
+      },
+      "compra": {
+        "path": "/assessoria-juridica-compra-de-imovel",
+        "hasDdLcpOpt": false,
+        "jsonLdBeforeH1": true,
+        "h1Index": 7295,
+        "jsonLdIndex": 2857,
+        "siteInteractionsDefer": false,
+        "belowFoldSectionCount": 8,
+        "contentVisibilityValues": [
+          "visible"
+        ]
+      },
+      "curitiba": {
+        "path": "/advogada-imobiliaria-curitiba",
+        "hasDdLcpOpt": false,
+        "jsonLdBeforeH1": true,
+        "h1Index": 9653,
+        "jsonLdIndex": 2796,
+        "siteInteractionsDefer": false,
+        "belowFoldSectionCount": 8,
+        "contentVisibilityValues": [
+          "visible"
+        ]
+      },
+      "contato": {
+        "path": "/contato",
+        "hasDdLcpOpt": false,
+        "jsonLdBeforeH1": true,
+        "h1Index": 4693,
+        "jsonLdIndex": 2496,
+        "siteInteractionsDefer": false,
+        "belowFoldSectionCount": 1,
+        "contentVisibilityValues": [
+          "visible"
+        ]
+      }
+    }
+  },
+  "qa": {
+    "desktop": {
+      "profile": "desktop",
+      "headChecks": {
+        "hasDdLcpOpt": true,
+        "faqDetailsCount": 6,
+        "faqQuestions": [
+          "O que é due diligence imobiliária?",
+          "A due diligence imobiliária é obrigatória por lei?",
+          "Quanto tempo leva a análise?",
+          "A due diligence substitui as certidões e a escritura?",
+          "A imobiliária pode contratar a due diligence de um negócio que intermedeia?",
+          "A análise atende imóveis fora de Curitiba?"
+        ],
+        "jsonLdBlocks": 1,
+        "faqPageInJsonLd": true,
+        "h1": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "formPresent": true,
+        "formAnchorId": "due-diligence-imobiliaria-contact-title",
+        "formAnchorExists": true,
+        "portrait": {
+          "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+          "alt": "Drielle Pereira, advogada imobiliarista",
+          "loading": "lazy",
+          "width": "1600",
+          "height": "1600"
+        }
+      },
+      "anchorResult": {
+        "hash": "#due-diligence-imobiliaria-contact-title",
+        "anchorInView": false,
+        "formTop": 2033
+      },
+      "keyboardFilled": {
+        "nome": "Felipe QA CTO16",
+        "email": "qa-cto16@example.com",
+        "telefone": "41999990000"
+      },
+      "faqToggle": [
+        {
+          "index": 0,
+          "opened": true,
+          "closed": true
+        },
+        {
+          "index": 1,
+          "opened": true,
+          "closed": true
+        },
+        {
+          "index": 2,
+          "opened": true,
+          "closed": true
+        },
+        {
+          "index": 3,
+          "opened": true,
+          "closed": true
+        },
+        {
+          "index": 4,
+          "opened": true,
+          "closed": true
+        },
+        {
+          "index": 5,
+          "opened": true,
+          "closed": true
+        }
+      ],
+      "faqTogglePass": true,
+      "scrollCls": {
+        "cls": 0,
+        "shiftCount": 0,
+        "observerSupport": true,
+        "portraitVisible": true,
+        "portraitNatural": 1600,
+        "portraitTransferKb": 144.09
+      },
+      "formPosts": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1:3025/api/contato",
+          "intercepted": true,
+          "bodyPreview": "{\"city\":\"\",\"consent\":true,\"demandType\":\"Compra, venda ou investimento\",\"email\":\"qa-cto16@example.com\",\"formLocation\":\"servico\",\"icp\":\"comprador\",\"message\":\"Mensagem de QA CTO16 — interceptação local, "
+        }
+      ],
+      "formOutcome": {
+        "successVisible": true,
+        "statusText": null
+      },
+      "formInterceptedOnly": true
+    },
+    "mobile": {
+      "profile": "mobile",
+      "headChecks": {
+        "hasDdLcpOpt": true,
+        "faqDetailsCount": 6,
+        "faqQuestions": [
+          "O que é due diligence imobiliária?",
+          "A due diligence imobiliária é obrigatória por lei?",
+          "Quanto tempo leva a análise?",
+          "A due diligence substitui as certidões e a escritura?",
+          "A imobiliária pode contratar a due diligence de um negócio que intermedeia?",
+          "A análise atende imóveis fora de Curitiba?"
+        ],
+        "jsonLdBlocks": 1,
+        "faqPageInJsonLd": true,
+        "h1": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "formPresent": true,
+        "formAnchorId": "due-diligence-imobiliaria-contact-title",
+        "formAnchorExists": true,
+        "portrait": {
+          "src": "/assets/images/drielle-pereira-retrato-profissional.webp",
+          "alt": "Drielle Pereira, advogada imobiliarista",
+          "loading": "lazy",
+          "width": "1600",
+          "height": "1600"
+        }
+      },
+      "anchorResult": {
+        "hash": "#due-diligence-imobiliaria-contact-title",
+        "anchorInView": false,
+        "formTop": 3491
+      },
+      "keyboardFilled": {
+        "nome": "Felipe QA CTO16",
+        "email": "qa-cto16@example.com",
+        "telefone": "41999990000"
+      },
+      "faqToggle": [
+        {
+          "index": 0,
+          "opened": true,
+          "closed": true
+        },
+        {
+          "index": 1,
+          "opened": true,
+          "closed": true
+        },
+        {
+          "index": 2,
+          "opened": true,
+          "closed": true
+        },
+        {
+          "index": 3,
+          "opened": true,
+          "closed": true
+        },
+        {
+          "index": 4,
+          "opened": true,
+          "closed": true
+        },
+        {
+          "index": 5,
+          "opened": true,
+          "closed": true
+        }
+      ],
+      "faqTogglePass": true,
+      "scrollCls": {
+        "cls": 0,
+        "shiftCount": 0,
+        "observerSupport": true,
+        "portraitVisible": true,
+        "portraitNatural": 1600,
+        "portraitTransferKb": 144.09
+      },
+      "formPosts": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1:3025/api/contato",
+          "intercepted": true,
+          "bodyPreview": "{\"city\":\"\",\"consent\":true,\"demandType\":\"Compra, venda ou investimento\",\"email\":\"qa-cto16@example.com\",\"formLocation\":\"servico\",\"icp\":\"comprador\",\"message\":\"Mensagem de QA CTO16 — interceptação local, "
+        }
+      ],
+      "formOutcome": {
+        "successVisible": true,
+        "statusText": null
+      },
+      "formInterceptedOnly": true
+    }
+  },
+  "notes": {
+    "formAnchor": "#due-diligence-imobiliaria-contact-title",
+    "noRealSubmit": true
+  }
+}

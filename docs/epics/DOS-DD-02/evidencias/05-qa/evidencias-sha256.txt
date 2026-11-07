@@ -1,0 +1,12 @@
+# DOS-DD-02.05 evidence pack SHA-256 (CTO16)
+# generated 2026-11-07T17:37:35.4860648-03:00
+
+9ad651750342e9da691ad949593e873a1dc9709aa4a116020451fbd471605602  docs/epics/DOS-DD-02/evidencias/05-qa/RELATORIO-CTO16-ESCOPO-DD.md
+a655f90aea96fe925127721bacc62269c2f8313e92f5374e45e2c67000ab2d50  docs/epics/DOS-DD-02/evidencias/05-qa/cto16-scope-and-qa.json
+6f7976eec9c5820dd4973ab4c3ee6059e34a30c265441ec1eafb4e8a7fe4815f  docs/epics/DOS-DD-02/evidencias/05-qa/perf-dd-h1-probe-cto16-final-summary.json
+b265bec627a0377c0229e591b0b85a9fcf4583dac4493eb49e7791e4a5cdce7d  docs/epics/DOS-DD-02/evidencias/05-qa/perf-dd-h1-probe-cto16-final.json
+9fd90ab203fc4fc641232614641372fc8fd32131ab77450af3ff421c081f338a  docs/epics/DOS-DD-02/evidencias/05-qa/perf-dd-h1-probe-pre-fix-summary.json
+3e2ef758a4b93ab30db2b3b6080a81195f0ab101ae682c105c5567837e511d4f  docs/epics/DOS-DD-02/evidencias/05-qa/perf-dd-h1-probe-post-fix-cv-summary.json
+66372252e20444e530b7343b27f6b6ca655fcc7b8ae42954f424ba69a24c87ca  docs/epics/DOS-DD-02/evidencias/05-qa/candidato-manifesto-sha256.txt
+b52d790ccc2c67a1728d5b6eab98d81aec965b7c7e6a1502ce4960bba6571c90  docs/epics/DOS-DD-02/evidencias/05-qa/cto16-typecheck.txt
+c77155f8559b433acdbc6fdba3b3a3f7d88cdb0781fe8a203adf9476bde4f07b  docs/epics/DOS-DD-02/evidencias/05-qa/cto16-build.txt

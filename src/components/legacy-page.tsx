@@ -26,19 +26,45 @@ const legacyPageSlugs: Record<LegacyPageKey, string> = {
 
 export async function LegacyPage({ page }: LegacyPageProps) {
   const legacyPage = await getLegacyPage(page);
+  const optimizeDdLcp = page === "dueDiligence";
+
+  const jsonLd = legacyPage.jsonLd.map((schema, index) => (
+    <script
+      key={`${page}-${index}`}
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: schema }}
+    />
+  ));
+
+  const body = (
+    <div dangerouslySetInnerHTML={{ __html: legacyPage.body }} suppressHydrationWarning />
+  );
+
+  const tracker = <InstitutionalCtaTracker pageSlug={legacyPageSlugs[page]} />;
+  const interactions = optimizeDdLcp ? (
+    <script src="/site-interactions.js" defer />
+  ) : (
+    <script src="/site-interactions.js" />
+  );
+
+  // CTO 16 R1: body-before-JSON-LD, defer and content-visibility only on dueDiligence.
+  if (optimizeDdLcp) {
+    return (
+      <div className="dd-lcp-opt" data-dd-lcp-opt="">
+        {body}
+        {jsonLd}
+        {tracker}
+        {interactions}
+      </div>
+    );
+  }
 
   return (
     <>
-      {legacyPage.jsonLd.map((schema, index) => (
-        <script
-          key={`${page}-${index}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: schema }}
-        />
-      ))}
-      <div dangerouslySetInnerHTML={{ __html: legacyPage.body }} suppressHydrationWarning />
-      <InstitutionalCtaTracker pageSlug={legacyPageSlugs[page]} />
-      <script src="/site-interactions.js" />
+      {jsonLd}
+      {body}
+      {tracker}
+      {interactions}
     </>
   );
 }
