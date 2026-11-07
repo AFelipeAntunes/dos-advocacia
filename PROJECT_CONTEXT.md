@@ -462,3 +462,7 @@ Status atual: R1 de escopo aceito; pacote local apto tecnicamente como base PR/P
 
 ### DOS-DD-02 — integração autorizada, 07/11/2026
 Status atual: Felipe autorizou commit/push/PR/Preview do lote aceito no CTO17; sem merge ou produção. Alterações recentes: preflight remoto sem divergência/PRs abertas; 114 testes, typecheck e build23/23 aprovados pelo CTO. Pendências: URL/SHA do Preview, integração Wix real e gate mobile. Registro em docs/epics/DOS-DD-02/18-INTEGRACAO-PR-PREVIEW.md.
+
+
+### DOS-DD-02 — PR12 e primeiro Preview, 07/11/2026
+Status atual: PR12 em rascunho, commit74293fe, Preview keu822p1e Ready, checks verdes; produção7fec6b2 intacta. Alterações recentes: integração Wix real conferida;108 posts publicados e três multicategoria identificados via conector, CTAs DD/B2B/comprador corretos nas páginas sondadas. Pendências: SITE_URL Preview genérica antiga afeta canonical dos artigos; autorização específica de override da branch solicitada, não aplicada. Medição automatizada protegida por SSO e GA4/DebugView real continuam abertos. Detalhes e limites em18-INTEGRACAO-PR-PREVIEW.md.

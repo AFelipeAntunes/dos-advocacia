@@ -96,3 +96,7 @@ Sonda local com melhora aceita como evidência. Aceite final QA05 aguarda limita
 
 ## Parecer17 — escopo DD aceito
 R1 do CTO16 fechado por revisão de código/evidências. Base local de PR/Preview aceita tecnicamente; card05 não encerrado. Mobile final +54 ms (5/10) permanece gate aberto para comparação equivalente no Preview, sem novo refactor especulativo. Operações Git/Preview dependem de autorização específica. Ver 17-ACEITE-CTO-ESCOPO-DD-E-GATE-PREVIEW.md.
+
+
+## Integração PR12 —07/11/2026
+Commit74293fe e Preview Ready; aceites reais de artigos/multicategoria registrados no18. Canonical dos artigos revela SITE_URL genérica antiga; override solicitado só para qa/dos-dd-02-05. Release, desempenho mobile final e GA4 real não aprovados. Sem merge/produção.

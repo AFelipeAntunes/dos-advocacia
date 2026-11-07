@@ -1,0 +1,53 @@
+{
+  "collectedAt": "2026-11-07T23:19:53.622Z",
+  "total": 108,
+  "categories": [
+    {
+      "id": "8c2ee73c-4740-4d24-8b95-54c0bb24b1ba",
+      "slug": "due-diligence-imobiliária",
+      "label": "Due Diligence Imobiliária"
+    },
+    {
+      "id": "5622eb6a-8cb7-4bfa-92b1-7f694afc7de5",
+      "slug": "contratos-imobiliários",
+      "label": "Contratos Imobiliários"
+    },
+    {
+      "id": "d3ccf9b7-7097-45c8-97f6-d102bc5fc8e2",
+      "slug": "assessoria-para-imobiliárias",
+      "label": "Assessoria para Imobiliárias"
+    },
+    {
+      "id": "2077ef1a-3096-4792-90c7-4e9eaa601618",
+      "slug": "litígios-imobiliários",
+      "label": "Litígios Imobiliários"
+    }
+  ],
+  "multicategory": [
+    {
+      "id": "67b6ffc1-29fa-443d-847c-9f3c2e1e6514",
+      "slug": "garantia-do-fiador-na-renovação-do-contrato-de-aluguel",
+      "categoryIds": [
+        "d3ccf9b7-7097-45c8-97f6-d102bc5fc8e2",
+        "5622eb6a-8cb7-4bfa-92b1-7f694afc7de5"
+      ]
+    },
+    {
+      "id": "2c11371f-1148-4fff-abeb-8dcef7ffeced",
+      "slug": "distrato-de-imóvel-na-planta-a-construtora-quis-reter-50-o-stj-disse-que-não",
+      "categoryIds": [
+        "8c2ee73c-4740-4d24-8b95-54c0bb24b1ba",
+        "5622eb6a-8cb7-4bfa-92b1-7f694afc7de5"
+      ]
+    },
+    {
+      "id": "ddbd87e3-8677-4dc4-b9bc-cabd4f93726c",
+      "slug": "multipropriedade-imobiliária-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+      "categoryIds": [
+        "8c2ee73c-4740-4d24-8b95-54c0bb24b1ba",
+        "5622eb6a-8cb7-4bfa-92b1-7f694afc7de5"
+      ]
+    }
+  ],
+  "withoutCategoryCount": 0
+}
