@@ -466,3 +466,7 @@ Status atual: Felipe autorizou commit/push/PR/Preview do lote aceito no CTO17; s
 
 ### DOS-DD-02 — PR12 e primeiro Preview, 07/11/2026
 Status atual: PR12 em rascunho, commit74293fe, Preview keu822p1e Ready, checks verdes; produção7fec6b2 intacta. Alterações recentes: integração Wix real conferida;108 posts publicados e três multicategoria identificados via conector, CTAs DD/B2B/comprador corretos nas páginas sondadas. Pendências: SITE_URL Preview genérica antiga afeta canonical dos artigos; autorização específica de override da branch solicitada, não aplicada. Medição automatizada protegida por SSO e GA4/DebugView real continuam abertos. Detalhes e limites em18-INTEGRACAO-PR-PREVIEW.md.
+
+
+### DOS-DD-02 — SITE_URL Preview,08/11/2026
+Status atual: override autorizado por Felipe e salvo somente na Preview Branch qa/dos-dd-02-05. Alterações recentes: SITE_URL Config com domínio oficial; nenhuma aplicação alterada. Novo build via integração Git após cancelamento da confirmação por e-mail do redeploy manual. Pendências: validar canonical/schema/sitemap no novo Preview, desempenho mobile e GA4 real. Ver19-PREVIEW-SITE-URL-20261108.md. Production e credenciais preservadas.
