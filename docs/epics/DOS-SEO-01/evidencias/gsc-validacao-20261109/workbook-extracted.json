@@ -1,0 +1,173 @@
+{
+  "source": "C:\\Users\\Felipe Antunes\\Downloads\\dosadvocacia.com.br-Coverage-Validation-2026-11-09.xlsx",
+  "sha256": "775af4d5533f80a4d05d70edde5cec713584591d26e93191f40bb4042d0de833",
+  "sheets": [
+    {
+      "name": "Tabela",
+      "rows": [
+        {
+          "A1": "URL",
+          "B1": "Último rastreamento",
+          "C1": "Status"
+        },
+        {
+          "A2": "https://www.dosadvocacia.com.br/post/holding-imobiliária-vantagens-reais-e-riscos-que-ninguém-conta",
+          "B2": "46287.0",
+          "C2": "Pendente"
+        },
+        {
+          "A3": "https://www.dosadvocacia.com.br/post/o-imóvel-estava-ocupado-há-anos-o-comprador-só-descobriu-depois-de-pagar",
+          "B3": "46281.0",
+          "C3": "Pendente"
+        },
+        {
+          "A4": "https://www.dosadvocacia.com.br/post/sinal-de-negócio-em-imóvel-quando-pagar-pode-ser-uma-armadilha",
+          "B4": "46257.0",
+          "C4": "Pendente"
+        },
+        {
+          "A5": "https://www.dosadvocacia.com.br/post/consórcio-imobiliário-parece-simples-o-contrato-não-é",
+          "B5": "46252.0",
+          "C5": "Pendente"
+        },
+        {
+          "A6": "https://www.dosadvocacia.com.br/post/o-inquilino-não-paga-não-sai-e-a-imobiliária-fica-no-meio-o-que-fazer-numa-ação-de-despejo",
+          "B6": "46252.0",
+          "C6": "Pendente"
+        },
+        {
+          "A7": "https://www.dosadvocacia.com.br/post/passivo-oculto-em-imóvel-o-risco-que-ninguém-conta-antes-da-assinatura",
+          "B7": "46252.0",
+          "C7": "Pendente"
+        },
+        {
+          "A8": "https://www.dosadvocacia.com.br/post/comprar-imóvel-em-leilão-os-riscos-jurídicos-que-ninguém-lê-no-edital",
+          "B8": "46249.0",
+          "C8": "Pendente"
+        },
+        {
+          "A9": "https://www.dosadvocacia.com.br/site.webmanifest",
+          "B9": "46233.0",
+          "C9": "Pendente"
+        },
+        {
+          "A10": "https://www.dosadvocacia.com.br/post/o-fiador-pediu-exoneração-da-fiança-a-imobiliária-tem-30-dias-para-agir",
+          "B10": "46227.0",
+          "C10": "Pendente"
+        },
+        {
+          "A11": "https://www.dosadvocacia.com.br/post/o-vendedor-tinha-uma-dívida-o-imóvel-ficou-bloqueado-depois-que-o-comprador-registrou",
+          "B11": "46224.0",
+          "C11": "Pendente"
+        },
+        {
+          "A12": "https://www.dosadvocacia.com.br/post/o-vendedor-tinha-dívida-a-compra-foi-feita-o-risco-é-seu",
+          "B12": "46222.0",
+          "C12": "Pendente"
+        },
+        {
+          "A13": "https://www.dosadvocacia.com.br/post/financiou-o-imóvel-está-pagando-mas-a-propriedade-ainda-não-é-sua",
+          "B13": "46222.0",
+          "C13": "Pendente"
+        },
+        {
+          "A14": "https://www.dosadvocacia.com.br/post/o-imóvel-foi-entregue-com-defeito-o-comprador-só-descobriu-depois-de-assinar-a-escritura-1",
+          "B14": "46222.0",
+          "C14": "Pendente"
+        },
+        {
+          "A15": "https://www.dosadvocacia.com.br/post/multipropriedade-imobiliária-o-que-parece-férias-pode-virar-dívida",
+          "B15": "46212.0",
+          "C15": "Pendente"
+        },
+        {
+          "A16": "https://www.dosadvocacia.com.br/post/a-dívida-de-condomínio-era-do-vendedor-e-agora-é-sua",
+          "B16": "46212.0",
+          "C16": "Pendente"
+        },
+        {
+          "A17": "https://www.dosadvocacia.com.br/post/a-garantia-venceu-e-o-locatário-ainda-está-no-imóvel-a-imobiliária-percebeu",
+          "B17": "46212.0",
+          "C17": "Pendente"
+        },
+        {
+          "A18": "https://www.dosadvocacia.com.br/blog/categories/litígios-imobiliários",
+          "B18": "46206.0",
+          "C18": "Pendente"
+        },
+        {
+          "A19": "https://www.dosadvocacia.com.br/post/o-inquilino-sublocou-o-imóvel-sem-avisar-e-a-imobiliária-foi-acionada-pelo-locador",
+          "B19": "46204.0",
+          "C19": "Pendente"
+        },
+        {
+          "A20": "https://www.dosadvocacia.com.br/blog-feed.xml",
+          "B20": "46188.0",
+          "C20": "Pendente"
+        },
+        {
+          "A21": "https://www.dosadvocacia.com.br/compradores-e-investidores-1-2",
+          "B21": "46185.0",
+          "C21": "Pendente"
+        },
+        {
+          "A22": "https://www.dosadvocacia.com.br/compradores-e-investidores-1-1",
+          "B22": "46185.0",
+          "C22": "Pendente"
+        },
+        {
+          "A23": "https://www.dosadvocacia.com.br/post/cadastro-imobiliario-brasileiro-o-que-o-cib-muda-na-compra-do-seu-imovel",
+          "B23": "46184.0",
+          "C23": "Pendente"
+        },
+        {
+          "A24": "https://www.dosadvocacia.com.br/blog/categories/contratos-imobiliários",
+          "B24": "46183.0",
+          "C24": "Pendente"
+        },
+        {
+          "A25": "https://www.dosadvocacia.com.br/_api/v2/dynamicmodel",
+          "B25": "46183.0",
+          "C25": "Pendente"
+        },
+        {
+          "A26": "https://www.dosadvocacia.com.br/_api/v1/access-tokens",
+          "B26": "46183.0",
+          "C26": "Pendente"
+        },
+        {
+          "A27": "https://www.dosadvocacia.com.br/compradores-e-investidores",
+          "B27": "46163.0",
+          "C27": "Pendente"
+        },
+        {
+          "A28": "https://www.dosadvocacia.com.br/post/imovel-em-terreno-de-marinha",
+          "B28": "46333.0",
+          "C28": "Falha"
+        },
+        {
+          "A29": "https://www.dosadvocacia.com.br/post/falecimento-do-locador-a-imobiliária-continua-repassando",
+          "B29": "46333.0",
+          "C29": "Falha"
+        }
+      ]
+    },
+    {
+      "name": "Metadados",
+      "rows": [
+        {
+          "A1": "Propriedade",
+          "B1": "Valor"
+        },
+        {
+          "A2": "Problema",
+          "B2": "Rastreada, mas não indexada no momento"
+        },
+        {
+          "A3": "Sitemap",
+          "B3": "Todas as páginas conhecidas"
+        }
+      ]
+    }
+  ]
+}

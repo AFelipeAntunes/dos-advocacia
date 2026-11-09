@@ -503,3 +503,11 @@ Status atual: CTAs/eventos e formulário interceptado do smoke aceitos (bruto ct
 
 ### DOS-DD-02 — CTO25,09/11/2026
 Status atual: ajuste da âncora real aceito, oito verificações locais aprovadas. Preparação do commit final e Preview na PR12, sem merge/produção. Alterações recentes: CSS isolado scroll-margin; typecheck e build23/23 reexecutados pelo CTO; evidências sanitizadas (bypass revogado e cabeçalhos de sessão). Pendências: smoke remoto da âncora final, datas efetivas do rollout e autorização específica de produção. GSC em frente separada: dois posts200 fora do sitemap público121URLs; sem causa de não indexação comprovada. Ver25-CTO-ACEITE-ANCORA-E-LOTE-RELEASE.md.
+
+
+### DOS-DD-02 — Preview final f5f3d7e,09/11/2026
+Status atual: commit final f5f3d7ec0775c5d2f4e6fa8bde09238440bd442a enviado na PR12. Preview oficial6jyj6gmyb com deployment GitHub7657095068 emsuccess. Âncora remota conferida pelo CTO em1280x720: topo116.125px >header92.8px, scroll-margin116px; pass. Demais oito combinações locais e bateria80 preservadas. Lote pronto para autorização específica de merge/produção, incluindo lastModified no rollout real. Sem merge/deploy Production. Dados e screenshot de smoke remoto locais em evidencias/05-qa/release-f5f3d7e.
+
+
+### DOS-DD-02 — rollout autorizado,09/11/2026
+Status atual: Felipe autorizou merge da PR12 e publicação, com lastModified no rollout e smoke/revalidação se necessária. Alterações recentes: datas2026-11-09 nas cinco rotas do lote, testes sitemap17/17, typecheck e build23/23 aprovados. Publicação em andamento, ainda não declarada concluída. Produção anterior7fec6b2; nenhum Wix/DNS/credencial alterado. Ver26-RELEASE-AUTORIZADO-20261109.md.
