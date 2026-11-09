@@ -16,6 +16,7 @@ export const areasPath = "/areas-de-atuacao";
 export const institutionalLinks = [
   { href: "/advogada-imobiliaria", label: "Advogada Imobiliarista" },
   { href: "/assessoria-juridica-compra-de-imovel", label: "Compra de imóvel" },
+  { href: "/due-diligence-imobiliaria", label: "Due diligence imobiliária" },
   { href: "/assessoria-juridica-para-imobiliarias", label: "Jurídico para imobiliárias" }
 ] as const;
 

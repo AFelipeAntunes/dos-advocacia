@@ -511,3 +511,8 @@ Status atual: commit final f5f3d7ec0775c5d2f4e6fa8bde09238440bd442a enviado na P
 
 ### DOS-DD-02 — rollout autorizado,09/11/2026
 Status atual: Felipe autorizou merge da PR12 e publicação, com lastModified no rollout e smoke/revalidação se necessária. Alterações recentes: datas2026-11-09 nas cinco rotas do lote, testes sitemap17/17, typecheck e build23/23 aprovados. Publicação em andamento, ainda não declarada concluída. Produção anterior7fec6b2; nenhum Wix/DNS/credencial alterado. Ver26-RELEASE-AUTORIZADO-20261109.md.
+
+
+### Due diligence no submenu — 09/11/2026
+Status atual: ajuste local na branch fix/due-diligence-menu-20261109, base749fbfc. Alterações recentes: link Due diligence imobiliária no submenu Áreas e rodapé compartilhado, aria-current correto, sem JS/CSS novo. Prova: navegação18/18 antes/depois, typecheck e build23/23, desktop1280/mobile390 sem overflow. Pendências: autorização de commit/push/PR/merge/deploy; entrega real do webhook Wix continua não comprovada pelo diagnóstico14. Rotina prevista automática, indexação Google independente. Ver28-MENU-E-ROTINA-WIX-20261109.md.
+

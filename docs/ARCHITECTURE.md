@@ -124,3 +124,8 @@ O corte foi concluído no projeto oficial `dos-advocacia` da Vercel.
 - Verificação realizada no domínio público: home, `/blog`, artigo Wix real, `/sitemap.xml` e `/robots.txt` com HTTP 200; a raiz respondeu 308 para `www`; um artigo foi confirmado com canonical, description, Open Graph e `BlogPosting`.
 
 O Wix continua como backoffice. A rotina alvo é automática pelo evento Blog `Post Updated`; se a entrega falhar, a redatora solicita “Revalide o blog Wix”, e um responsável autorizado chama a rota segura de contingência sem expor o segredo.
+
+
+### Due diligence no submenu — 09/11/2026
+Status atual: ajuste local na branch fix/due-diligence-menu-20261109, base749fbfc. Alterações recentes: link Due diligence imobiliária no submenu Áreas e rodapé compartilhado, aria-current correto, sem JS/CSS novo. Prova: navegação18/18 antes/depois, typecheck e build23/23, desktop1280/mobile390 sem overflow. Pendências: autorização de commit/push/PR/merge/deploy; entrega real do webhook Wix continua não comprovada pelo diagnóstico14. Rotina prevista automática, indexação Google independente. Ver28-MENU-E-ROTINA-WIX-20261109.md.
+

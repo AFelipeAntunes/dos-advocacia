@@ -1,0 +1,31 @@
+{
+  "links": [
+    {
+      "current": null,
+      "href": "/areas-de-atuacao",
+      "text": "Todas as áreas de atuação"
+    },
+    {
+      "current": null,
+      "href": "/advogada-imobiliaria",
+      "text": "Advogada Imobiliarista"
+    },
+    {
+      "current": null,
+      "href": "/assessoria-juridica-compra-de-imovel",
+      "text": "Compra de imóvel"
+    },
+    {
+      "current": "page",
+      "href": "/due-diligence-imobiliaria",
+      "text": "Due diligence imobiliária"
+    },
+    {
+      "current": null,
+      "href": "/assessoria-juridica-para-imobiliarias",
+      "text": "Jurídico para imobiliárias"
+    }
+  ],
+  "overflow": false,
+  "width": 1280
+}
