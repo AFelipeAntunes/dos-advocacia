@@ -28,7 +28,7 @@ const pages: PageFixture[] = [
   { currentPath: null, file: "contratos-imobiliarios.html", route: "/contratos-imobiliarios" },
   { currentPath: null, file: "assessoria-em-locacao.html", route: "/assessoria-em-locacao" },
   { currentPath: null, file: "conflitos-imobiliarios.html", route: "/conflitos-imobiliarios" },
-  { currentPath: null, file: "due-diligence-imobiliaria.html", route: "/due-diligence-imobiliaria" },
+  { currentPath: "/due-diligence-imobiliaria", file: "due-diligence-imobiliaria.html", route: "/due-diligence-imobiliaria" },
   { currentPath: "/treinamentos", file: "treinamentos.html", route: "/treinamentos" },
   { currentPath: "/contato", file: "contato.html", route: "/contato" },
   { currentPath: "/sobre", file: "sobre.html", route: "/sobre" },
@@ -45,6 +45,7 @@ const expectedSubmenu = [
   "/areas-de-atuacao",
   "/advogada-imobiliaria",
   "/assessoria-juridica-compra-de-imovel",
+  "/due-diligence-imobiliaria",
   "/assessoria-juridica-para-imobiliarias"
 ];
 
