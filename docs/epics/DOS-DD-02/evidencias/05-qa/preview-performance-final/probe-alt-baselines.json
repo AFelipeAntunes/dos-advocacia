@@ -1,0 +1,20 @@
+[
+  {
+    "origin": "https://dos-advocacia-n7nukp43d-dos-advocacia.vercel.app",
+    "status": 200,
+    "h1": "O imóvel parece certo. Os documentos podem contar outra história.",
+    "isSso": false
+  },
+  {
+    "origin": "https://dos-advocacia-git-qa-dos-legal-name-dos-advocacia.vercel.app",
+    "status": 200,
+    "h1": "O imóvel parece certo. Os documentos podem contar outra história.",
+    "isSso": false
+  },
+  {
+    "origin": "https://dos-advocacia-8anblj629-dos-advocacia.vercel.app",
+    "status": 200,
+    "h1": "O imóvel parece certo. Os documentos podem contar outra história.",
+    "isSso": false
+  }
+]

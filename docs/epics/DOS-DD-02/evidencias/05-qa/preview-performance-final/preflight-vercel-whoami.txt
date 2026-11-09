@@ -1,0 +1,9 @@
+﻿node.exe : Vercel CLI 65.12.1
+No linha:1 caractere:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Vercel CLI 65.12.1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+> Logged out.
+> Run `vercel deploy --temporary` to create a temporary deployment you can claim later, or `vercel login` to log in.

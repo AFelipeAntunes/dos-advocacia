@@ -100,3 +100,19 @@ R1 do CTO16 fechado por revisão de código/evidências. Base local de PR/Previe
 
 ## Integração PR12 —07/11/2026
 Commit74293fe e Preview Ready; aceites reais de artigos/multicategoria registrados no18. Canonical dos artigos revela SITE_URL genérica antiga; override solicitado só para qa/dos-dd-02-05. Release, desempenho mobile final e GA4 real não aprovados. Sem merge/produção.
+
+
+## CTO20 — medição não executada e errata da âncora
+Devolutiva do navegador é diagnóstico de capacidade, não benchmark. Próximo executor local/CDP; preflight autenticado primeiro. Prova antiga de navegação ao formulário não passou (anchorInView=false), apesar de alvo existente. Handoff completo no20. Sem alteração de aplicação/produção.
+
+
+## CTO22 — B comprovada; D autorizado ao executor
+Referência n7nukp43d/753bad4 tem árvore Git idêntica à Production7fec6b2. Medir Preview×Preview com OIDC, sem A/C. D autorizado por Felipe de forma restrita; executar e comprovar, não marcar concluído. Ver22 para cache quente, limites e limpeza.
+
+
+## CTO23 — B/D e desempenho localizados aceitos
+80 medições conferidas; quatro medianas sem piora. Outlier preservado com diferença concentrada emTTFB. Fragmento sr-only não é CTA aprovado: não bloqueante, aceite antigo retirado. Smoke conectado curto e preparação de release no23; nenhum merge/produção autorizado.
+
+
+## CTO24 — smoke aceito, âncora real com correção local
+Eventos e formulário interceptados aceitos. Liberado ajuste CSS isolado de scroll-margin-top em o-que-voce-recebe e QA dirigido; sem repetir bateria80. Próximo retorno fecha preparação de release pelo CTO, sem produção automática. Ver24.

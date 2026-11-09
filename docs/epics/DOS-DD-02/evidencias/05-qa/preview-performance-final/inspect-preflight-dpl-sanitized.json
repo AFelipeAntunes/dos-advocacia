@@ -1,0 +1,34 @@
+{
+  "id": "dpl_CMEHKRbujwgfVuSjR88ZhGjQ1D3N",
+  "name": "preflight-playwright-auth",
+  "accountId": null,
+  "framework": null,
+  "createdAt": 1794231093456,
+  "updatedAt": null,
+  "nodeVersion": null,
+  "targets": null,
+  "alias": [
+    "preflight-playwright-auth.vercel.app",
+    "preflight-playwright-auth-dos-advocacia.vercel.app"
+  ],
+  "url": "preflight-playwright-auth-epmof5a6m-dos-advocacia.vercel.app",
+  "projectId": null,
+  "deploymentId": "dpl_CMEHKRbujwgfVuSjR88ZhGjQ1D3N",
+  "meta": null,
+  "readyState": "READY",
+  "target": "production",
+  "keys": [
+    "id",
+    "name",
+    "url",
+    "target",
+    "readyState",
+    "createdAt",
+    "duration",
+    "buildMachine",
+    "buildCacheSummary",
+    "aliases",
+    "builds",
+    "contextName"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "executedAt": "2026-11-09T13:45:00.000Z",
+  "authorizedBy": "Felipe (CTO22 explicit)",
+  "actions": [
+    {
+      "action": "inventory-accidental-project",
+      "projectName": "preflight-playwright-auth",
+      "projectId": "prj_oGSRjIAMCRzwviGYbbJOOCjEj4N5",
+      "deploymentId": "dpl_CMEHKRbujwgfVuSjR88ZhGjQ1D3N",
+      "createdAt": "2026-11-09T13:31:32.965Z",
+      "aliases": [
+        "preflight-playwright-auth.vercel.app",
+        "preflight-playwright-auth-dos-advocacia.vercel.app"
+      ],
+      "readyState": "READY",
+      "target": "production",
+      "matchedAccidentDescription": true,
+      "officialDomainsTouched": false
+    },
+    {
+      "action": "delete-project",
+      "command": "vercel project delete preflight-playwright-auth --confirm-name preflight-playwright-auth --scope dos-advocacia",
+      "result": "Deleted preflight-playwright-auth",
+      "postCheck": "project ls shows only dos-advocacia"
+    },
+    {
+      "action": "inventory-bypass",
+      "project": "dos-advocacia",
+      "projectId": "prj_bwBkZMufr8AHJ7TXedO6LtxEe7gu",
+      "bypassCountBefore": 1,
+      "createdAt": "2026-11-09T13:29:51.361Z",
+      "scope": "automation-bypass",
+      "identification": "single bypass; timestamp matches involuntary vercel curl in this session (~13m before cleanup)",
+      "secretValueRevealed": false
+    },
+    {
+      "action": "revoke-bypass",
+      "command": "vercel project protection disable dos-advocacia --protection-bypass --protection-bypass-secret <redacted> --scope dos-advocacia -y",
+      "result": {
+        "action": "disable",
+        "projectId": "prj_bwBkZMufr8AHJ7TXedO6LtxEe7gu",
+        "projectName": "dos-advocacia",
+        "protectionBypass": false
+      },
+      "bypassKeyCountAfter": 0,
+      "officialProjectPreserved": true,
+      "ssoProtectionPreserved": true
+    }
+  ],
+  "ok": true
+}

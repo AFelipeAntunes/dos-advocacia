@@ -316,6 +316,15 @@ h1, h2, h3 { text-wrap: balance; }
   content-visibility: auto;
   contain-intrinsic-size: auto 800px;
 }
+/* CTO 24: âncora aprovada do hero DD abaixo do header sticky (menu fechado). */
+.dd-lcp-opt #o-que-voce-recebe {
+  scroll-margin-top: 7.25rem; /* 92px header desktop + folga legível */
+}
+@media (max-width: 960px) {
+  .dd-lcp-opt #o-que-voce-recebe {
+    scroll-margin-top: 6.25rem; /* 78px header mobile + folga legível */
+  }
+}
 .page-lead { max-width: 650px; margin-bottom: 0; color: rgba(255,255,255,.75); font-size: clamp(1.05rem, 1.65vw, 1.25rem); line-height: 1.6; }
 .page-hero-stone { color: var(--navy); background: var(--stone); }
 .page-hero-stone .breadcrumb { color: var(--slate); }

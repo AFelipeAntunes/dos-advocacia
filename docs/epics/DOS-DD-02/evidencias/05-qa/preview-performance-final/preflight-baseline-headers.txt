@@ -1,0 +1,12 @@
+HTTP/1.1 302 Found
+Cache-Control: no-store, max-age=0
+Content-Type: text/plain
+Date: Sun, 08 Nov 2026 14:46:28 GMT
+Location: https://vercel.com/sso-api?url=https%3A%2F%2Fdos-advocacia-jxeouysg4-dos-advocacia.vercel.app%2Fdue-diligence-imobiliaria&nonce=<redacted>
+Server: Vercel
+set-cookie: <redacted>
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Frame-Options: DENY
+X-Robots-Tag: noindex
+X-Vercel-Id: gru1::ntghc-1794149188200-299b74d238ab
+

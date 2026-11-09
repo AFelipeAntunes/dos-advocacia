@@ -1,0 +1,108 @@
+{
+  "probedAt": "2026-11-09T13:48:53.620Z",
+  "chrome": "156.0.8078.81",
+  "candidate": "https://dos-advocacia-fp0125m2c-dos-advocacia.vercel.app",
+  "sha": "2abfbebab000a89250e0c18a29b06d0a161c6864",
+  "method": "fragment navigation + bounds (top AND bottom) after font/layout settle",
+  "historicalCto16": {
+    "formAnchorExists": true,
+    "anchorInView": false,
+    "formTopDesktop": 2033,
+    "formTopMobile": 3491
+  },
+  "ok": false,
+  "profiles": [
+    {
+      "profile": "desktop",
+      "status": 200,
+      "url": "https://dos-advocacia-fp0125m2c-dos-advocacia.vercel.app/due-diligence-imobiliaria#due-diligence-imobiliaria-contact-title",
+      "screenshot": "D:\\Projetos desenvolvimento\\.dos-dd-02-04-cta\\docs\\epics\\DOS-DD-02\\evidencias\\05-qa\\preview-performance-final\\anchor-desktop.png",
+      "ok": false,
+      "failReasons": [
+        "anchor-not-in-viewport-bounds"
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "hash": "#due-diligence-imobiliaria-contact-title",
+      "anchorId": "due-diligence-imobiliaria-contact-title",
+      "anchor": {
+        "exists": true,
+        "tag": "DIV",
+        "className": "sr-only",
+        "top": -649,
+        "bottom": -648,
+        "height": 1,
+        "width": 1,
+        "visibility": "visible",
+        "display": "block",
+        "opacity": "1",
+        "srOnlySuspect": true,
+        "topInViewport": false,
+        "bottomInViewport": false,
+        "fullyInView": false,
+        "partiallyInView": false,
+        "visibleByBounds": false
+      },
+      "form": {
+        "exists": true,
+        "top": -648,
+        "bottom": 276,
+        "height": 923,
+        "visibility": "visible",
+        "display": "block",
+        "opacity": "1",
+        "partiallyInView": true
+      },
+      "internalLinkExists": false,
+      "h1": "Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile",
+      "status": 200,
+      "url": "https://dos-advocacia-fp0125m2c-dos-advocacia.vercel.app/due-diligence-imobiliaria#due-diligence-imobiliaria-contact-title",
+      "screenshot": "D:\\Projetos desenvolvimento\\.dos-dd-02-04-cta\\docs\\epics\\DOS-DD-02\\evidencias\\05-qa\\preview-performance-final\\anchor-mobile.png",
+      "ok": false,
+      "failReasons": [
+        "anchor-not-in-viewport-bounds"
+      ],
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "hash": "#due-diligence-imobiliaria-contact-title",
+      "anchorId": "due-diligence-imobiliaria-contact-title",
+      "anchor": {
+        "exists": true,
+        "tag": "DIV",
+        "className": "sr-only",
+        "top": -921,
+        "bottom": -920,
+        "height": 1,
+        "width": 1,
+        "visibility": "visible",
+        "display": "block",
+        "opacity": "1",
+        "srOnlySuspect": true,
+        "topInViewport": false,
+        "bottomInViewport": false,
+        "fullyInView": false,
+        "partiallyInView": false,
+        "visibleByBounds": false
+      },
+      "form": {
+        "exists": true,
+        "top": -920,
+        "bottom": 129,
+        "height": 1049,
+        "visibility": "visible",
+        "display": "block",
+        "opacity": "1",
+        "partiallyInView": true
+      },
+      "internalLinkExists": false,
+      "h1": "Due diligence imobiliária antes de comprar, vender ou investir"
+    }
+  ]
+}

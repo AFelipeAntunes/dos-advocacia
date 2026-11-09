@@ -18,3 +18,5 @@ coverage/
 .playwright-cli/
 output/
 .next-dev*.log
+.vercel
+.env*
