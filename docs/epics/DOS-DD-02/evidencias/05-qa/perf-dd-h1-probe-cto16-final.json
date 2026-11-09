@@ -1,0 +1,5945 @@
+{
+  "method": "CTO15 directed H1 LCP probe",
+  "label": "cto16-final",
+  "path": "/due-diligence-imobiliaria",
+  "candidateOrigin": "http://127.0.0.1:3025",
+  "baselineOrigin": "http://127.0.0.1:3024",
+  "chrome": "156.0.8078.81",
+  "runsPerCell": 10,
+  "startedAt": "2026-11-07T20:34:22.658Z",
+  "finishedAt": "2026-11-07T20:36:55.726Z",
+  "durationMs": 153067,
+  "comparedToCto13": {
+    "desktop": {
+      "baselineMedian": 232,
+      "candidateMedian": 312,
+      "delta": 80
+    },
+    "mobile": {
+      "baselineMedian": 1272,
+      "candidateMedian": 1540,
+      "delta": 268
+    }
+  },
+  "rows": [
+    {
+      "profile": "desktop-cold",
+      "lcpCandidateMedian": 136,
+      "lcpBaselineMedian": 184,
+      "lcpDeltaMedian": -48,
+      "candidateSlowerPairs": "1/10",
+      "pairDeltas": [
+        -300,
+        -120,
+        0,
+        -72,
+        -32,
+        -92,
+        -8,
+        -44,
+        -36,
+        4
+      ],
+      "fcpCandidateMedian": 136,
+      "fcpBaselineMedian": 184,
+      "jsonLdCharsCandidate": 4138,
+      "jsonLdCharsBaseline": 1142,
+      "h1HtmlIndexCandidate": 4974,
+      "h1HtmlIndexBaseline": 5545,
+      "lcpIsH1": "10/10",
+      "portraitFound": "0/10"
+    },
+    {
+      "profile": "mobile-cold",
+      "lcpCandidateMedian": 1196,
+      "lcpBaselineMedian": 1142,
+      "lcpDeltaMedian": 54,
+      "candidateSlowerPairs": "5/10",
+      "pairDeltas": [
+        -36,
+        48,
+        28,
+        16,
+        72,
+        80,
+        -540,
+        -684,
+        -108,
+        -12
+      ],
+      "fcpCandidateMedian": 1196,
+      "fcpBaselineMedian": 1142,
+      "jsonLdCharsCandidate": 4138,
+      "jsonLdCharsBaseline": 1142,
+      "h1HtmlIndexCandidate": 4974,
+      "h1HtmlIndexBaseline": 5545,
+      "lcpIsH1": "10/10",
+      "portraitFound": "0/10"
+    }
+  ],
+  "paired": [
+    {
+      "profile": "desktop-cold",
+      "run": 1,
+      "baselineLcp": 436,
+      "candidateLcp": 136,
+      "delta": -300,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 2,
+      "baselineLcp": 272,
+      "candidateLcp": 152,
+      "delta": -120,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 3,
+      "baselineLcp": 164,
+      "candidateLcp": 164,
+      "delta": 0,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 4,
+      "baselineLcp": 208,
+      "candidateLcp": 136,
+      "delta": -72,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 5,
+      "baselineLcp": 168,
+      "candidateLcp": 136,
+      "delta": -32,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 6,
+      "baselineLcp": 220,
+      "candidateLcp": 128,
+      "delta": -92,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 7,
+      "baselineLcp": 172,
+      "candidateLcp": 164,
+      "delta": -8,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 8,
+      "baselineLcp": 196,
+      "candidateLcp": 152,
+      "delta": -44,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 9,
+      "baselineLcp": 164,
+      "candidateLcp": 128,
+      "delta": -36,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 10,
+      "baselineLcp": 128,
+      "candidateLcp": 132,
+      "delta": 4,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 1,
+      "baselineLcp": 1116,
+      "candidateLcp": 1080,
+      "delta": -36,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 2,
+      "baselineLcp": 1132,
+      "candidateLcp": 1180,
+      "delta": 48,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 3,
+      "baselineLcp": 1124,
+      "candidateLcp": 1152,
+      "delta": 28,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 4,
+      "baselineLcp": 1136,
+      "candidateLcp": 1152,
+      "delta": 16,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 5,
+      "baselineLcp": 1148,
+      "candidateLcp": 1220,
+      "delta": 72,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 6,
+      "baselineLcp": 1132,
+      "candidateLcp": 1212,
+      "delta": 80,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 7,
+      "baselineLcp": 1800,
+      "candidateLcp": 1260,
+      "delta": -540,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 8,
+      "baselineLcp": 1940,
+      "candidateLcp": 1256,
+      "delta": -684,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 9,
+      "baselineLcp": 1220,
+      "candidateLcp": 1112,
+      "delta": -108,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 10,
+      "baselineLcp": 1380,
+      "candidateLcp": 1368,
+      "delta": -12,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    }
+  ],
+  "summary": [
+    {
+      "profile": "desktop-cold",
+      "originLabel": "baseline",
+      "runs": 10,
+      "validRuns": 10,
+      "lcp": {
+        "n": 10,
+        "median": 184,
+        "mean": 212.8,
+        "min": 128,
+        "max": 436,
+        "sd": 83.2,
+        "samples": [
+          436,
+          272,
+          164,
+          208,
+          168,
+          220,
+          172,
+          196,
+          164,
+          128
+        ]
+      },
+      "fcp": {
+        "n": 10,
+        "median": 184,
+        "mean": 212.8,
+        "min": 128,
+        "max": 436,
+        "sd": 83.2,
+        "samples": [
+          436,
+          272,
+          164,
+          208,
+          168,
+          220,
+          172,
+          196,
+          164,
+          128
+        ]
+      },
+      "ttfb": {
+        "n": 10,
+        "median": 8,
+        "mean": 15.8,
+        "min": 6,
+        "max": 88,
+        "sd": 24.1,
+        "samples": [
+          88,
+          10,
+          6,
+          9,
+          7,
+          6,
+          7,
+          6,
+          10,
+          9
+        ]
+      },
+      "dcl": {
+        "n": 10,
+        "median": 36,
+        "mean": 55.6,
+        "min": 29,
+        "max": 138,
+        "sd": 38.2,
+        "samples": [
+          138,
+          59,
+          33,
+          39,
+          29,
+          36,
+          34,
+          30,
+          122,
+          36
+        ]
+      },
+      "gapLcpFcp": {
+        "n": 10,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "jsonLdChars": {
+        "n": 10,
+        "median": 1142,
+        "mean": 1142,
+        "min": 1142,
+        "max": 1142,
+        "sd": 0,
+        "samples": [
+          1142,
+          1142,
+          1142,
+          1142,
+          1142,
+          1142,
+          1142,
+          1142,
+          1142,
+          1142
+        ]
+      },
+      "documentChars": {
+        "n": 10,
+        "median": 33195,
+        "mean": 33195,
+        "min": 33195,
+        "max": 33195,
+        "sd": 0,
+        "samples": [
+          33195,
+          33195,
+          33195,
+          33195,
+          33195,
+          33195,
+          33195,
+          33195,
+          33195,
+          33195
+        ]
+      },
+      "h1HtmlIndex": {
+        "n": 10,
+        "median": 5545,
+        "mean": 5545,
+        "min": 5545,
+        "max": 5545,
+        "sd": 0,
+        "samples": [
+          5545,
+          5545,
+          5545,
+          5545,
+          5545,
+          5545,
+          5545,
+          5545,
+          5545,
+          5545
+        ]
+      },
+      "lcpIsH1Count": 10,
+      "portraitFoundCount": 0,
+      "jsonLdBeforeH1Count": 10,
+      "lcpElements": [
+        "#page-title :: O imóvel parece certo. Os documentos podem contar outra história."
+      ]
+    },
+    {
+      "profile": "desktop-cold",
+      "originLabel": "candidate",
+      "runs": 10,
+      "validRuns": 10,
+      "lcp": {
+        "n": 10,
+        "median": 136,
+        "mean": 142.8,
+        "min": 128,
+        "max": 164,
+        "sd": 13.3,
+        "samples": [
+          136,
+          152,
+          164,
+          136,
+          136,
+          128,
+          164,
+          152,
+          128,
+          132
+        ]
+      },
+      "fcp": {
+        "n": 10,
+        "median": 136,
+        "mean": 142.8,
+        "min": 128,
+        "max": 164,
+        "sd": 13.3,
+        "samples": [
+          136,
+          152,
+          164,
+          136,
+          136,
+          128,
+          164,
+          152,
+          128,
+          132
+        ]
+      },
+      "ttfb": {
+        "n": 10,
+        "median": 8,
+        "mean": 7.9,
+        "min": 6,
+        "max": 12,
+        "sd": 1.5,
+        "samples": [
+          8,
+          8,
+          12,
+          8,
+          6,
+          8,
+          8,
+          7,
+          7,
+          7
+        ]
+      },
+      "dcl": {
+        "n": 10,
+        "median": 100,
+        "mean": 99.3,
+        "min": 46,
+        "max": 126,
+        "sd": 20.6,
+        "samples": [
+          101,
+          114,
+          126,
+          99,
+          101,
+          96,
+          120,
+          46,
+          94,
+          96
+        ]
+      },
+      "gapLcpFcp": {
+        "n": 10,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "jsonLdChars": {
+        "n": 10,
+        "median": 4138,
+        "mean": 4138,
+        "min": 4138,
+        "max": 4138,
+        "sd": 0,
+        "samples": [
+          4138,
+          4138,
+          4138,
+          4138,
+          4138,
+          4138,
+          4138,
+          4138,
+          4138,
+          4138
+        ]
+      },
+      "documentChars": {
+        "n": 10,
+        "median": 65753,
+        "mean": 65753,
+        "min": 65753,
+        "max": 65753,
+        "sd": 0,
+        "samples": [
+          65753,
+          65753,
+          65753,
+          65753,
+          65753,
+          65753,
+          65753,
+          65753,
+          65753,
+          65753
+        ]
+      },
+      "h1HtmlIndex": {
+        "n": 10,
+        "median": 4974,
+        "mean": 4974,
+        "min": 4974,
+        "max": 4974,
+        "sd": 0,
+        "samples": [
+          4974,
+          4974,
+          4974,
+          4974,
+          4974,
+          4974,
+          4974,
+          4974,
+          4974,
+          4974
+        ]
+      },
+      "lcpIsH1Count": 10,
+      "portraitFoundCount": 0,
+      "jsonLdBeforeH1Count": 0,
+      "lcpElements": [
+        "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+      ]
+    },
+    {
+      "profile": "mobile-cold",
+      "originLabel": "baseline",
+      "runs": 10,
+      "validRuns": 10,
+      "lcp": {
+        "n": 10,
+        "median": 1142,
+        "mean": 1312.8,
+        "min": 1116,
+        "max": 1940,
+        "sd": 290.2,
+        "samples": [
+          1116,
+          1132,
+          1124,
+          1136,
+          1148,
+          1132,
+          1800,
+          1940,
+          1220,
+          1380
+        ]
+      },
+      "fcp": {
+        "n": 10,
+        "median": 1142,
+        "mean": 1312.8,
+        "min": 1116,
+        "max": 1940,
+        "sd": 290.2,
+        "samples": [
+          1116,
+          1132,
+          1124,
+          1136,
+          1148,
+          1132,
+          1800,
+          1940,
+          1220,
+          1380
+        ]
+      },
+      "ttfb": {
+        "n": 10,
+        "median": 6,
+        "mean": 5.9,
+        "min": 5,
+        "max": 7,
+        "sd": 0.7,
+        "samples": [
+          7,
+          6,
+          6,
+          6,
+          5,
+          5,
+          5,
+          7,
+          6,
+          6
+        ]
+      },
+      "dcl": {
+        "n": 10,
+        "median": 615,
+        "mean": 632.4,
+        "min": 593,
+        "max": 718,
+        "sd": 41.1,
+        "samples": [
+          617,
+          613,
+          614,
+          608,
+          593,
+          612,
+          616,
+          708,
+          625,
+          718
+        ]
+      },
+      "gapLcpFcp": {
+        "n": 10,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "jsonLdChars": {
+        "n": 10,
+        "median": 1142,
+        "mean": 1142,
+        "min": 1142,
+        "max": 1142,
+        "sd": 0,
+        "samples": [
+          1142,
+          1142,
+          1142,
+          1142,
+          1142,
+          1142,
+          1142,
+          1142,
+          1142,
+          1142
+        ]
+      },
+      "documentChars": {
+        "n": 10,
+        "median": 33195,
+        "mean": 33195,
+        "min": 33195,
+        "max": 33195,
+        "sd": 0,
+        "samples": [
+          33195,
+          33195,
+          33195,
+          33195,
+          33195,
+          33195,
+          33195,
+          33195,
+          33195,
+          33195
+        ]
+      },
+      "h1HtmlIndex": {
+        "n": 10,
+        "median": 5545,
+        "mean": 5545,
+        "min": 5545,
+        "max": 5545,
+        "sd": 0,
+        "samples": [
+          5545,
+          5545,
+          5545,
+          5545,
+          5545,
+          5545,
+          5545,
+          5545,
+          5545,
+          5545
+        ]
+      },
+      "lcpIsH1Count": 10,
+      "portraitFoundCount": 0,
+      "jsonLdBeforeH1Count": 10,
+      "lcpElements": [
+        "#page-title :: O imóvel parece certo. Os documentos podem contar outra história."
+      ]
+    },
+    {
+      "profile": "mobile-cold",
+      "originLabel": "candidate",
+      "runs": 10,
+      "validRuns": 10,
+      "lcp": {
+        "n": 10,
+        "median": 1196,
+        "mean": 1199.2,
+        "min": 1080,
+        "max": 1368,
+        "sd": 79.2,
+        "samples": [
+          1080,
+          1180,
+          1152,
+          1152,
+          1220,
+          1212,
+          1260,
+          1256,
+          1112,
+          1368
+        ]
+      },
+      "fcp": {
+        "n": 10,
+        "median": 1196,
+        "mean": 1199.2,
+        "min": 1080,
+        "max": 1368,
+        "sd": 79.2,
+        "samples": [
+          1080,
+          1180,
+          1152,
+          1152,
+          1220,
+          1212,
+          1260,
+          1256,
+          1112,
+          1368
+        ]
+      },
+      "ttfb": {
+        "n": 10,
+        "median": 7.5,
+        "mean": 8.1,
+        "min": 5,
+        "max": 13,
+        "sd": 2.6,
+        "samples": [
+          7,
+          13,
+          10,
+          6,
+          6,
+          12,
+          8,
+          6,
+          5,
+          8
+        ]
+      },
+      "dcl": {
+        "n": 10,
+        "median": 1207.5,
+        "mean": 1213.6,
+        "min": 1110,
+        "max": 1398,
+        "sd": 80,
+        "samples": [
+          1110,
+          1198,
+          1154,
+          1158,
+          1233,
+          1217,
+          1270,
+          1264,
+          1134,
+          1398
+        ]
+      },
+      "gapLcpFcp": {
+        "n": 10,
+        "median": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "sd": 0,
+        "samples": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "jsonLdChars": {
+        "n": 10,
+        "median": 4138,
+        "mean": 4138,
+        "min": 4138,
+        "max": 4138,
+        "sd": 0,
+        "samples": [
+          4138,
+          4138,
+          4138,
+          4138,
+          4138,
+          4138,
+          4138,
+          4138,
+          4138,
+          4138
+        ]
+      },
+      "documentChars": {
+        "n": 10,
+        "median": 65753,
+        "mean": 65753,
+        "min": 65753,
+        "max": 65753,
+        "sd": 0,
+        "samples": [
+          65753,
+          65753,
+          65753,
+          65753,
+          65753,
+          65753,
+          65753,
+          65753,
+          65753,
+          65753
+        ]
+      },
+      "h1HtmlIndex": {
+        "n": 10,
+        "median": 4974,
+        "mean": 4974,
+        "min": 4974,
+        "max": 4974,
+        "sd": 0,
+        "samples": [
+          4974,
+          4974,
+          4974,
+          4974,
+          4974,
+          4974,
+          4974,
+          4974,
+          4974,
+          4974
+        ]
+      },
+      "lcpIsH1Count": 10,
+      "portraitFoundCount": 0,
+      "jsonLdBeforeH1Count": 0,
+      "lcpElements": [
+        "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+      ]
+    }
+  ],
+  "raw": [
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2194,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 88,
+      "responseEndMs": 90,
+      "domInteractiveMs": 138,
+      "domContentLoadedMs": 138,
+      "loadMs": 356,
+      "fpMs": 436,
+      "fcpMs": 436,
+      "lcpMs": 436,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 238210,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 298,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 97,
+          "duration": 23,
+          "responseEnd": 120
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 98,
+          "duration": 38
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 98,
+          "duration": 40
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 98,
+          "duration": 67
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 98,
+          "duration": 77
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 98,
+          "duration": 81
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 98,
+          "duration": 71
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 98,
+          "duration": 70
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 98,
+          "duration": 34
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 364,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 138,
+          "dur": 143
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 93,
+      "portraitFound": false,
+      "measuredUntilMs": 2168,
+      "run": 1,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1977,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 8,
+      "responseEndMs": 8,
+      "domInteractiveMs": 33,
+      "domContentLoadedMs": 101,
+      "loadMs": 144,
+      "fpMs": 136,
+      "fcpMs": 136,
+      "lcpMs": 136,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 237636,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 35,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 14,
+          "duration": 11,
+          "responseEnd": 25
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 15,
+          "duration": 14
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 15,
+          "duration": 18
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 15,
+          "duration": 30
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 15,
+          "duration": 26
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 15,
+          "duration": 21
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 15,
+          "duration": 22
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 15,
+          "duration": 22
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 16,
+          "duration": 27
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 153,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 1964,
+      "run": 1,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1985,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 8,
+      "responseEndMs": 9,
+      "domInteractiveMs": 37,
+      "domContentLoadedMs": 114,
+      "loadMs": 163,
+      "fpMs": 152,
+      "fcpMs": 152,
+      "lcpMs": 152,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 237636,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 38,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 15,
+          "duration": 4,
+          "responseEnd": 19
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 16,
+          "duration": 13
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 16,
+          "duration": 17
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 16,
+          "duration": 31
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 16,
+          "duration": 35
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 16,
+          "duration": 18
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 16,
+          "duration": 29
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 16,
+          "duration": 30
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 17,
+          "duration": 35
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 170,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 1969,
+      "run": 2,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2114,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 10,
+      "responseEndMs": 11,
+      "domInteractiveMs": 58,
+      "domContentLoadedMs": 59,
+      "loadMs": 289,
+      "fpMs": 272,
+      "fcpMs": 272,
+      "lcpMs": 272,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 238210,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 213,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 20,
+          "duration": 11,
+          "responseEnd": 31
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 21,
+          "duration": 39
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 21,
+          "duration": 46
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 21,
+          "duration": 66
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 21,
+          "duration": 52
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 21,
+          "duration": 47
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 22,
+          "duration": 48
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 22,
+          "duration": 50
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 22,
+          "duration": 31
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 304,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 58,
+          "dur": 124
+        },
+        {
+          "start": 228,
+          "dur": 53
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 77,
+      "portraitFound": false,
+      "measuredUntilMs": 2097,
+      "run": 2,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1992,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 7,
+      "domInteractiveMs": 33,
+      "domContentLoadedMs": 33,
+      "loadMs": 154,
+      "fpMs": 164,
+      "fcpMs": 164,
+      "lcpMs": 164,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 238210,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 131,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 14,
+          "duration": 5,
+          "responseEnd": 18
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 14,
+          "duration": 11
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 14,
+          "duration": 16
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 14,
+          "duration": 23
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 14,
+          "duration": 30
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 14,
+          "duration": 31
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 14,
+          "duration": 25
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 14,
+          "duration": 25
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 15,
+          "duration": 7
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 163,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 33,
+          "dur": 67
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 17,
+      "portraitFound": false,
+      "measuredUntilMs": 1977,
+      "run": 3,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2020,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 12,
+      "responseEndMs": 13,
+      "domInteractiveMs": 41,
+      "domContentLoadedMs": 126,
+      "loadMs": 185,
+      "fpMs": 164,
+      "fcpMs": 164,
+      "lcpMs": 164,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 237636,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 38,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 20,
+          "duration": 4,
+          "responseEnd": 24
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 21,
+          "duration": 11
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 21,
+          "duration": 20
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 21,
+          "duration": 34
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 21,
+          "duration": 22
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 21,
+          "duration": 29
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 21,
+          "duration": 27
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 21,
+          "duration": 26
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 22,
+          "duration": 32
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 196,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 2005,
+      "run": 3,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1977,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 8,
+      "responseEndMs": 9,
+      "domInteractiveMs": 30,
+      "domContentLoadedMs": 99,
+      "loadMs": 152,
+      "fpMs": 136,
+      "fcpMs": 136,
+      "lcpMs": 136,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 237636,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 37,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 14,
+          "duration": 4,
+          "responseEnd": 18
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 15,
+          "duration": 10
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 15,
+          "duration": 18
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 15,
+          "duration": 17
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 15,
+          "duration": 26
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 15,
+          "duration": 28
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 15,
+          "duration": 18
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 15,
+          "duration": 19
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 15,
+          "duration": 25
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 159,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 1963,
+      "run": 4,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2039,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 9,
+      "responseEndMs": 9,
+      "domInteractiveMs": 39,
+      "domContentLoadedMs": 39,
+      "loadMs": 211,
+      "fpMs": 208,
+      "fcpMs": 208,
+      "lcpMs": 208,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 238210,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 169,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 17,
+          "duration": 4,
+          "responseEnd": 22
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 18,
+          "duration": 13
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 18,
+          "duration": 23
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 18,
+          "duration": 28
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 18,
+          "duration": 35
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 18,
+          "duration": 25
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 18,
+          "duration": 25
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 18,
+          "duration": 26
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 19,
+          "duration": 5
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 217,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 39,
+          "dur": 102
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 52,
+      "portraitFound": false,
+      "measuredUntilMs": 2026,
+      "run": 4,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2009,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 7,
+      "responseEndMs": 7,
+      "domInteractiveMs": 29,
+      "domContentLoadedMs": 29,
+      "loadMs": 175,
+      "fpMs": 168,
+      "fcpMs": 168,
+      "lcpMs": 168,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 238210,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 139,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 12,
+          "duration": 4,
+          "responseEnd": 17
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 13,
+          "duration": 15
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 13,
+          "duration": 15
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 13,
+          "duration": 23
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 13,
+          "duration": 27
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 13,
+          "duration": 16
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 13,
+          "duration": 17
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 13,
+          "duration": 22
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 13,
+          "duration": 4
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 187,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 29,
+          "dur": 79
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 29,
+      "portraitFound": false,
+      "measuredUntilMs": 1996,
+      "run": 5,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1979,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 7,
+      "domInteractiveMs": 30,
+      "domContentLoadedMs": 101,
+      "loadMs": 151,
+      "fpMs": 136,
+      "fcpMs": 136,
+      "lcpMs": 136,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 237636,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 36,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 13,
+          "duration": 5,
+          "responseEnd": 18
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 13,
+          "duration": 10
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 13,
+          "duration": 14
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 13,
+          "duration": 23
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 13,
+          "duration": 29
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 13,
+          "duration": 19
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 13,
+          "duration": 19
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 13,
+          "duration": 19
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 14,
+          "duration": 27
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 158,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 1966,
+      "run": 5,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1974,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 8,
+      "responseEndMs": 8,
+      "domInteractiveMs": 29,
+      "domContentLoadedMs": 96,
+      "loadMs": 145,
+      "fpMs": 128,
+      "fcpMs": 128,
+      "lcpMs": 128,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 237636,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 32,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 13,
+          "duration": 4,
+          "responseEnd": 17
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 13,
+          "duration": 10
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 13,
+          "duration": 13
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 13,
+          "duration": 25
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 13,
+          "duration": 22
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 13,
+          "duration": 14
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 13,
+          "duration": 19
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 13,
+          "duration": 16
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 14,
+          "duration": 21
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 153,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 1961,
+      "run": 6,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2048,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 7,
+      "domInteractiveMs": 36,
+      "domContentLoadedMs": 36,
+      "loadMs": 218,
+      "fpMs": 220,
+      "fcpMs": 220,
+      "lcpMs": 220,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 238210,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 184,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 14,
+          "duration": 4,
+          "responseEnd": 18
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 15,
+          "duration": 12
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 15,
+          "duration": 23
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 15,
+          "duration": 28
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 15,
+          "duration": 34
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 15,
+          "duration": 27
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 15,
+          "duration": 28
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 15,
+          "duration": 27
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 16,
+          "duration": 11
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 224,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 36,
+          "dur": 106
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 56,
+      "portraitFound": false,
+      "measuredUntilMs": 2026,
+      "run": 6,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2007,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 7,
+      "responseEndMs": 7,
+      "domInteractiveMs": 34,
+      "domContentLoadedMs": 34,
+      "loadMs": 174,
+      "fpMs": 172,
+      "fcpMs": 172,
+      "lcpMs": 172,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 238210,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 138,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 14,
+          "duration": 4,
+          "responseEnd": 17
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 14,
+          "duration": 13
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 14,
+          "duration": 18
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 14,
+          "duration": 28
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 14,
+          "duration": 18
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 14,
+          "duration": 21
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 14,
+          "duration": 20
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 14,
+          "duration": 26
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 14,
+          "duration": 11
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 180,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 34,
+          "dur": 75
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 25,
+      "portraitFound": false,
+      "measuredUntilMs": 1991,
+      "run": 7,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1999,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 8,
+      "responseEndMs": 9,
+      "domInteractiveMs": 27,
+      "domContentLoadedMs": 120,
+      "loadMs": 179,
+      "fpMs": 164,
+      "fcpMs": 164,
+      "lcpMs": 164,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 237636,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 44,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 14,
+          "duration": 4,
+          "responseEnd": 18
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 15,
+          "duration": 14
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 15,
+          "duration": 17
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 15,
+          "duration": 39
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 15,
+          "duration": 40
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 15,
+          "duration": 23
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 15,
+          "duration": 26
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 15,
+          "duration": 34
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 16,
+          "duration": 42
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 187,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 1984,
+      "run": 7,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1974,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 7,
+      "responseEndMs": 7,
+      "domInteractiveMs": 32,
+      "domContentLoadedMs": 46,
+      "loadMs": 153,
+      "fpMs": 152,
+      "fcpMs": 152,
+      "lcpMs": 152,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 237636,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 106,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 14,
+          "duration": 5,
+          "responseEnd": 19
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 15,
+          "duration": 11
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 15,
+          "duration": 16
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 15,
+          "duration": 27
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 15,
+          "duration": 25
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 15,
+          "duration": 19
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 15,
+          "duration": 19
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 15,
+          "duration": 19
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 15,
+          "duration": 25
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 159,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 45,
+          "dur": 55
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 5,
+      "portraitFound": false,
+      "measuredUntilMs": 1960,
+      "run": 8,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2022,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 7,
+      "domInteractiveMs": 30,
+      "domContentLoadedMs": 30,
+      "loadMs": 200,
+      "fpMs": 196,
+      "fcpMs": 196,
+      "lcpMs": 196,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 238210,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 166,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 13,
+          "duration": 4,
+          "responseEnd": 17
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 13,
+          "duration": 9
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 13,
+          "duration": 17
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 13,
+          "duration": 28
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 13,
+          "duration": 19
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 13,
+          "duration": 25
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 13,
+          "duration": 21
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 13,
+          "duration": 20
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 14,
+          "duration": 8
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 209,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 30,
+          "dur": 99
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 49,
+      "portraitFound": false,
+      "measuredUntilMs": 2008,
+      "run": 8,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 2004,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 10,
+      "responseEndMs": 11,
+      "domInteractiveMs": 122,
+      "domContentLoadedMs": 122,
+      "loadMs": 173,
+      "fpMs": 164,
+      "fcpMs": 164,
+      "lcpMs": 164,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 238210,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 42,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 16,
+          "duration": 4,
+          "responseEnd": 20
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 17,
+          "duration": 12
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 17,
+          "duration": 21
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 17,
+          "duration": 40
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 17,
+          "duration": 33
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 17,
+          "duration": 25
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 17,
+          "duration": 27
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 18,
+          "duration": 26
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 18,
+          "duration": 6
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 180,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 1988,
+      "run": 9,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1967,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 7,
+      "responseEndMs": 8,
+      "domInteractiveMs": 25,
+      "domContentLoadedMs": 94,
+      "loadMs": 141,
+      "fpMs": 128,
+      "fcpMs": 128,
+      "lcpMs": 128,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 237636,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 34,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 14,
+          "duration": 4,
+          "responseEnd": 17
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 14,
+          "duration": 9
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 14,
+          "duration": 13
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 14,
+          "duration": 23
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 14,
+          "duration": 25
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 14,
+          "duration": 18
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 14,
+          "duration": 16
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 14,
+          "duration": 19
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 15,
+          "duration": 23
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 149,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 1950,
+      "run": 9,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1969,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 7,
+      "responseEndMs": 7,
+      "domInteractiveMs": 23,
+      "domContentLoadedMs": 96,
+      "loadMs": 142,
+      "fpMs": 132,
+      "fcpMs": 132,
+      "lcpMs": 132,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 237636,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 36,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 12,
+          "duration": 4,
+          "responseEnd": 16
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 12,
+          "duration": 11
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 12,
+          "duration": 13
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 12,
+          "duration": 18
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 12,
+          "duration": 25
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 12,
+          "duration": 26
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 12,
+          "duration": 19
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 13,
+          "duration": 19
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 13,
+          "duration": 26
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 148,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 1956,
+      "run": 10,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "desktop-cold",
+      "status": 200,
+      "wallMs": 1968,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 9,
+      "responseEndMs": 10,
+      "domInteractiveMs": 36,
+      "domContentLoadedMs": 36,
+      "loadMs": 144,
+      "fpMs": 128,
+      "fcpMs": 128,
+      "lcpMs": 128,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 238210,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 92,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 344,
+        "width": 850,
+        "height": 267,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "90.72px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 15,
+          "duration": 4,
+          "responseEnd": 19
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 16,
+          "duration": 11
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 16,
+          "duration": 13
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 16,
+          "duration": 24
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 16,
+          "duration": 18
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 16,
+          "duration": 21
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 16,
+          "duration": 20
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 16,
+          "duration": 19
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 16,
+          "duration": 5
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 157,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 36,
+          "dur": 60
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 10,
+      "portraitFound": false,
+      "measuredUntilMs": 1956,
+      "run": 10,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5054,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 7,
+      "responseEndMs": 214,
+      "domInteractiveMs": 617,
+      "domContentLoadedMs": 617,
+      "loadMs": 1506,
+      "fpMs": 1116,
+      "fcpMs": 1116,
+      "lcpMs": 1116,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 72570,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 499,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 258,
+        "width": 358,
+        "height": 235,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 217,
+          "duration": 681,
+          "responseEnd": 898
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 220,
+          "duration": 276
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 220,
+          "duration": 367
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 220,
+          "duration": 1066
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 221,
+          "duration": 989
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 221,
+          "duration": 491
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 221,
+          "duration": 661
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 221,
+          "duration": 568
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 222,
+          "duration": 273
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1587,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 617,
+          "dur": 432
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 382,
+      "portraitFound": false,
+      "measuredUntilMs": 5035,
+      "run": 1,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5045,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 7,
+      "responseEndMs": 229,
+      "domInteractiveMs": 603,
+      "domContentLoadedMs": 1110,
+      "loadMs": 1489,
+      "fpMs": 1080,
+      "fcpMs": 1080,
+      "lcpMs": 1080,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 64476,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": -30,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 273,
+        "width": 358,
+        "height": 188,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 194,
+          "duration": 743,
+          "responseEnd": 936
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 196,
+          "duration": 258
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 196,
+          "duration": 395
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 196,
+          "duration": 1067
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 197,
+          "duration": 942
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 197,
+          "duration": 488
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 198,
+          "duration": 707
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 198,
+          "duration": 567
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 218,
+          "duration": 873
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1564,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 5017,
+      "run": 1,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5192,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 13,
+      "responseEndMs": 230,
+      "domInteractiveMs": 649,
+      "domContentLoadedMs": 1198,
+      "loadMs": 1626,
+      "fpMs": 1180,
+      "fcpMs": 1180,
+      "lcpMs": 1180,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 64476,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": -18,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 273,
+        "width": 358,
+        "height": 188,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 229,
+          "duration": 721,
+          "responseEnd": 951
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 233,
+          "duration": 262
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 233,
+          "duration": 390
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 234,
+          "duration": 1072
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 234,
+          "duration": 934
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 235,
+          "duration": 498
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 235,
+          "duration": 699
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 236,
+          "duration": 574
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 237,
+          "duration": 883
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1717,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 5152,
+      "run": 2,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5041,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 211,
+      "domInteractiveMs": 612,
+      "domContentLoadedMs": 613,
+      "loadMs": 1491,
+      "fpMs": 1132,
+      "fcpMs": 1132,
+      "lcpMs": 1132,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 72570,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 519,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 258,
+        "width": 358,
+        "height": 235,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 211,
+          "duration": 700,
+          "responseEnd": 911
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 214,
+          "duration": 262
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 215,
+          "duration": 369
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 215,
+          "duration": 1071
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 215,
+          "duration": 992
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 216,
+          "duration": 491
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 216,
+          "duration": 661
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 217,
+          "duration": 552
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 219,
+          "duration": 254
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1567,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 612,
+          "dur": 458
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 408,
+      "portraitFound": false,
+      "measuredUntilMs": 5018,
+      "run": 2,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5056,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 208,
+      "domInteractiveMs": 613,
+      "domContentLoadedMs": 614,
+      "loadMs": 1508,
+      "fpMs": 1124,
+      "fcpMs": 1124,
+      "lcpMs": 1124,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 72570,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 511,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 258,
+        "width": 358,
+        "height": 235,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 208,
+          "duration": 717,
+          "responseEnd": 925
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 210,
+          "duration": 265
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 210,
+          "duration": 374
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 210,
+          "duration": 1084
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 211,
+          "duration": 1008
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 211,
+          "duration": 513
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 211,
+          "duration": 667
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 211,
+          "duration": 558
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 212,
+          "duration": 278
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1581,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 613,
+          "dur": 449
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 399,
+      "portraitFound": false,
+      "measuredUntilMs": 5035,
+      "run": 3,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5127,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 10,
+      "responseEndMs": 225,
+      "domInteractiveMs": 631,
+      "domContentLoadedMs": 1154,
+      "loadMs": 1569,
+      "fpMs": 1152,
+      "fcpMs": 1152,
+      "lcpMs": 1152,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 64476,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": -2,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 273,
+        "width": 358,
+        "height": 188,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 201,
+          "duration": 714,
+          "responseEnd": 916
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 205,
+          "duration": 259
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 205,
+          "duration": 400
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 206,
+          "duration": 1067
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 206,
+          "duration": 941
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 207,
+          "duration": 507
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 207,
+          "duration": 693
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 207,
+          "duration": 598
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 236,
+          "duration": 863
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1660,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 1148,
+          "dur": 73
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 23,
+      "portraitFound": false,
+      "measuredUntilMs": 5099,
+      "run": 3,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5199,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 229,
+      "domInteractiveMs": 612,
+      "domContentLoadedMs": 1158,
+      "loadMs": 1656,
+      "fpMs": 1152,
+      "fcpMs": 1152,
+      "lcpMs": 1152,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 64476,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": -6,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 273,
+        "width": 358,
+        "height": 188,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 208,
+          "duration": 730,
+          "responseEnd": 938
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 212,
+          "duration": 260
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 213,
+          "duration": 398
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 214,
+          "duration": 1083
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 215,
+          "duration": 941
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 215,
+          "duration": 489
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 216,
+          "duration": 691
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 216,
+          "duration": 567
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 219,
+          "duration": 876
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1845,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 1150,
+          "dur": 74
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 24,
+      "portraitFound": false,
+      "measuredUntilMs": 5182,
+      "run": 4,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5051,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 206,
+      "domInteractiveMs": 608,
+      "domContentLoadedMs": 608,
+      "loadMs": 1520,
+      "fpMs": 1136,
+      "fcpMs": 1136,
+      "lcpMs": 1136,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 72570,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 528,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 258,
+        "width": 358,
+        "height": 235,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 205,
+          "duration": 714,
+          "responseEnd": 919
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 208,
+          "duration": 276
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 209,
+          "duration": 368
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 209,
+          "duration": 1083
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 209,
+          "duration": 1004
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 210,
+          "duration": 507
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 210,
+          "duration": 663
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 211,
+          "duration": 553
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 212,
+          "duration": 257
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1589,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 608,
+          "dur": 451
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 401,
+      "portraitFound": false,
+      "measuredUntilMs": 5035,
+      "run": 4,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5075,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 5,
+      "responseEndMs": 200,
+      "domInteractiveMs": 593,
+      "domContentLoadedMs": 593,
+      "loadMs": 1540,
+      "fpMs": 1148,
+      "fcpMs": 1148,
+      "lcpMs": 1148,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 72570,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 555,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 258,
+        "width": 358,
+        "height": 235,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 200,
+          "duration": 682,
+          "responseEnd": 883
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 204,
+          "duration": 263
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 205,
+          "duration": 370
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 205,
+          "duration": 1066
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 206,
+          "duration": 977
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 206,
+          "duration": 491
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 206,
+          "duration": 661
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 207,
+          "duration": 552
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 208,
+          "duration": 256
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1617,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 593,
+          "dur": 479
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 429,
+      "portraitFound": false,
+      "measuredUntilMs": 5056,
+      "run": 5,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5249,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 233,
+      "domInteractiveMs": 612,
+      "domContentLoadedMs": 1233,
+      "loadMs": 1704,
+      "fpMs": 1220,
+      "fcpMs": 1220,
+      "lcpMs": 1220,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 64476,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": -13,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 273,
+        "width": 358,
+        "height": 188,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 197,
+          "duration": 725,
+          "responseEnd": 923
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 200,
+          "duration": 262
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 201,
+          "duration": 384
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 203,
+          "duration": 1074
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 203,
+          "duration": 934
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 204,
+          "duration": 486
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 204,
+          "duration": 688
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 205,
+          "duration": 564
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 232,
+          "duration": 843
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1807,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 5231,
+      "run": 5,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5182,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 12,
+      "responseEndMs": 239,
+      "domInteractiveMs": 669,
+      "domContentLoadedMs": 1217,
+      "loadMs": 1650,
+      "fpMs": 1212,
+      "fcpMs": 1212,
+      "lcpMs": 1212,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 64476,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": -5,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 273,
+        "width": 358,
+        "height": 188,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 231,
+          "duration": 749,
+          "responseEnd": 980
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 233,
+          "duration": 271
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 233,
+          "duration": 394
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 234,
+          "duration": 1082
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 234,
+          "duration": 948
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 235,
+          "duration": 515
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 235,
+          "duration": 684
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 236,
+          "duration": 606
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 239,
+          "duration": 896
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1746,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 1211,
+          "dur": 68
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 18,
+      "portraitFound": false,
+      "measuredUntilMs": 5166,
+      "run": 6,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5037,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 5,
+      "responseEndMs": 206,
+      "domInteractiveMs": 611,
+      "domContentLoadedMs": 612,
+      "loadMs": 1501,
+      "fpMs": 1132,
+      "fcpMs": 1132,
+      "lcpMs": 1132,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 72570,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 520,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 258,
+        "width": 358,
+        "height": 235,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 205,
+          "duration": 697,
+          "responseEnd": 902
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 209,
+          "duration": 263
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 209,
+          "duration": 371
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 210,
+          "duration": 1063
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 210,
+          "duration": 1000
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 211,
+          "duration": 507
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 211,
+          "duration": 660
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 211,
+          "duration": 552
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 213,
+          "duration": 275
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1575,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 611,
+          "dur": 452
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 402,
+      "portraitFound": false,
+      "measuredUntilMs": 5021,
+      "run": 6,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5763,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 5,
+      "responseEndMs": 202,
+      "domInteractiveMs": 616,
+      "domContentLoadedMs": 616,
+      "loadMs": 2222,
+      "fpMs": 1800,
+      "fcpMs": 1800,
+      "lcpMs": 1800,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 72324,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 1184,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 258,
+        "width": 358,
+        "height": 235,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 201,
+          "duration": 707,
+          "responseEnd": 908
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 203,
+          "duration": 265
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 203,
+          "duration": 368
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 204,
+          "duration": 1085
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 204,
+          "duration": 994
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 204,
+          "duration": 505
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 205,
+          "duration": 657
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 205,
+          "duration": 566
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 207,
+          "duration": 257
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 2399,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 615,
+          "dur": 875
+        },
+        {
+          "start": 1772,
+          "dur": 429
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 1204,
+      "portraitFound": false,
+      "measuredUntilMs": 5747,
+      "run": 7,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5355,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 8,
+      "responseEndMs": 243,
+      "domInteractiveMs": 631,
+      "domContentLoadedMs": 1270,
+      "loadMs": 1819,
+      "fpMs": 1260,
+      "fcpMs": 1260,
+      "lcpMs": 1260,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 64476,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": -10,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 273,
+        "width": 358,
+        "height": 188,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 215,
+          "duration": 736,
+          "responseEnd": 951
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 220,
+          "duration": 269
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 221,
+          "duration": 407
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 222,
+          "duration": 1069
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 222,
+          "duration": 946
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 223,
+          "duration": 496
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 225,
+          "duration": 697
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 226,
+          "duration": 571
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 277,
+          "duration": 829
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1972,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 5337,
+      "run": 7,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5321,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 230,
+      "domInteractiveMs": 645,
+      "domContentLoadedMs": 1264,
+      "loadMs": 1769,
+      "fpMs": 1256,
+      "fcpMs": 1256,
+      "lcpMs": 1256,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 64476,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": -8,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 273,
+        "width": 358,
+        "height": 188,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 209,
+          "duration": 744,
+          "responseEnd": 953
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 212,
+          "duration": 264
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 213,
+          "duration": 386
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 214,
+          "duration": 1062
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 214,
+          "duration": 939
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 214,
+          "duration": 492
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 215,
+          "duration": 681
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 215,
+          "duration": 600
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 218,
+          "duration": 887
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1868,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 5299,
+      "run": 8,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5738,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 7,
+      "responseEndMs": 204,
+      "domInteractiveMs": 706,
+      "domContentLoadedMs": 708,
+      "loadMs": 2188,
+      "fpMs": 1940,
+      "fcpMs": 1940,
+      "lcpMs": 1940,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 72324,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 1232,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 258,
+        "width": 358,
+        "height": 235,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 228,
+          "duration": 685,
+          "responseEnd": 913
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 232,
+          "duration": 299
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 233,
+          "duration": 389
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 233,
+          "duration": 1084
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 234,
+          "duration": 1005
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 234,
+          "duration": 525
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 235,
+          "duration": 679
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 236,
+          "duration": 570
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 239,
+          "duration": 260
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 2267,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 706,
+          "dur": 1040
+        },
+        {
+          "start": 1934,
+          "dur": 237
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 1177,
+      "portraitFound": false,
+      "measuredUntilMs": 5715,
+      "run": 8,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5167,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 212,
+      "domInteractiveMs": 624,
+      "domContentLoadedMs": 625,
+      "loadMs": 1624,
+      "fpMs": 1220,
+      "fcpMs": 1220,
+      "lcpMs": 1220,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 72570,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 596,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 258,
+        "width": 358,
+        "height": 235,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 215,
+          "duration": 688,
+          "responseEnd": 904
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 219,
+          "duration": 274
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 219,
+          "duration": 377
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 219,
+          "duration": 1085
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 220,
+          "duration": 1008
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 220,
+          "duration": 514
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 221,
+          "duration": 668
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 221,
+          "duration": 574
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 222,
+          "duration": 266
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1714,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 624,
+          "dur": 521
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 471,
+      "portraitFound": false,
+      "measuredUntilMs": 5152,
+      "run": 9,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5066,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 5,
+      "responseEndMs": 233,
+      "domInteractiveMs": 614,
+      "domContentLoadedMs": 1134,
+      "loadMs": 1508,
+      "fpMs": 1112,
+      "fcpMs": 1112,
+      "lcpMs": 1112,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 64476,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": -22,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 273,
+        "width": 358,
+        "height": 188,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 210,
+          "duration": 742,
+          "responseEnd": 953
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 213,
+          "duration": 261
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 213,
+          "duration": 386
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 213,
+          "duration": 1064
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 214,
+          "duration": 941
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 214,
+          "duration": 493
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 215,
+          "duration": 676
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 216,
+          "duration": 553
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 238,
+          "duration": 870
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1579,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 5039,
+      "run": 9,
+      "orderPosition": 2
+    },
+    {
+      "originLabel": "candidate",
+      "origin": "http://127.0.0.1:3025",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5679,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 8,
+      "responseEndMs": 230,
+      "domInteractiveMs": 639,
+      "domContentLoadedMs": 1398,
+      "loadMs": 2140,
+      "fpMs": 1368,
+      "fcpMs": 1368,
+      "lcpMs": 1368,
+      "lcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir",
+      "lcpSize": 64476,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": -30,
+      "h1Box": {
+        "text": "Due diligence imobiliária antes de comprar, vender ou investir",
+        "top": 273,
+        "width": 358,
+        "height": 188,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 65753,
+      "h1HtmlIndex": 4974,
+      "firstJsonLdIndex": 22236,
+      "bodyConteudoIndex": 4445,
+      "jsonLdBeforeH1InHtml": false,
+      "jsonLdCount": 1,
+      "jsonLdChars": 4138,
+      "cssCount": 1,
+      "cssTransferBytes": 9707,
+      "cssEncodedBytes": 9407,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 226,
+          "duration": 727,
+          "responseEnd": 953
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 230,
+          "duration": 280
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 231,
+          "duration": 401
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 231,
+          "duration": 1073
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 233,
+          "duration": 934
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 234,
+          "duration": 497
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 235,
+          "duration": 687
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 236,
+          "duration": 566
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 3002,
+          "start": 239,
+          "duration": 883
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 2321,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [],
+      "longTaskProxyBeforeLcpMs": 0,
+      "portraitFound": false,
+      "measuredUntilMs": 5663,
+      "run": 10,
+      "orderPosition": 1
+    },
+    {
+      "originLabel": "baseline",
+      "origin": "http://127.0.0.1:3024",
+      "profile": "mobile-cold",
+      "status": 200,
+      "wallMs": 5176,
+      "cdpMetrics": {},
+      "collectionValid": true,
+      "support": {
+        "lcp": true,
+        "longtask": true
+      },
+      "errors": [],
+      "ttfbMs": 6,
+      "responseEndMs": 212,
+      "domInteractiveMs": 718,
+      "domContentLoadedMs": 718,
+      "loadMs": 1608,
+      "fpMs": 1380,
+      "fcpMs": 1380,
+      "lcpMs": 1380,
+      "lcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "lcpSize": 72324,
+      "lcpUrl": null,
+      "lcpIsH1": true,
+      "gapLcpMinusFcpMs": 0,
+      "gapLcpMinusDclMs": 662,
+      "h1Box": {
+        "text": "O imóvel parece certo. Os documentos podem contar outra história.",
+        "top": 258,
+        "width": 358,
+        "height": 235,
+        "fontFamily": "Urbanist, \"Urbanist Fallback\", Urbanist, Arial, sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "documentChars": 33195,
+      "h1HtmlIndex": 5545,
+      "firstJsonLdIndex": 2598,
+      "bodyConteudoIndex": 5158,
+      "jsonLdBeforeH1InHtml": true,
+      "jsonLdCount": 1,
+      "jsonLdChars": 1142,
+      "cssCount": 1,
+      "cssTransferBytes": 9494,
+      "cssEncodedBytes": 9194,
+      "fontResources": [
+        {
+          "name": "/_next/static/media/9e6813202f725814-s.p.2qijkc4_gtkq0.woff2",
+          "transfer": 28112,
+          "encoded": 27812,
+          "start": 211,
+          "duration": 749,
+          "responseEnd": 960
+        }
+      ],
+      "scriptResources": [
+        {
+          "name": "/_next/static/chunks/1zgmbervt4bfj.js",
+          "transfer": 4344,
+          "start": 214,
+          "duration": 261
+        },
+        {
+          "name": "/_next/static/chunks/2rv5jvl35qh22.js",
+          "transfer": 8453,
+          "start": 215,
+          "duration": 369
+        },
+        {
+          "name": "/_next/static/chunks/33sv2kyjb3til.js",
+          "transfer": 71736,
+          "start": 215,
+          "duration": 1069
+        },
+        {
+          "name": "/_next/static/chunks/2c7fqfns8tiv2.js",
+          "transfer": 44604,
+          "start": 215,
+          "duration": 930
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-2u1d16houkiyo.js",
+          "transfer": 4205,
+          "start": 216,
+          "duration": 602
+        },
+        {
+          "name": "/_next/static/chunks/0k6d2kzqa12f6.js",
+          "transfer": 7234,
+          "start": 216,
+          "duration": 696
+        },
+        {
+          "name": "/_next/static/chunks/0os2puq7eo3l9.js",
+          "transfer": 1228,
+          "start": 216,
+          "duration": 681
+        },
+        {
+          "name": "/site-interactions.js",
+          "transfer": 2960,
+          "start": 240,
+          "duration": 467
+        },
+        {
+          "name": "https://www.googletagmanager.com/gtag/js?id=G-37RDFTHKL8",
+          "transfer": 0,
+          "start": 1681,
+          "duration": 0
+        }
+      ],
+      "longTasksBeforeLcp": [
+        {
+          "start": 718,
+          "dur": 481
+        },
+        {
+          "start": 1378,
+          "dur": 219
+        }
+      ],
+      "longTaskProxyBeforeLcpMs": 600,
+      "portraitFound": false,
+      "measuredUntilMs": 5146,
+      "run": 10,
+      "orderPosition": 2
+    }
+  ]
+}

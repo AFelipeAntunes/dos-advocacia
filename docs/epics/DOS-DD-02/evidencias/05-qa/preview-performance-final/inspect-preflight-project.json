@@ -1,0 +1,19 @@
+﻿{
+  "id": "prj_oGSRjIAMCRzwviGYbbJOOCjEj4N5",
+  "name": "preflight-playwright-auth",
+  "owner": {
+    "name": "DOS Advocacia",
+    "slug": "dos-advocacia"
+  },
+  "createdAt": 1794231092965,
+  "rootDirectory": null,
+  "nodeVersion": "26.x",
+  "framework": null,
+  "buildCommand": null,
+  "outputDirectory": null,
+  "installCommand": null,
+  "sandbox": {
+    "region": "iad1",
+    "failoverRegions": []
+  }
+}

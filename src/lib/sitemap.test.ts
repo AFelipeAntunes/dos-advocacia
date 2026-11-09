@@ -204,10 +204,13 @@ test("datas institucionais são por rota e não mudam entre execuções", () => 
   assert.equal(iso(byPath.get("/assessoria-em-locacao")?.lastModified), "2026-11-04T00:00:00.000Z");
   assert.equal(iso(byPath.get("/sobre")?.lastModified), "2026-07-10T00:00:00.000Z");
   assert.equal(iso(byPath.get("/contato")?.lastModified), "2026-08-06T00:00:00.000Z");
-  assert.equal(iso(byPath.get("/due-diligence-imobiliaria")?.lastModified), "2026-08-02T00:00:00.000Z");
+  assert.equal(iso(byPath.get("/due-diligence-imobiliaria")?.lastModified), "2026-11-09T00:00:00.000Z");
 
-  for (const route of ["/", "/advogada-imobiliaria", "/advogada-imobiliaria-curitiba", "/areas-de-atuacao", "/treinamentos"]) {
+  for (const route of ["/areas-de-atuacao", "/treinamentos"]) {
     assert.equal(iso(byPath.get(route)?.lastModified), "2026-11-04T00:00:00.000Z", route);
+  }
+  for (const route of ["/", "/advogada-imobiliaria", "/advogada-imobiliaria-curitiba", "/assessoria-juridica-compra-de-imovel"]) {
+    assert.equal(iso(byPath.get(route)?.lastModified), "2026-11-09T00:00:00.000Z", route);
   }
 });
 

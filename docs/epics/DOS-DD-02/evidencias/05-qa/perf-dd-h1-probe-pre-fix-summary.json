@@ -1,0 +1,263 @@
+{
+  "comparedAt": "2026-11-07T19:05:18.887Z",
+  "chrome": "156.0.8078.81",
+  "label": "pre-fix",
+  "rows": [
+    {
+      "profile": "desktop-cold",
+      "lcpCandidateMedian": 240,
+      "lcpBaselineMedian": 274,
+      "lcpDeltaMedian": -34,
+      "candidateSlowerPairs": "2/10",
+      "pairDeltas": [
+        -172,
+        -24,
+        12,
+        -8,
+        -32,
+        -36,
+        -72,
+        -48,
+        -40,
+        52
+      ],
+      "fcpCandidateMedian": 240,
+      "fcpBaselineMedian": 274,
+      "jsonLdCharsCandidate": 4138,
+      "jsonLdCharsBaseline": 1142,
+      "h1HtmlIndexCandidate": 9113,
+      "h1HtmlIndexBaseline": 5545,
+      "lcpIsH1": "10/10",
+      "portraitFound": "0/10"
+    },
+    {
+      "profile": "mobile-cold",
+      "lcpCandidateMedian": 1388,
+      "lcpBaselineMedian": 1296,
+      "lcpDeltaMedian": 92,
+      "candidateSlowerPairs": "8/10",
+      "pairDeltas": [
+        140,
+        108,
+        -104,
+        136,
+        -60,
+        200,
+        344,
+        348,
+        164,
+        8
+      ],
+      "fcpCandidateMedian": 1388,
+      "fcpBaselineMedian": 1296,
+      "jsonLdCharsCandidate": 4138,
+      "jsonLdCharsBaseline": 1142,
+      "h1HtmlIndexCandidate": 9113,
+      "h1HtmlIndexBaseline": 5545,
+      "lcpIsH1": "10/10",
+      "portraitFound": "0/10"
+    }
+  ],
+  "paired": [
+    {
+      "profile": "desktop-cold",
+      "run": 1,
+      "baselineLcp": 452,
+      "candidateLcp": 280,
+      "delta": -172,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 2,
+      "baselineLcp": 268,
+      "candidateLcp": 244,
+      "delta": -24,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 3,
+      "baselineLcp": 220,
+      "candidateLcp": 232,
+      "delta": 12,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 4,
+      "baselineLcp": 252,
+      "candidateLcp": 244,
+      "delta": -8,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 5,
+      "baselineLcp": 284,
+      "candidateLcp": 252,
+      "delta": -32,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 6,
+      "baselineLcp": 300,
+      "candidateLcp": 264,
+      "delta": -36,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 7,
+      "baselineLcp": 308,
+      "candidateLcp": 236,
+      "delta": -72,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 8,
+      "baselineLcp": 280,
+      "candidateLcp": 232,
+      "delta": -48,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 9,
+      "baselineLcp": 264,
+      "candidateLcp": 224,
+      "delta": -40,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "desktop-cold",
+      "run": 10,
+      "baselineLcp": 148,
+      "candidateLcp": 200,
+      "delta": 52,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 1,
+      "baselineLcp": 1244,
+      "candidateLcp": 1384,
+      "delta": 140,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 2,
+      "baselineLcp": 1216,
+      "candidateLcp": 1324,
+      "delta": 108,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 3,
+      "baselineLcp": 1496,
+      "candidateLcp": 1392,
+      "delta": -104,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 4,
+      "baselineLcp": 1532,
+      "candidateLcp": 1668,
+      "delta": 136,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 5,
+      "baselineLcp": 1348,
+      "candidateLcp": 1288,
+      "delta": -60,
+      "candidateSlower": false,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 6,
+      "baselineLcp": 1492,
+      "candidateLcp": 1692,
+      "delta": 200,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 7,
+      "baselineLcp": 1260,
+      "candidateLcp": 1604,
+      "delta": 344,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 8,
+      "baselineLcp": 1304,
+      "candidateLcp": 1652,
+      "delta": 348,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 9,
+      "baselineLcp": 1144,
+      "candidateLcp": 1308,
+      "delta": 164,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    },
+    {
+      "profile": "mobile-cold",
+      "run": 10,
+      "baselineLcp": 1288,
+      "candidateLcp": 1296,
+      "delta": 8,
+      "candidateSlower": true,
+      "baselineLcpElement": "#page-title :: O imóvel parece certo. Os documentos podem contar outra história.",
+      "candidateLcpElement": "#page-title :: Due diligence imobiliária antes de comprar, vender ou investir"
+    }
+  ]
+}

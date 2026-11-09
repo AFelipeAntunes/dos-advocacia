@@ -10,6 +10,7 @@ export type WixRichTextRun = {
 };
 
 type TextBlock = {
+  fromList?: boolean;
   id: string;
   runs: WixRichTextRun[];
 };
@@ -19,6 +20,13 @@ export type WixRichContentBlock =
   | (TextBlock & { kind: "heading"; level: number })
   | (TextBlock & { kind: "paragraph" })
   | { alt?: string; height?: number; id: string; kind: "image"; src?: string; width?: number };
+
+const LIST_NODE_TYPES = new Set([
+  "BULLETED_LIST",
+  "ORDERED_LIST",
+  "LIST_ITEM",
+  "LIST"
+]);
 
 export type WixFaqItem = {
   answer: string;
@@ -62,6 +70,13 @@ function imageSource(node: WixRichContentNode) {
   return typeof source === "string" ? source : source?.id;
 }
 
+function markFromList(blocks: WixRichContentBlock[]): WixRichContentBlock[] {
+  return blocks.map((block) => {
+    if (block.kind === "image") return block;
+    return { ...block, fromList: true };
+  });
+}
+
 function blocksFromNodes(nodes?: WixRichContentNode[], prefix = "block"): WixRichContentBlock[] {
   return (nodes ?? []).flatMap((node, index) => {
     const id = node.id || `${prefix}-${index}`;
@@ -89,6 +104,10 @@ function blocksFromNodes(nodes?: WixRichContentNode[], prefix = "block"): WixRic
       return [{ id, kind: "paragraph" as const, runs: textRuns(node.nodes) }];
     }
 
+    if (node.type && LIST_NODE_TYPES.has(node.type)) {
+      return markFromList(blocksFromNodes(node.nodes, id));
+    }
+
     return blocksFromNodes(node.nodes, id);
   }).filter((block) => block.kind === "image" || block.runs.length > 0);
 }
@@ -107,12 +126,97 @@ export function getWixRichContentBlocks(content?: WixRichContent, fallback?: str
     .filter((block) => block.runs[0].text.length > 0);
 }
 
-function textOfBlock(block: TextBlock) {
+export function textOfRichContentBlock(block: TextBlock) {
   return block.runs.map((run) => run.text).join("").replace(/\s+/g, " ").trim();
+}
+
+function textOfBlock(block: TextBlock) {
+  return textOfRichContentBlock(block);
 }
 
 function isFaqHeading(text: string) {
   return text.toLocaleLowerCase("pt-BR").startsWith("perguntas frequentes");
+}
+
+const faqCtaDestinations = new Set([
+  "/assessoria-em-locacao",
+  "/assessoria-juridica-compra-de-imovel",
+  "/conflitos-imobiliarios",
+  "/contratos-imobiliarios",
+  "/due-diligence-imobiliaria"
+]);
+
+function isConversionHref(href: string) {
+  try {
+    const url = new URL(href, "https://www.dosadvocacia.com.br");
+    return url.hostname === "wa.me"
+      || url.hostname === "api.whatsapp.com"
+      || faqCtaDestinations.has(url.pathname.replace(/\/+$/, ""));
+  } catch {
+    return false;
+  }
+}
+
+function isContactSectionHeading(text: string) {
+  const normalized = text.toLocaleLowerCase("pt-BR").trim();
+  return /^(fale com|fale conosco|entre em contato|canais de atendimento|whatsapp)\b/.test(normalized);
+}
+
+/**
+ * Isolated conversion block: every substantive run is a WhatsApp/service link,
+ * or the visible text is itself a contact CTA label. Body copy that merely embeds
+ * an editorial link keeps non-linked runs and is NOT a cut (parecer 08 / CTO 11 R1).
+ */
+function isIsolatedConversionParagraph(block: TextBlock) {
+  const text = textOfBlock(block).toLocaleLowerCase("pt-BR");
+  if (
+    /^(fale com a dra\.|fale com o escrit|fale conosco|falar pelo whatsapp|chamar no whatsapp|converse pelo whatsapp)\b/.test(text)
+  ) {
+    return true;
+  }
+
+  const substantiveRuns = block.runs.filter((run) => run.text.replace(/\s+/g, "").length > 0);
+  if (substantiveRuns.length === 0) return false;
+
+  return substantiveRuns.every((run) => Boolean(run.href && isConversionHref(run.href)));
+}
+
+/**
+ * Cut markers for compact CTA insertion (parecer 08 + CTO 11 R1).
+ * Embedded editorial service/WhatsApp links inside a body paragraph are NOT a cut.
+ */
+export function isCompactInsertionCutBlock(block: WixRichContentBlock) {
+  if (block.kind === "image") return false;
+
+  const text = textOfBlock(block).toLocaleLowerCase("pt-BR");
+  if (block.kind === "heading" && block.level === 2 && isFaqHeading(text)) return true;
+  if (block.kind === "heading" && isContactSectionHeading(text)) return true;
+  if (text.startsWith("leia também")) return true;
+  if (block.kind === "paragraph" && isIsolatedConversionParagraph(block)) return true;
+  return false;
+}
+
+export function isEligibleBodyParagraph(block: WixRichContentBlock) {
+  return block.kind === "paragraph"
+    && !block.fromList
+    && textOfBlock(block).length > 0
+    && !isCompactInsertionCutBlock(block);
+}
+
+/** Index of the 3rd eligible body paragraph, or null when compact CTA must be omitted. */
+export function findDueDiligenceCompactInsertionIndex(blocks: WixRichContentBlock[]) {
+  let eligibleCount = 0;
+
+  for (let index = 0; index < blocks.length; index += 1) {
+    const block = blocks[index];
+    if (isCompactInsertionCutBlock(block)) return null;
+    if (!isEligibleBodyParagraph(block)) continue;
+
+    eligibleCount += 1;
+    if (eligibleCount === 3) return index;
+  }
+
+  return null;
 }
 
 function isFaqQuestion(block: Exclude<WixRichContentBlock, { kind: "image" }>) {
@@ -125,30 +229,11 @@ function isFaqQuestion(block: Exclude<WixRichContentBlock, { kind: "image" }>) {
     && block.runs.every((run) => run.bold);
 }
 
-const faqCtaDestinations = new Set([
-  "/assessoria-em-locacao",
-  "/assessoria-juridica-compra-de-imovel",
-  "/conflitos-imobiliarios",
-  "/contratos-imobiliarios",
-  "/due-diligence-imobiliaria"
-]);
-
 function isFaqCta(block: TextBlock) {
   const text = textOfBlock(block).toLocaleLowerCase("pt-BR");
   if (text.startsWith("leia também:") || text.startsWith("fale com a dra.")) return true;
 
-  return block.runs.some((run) => {
-    if (!run.href) return false;
-
-    try {
-      const url = new URL(run.href, "https://www.dosadvocacia.com.br");
-      return url.hostname === "wa.me"
-        || url.hostname === "api.whatsapp.com"
-        || faqCtaDestinations.has(url.pathname.replace(/\/+$/, ""));
-    } catch {
-      return false;
-    }
-  });
+  return block.runs.some((run) => Boolean(run.href && isConversionHref(run.href)));
 }
 
 export function getWixFaqItems(content?: WixRichContent): WixFaqItem[] {

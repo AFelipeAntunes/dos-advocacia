@@ -1,0 +1,1206 @@
+﻿diff --git a/public/site-interactions.js b/public/site-interactions.js
+index 864c265..3e93396 100644
+--- a/public/site-interactions.js
++++ b/public/site-interactions.js
+@@ -123,6 +123,8 @@
+           trackLead(form, payload);
+           const whatsappMessage = payload.pageSlug === "assessoria-juridica-para-imobiliarias"
+             ? "Olá, Drielle! Vim pela página de Assessoria Jurídica para Imobiliárias, já enviei o formulário e quero conversar sobre a contratação da assessoria para a minha imobiliária."
++            : payload.pageSlug === "due-diligence-imobiliaria"
++              ? "Olá, Drielle! Vim pela página de Due diligence imobiliária, já enviei o formulário e quero conversar sobre a análise do imóvel."
+             : "Olá, enviei uma mensagem pelo site e gostaria de dar sequência ao atendimento.";
+           form.innerHTML = `<div class="form-success" role="status"><p class="eyebrow">Mensagem recebida</p><h2>Mensagem enviada.</h2><p>O retorno acontece em até 24 horas úteis. Se for urgente, o WhatsApp é o caminho mais rápido.</p><a class="button button-coral" href="https://wa.me/5541987926468?text=${encodeURIComponent(whatsappMessage)}" target="_blank" rel="noopener">Falar pelo WhatsApp <span aria-hidden="true">↗</span></a></div>`;
+         } catch {
+diff --git a/src/app/globals.css b/src/app/globals.css
+index 3ec59bf..ba57d4c 100644
+--- a/src/app/globals.css
++++ b/src/app/globals.css
+@@ -695,6 +695,39 @@ h1, h2, h3 { text-wrap: balance; }
+ .article-service-cta { margin-top: 2.5rem; padding: clamp(1.8rem, 4vw, 2.6rem); color: white; background: var(--navy); }
+ .article-service-cta h2 { max-width: 560px; margin: .5rem 0 .9rem; color: white; font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 500; letter-spacing: -.04em; line-height: 1.1; }
+ .article-service-cta__lead { max-width: 52ch; margin: 0 0 1.4rem; color: rgba(255,255,255,.78); font-size: 1rem; line-height: 1.6; }
++.article-service-cta__actions {
++  display: flex;
++  flex-wrap: wrap;
++  gap: .9rem 1.25rem;
++  align-items: center;
++}
++.article-service-cta--compact {
++  margin: 0 0 1.8rem;
++  padding: 1.15rem 1.25rem;
++  color: var(--navy);
++  background: var(--stone);
++  border-left: 3px solid var(--coral);
++}
++.article-service-cta--compact p {
++  margin: 0 0 .85rem;
++  color: var(--slate);
++  font-size: 1rem;
++  line-height: 1.55;
++  max-width: 58ch;
++}
++.article-service-cta--compact .text-link {
++  color: var(--teal);
++  font-weight: 750;
++}
++.article-service-cta--due-diligence .text-link-light {
++  color: rgba(255,255,255,.88);
++  font-weight: 650;
++  text-decoration: underline;
++  text-underline-offset: .18em;
++}
++.article-service-cta--due-diligence .text-link-light:hover {
++  color: white;
++}
+ 
+ .article__content {
+   margin-top: 2rem;
+diff --git a/src/app/post/[slug]/page.tsx b/src/app/post/[slug]/page.tsx
+index 0224d4b..ad9fbb6 100644
+--- a/src/app/post/[slug]/page.tsx
++++ b/src/app/post/[slug]/page.tsx
+@@ -6,12 +6,17 @@ import { notFound } from "next/navigation";
+ import { BlogPostJsonLd } from "@/components/blog-post-json-ld";
+ import { BlogCtaTracker } from "@/components/blog-cta-tracker";
+ import { BlogPostCard } from "@/components/blog-post-card";
+-import { BlogServiceCta } from "@/components/blog-service-cta";
++import { BlogDueDiligenceCompactCta, BlogServiceCta, getBlogServiceCtaPlan } from "@/components/blog-service-cta";
+ import { FaqPageJsonLd } from "@/components/faq-page-json-ld";
+ import { WixRichContent } from "@/components/wix-rich-content";
+ import { getBlogCategories, getPostCategory, getRelatedPosts } from "@/lib/wix/blog-navigation";
+ import { getWixPostBySlug, isWixBlogConfigured, listWixCategories, listWixPosts } from "@/lib/wix/blog";
+-import { getWixFaqItems, getWixRelatedPostSlugs } from "@/lib/wix/rich-content";
++import {
++  findDueDiligenceCompactInsertionIndex,
++  getWixFaqItems,
++  getWixRelatedPostSlugs,
++  getWixRichContentBlocks
++} from "@/lib/wix/rich-content";
+ import { getPostDescription, getPostImageUrl, getPostSeoTitle } from "@/lib/wix/seo";
+ 
+ type PostPageProps = {
+@@ -72,6 +77,11 @@ export default async function PostPage({ params }: PostPageProps) {
+   const categories = getBlogCategories(posts, wixCategories);
+   const relatedPosts = getRelatedPosts(post, posts, categories, getWixRelatedPostSlugs(post.richContent));
+   const faqItems = getWixFaqItems(post.richContent);
++  const ctaPlan = getBlogServiceCtaPlan(post, categories);
++  const contentBlocks = getWixRichContentBlocks(post.richContent, post.contentText ?? post.excerpt);
++  const compactAfterBlockIndex = ctaPlan?.kind === "due-diligence"
++    ? findDueDiligenceCompactInsertionIndex(contentBlocks)
++    : null;
+ 
+   return (
+     <main className="article-shell">
+@@ -88,7 +98,14 @@ export default async function PostPage({ params }: PostPageProps) {
+           {post.minutesToRead ? ` · ${post.minutesToRead} min de leitura` : ""}
+         </p>
+         <BlogCtaTracker postSlug={post.slug} />
+-        <div className="article__content"><WixRichContent content={post.richContent} fallback={post.contentText ?? post.excerpt} /></div>
++        <div className="article__content">
++          <WixRichContent
++            content={post.richContent}
++            fallback={post.contentText ?? post.excerpt}
++            compactAfterBlockIndex={compactAfterBlockIndex}
++            compactCta={compactAfterBlockIndex === null ? undefined : <BlogDueDiligenceCompactCta />}
++          />
++        </div>
+         <BlogServiceCta categories={categories} post={post} />
+         <Link className="article-contact-link" href="/contato">
+           Prefere escrever? Fale por e-mail <span aria-hidden="true">↗</span>
+diff --git a/src/components/blog-cta-tracker.tsx b/src/components/blog-cta-tracker.tsx
+index c88af5c..0ad984d 100644
+--- a/src/components/blog-cta-tracker.tsx
++++ b/src/components/blog-cta-tracker.tsx
+@@ -24,14 +24,26 @@ declare global {
+   }
+ }
+ 
++/**
++ * Privacy / series note (parecer 08 + card 04):
++ * - Editorial links inside `.article__content` keep historical `cta_position=meio`
++ *   and WhatsApp keeps `cta_position=fim` + `link_url`.
++ * - Injected DD blocks use `meio_artigo` / `fim_artigo` and omit `link_url` on WhatsApp.
++ * - B2B final block keeps `fim_artigo` without `link_url`.
++ * - Related-posts cards sit outside these scopes and emit zero service events.
++ */
+ export function BlogCtaTracker({ postSlug }: BlogCtaTrackerProps) {
+   useEffect(() => {
+     const articleContent = document.querySelector<HTMLElement>(".article__content");
+-    const serviceCta = document.querySelector<HTMLElement>(".article-service-cta");
+-    if (!articleContent && !serviceCta) return;
++    const serviceScopes = Array.from(
++      document.querySelectorAll<HTMLElement>("[data-cta-scope]")
++    );
++    if (!articleContent && serviceScopes.length === 0) return;
+ 
+     const serviceLinks = articleContent
+-      ? Array.from(articleContent.querySelectorAll<HTMLAnchorElement>("a[href]"))
++      ? Array.from(articleContent.querySelectorAll<HTMLAnchorElement>("a[href]")).filter(
++        (link) => !link.closest("[data-cta-scope]")
++      )
+       : [];
+     const articleCluster = serviceLinks
+       .map((link) => getServiceDestination(link.href, window.location.origin))
+@@ -49,6 +61,7 @@ export function BlogCtaTracker({ postSlug }: BlogCtaTrackerProps) {
+     function trackArticleClick(event: MouseEvent) {
+       const link = getClickedLink(event);
+       if (!link || !articleContent?.contains(link)) return;
++      if (link.closest("[data-cta-scope]")) return;
+ 
+       if (isWhatsAppUrl(link.href)) {
+         window.gtag?.("event", "click_whatsapp", {
+@@ -70,9 +83,25 @@ export function BlogCtaTracker({ postSlug }: BlogCtaTrackerProps) {
+       });
+     }
+ 
+-    function trackServiceCtaClick(event: MouseEvent) {
++    function trackServiceScopeClick(event: MouseEvent) {
+       const link = getClickedLink(event);
+-      if (!link || !serviceCta?.contains(link)) return;
++      if (!link) return;
++
++      const scope = link.closest<HTMLElement>("[data-cta-scope]");
++      if (!scope || !serviceScopes.includes(scope)) return;
++
++      const position = scope.dataset.ctaPosition === "meio_artigo" ? "meio_artigo" : "fim_artigo";
++
++      if (isWhatsAppUrl(link.href)) {
++        const cluster = getClusterFromDestination("due-diligence-imobiliaria");
++
++        window.gtag?.("event", "click_whatsapp", {
++          post_slug: postSlug,
++          ...(cluster ? { cluster } : {}),
++          cta_position: position
++        });
++        return;
++      }
+ 
+       const destination = getServiceDestination(link.href, window.location.origin);
+       if (!destination) return;
+@@ -80,16 +109,20 @@ export function BlogCtaTracker({ postSlug }: BlogCtaTrackerProps) {
+       window.gtag?.("event", "click_cta_servico", {
+         post_slug: postSlug,
+         destino: destination,
+-        cta_position: "fim_artigo"
++        cta_position: position
+       });
+     }
+ 
+     articleContent?.addEventListener("click", trackArticleClick);
+-    serviceCta?.addEventListener("click", trackServiceCtaClick);
++    for (const scope of serviceScopes) {
++      scope.addEventListener("click", trackServiceScopeClick);
++    }
+ 
+     return () => {
+       articleContent?.removeEventListener("click", trackArticleClick);
+-      serviceCta?.removeEventListener("click", trackServiceCtaClick);
++      for (const scope of serviceScopes) {
++        scope.removeEventListener("click", trackServiceScopeClick);
++      }
+     };
+   }, [postSlug]);
+ 
+diff --git a/src/components/blog-service-cta.tsx b/src/components/blog-service-cta.tsx
+index a300cba..c835a0f 100644
+--- a/src/components/blog-service-cta.tsx
++++ b/src/components/blog-service-cta.tsx
+@@ -1,4 +1,12 @@
+-import { isImobiliariasPost, type BlogCategory } from "@/lib/wix/blog-navigation";
++import {
++  COMPRA_SERVICE_PATH,
++  DUE_DILIGENCE_SERVICE_PATH,
++  DUE_DILIGENCE_WHATSAPP_HREF,
++  IMOBILIARIAS_SERVICE_PATH,
++  type BlogServiceCtaPlan,
++  resolveBlogServiceCtaPlan
++} from "@/lib/wix/blog-cta-eligibility";
++import type { BlogCategory } from "@/lib/wix/blog-navigation";
+ import type { WixBlogPost } from "@/lib/wix/types";
+ 
+ type BlogServiceCtaProps = {
+@@ -6,15 +14,92 @@ type BlogServiceCtaProps = {
+   post: WixBlogPost;
+ };
+ 
++export function getBlogServiceCtaPlan(post: WixBlogPost, categories: BlogCategory[]) {
++  return resolveBlogServiceCtaPlan(post, categories);
++}
++
++export function BlogDueDiligenceCompactCta() {
++  return (
++    <aside
++      className="article-service-cta article-service-cta--compact"
++      data-cta-position="meio_artigo"
++      data-cta-scope="due-diligence"
++      data-cta-variant="due-diligence-compacto"
++      id="article-dd-cta-compact"
++      aria-label="Due diligence imobiliária"
++    >
++      <p>
++        Vai comprar ou investir? A due diligence imobiliária analisa o imóvel, quem vende e o que acompanha o bem antes da assinatura.
++      </p>
++      <a className="text-link" href={DUE_DILIGENCE_SERVICE_PATH} data-cta-destination="due-diligence-imobiliaria">
++        Entender a due diligence <span aria-hidden="true">→</span>
++      </a>
++    </aside>
++  );
++}
++
+ export function BlogServiceCta({ categories, post }: BlogServiceCtaProps) {
+-  if (!isImobiliariasPost(post, categories)) return null;
++  const plan = resolveBlogServiceCtaPlan(post, categories);
++  if (!plan) return null;
++
++  if (plan.kind === "imobiliarias") {
++    return (
++      <aside
++        className="article-service-cta"
++        data-cta-position="fim_artigo"
++        data-cta-scope="article-service"
++        data-cta-variant="imobiliarias"
++        aria-labelledby="article-service-cta-title"
++      >
++        <p className="eyebrow eyebrow-light">Para imobiliárias e administradoras</p>
++        <h2 id="article-service-cta-title">A rotina do artigo também chega como demanda jurídica</h2>
++        <p className="article-service-cta__lead">
++          Contratos, locação, venda e conflitos no mesmo acompanhamento, com leitura da operação antes de o caso virar processo.
++        </p>
++        <a className="button button-light" href={IMOBILIARIAS_SERVICE_PATH}>
++          Assessoria jurídica para imobiliárias
++        </a>
++      </aside>
++    );
++  }
++
++  return <BlogDueDiligenceCompleteCta plan={plan} />;
++}
+ 
++function BlogDueDiligenceCompleteCta({ plan }: { plan: Extract<BlogServiceCtaPlan, { kind: "due-diligence" }> }) {
+   return (
+-    <aside className="article-service-cta" data-cta-scope="article-service" aria-labelledby="article-service-cta-title">
+-      <p className="eyebrow eyebrow-light">Para imobiliárias e administradoras</p>
+-      <h2 id="article-service-cta-title">A rotina do artigo também chega como demanda jurídica</h2>
+-      <p className="article-service-cta__lead">Contratos, locação, venda e conflitos no mesmo acompanhamento, com leitura da operação antes de o caso virar processo.</p>
+-      <a className="button button-light" href="/assessoria-juridica-para-imobiliarias">Assessoria jurídica para imobiliárias</a>
++    <aside
++      className="article-service-cta article-service-cta--due-diligence"
++      data-cta-position="fim_artigo"
++      data-cta-scope="due-diligence"
++      data-cta-variant="due-diligence-completo"
++      id="article-dd-cta-complete"
++      aria-labelledby="article-dd-cta-complete-title"
++    >
++      <p className="eyebrow eyebrow-light">Antes do sinal</p>
++      <h2 id="article-dd-cta-complete-title">Antes do sinal, uma conversa</h2>
++      <p className="article-service-cta__lead">
++        Se você está perto de assinar uma proposta, este é o momento de olhar os documentos.
++      </p>
++      <div className="article-service-cta__actions">
++        <a className="button button-light" href={DUE_DILIGENCE_SERVICE_PATH} data-cta-destination="due-diligence-imobiliaria">
++          Conhecer a due diligence imobiliária
++        </a>
++        {plan.showCompraLink ? (
++          <a className="text-link text-link-light" href={COMPRA_SERVICE_PATH} data-cta-destination="assessoria-juridica-compra-de-imovel">
++            ver assessoria na compra <span aria-hidden="true">→</span>
++          </a>
++        ) : null}
++        <a
++          className="text-link text-link-light"
++          href={DUE_DILIGENCE_WHATSAPP_HREF}
++          target="_blank"
++          rel="noopener"
++          data-cta-whatsapp="due-diligence"
++        >
++          Falar pelo WhatsApp <span aria-hidden="true">↗</span>
++        </a>
++      </div>
+     </aside>
+   );
+ }
+diff --git a/src/components/wix-rich-content.tsx b/src/components/wix-rich-content.tsx
+index ab3a9f5..d681f26 100644
+--- a/src/components/wix-rich-content.tsx
++++ b/src/components/wix-rich-content.tsx
+@@ -1,10 +1,12 @@
+ import Image from "next/image";
+-import type { ReactNode } from "react";
++import { Fragment, type ReactNode } from "react";
+ 
+ import { getWixRichContentBlocks, resolveWixImageUrl, type WixRichContentBlock } from "@/lib/wix/rich-content";
+ import type { WixRichContentNode } from "@/lib/wix/types";
+ 
+ type WixRichContentProps = {
++  compactAfterBlockIndex?: number | null;
++  compactCta?: ReactNode;
+   content?: { nodes?: WixRichContentNode[] };
+   fallback?: string;
+ };
+@@ -36,40 +38,52 @@ function InlineContent({ block }: { block: WixTextContentBlock }) {
+   });
+ }
+ 
+-export function WixRichContent({ content, fallback }: WixRichContentProps) {
+-  const blocks = getWixRichContentBlocks(content, fallback);
++function renderBlock(block: WixRichContentBlock) {
++  if (block.kind === "image") {
++    const src = resolveWixImageUrl(block.src);
++    if (!src) return null;
+ 
+-  return (
+-    <>
+-      {blocks.map((block) => {
+-        if (block.kind === "image") {
+-          const src = resolveWixImageUrl(block.src);
+-          if (!src) return null;
++    return (
++      <figure className="article__figure">
++        <Image
++          alt={block.alt || "Imagem do artigo"}
++          height={block.height ?? 700}
++          sizes="(max-width: 760px) 100vw, 760px"
++          src={src}
++          width={block.width ?? 1200}
++        />
++      </figure>
++    );
++  }
+ 
+-          return (
+-            <figure className="article__figure" key={block.id}>
+-              <Image
+-                alt={block.alt || "Imagem do artigo"}
+-                height={block.height ?? 700}
+-                sizes="(max-width: 760px) 100vw, 760px"
+-                src={src}
+-                width={block.width ?? 1200}
+-              />
+-            </figure>
+-          );
+-        }
++  if (block.kind === "heading") {
++    const Heading = (`h${Math.min(Math.max(block.level, 2), 4)}` as "h2" | "h3" | "h4");
++    return <Heading><InlineContent block={block} /></Heading>;
++  }
+ 
+-        if (block.kind === "heading") {
+-          const Heading = (`h${Math.min(Math.max(block.level, 2), 4)}` as "h2" | "h3" | "h4");
+-          return <Heading key={block.id}><InlineContent block={block} /></Heading>;
+-        }
++  if (block.kind === "blockquote") {
++    return <blockquote><InlineContent block={block} /></blockquote>;
++  }
+ 
+-        if (block.kind === "blockquote") {
+-          return <blockquote key={block.id}><InlineContent block={block} /></blockquote>;
+-        }
++  return <p><InlineContent block={block} /></p>;
++}
++
++export function WixRichContent({
++  content,
++  fallback,
++  compactCta,
++  compactAfterBlockIndex = null
++}: WixRichContentProps) {
++  const blocks = getWixRichContentBlocks(content, fallback);
+ 
+-        return <p key={block.id}><InlineContent block={block} /></p>;
+-      })}
++  return (
++    <>
++      {blocks.map((block, index) => (
++        <Fragment key={block.id}>
++          {renderBlock(block)}
++          {compactCta && compactAfterBlockIndex === index ? compactCta : null}
++        </Fragment>
++      ))}
+     </>
+   );
+ }
+diff --git a/src/legacy-pages/advogada-imobiliaria-curitiba.html b/src/legacy-pages/advogada-imobiliaria-curitiba.html
+index 6904458..2392b8d 100644
+--- a/src/legacy-pages/advogada-imobiliaria-curitiba.html
++++ b/src/legacy-pages/advogada-imobiliaria-curitiba.html
+@@ -182,7 +182,7 @@
+           <div class="area-list">
+             <article class="area-row"><span>01</span><div><h3>Contratos imobiliários e segurança jurídica</h3><p>Leitura estratégica, elaboração e revisão de contratos de compra e venda, promessas e instrumentos de intermediação, conectando cláusulas, obrigações e saídas ao negócio real.</p><a class="text-link" href="/contratos-imobiliarios">Ver a área <span aria-hidden="true">→</span></a></div><div class="area-aside"><h3>Frentes de análise</h3><ul><li>Compra e venda</li><li>Promessas e compromissos</li><li>Intermediação</li><li>Cláusulas e responsabilidades</li></ul></div></article>
+             <article class="area-row"><span>02</span><div><h3>Assessoria em locação de imóveis</h3><p>Organização de garantias locatícias, vistorias e documentação para imobiliárias, administradoras e locadores, evitando que uma falha de rotina vire conflito.</p><a class="text-link" href="/assessoria-em-locacao">Ver a área <span aria-hidden="true">→</span></a></div><div class="area-aside"><h3>Frentes de análise</h3><ul><li>Contratos de locação</li><li>Garantias locatícias</li><li>Vistorias</li><li>Documentação</li></ul></div></article>
+-            <article class="area-row"><span>03</span><div><h3>Due diligence imobiliária para investidores</h3><p>Investigação documental que mostra o que preço, localização e aparência não revelam antes de qualquer movimento patrimonial.</p><a class="text-link" href="/due-diligence-imobiliaria">Ver a área <span aria-hidden="true">→</span></a></div><div class="area-aside"><h3>Frentes de análise</h3><ul><li>Matrícula</li><li>Certidões</li><li>Partes envolvidas</li><li>Viabilidade jurídica</li></ul></div></article>
++            <article class="area-row"><span>03</span><div><h3>Due diligence imobiliária para investidores</h3><p>Investigação documental que mostra o que preço, localização e aparência não revelam antes de qualquer movimento patrimonial.</p><a class="text-link" href="/due-diligence-imobiliaria">Due diligence imobiliária <span aria-hidden="true">→</span></a></div><div class="area-aside"><h3>Frentes de análise</h3><ul><li>Matrícula</li><li>Certidões</li><li>Partes envolvidas</li><li>Viabilidade jurídica</li></ul></div></article>
+             <article class="area-row"><span>04</span><div><h3>Gestão de litígios e conflitos imobiliários</h3><p>Análise técnica de fatos, mensagens e documentos em conjunto para avaliar a próxima reação com fundamento.</p><a class="text-link" href="/conflitos-imobiliarios">Ver a área <span aria-hidden="true">→</span></a></div><div class="area-aside"><h3>Frentes de análise</h3><ul><li>Histórico da relação</li><li>Documentos</li><li>Responsabilidades</li><li>Alternativas de condução</li></ul></div></article>
+           </div>
+         </div>
+diff --git a/src/legacy-pages/advogada-imobiliaria.html b/src/legacy-pages/advogada-imobiliaria.html
+index c587392..470db86 100644
+--- a/src/legacy-pages/advogada-imobiliaria.html
++++ b/src/legacy-pages/advogada-imobiliaria.html
+@@ -177,7 +177,7 @@
+         <div class="page-shell">
+           <div class="section-heading"><div><p class="eyebrow">Demandas atendidas</p><h2 id="demandas-title">Situações imobiliárias que pedem análise antes da assinatura.</h2></div></div>
+           <div class="topic-list">
+-            <article class="topic-item"><span>01</span><div><h3><a class="text-link" data-cta-position="demandas" href="/due-diligence-imobiliaria">Análise de risco na compra de imóvel (due diligence)</a></h3></div></article>
++            <article class="topic-item"><span>01</span><div><h3><a class="text-link" data-cta-position="demandas" href="/due-diligence-imobiliaria">Due diligence imobiliária</a></h3></div></article>
+             <article class="topic-item"><span>02</span><div><h3><a class="text-link" data-cta-position="demandas" href="/assessoria-juridica-compra-de-imovel">Compra de imóvel na planta, atraso na entrega e distrato</a></h3></div></article>
+             <article class="topic-item"><span>03</span><div><h3><a class="text-link" data-cta-position="demandas" data-track-post="true" href="/post/compra-de-imóvel-em-inventário-riscos-que-ninguém-te-conta">Compra de imóvel em inventário e cessão de direitos hereditários</a></h3></div></article>
+             <article class="topic-item"><span>04</span><div><h3><a class="text-link" data-cta-position="demandas" data-track-post="true" href="/post/comprar-imóvel-em-leilão-os-riscos-jurídicos-que-ninguém-lê-no-edital">Compra de imóvel em leilão</a></h3></div></article>
+@@ -230,7 +230,7 @@
+           <div class="area-list">
+             <article class="area-row"><span>01</span><div><h3>Contratos imobiliários e segurança jurídica</h3><p>Leitura estratégica, elaboração e revisão de contratos de compra e venda, promessas e instrumentos de intermediação.</p><a class="text-link" href="/contratos-imobiliarios">Ver a área <span aria-hidden="true">→</span></a></div><div class="area-aside"><h3>Frentes de análise</h3><ul><li>Compra e venda</li><li>Promessas e compromissos</li><li>Intermediação</li><li>Cláusulas e responsabilidades</li></ul></div></article>
+             <article class="area-row"><span>02</span><div><h3>Assessoria em locação de imóveis</h3><p>Garantias locatícias, vistorias e documentação organizadas para imobiliárias, administradoras e locadores.</p><a class="text-link" href="/assessoria-em-locacao">Ver a área <span aria-hidden="true">→</span></a></div><div class="area-aside"><h3>Frentes de análise</h3><ul><li>Contratos de locação</li><li>Garantias locatícias</li><li>Vistorias</li><li>Documentação</li></ul></div></article>
+-            <article class="area-row"><span>03</span><div><h3>Due diligence imobiliária para investidores</h3><p>A investigação documental que mostra o que preço, localização e aparência não revelam antes de qualquer movimento patrimonial.</p><a class="text-link" href="/due-diligence-imobiliaria">Ver a área <span aria-hidden="true">→</span></a></div><div class="area-aside"><h3>Frentes de análise</h3><ul><li>Matrícula</li><li>Certidões</li><li>Partes envolvidas</li><li>Viabilidade jurídica</li></ul></div></article>
++            <article class="area-row"><span>03</span><div><h3>Due diligence imobiliária para investidores</h3><p>A investigação documental que mostra o que preço, localização e aparência não revelam antes de qualquer movimento patrimonial.</p><a class="text-link" href="/due-diligence-imobiliaria">Due diligence imobiliária <span aria-hidden="true">→</span></a></div><div class="area-aside"><h3>Frentes de análise</h3><ul><li>Matrícula</li><li>Certidões</li><li>Partes envolvidas</li><li>Viabilidade jurídica</li></ul></div></article>
+             <article class="area-row"><span>04</span><div><h3>Gestão de litígios e conflitos imobiliários</h3><p>Fatos, mensagens e documentos lidos em conjunto para avaliar a próxima reação com fundamento.</p><a class="text-link" href="/conflitos-imobiliarios">Ver a área <span aria-hidden="true">→</span></a></div><div class="area-aside"><h3>Frentes de análise</h3><ul><li>Histórico da relação</li><li>Documentos</li><li>Responsabilidades</li><li>Alternativas de condução</li></ul></div></article>
+           </div>
+         </div>
+diff --git a/src/legacy-pages/assessoria-juridica-compra-de-imovel.html b/src/legacy-pages/assessoria-juridica-compra-de-imovel.html
+index 2a214ae..0bb5fcf 100644
+--- a/src/legacy-pages/assessoria-juridica-compra-de-imovel.html
++++ b/src/legacy-pages/assessoria-juridica-compra-de-imovel.html
+@@ -94,7 +94,7 @@
+           <div>
+             <h2 id="risco-title">O risco não está no imóvel que você viu. Está no que não aparece na visita</h2>
+             <p>Você visita, gosta, negocia o preço. Nada disso mostra se existe uma dívida do vendedor, uma penhora, um inventário mal resolvido ou uma construção que nunca foi averbada.</p>
+-            <p>Esses pontos não aparecem no anúncio nem na conversa. Aparecem <a class="text-link" href="/due-diligence-imobiliaria">na matrícula, nas certidões</a> e na leitura do contrato. Quase sempre depois que o dinheiro já saiu.</p>
++            <p>Esses pontos não aparecem no anúncio nem na conversa. Aparecem na <a class="text-link" href="/due-diligence-imobiliaria">análise completa do imóvel e das partes antes da compra</a> e na leitura do contrato. Quase sempre depois que o dinheiro já saiu.</p>
+           </div>
+           <div class="topic-list">
+             <article class="topic-item"><span>01</span><div><h3>Comprar com o vendedor certo</h3><p>Confirmar se quem vende pode vender, se há cônjuge, herdeiro ou procuração envolvida e se existem dívidas capazes de alcançar o imóvel.</p></div></article>
+diff --git a/src/legacy-pages/due-diligence-imobiliaria.html b/src/legacy-pages/due-diligence-imobiliaria.html
+index 4db7df9..d244b6f 100644
+--- a/src/legacy-pages/due-diligence-imobiliaria.html
++++ b/src/legacy-pages/due-diligence-imobiliaria.html
+@@ -1,17 +1,340 @@
+ ﻿<!doctype html>
+ <html lang="pt-BR">
+   <head>
+-    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0b1e47">
+-    <meta name="description" content="Due diligence imobiliária revela dívidas, penhoras e passivos ocultos antes da compra. Entenda o que é verificado e quando contratar a análise.">
+-    <link rel="canonical" href="https://www.dosadvocacia.com.br/due-diligence-imobiliaria"><link rel="icon" href="/assets/brand/symbol.svg" type="image/svg+xml"><link rel="manifest" href="/site.webmanifest"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css">
+-    <title>Due diligence imobiliária | Advogado para análise de imóvel</title>
+-     <meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:title" content="Due diligence imobiliária | Advogado para análise de imóvel"><meta property="og:description" content="Due diligence imobiliária revela dívidas, penhoras e passivos ocultos antes da compra. Entenda o que é verificado e quando contratar a análise."><meta property="og:url" content="https://www.dosadvocacia.com.br/due-diligence-imobiliaria">
+-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://www.dosadvocacia.com.br/"},{"@type":"ListItem","position":2,"name":"Áreas de atuação","item":"https://www.dosadvocacia.com.br/areas-de-atuacao"},{"@type":"ListItem","position":3,"name":"Due diligence imobiliária","item":"https://www.dosadvocacia.com.br/due-diligence-imobiliaria"}]},{"@type":"Service","name":"Due diligence imobiliária","serviceType":"Due diligence imobiliária","provider":{"@type":"LegalService","name":"DOS Advocacia Imobiliária"},"areaServed":["Curitiba","Paraná","Brasil"],"url":"https://www.dosadvocacia.com.br/due-diligence-imobiliaria","description":"Análise documental e jurídica para apoiar decisões de compra, venda e investimento em imóveis."}]}</script>
++    <meta charset="utf-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1">
++    <meta name="theme-color" content="#0b1e47">
++    <meta name="description" content="Due diligence imobiliária antes de comprar ou investir. Análise da matrícula, do vendedor e dos riscos que não aparecem no anúncio. Curitiba e todo o Brasil.">
++    <link rel="canonical" href="https://www.dosadvocacia.com.br/due-diligence-imobiliaria">
++    <link rel="icon" href="/assets/brand/symbol.svg" type="image/svg+xml">
++    <link rel="manifest" href="/site.webmanifest">
++    <link rel="preconnect" href="https://fonts.googleapis.com">
++    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
++    <title>Due diligence imobiliária | Curitiba e todo o Brasil</title>
++    <meta property="og:type" content="website">
++    <meta property="og:locale" content="pt_BR">
++    <meta property="og:site_name" content="Drielle Pereira Advocacia Imobiliária">
++    <meta property="og:title" content="Due diligence imobiliária | Curitiba e todo o Brasil">
++    <meta property="og:description" content="Due diligence imobiliária antes de comprar ou investir. Análise da matrícula, do vendedor e dos riscos que não aparecem no anúncio. Curitiba e todo o Brasil.">
++    <meta property="og:url" content="https://www.dosadvocacia.com.br/due-diligence-imobiliaria">
++    <meta property="og:image" content="https://www.dosadvocacia.com.br/assets/images/drielle-pereira-retrato-casual.webp">
++    <script type="application/ld+json">
++      {
++        "@context": "https://schema.org",
++        "@graph": [
++          {
++            "@type": "LegalService",
++            "@id": "https://www.dosadvocacia.com.br/#organization",
++            "name": "Drielle Pereira Advocacia Imobiliária",
++            "url": "https://www.dosadvocacia.com.br/",
++            "logo": "https://www.dosadvocacia.com.br/assets/brand/symbol.svg",
++            "image": "https://www.dosadvocacia.com.br/assets/images/hero-dos-advocacia.webp",
++            "description": "Assessoria jurídica especializada no mercado imobiliário para imobiliárias, corretores, compradores, vendedores e investidores.",
++            "telephone": "+5541987926468",
++            "email": "drielle@dosadvocacia.com.br",
++            "address": {
++              "@type": "PostalAddress",
++              "streetAddress": "Av. do Batel, 1230, Conj. 508, Batel",
++              "addressLocality": "Curitiba",
++              "addressRegion": "PR",
++              "addressCountry": "BR"
++            },
++            "openingHours": "Mo-Fr 10:00-18:00",
++            "areaServed": [
++              { "@type": "City", "name": "Curitiba" },
++              { "@type": "AdministrativeArea", "name": "Paraná" },
++              { "@type": "Country", "name": "Brasil" }
++            ],
++            "sameAs": ["https://www.instagram.com/drielleadvimobiliaria/"]
++          },
++          {
++            "@type": "Service",
++            "@id": "https://www.dosadvocacia.com.br/due-diligence-imobiliaria#service",
++            "name": "Due diligence imobiliária",
++            "serviceType": "Due diligence imobiliária",
++            "url": "https://www.dosadvocacia.com.br/due-diligence-imobiliaria",
++            "description": "Análise jurídica do imóvel e das partes antes da assinatura, com leitura da matrícula, do vendedor e das obrigações que acompanham o bem.",
++            "provider": { "@id": "https://www.dosadvocacia.com.br/#organization" },
++            "areaServed": [
++              { "@type": "City", "name": "Curitiba" },
++              { "@type": "Country", "name": "Brasil" }
++            ]
++          },
++          {
++            "@type": "BreadcrumbList",
++            "itemListElement": [
++              { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.dosadvocacia.com.br/" },
++              { "@type": "ListItem", "position": 2, "name": "Áreas de atuação", "item": "https://www.dosadvocacia.com.br/areas-de-atuacao" },
++              { "@type": "ListItem", "position": 3, "name": "Due diligence imobiliária", "item": "https://www.dosadvocacia.com.br/due-diligence-imobiliaria" }
++            ]
++          },
++          {
++            "@type": "FAQPage",
++            "mainEntity": [
++              {
++                "@type": "Question",
++                "name": "O que é due diligence imobiliária?",
++                "acceptedAnswer": { "@type": "Answer", "text": "É a análise jurídica do imóvel, de quem vende e das obrigações ligadas ao bem, feita antes da assinatura. O objetivo é identificar riscos que não aparecem no anúncio nem na visita e mostrar o que precisa ser resolvido ou negociado antes de o dinheiro mudar de mãos." }
++              },
++              {
++                "@type": "Question",
++                "name": "A due diligence imobiliária é obrigatória por lei?",
++                "acceptedAnswer": { "@type": "Answer", "text": "Não. Desde a Lei 14.382/2022, certidões forenses ou de distribuidores judiciais não são exigidas para caracterizar a boa-fé de quem compra (art. 54, §2º, da Lei 13.097/2015). Os riscos fora da matrícula continuam previstos em lei, como a fraude à execução (art. 792, IV, do CPC). A análise existe para enxergar esses riscos antes de pagar." }
++              },
++              {
++                "@type": "Question",
++                "name": "Quanto tempo leva a análise?",
++                "acceptedAnswer": { "@type": "Answer", "text": "Depende da documentação disponível e de quantas pessoas e imóveis estão envolvidos. O prazo é combinado no início, depois da primeira leitura do caso." }
++              },
++              {
++                "@type": "Question",
++                "name": "A due diligence substitui as certidões e a escritura?",
++                "acceptedAnswer": { "@type": "Answer", "text": "Não. Os documentos exigidos para a escritura continuam necessários. A due diligence lê esses documentos em conjunto, cruza com o histórico das partes e aponta o que eles, isolados, não mostram." }
++              },
++              {
++                "@type": "Question",
++                "name": "A imobiliária pode contratar a due diligence de um negócio que intermedeia?",
++                "acceptedAnswer": { "@type": "Answer", "text": "Pode. Para a imobiliária, a análise antes da proposta reduz o risco de o negócio cair na escritura e protege a relação com comprador e vendedor. O escritório atua ao lado da imobiliária, sem tomar o lugar dela na negociação." }
++              },
++              {
++                "@type": "Question",
++                "name": "A análise atende imóveis fora de Curitiba?",
++                "acceptedAnswer": { "@type": "Answer", "text": "Sim. A análise é documental e pode ser feita a distância para imóveis em qualquer cidade do Brasil. Quando o caso exige um ato presencial, isso é avaliado antes." }
++              }
++            ]
++          }
++        ]
++      }
++    </script>
+   </head>
+   <body>
+     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+-    <header class="site-header"><div class="page-shell header-inner"><a class="brand" href="/" aria-label="Drielle Pereira Advocacia Imobiliária - página inicial"><img class="brand-symbol" src="/assets/brand/symbol.svg" alt="" width="42" height="38" aria-hidden="true"><span class="brand-wordmark"><strong>Drielle Pereira</strong><small>Advocacia Imobiliária</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" data-menu-toggle><span class="sr-only">Abrir menu</span><span></span><span></span></button><nav class="main-nav" id="main-navigation" aria-label="Principal" data-menu><a href="/">Início</a><a aria-current="page" href="/areas-de-atuacao.html">Áreas de atuação</a><a href="/sobre.html">O escritório</a><a href="/treinamentos.html">Treinamentos</a><a href="/conteudos.html">Conteúdos</a><a class="nav-contact" href="/contato.html">Fale conosco <span aria-hidden="true">↗</span></a></nav></div></header>
+-    <main id="conteudo"><section class="page-hero" aria-labelledby="page-title"><div class="page-shell"><nav class="breadcrumb" aria-label="Você está em"><a href="/">Início</a><span aria-hidden="true">/</span><a href="/areas-de-atuacao.html">Áreas de atuação</a><span aria-hidden="true">/</span><span>Due diligence imobiliária</span></nav><p class="eyebrow eyebrow-light">Análise de viabilidade</p><h1 id="page-title">O imóvel parece certo. Os documentos podem contar <em>outra história.</em></h1><p class="page-lead">Investir sem due diligence é decidir no escuro. Antes de comprar, vender ou aportar patrimônio, você precisa conhecer os fatos jurídicos que não aparecem na visita.</p></div></section><section class="section-space"><div class="page-shell content-guide"><div><p class="eyebrow">O que está em jogo</p><h2>Preço e localização não revelam todos os riscos da operação.</h2><p>Matrícula, histórico das partes, obrigações e restrições podem interferir na viabilidade do negócio. A análise jurídica conecta documentos e informações para mostrar quais pontos exigem atenção antes da assinatura.</p><p>Quem pesquisa por "due diligence imobiliaria" ou "due diligence na compra de imovel" busca essa mesma análise preventiva aplicada à operação concreta. O escopo muda conforme o imóvel, as partes e o objetivo do investimento.</p></div><div class="topic-list"><article class="topic-item"><span>01</span><div><h3>Leitura documental</h3><p>Organização e verificação dos documentos disponibilizados no contexto da operação.</p></div></article><article class="topic-item"><span>02</span><div><h3>Informações relevantes</h3><p>Identificação de dados que podem influenciar a compreensão do negócio e a tomada de decisão.</p></div></article><article class="topic-item"><span>03</span><div><h3>Riscos e prioridades</h3><p>Leitura dos pontos que merecem atenção à luz do objetivo da operação.</p></div></article><article class="topic-item"><span>04</span><div><h3>Orientação estratégica</h3><p>Direcionamento jurídico para que os próximos passos sejam avaliados com critério.</p></div></article></div></div></section><section class="section-space" style="padding-top:0"><div class="page-shell quiet-cta"><h2>Antes de movimentar patrimônio, descubra o que os documentos mudam na sua decisão.</h2><a class="button button-light" href="https://wa.me/5541987926468?text=Ol%C3%A1%2C%20Drielle!%20Vim%20pela%20p%C3%A1gina%20de%20Due%20Diligence%20Imobili%C3%A1ria%20e%20gostaria%20de%20conversar%20sobre%20uma%20negocia%C3%A7%C3%A3o%20ou%20investimento." target="_blank" rel="noopener">Falar sobre o investimento pelo WhatsApp <span aria-hidden="true">↗</span></a></div></section></main>
+-    <footer class="site-footer"><div class="page-shell footer-top"><div class="footer-brand"><div class="footer-wordmark"><img src="/assets/brand/Símbolo_Invertido.svg" alt="" width="52" height="45" aria-hidden="true"><span><strong>Drielle Pereira</strong><small>Advocacia Imobiliária</small></span></div><p>Assessoria jurídica especializada para o mercado imobiliário.</p></div><div class="footer-column"><p class="footer-label">Navegação</p><a href="/areas-de-atuacao.html">Áreas de atuação</a><a href="/sobre.html">O escritório</a><a href="/treinamentos.html">Treinamentos</a><a href="/conteudos.html">Conteúdos</a><a href="/contato.html">Canais de atendimento</a></div><div class="footer-column"><p class="footer-label">Contato</p><a href="https://wa.me/5541987926468?text=Olá%2C+gostaria+de+saber+mais+sobre+a+Drielle+Pereira+Advocacia+Imobiliária." target="_blank" rel="noopener">+55 41 98792-6468</a><span class="contact-email">drielle@dosadvocacia.com.br</span><a href="https://www.instagram.com/drielleadvimobiliaria/" target="_blank" rel="noopener">Instagram ↗</a></div><address class="footer-column"><p class="footer-label">Curitiba</p><p>Av. do Batel, 1230<br>Conj. 508, Batel<br>Curitiba - PR</p><p>Seg. a sex., 10h às 18h</p></address></div><div class="page-shell footer-bottom"><p>© 2024 Drielle Pereira Advocacia Imobiliária.</p><a href="/politica-de-privacidade.html">Política de privacidade</a></div></footer><script src="/script.js" defer></script>
++    <header class="site-header">
++      <div class="page-shell header-inner">
++        <a class="brand" href="/" aria-label="Drielle Pereira Advocacia Imobiliária - página inicial">
++          <img class="brand-symbol" src="/assets/brand/symbol.svg" alt="" width="42" height="38" aria-hidden="true">
++          <span class="brand-wordmark"><strong>Drielle Pereira</strong><small>Advocacia Imobiliária</small></span>
++        </a>
++        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" data-menu-toggle>
++          <span class="sr-only">Abrir menu</span><span></span><span></span>
++        </button>
++        <nav class="main-nav" id="main-navigation" aria-label="Principal" data-menu>
++          <a href="/">Início</a>
++          <a href="/areas-de-atuacao">Áreas de atuação</a>
++          <a href="/sobre">O escritório</a>
++          <a href="/treinamentos">Treinamentos</a>
++          <a href="/blog">Conteúdos</a>
++          <a class="nav-contact" href="/contato">Fale conosco <span aria-hidden="true">↗</span></a>
++        </nav>
++      </div>
++    </header>
++    <main id="conteudo">
++      <section class="page-hero" aria-labelledby="page-title">
++        <div class="page-shell">
++          <nav class="breadcrumb" aria-label="Você está em">
++            <a href="/">Início</a><span aria-hidden="true">/</span>
++            <a href="/areas-de-atuacao">Áreas de atuação</a><span aria-hidden="true">/</span>
++            <span>Due diligence imobiliária</span>
++          </nav>
++          <p class="eyebrow eyebrow-light">Para compradores, investidores e imobiliárias · Curitiba e Brasil</p>
++          <h1 id="page-title">Due diligence imobiliária antes de comprar, vender ou investir</h1>
++          <p class="page-lead">O anúncio mostra o imóvel. A matrícula, o histórico de quem vende e as obrigações que acompanham o bem contam outra parte da história. E é essa parte que decide se o negócio é seguro.</p>
++          <p class="page-lead" style="margin-top: 1rem;">Due diligence imobiliária é a análise jurídica do imóvel e das partes antes da assinatura. Ela mostra o que precisa ser resolvido, negociado ou reconsiderado enquanto ainda dá tempo.</p>
++          <div class="hero-actions" style="margin-top: 2rem;">
++            <a class="button button-coral" href="https://wa.me/5541987926468?text=Ol%C3%A1%2C%20Drielle!%20Vim%20pelo%20site%20e%20quero%20conversar%20sobre%20uma%20due%20diligence%20imobili%C3%A1ria." target="_blank" rel="noopener" data-icp="comprador" data-cta-position="hero">Conversar sobre o imóvel que estou avaliando <span aria-hidden="true">↗</span></a>
++            <a class="text-link text-link-light" href="#o-que-voce-recebe">Ver o que a análise entrega <span aria-hidden="true">→</span></a>
++          </div>
++        </div>
++      </section>
++
++      <section class="section-space" aria-labelledby="analisa-title">
++        <div class="page-shell content-guide">
++          <div>
++            <h2 id="analisa-title">O que a due diligence imobiliária analisa</h2>
++            <p>A análise olha para três frentes ao mesmo tempo. Separadas, cada uma pode parecer em ordem. Juntas, mostram o risco real.</p>
++          </div>
++          <div class="topic-list">
++            <article class="topic-item">
++              <span>01</span>
++              <div>
++                <h3>O imóvel</h3>
++                <p>A matrícula mostra o que foi registrado até a data em que a certidão foi emitida. Uma construção não averbada, uma área diferente da registrada ou um ônus antigo mudam o valor e a viabilidade do negócio. Veja também: <a class="text-link" href="/post/imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer">Imóvel sem Habite-se: riscos jurídicos que o comprador precisa conhecer</a>.</p>
++              </div>
++            </article>
++            <article class="topic-item">
++              <span>02</span>
++              <div>
++                <h3>Quem vende</h3>
++                <p>Há riscos que nunca chegam à matrícula. A lei considera fraude à execução a venda feita quando já tramitava contra o vendedor uma ação capaz de reduzi-lo à insolvência (art. 792, IV, do CPC). Regime de casamento, herança ainda não partilhada e venda por procuração também mudam quem precisa assinar. Veja também: <a class="text-link" href="/post/fraude-à-execução-no-imóvel-o-risco-que-pode-te-custar-tudo">Fraude à execução no imóvel: o risco que pode te custar tudo</a> e <a class="text-link" href="/post/compra-de-imóvel-em-inventário-riscos-que-ninguém-te-conta">Compra de imóvel em inventário: riscos que ninguém te conta</a>.</p>
++              </div>
++            </article>
++            <article class="topic-item">
++              <span>03</span>
++              <div>
++                <h3>O que acompanha o imóvel</h3>
++                <p>Dívidas de condomínio e de IPTU, um contrato de locação em vigor e restrições de uso não aparecem na visita. Aparecem depois, quando o imóvel já é seu.</p>
++              </div>
++            </article>
++          </div>
++        </div>
++      </section>
++
++      <section class="section-space" style="padding-top: 0;" aria-labelledby="quando-title">
++        <div class="page-shell content-guide">
++          <div>
++            <h2 id="quando-title">Quando contratar</h2>
++          </div>
++          <div>
++            <p>O momento certo é antes de pagar sinal ou assinar proposta. Depois disso, o que poderia ser condição do negócio vira problema para resolver.</p>
++            <p>A análise costuma fazer mais diferença quando</p>
++            <div class="topic-list">
++              <article class="topic-item"><span>01</span><div><p>o imóvel vem de inventário ou herança</p></div></article>
++              <article class="topic-item"><span>02</span><div><p>a compra é para investimento ou envolve valor alto</p></div></article>
++              <article class="topic-item"><span>03</span><div><p>o imóvel está na planta, em loteamento ou é rural</p></div></article>
++              <article class="topic-item"><span>04</span><div><p>quem vende é empresa, está representado por procurador ou tem histórico de dívidas</p></div></article>
++              <article class="topic-item"><span>05</span><div><p>o negócio tem prazo curto e pressão para fechar</p></div></article>
++            </div>
++          </div>
++        </div>
++      </section>
++
++      <section class="section-space" style="padding-top: 0;" aria-labelledby="o-que-voce-recebe">
++        <div class="page-shell content-guide">
++          <div>
++            <h2 id="o-que-voce-recebe">O que você recebe</h2>
++          </div>
++          <div>
++            <div class="topic-list">
++              <article class="topic-item"><span>01</span><div><h3>Leitura documental</h3><p>Organização e verificação dos documentos do imóvel e das partes.</p></div></article>
++              <article class="topic-item"><span>02</span><div><h3>Informações relevantes</h3><p>O que os documentos mostram e o que muda na sua decisão.</p></div></article>
++              <article class="topic-item"><span>03</span><div><h3>Riscos e prioridades</h3><p>O que precisa ser resolvido antes da assinatura e o que pode entrar na negociação.</p></div></article>
++              <article class="topic-item"><span>04</span><div><h3>Orientação estratégica</h3><p>O caminho jurídico para seguir, ajustar ou não fechar o negócio.</p></div></article>
++            </div>
++            <p style="margin-top: 1.6rem;">Ao final, você sabe o que está em ordem, o que precisa ser resolvido e o que pode ser negociado. A decisão continua sendo sua, agora com os riscos à vista.</p>
++          </div>
++        </div>
++      </section>
++
++      <section class="section-space" style="padding-top: 0;" aria-labelledby="metodo-title">
++        <div class="page-shell content-guide">
++          <div>
++            <h2 id="metodo-title">Por que eu faço due diligence desse jeito</h2>
++          </div>
++          <div>
++            <p>São mais de 10 anos de experiência ligada ao mercado imobiliário, começando dentro de imobiliárias, antes da advocacia. Vi de perto negócios que pareciam fechados travarem no cartório ou no banco por um documento que ninguém tinha olhado antes. Essa vivência define o método: a análise dos documentos anda junto com a leitura da negociação, para identificar o risco antes da assinatura.</p>
++            <p>Por isso a análise não termina na lista de certidões. Ela termina na pergunta que importa para quem vai assinar. Este negócio fecha com segurança, ou o que precisa mudar antes?</p>
++            <p>Dra. Drielle Pereira, advogada imobiliarista, OAB/PR 76.982.</p>
++          </div>
++        </div>
++      </section>
++
++      <section class="section-space" style="padding-top: 0;" aria-labelledby="publico-title">
++        <div class="page-shell content-guide">
++          <div>
++            <h2 id="publico-title">Para quem é</h2>
++          </div>
++          <div>
++            <div class="topic-list">
++              <article class="topic-item"><span>01</span><div><p>Quem vai comprar para morar e não quer descobrir o problema depois da escritura</p></div></article>
++              <article class="topic-item"><span>02</span><div><p>Investidores que avaliam mais de um imóvel e precisam comparar o risco de cada um</p></div></article>
++              <article class="topic-item"><span>03</span><div><p>Imobiliárias e corretores que querem levar um negócio de valor alto até a escritura sem surpresa</p></div></article>
++              <article class="topic-item"><span>04</span><div><p>Quem vai vender e quer antecipar o que o comprador vai questionar</p></div></article>
++            </div>
++          </div>
++        </div>
++      </section>
++
++      <section class="section-space" style="padding-top: 0;" aria-labelledby="atendimento-title">
++        <div class="page-shell content-guide">
++          <div>
++            <h2 id="atendimento-title">Atendimento em Curitiba e em todo o Brasil</h2>
++          </div>
++          <div>
++            <p>O escritório fica no Batel, em Curitiba. A análise é documental e atende imóveis em qualquer cidade do país. O primeiro retorno acontece em até 24 horas úteis.</p>
++            <p>Se a operação pede análise do contrato de compra, veja a <a class="text-link" href="/assessoria-juridica-compra-de-imovel" data-cta-position="demandas">assessoria jurídica na compra de imóvel</a>. Para modelos e cláusulas da negociação, a página de <a class="text-link" href="/contratos-imobiliarios" data-cta-position="demandas">contratos imobiliários</a> reúne esse recorte.</p>
++          </div>
++        </div>
++      </section>
++
++      <section class="training-faq section-space" aria-labelledby="faq-title">
++        <div class="page-shell training-faq-grid">
++          <div>
++            <h2 id="faq-title">Perguntas frequentes</h2>
++          </div>
++          <div class="faq-list">
++            <details>
++              <summary><h3>O que é due diligence imobiliária?</h3></summary>
++              <p>É a análise jurídica do imóvel, de quem vende e das obrigações ligadas ao bem, feita antes da assinatura. O objetivo é identificar riscos que não aparecem no anúncio nem na visita e mostrar o que precisa ser resolvido ou negociado antes de o dinheiro mudar de mãos.</p>
++            </details>
++            <details>
++              <summary><h3>A due diligence imobiliária é obrigatória por lei?</h3></summary>
++              <p>Não. Desde a Lei 14.382/2022, certidões forenses ou de distribuidores judiciais não são exigidas para caracterizar a boa-fé de quem compra (art. 54, §2º, da Lei 13.097/2015). Os riscos fora da matrícula continuam previstos em lei, como a fraude à execução (art. 792, IV, do CPC). A análise existe para enxergar esses riscos antes de pagar.</p>
++            </details>
++            <details>
++              <summary><h3>Quanto tempo leva a análise?</h3></summary>
++              <p>Depende da documentação disponível e de quantas pessoas e imóveis estão envolvidos. O prazo é combinado no início, depois da primeira leitura do caso.</p>
++            </details>
++            <details>
++              <summary><h3>A due diligence substitui as certidões e a escritura?</h3></summary>
++              <p>Não. Os documentos exigidos para a escritura continuam necessários. A due diligence lê esses documentos em conjunto, cruza com o histórico das partes e aponta o que eles, isolados, não mostram.</p>
++            </details>
++            <details>
++              <summary><h3>A imobiliária pode contratar a due diligence de um negócio que intermedeia?</h3></summary>
++              <p>Pode. Para a imobiliária, a análise antes da proposta reduz o risco de o negócio cair na escritura e protege a relação com comprador e vendedor. O escritório atua ao lado da imobiliária, sem tomar o lugar dela na negociação.</p>
++            </details>
++            <details>
++              <summary><h3>A análise atende imóveis fora de Curitiba?</h3></summary>
++              <p>Sim. A análise é documental e pode ser feita a distância para imóveis em qualquer cidade do Brasil. Quando o caso exige um ato presencial, isso é avaliado antes.</p>
++            </details>
++          </div>
++        </div>
++      </section>
++
++      <section class="section-space" style="padding-top: 0;" aria-labelledby="cta-title">
++        <div class="page-shell quiet-cta">
++          <div>
++            <h2 id="cta-title">Antes do sinal, uma conversa</h2>
++            <p class="page-lead" style="margin-top: 1.2rem;">Se você está perto de assinar uma proposta ou pagar sinal, este é o momento de olhar os documentos. Depois, a mesma análise serve para remediar, não para decidir.</p>
++            <p class="page-lead" style="margin-top: 0.7rem;">Retorno em até 24 horas úteis. Atendimento em Curitiba e online para todo o Brasil.</p>
++          </div>
++          <a class="button button-light" href="https://wa.me/5541987926468?text=Ol%C3%A1%2C%20Drielle!%20Vim%20pelo%20site%20e%20quero%20conversar%20sobre%20uma%20due%20diligence%20imobili%C3%A1ria." target="_blank" rel="noopener" data-icp="comprador" data-cta-position="rodape_pagina">Conversar sobre o imóvel pelo WhatsApp <span aria-hidden="true">↗</span></a>
++        </div>
++      </section>
++    </main>
++    <footer class="site-footer">
++      <div class="page-shell footer-top">
++        <div class="footer-brand">
++          <div class="footer-wordmark">
++            <img src="/assets/brand/Símbolo_Invertido.svg" alt="" width="52" height="45" aria-hidden="true">
++            <span><strong>Drielle Pereira</strong><small>Advocacia Imobiliária</small></span>
++          </div>
++          <p>Assessoria jurídica especializada para o mercado imobiliário.</p>
++        </div>
++        <div class="footer-column">
++          <p class="footer-label">Navegação</p>
++          <a href="/areas-de-atuacao">Áreas de atuação</a>
++          <a href="/sobre">O escritório</a>
++          <a href="/treinamentos">Treinamentos</a>
++          <a href="/blog">Conteúdos</a>
++          <a href="/contato">Canais de atendimento</a>
++        </div>
++        <div class="footer-column">
++          <p class="footer-label">Contato</p>
++          <a href="https://wa.me/5541987926468?text=Olá%2C+gostaria+de+saber+mais+sobre+a+Drielle+Pereira+Advocacia+Imobiliária." target="_blank" rel="noopener">+55 41 98792-6468</a>
++          <span class="contact-email">drielle@dosadvocacia.com.br</span>
++          <a href="https://www.instagram.com/drielleadvimobiliaria/" target="_blank" rel="noopener">Instagram ↗</a>
++        </div>
++        <address class="footer-column">
++          <p class="footer-label">Curitiba</p>
++          <p>Av. do Batel, 1230<br>Conj. 508, Batel<br>Curitiba - PR</p>
++          <p>Seg. a sex., 10h às 18h</p>
++        </address>
++      </div>
++      <div class="page-shell footer-bottom">
++        <p>© 2024 Drielle Pereira Advocacia Imobiliária.</p>
++        <a href="/politica-de-privacidade">Política de privacidade</a>
++      </div>
++    </footer>
+   </body>
+ </html>
+diff --git a/src/legacy-pages/index.html b/src/legacy-pages/index.html
+index 14e34ac..7384f5c 100644
+--- a/src/legacy-pages/index.html
++++ b/src/legacy-pages/index.html
+@@ -176,9 +176,9 @@
+               <p>Conflito imobiliário exige análise técnica, não improviso. Orientação para quem precisa decidir com segurança.</p>
+               <span class="card-arrow" aria-hidden="true">↗</span>
+             </a>
+-            <a class="practice-card reveal" href="/due-diligence-imobiliaria.html">
++            <a class="practice-card reveal" href="/due-diligence-imobiliaria">
+               <span class="practice-number">04</span>
+-              <h3>Due diligence e viabilidade para investidores</h3>
++              <h3>Due diligence imobiliária</h3>
+               <p>Investir sem due diligence é decidir no escuro. Investigação documental antes do movimento patrimonial.</p>
+               <span class="card-arrow" aria-hidden="true">↗</span>
+             </a>
+diff --git a/src/lib/contact-form.test.ts b/src/lib/contact-form.test.ts
+index c60c53a..9da04cb 100644
+--- a/src/lib/contact-form.test.ts
++++ b/src/lib/contact-form.test.ts
+@@ -82,6 +82,28 @@ test("successful landing form identifies the page and contracting intent in What
+   assert.equal(leadEvents.length, 1);
+ });
+ 
++test("due diligence form success WhatsApp identifies the page without PII", async () => {
++  const { markup, leadEvents } = await submitForm("due-diligence-imobiliaria");
++  const href = markup.match(/href="([^"]+)"/)?.[1];
++  assert.ok(href);
++  const message = new URL(href).searchParams.get("text") ?? "";
++  assert.match(message, /página de Due diligence imobiliária/);
++  assert.match(message, /já enviei o formulário/);
++  assert.match(message, /análise do imóvel/);
++  assert.doesNotMatch(message, /qa@example|41999999999|Mensagem privada|Teste QA/);
++  assert.equal(leadEvents.length, 1);
++});
++
++test("registers the due diligence landing with comprador ICP and compra demanda", () => {
++  const markup = getContactFormMarkup("dueDiligence");
++
++  assert.ok(markup);
++  assert.match(markup, /data-page-slug="due-diligence-imobiliaria"/);
++  assert.match(markup, /data-icp="comprador"/);
++  assert.match(markup, /data-form-location="servico"/);
++  assert.match(markup, /name="demandType" value="Compra, venda ou investimento"/);
++});
++
+ test("other forms retain their existing WhatsApp message", async () => {
+   const { markup } = await submitForm("contato");
+   const href = markup.match(/href="([^"]+)"/)?.[1];
+diff --git a/src/lib/wix/blog-service-cta.test.ts b/src/lib/wix/blog-service-cta.test.ts
+index 244d987..52d685e 100644
+--- a/src/lib/wix/blog-service-cta.test.ts
++++ b/src/lib/wix/blog-service-cta.test.ts
+@@ -3,9 +3,15 @@ import test from "node:test";
+ import { createElement } from "react";
+ import { renderToStaticMarkup } from "react-dom/server";
+ 
+-import { BlogServiceCta } from "@/components/blog-service-cta";
++import { BlogDueDiligenceCompactCta, BlogServiceCta } from "@/components/blog-service-cta";
++import { WixRichContent } from "@/components/wix-rich-content";
++import { resolveBlogServiceCtaPlan, CONTRATOS_COMPRADOR_POST_IDS } from "@/lib/wix/blog-cta-eligibility";
+ import { getBlogCategories } from "@/lib/wix/blog-navigation";
+-import type { WixBlogCategory, WixBlogPost } from "@/lib/wix/types";
++import {
++  findDueDiligenceCompactInsertionIndex,
++  getWixRichContentBlocks
++} from "@/lib/wix/rich-content";
++import type { WixBlogCategory, WixBlogPost, WixRichContentNode } from "@/lib/wix/types";
+ 
+ const wixCategories: WixBlogCategory[] = [
+   { id: "assessoria", label: "Assessoria para Imobiliárias", slug: "assessoria-para-imobiliárias" },
+@@ -14,51 +20,185 @@ const wixCategories: WixBlogCategory[] = [
+   { id: "litigios", label: "Litígios Imobiliários", slug: "litígios-imobiliários" }
+ ];
+ 
++const buyerContratosId = [...CONTRATOS_COMPRADOR_POST_IDS][0];
++
+ const fixtures = {
+   b2b: post("post-b2b", ["assessoria"]),
+-  b2c: post("post-b2c", ["due"]),
++  due: post("post-due", ["due"]),
++  contratosBuyer: post("post-contratos-buyer", ["contratos"], buyerContratosId),
++  contratosSemPersona: post("post-contratos-sem", ["contratos"], "id-fora-da-allowlist"),
+   multicategoria: post("post-multicategoria", ["due", "assessoria"]),
++  dueComDesconhecida: post("post-due-unknown", ["due", "fora-do-catalogo"]),
++  litigios: post("post-litigios", ["litigios"]),
+   semCategoria: post("post-sem-categoria", []),
+   categoriaDesconhecida: post("post-categoria-desconhecida", ["fora-do-catalogo"])
+ };
+ 
+ const categories = getBlogCategories(Object.values(fixtures), wixCategories);
+ 
+-function render(postFixture: WixBlogPost) {
++function renderFinal(postFixture: WixBlogPost) {
+   return renderToStaticMarkup(createElement(BlogServiceCta, { categories, post: postFixture }));
+ }
+ 
+-test("renders the service block on the server for the approved B2B category", () => {
+-  const html = render(fixtures.b2b);
+-
++test("keeps the B2B final block for Assessoria and suppresses DD", () => {
++  const html = renderFinal(fixtures.b2b);
+   assert.match(html, /data-cta-scope="article-service"/);
+   assert.match(html, /href="\/assessoria-juridica-para-imobiliarias"/);
+-  assert.equal((html.match(/assessoria-juridica-para-imobiliarias/g) ?? []).length, 1);
++  assert.doesNotMatch(html, /due-diligence-imobiliaria/);
++  assert.equal(resolveBlogServiceCtaPlan(fixtures.multicategoria, categories)?.kind, "imobiliarias");
++  assert.doesNotMatch(renderFinal(fixtures.multicategoria), /article-dd-cta-complete/);
++});
+ 
+-  const anchor = /<a\b[^>]*href="\/assessoria-juridica-para-imobiliarias"[^>]*>([\s\S]*?)<\/a>/.exec(html);
+-  assert.ok(anchor, "service block link was not rendered");
+-  assert.equal(anchor[1].trim(), "Assessoria jurídica para imobiliárias");
++test("Due Diligence category receives complete DD block without compra secondary", () => {
++  const html = renderFinal(fixtures.due);
++  assert.match(html, /id="article-dd-cta-complete"/);
++  assert.match(html, /data-cta-position="fim_artigo"/);
++  assert.match(html, /href="\/due-diligence-imobiliaria"/);
++  assert.match(html, /Conhecer a due diligence imobiliária/);
++  assert.match(html, /Falar pelo WhatsApp/);
++  assert.doesNotMatch(html, /ver assessoria na compra/);
+ });
+ 
+-test("renders the block when the approved category is one of several", () => {
+-  const html = render(fixtures.multicategoria);
++test("Contratos comprador allowlist receives DD complete with compra secondary", () => {
++  const html = renderFinal(fixtures.contratosBuyer);
++  assert.match(html, /article-dd-cta-complete/);
++  assert.match(html, /ver assessoria na compra/);
++  assert.match(html, /href="\/assessoria-juridica-compra-de-imovel"/);
++});
+ 
+-  assert.match(html, /data-cta-scope="article-service"/);
+-  assert.match(html, /href="\/assessoria-juridica-para-imobiliarias"/);
++test("Contratos without buyer proof, Litígios, empty and unknown stay without new blocks", () => {
++  assert.equal(renderFinal(fixtures.contratosSemPersona), "");
++  assert.equal(renderFinal(fixtures.litigios), "");
++  assert.equal(renderFinal(fixtures.semCategoria), "");
++  assert.equal(renderFinal(fixtures.categoriaDesconhecida), "");
++});
++
++test("unknown extra category id does not erase a known Due Diligence match", () => {
++  assert.equal(resolveBlogServiceCtaPlan(fixtures.dueComDesconhecida, categories)?.kind, "due-diligence");
++  assert.match(renderFinal(fixtures.dueComDesconhecida), /article-dd-cta-complete/);
++});
++
++test("compact CTA SSR markup has unique id and meio_artigo position", () => {
++  const html = renderToStaticMarkup(createElement(BlogDueDiligenceCompactCta));
++  assert.match(html, /id="article-dd-cta-compact"/);
++  assert.match(html, /data-cta-position="meio_artigo"/);
++  assert.match(html, /data-cta-scope="due-diligence"/);
++  assert.match(html, /Entender a due diligence/);
++  assert.match(html, /href="\/due-diligence-imobiliaria"/);
++});
++
++test("inserts at most one compact after the third eligible paragraph on the server", () => {
++  const nodes = paragraphs(4);
++  const blocks = getWixRichContentBlocks({ nodes });
++  const index = findDueDiligenceCompactInsertionIndex(blocks);
++  assert.equal(index, 2);
++
++  const html = renderToStaticMarkup(
++    createElement(WixRichContent, {
++      content: { nodes },
++      compactAfterBlockIndex: index,
++      compactCta: createElement(BlogDueDiligenceCompactCta)
++    })
++  );
++
++  assert.equal((html.match(/id="article-dd-cta-compact"/g) ?? []).length, 1);
++  assert.match(html, /P1[\s\S]*P2[\s\S]*P3[\s\S]*article-dd-cta-compact[\s\S]*P4/);
+ });
+ 
+-test("does not render the block outside the approved category", () => {
+-  assert.equal(render(fixtures.b2c), "");
+-  assert.equal(render(fixtures.semCategoria), "");
+-  assert.equal(render(fixtures.categoriaDesconhecida), "");
++test("short content keeps only the final block opportunity (no compact)", () => {
++  const nodes = paragraphs(2);
++  assert.equal(findDueDiligenceCompactInsertionIndex(getWixRichContentBlocks({ nodes })), null);
+ });
+ 
+-function post(slug: string, categoryIds: string[]): WixBlogPost {
++test("FAQ and Leia também cut off compact insertion", () => {
++  const withFaq: WixRichContentNode[] = [
++    ...paragraphs(2),
++    {
++      id: "faq",
++      headingData: { level: 2 },
++      nodes: [{ textData: { text: "Perguntas frequentes" }, type: "TEXT" }],
++      type: "HEADING"
++    },
++    ...paragraphs(3, "faq-p")
++  ];
++  assert.equal(findDueDiligenceCompactInsertionIndex(getWixRichContentBlocks({ nodes: withFaq })), null);
++
++  const withRelated: WixRichContentNode[] = [
++    ...paragraphs(2),
++    {
++      id: "related",
++      nodes: [{ textData: { text: "Leia também: outro post" }, type: "TEXT" }],
++      type: "PARAGRAPH"
++    },
++    ...paragraphs(3, "after")
++  ];
++  assert.equal(findDueDiligenceCompactInsertionIndex(getWixRichContentBlocks({ nodes: withRelated })), null);
++});
++
++test("list paragraphs are not counted as eligible body paragraphs", () => {
++  const nodes: WixRichContentNode[] = [
++    ...paragraphs(2),
++    {
++      id: "list",
++      type: "BULLETED_LIST",
++      nodes: [
++        {
++          id: "li1",
++          type: "LIST_ITEM",
++          nodes: [{
++            id: "li1-p",
++            type: "PARAGRAPH",
++            nodes: [{ textData: { text: "Item de lista" }, type: "TEXT" }]
++          }]
++        }
++      ]
++    },
++    ...paragraphs(1, "p3")
++  ];
++  const blocks = getWixRichContentBlocks({ nodes });
++  assert.equal(
++    blocks.some((block) => block.kind === "paragraph" && "fromList" in block && block.fromList === true),
++    true
++  );
++  assert.equal(findDueDiligenceCompactInsertionIndex(blocks), 3);
++});
++
++test("existing editorial service link does not suppress compact eligibility", () => {
++  const nodes: WixRichContentNode[] = [
++    paragraphWithLink("P1", "/due-diligence-imobiliaria"),
++    ...paragraphs(2, "rest")
++  ];
++  assert.equal(findDueDiligenceCompactInsertionIndex(getWixRichContentBlocks({ nodes })), 2);
++});
++
++function post(slug: string, categoryIds: string[], id = slug): WixBlogPost {
+   return {
+     categoryIds,
+     firstPublishedDate: "2026-07-20",
+-    id: slug,
++    id,
+     slug,
+     title: slug
+   };
+ }
++
++function paragraphs(count: number, prefix = "p"): WixRichContentNode[] {
++  return Array.from({ length: count }, (_, index) => ({
++    id: `${prefix}-${index + 1}`,
++    type: "PARAGRAPH",
++    nodes: [{ textData: { text: `P${index + 1}` }, type: "TEXT" }]
++  }));
++}
++
++function paragraphWithLink(text: string, href: string): WixRichContentNode {
++  return {
++    id: "linked",
++    type: "PARAGRAPH",
++    nodes: [{
++      type: "TEXT",
++      textData: {
++        text,
++        decorations: [{ type: "LINK", linkData: { link: { url: href } } }]
++      }
++    }]
++  };
++}
+diff --git a/src/lib/wix/rich-content.ts b/src/lib/wix/rich-content.ts
+index a07abad..3ef8975 100644
+--- a/src/lib/wix/rich-content.ts
++++ b/src/lib/wix/rich-content.ts
+@@ -10,6 +10,7 @@ export type WixRichTextRun = {
+ };
+ 
+ type TextBlock = {
++  fromList?: boolean;
+   id: string;
+   runs: WixRichTextRun[];
+ };
+@@ -20,6 +21,13 @@ export type WixRichContentBlock =
+   | (TextBlock & { kind: "paragraph" })
+   | { alt?: string; height?: number; id: string; kind: "image"; src?: string; width?: number };
+ 
++const LIST_NODE_TYPES = new Set([
++  "BULLETED_LIST",
++  "ORDERED_LIST",
++  "LIST_ITEM",
++  "LIST"
++]);
++
+ export type WixFaqItem = {
+   answer: string;
+   question: string;
+@@ -62,6 +70,13 @@ function imageSource(node: WixRichContentNode) {
+   return typeof source === "string" ? source : source?.id;
+ }
+ 
++function markFromList(blocks: WixRichContentBlock[]): WixRichContentBlock[] {
++  return blocks.map((block) => {
++    if (block.kind === "image") return block;
++    return { ...block, fromList: true };
++  });
++}
++
+ function blocksFromNodes(nodes?: WixRichContentNode[], prefix = "block"): WixRichContentBlock[] {
+   return (nodes ?? []).flatMap((node, index) => {
+     const id = node.id || `${prefix}-${index}`;
+@@ -89,6 +104,10 @@ function blocksFromNodes(nodes?: WixRichContentNode[], prefix = "block"): WixRic
+       return [{ id, kind: "paragraph" as const, runs: textRuns(node.nodes) }];
+     }
+ 
++    if (node.type && LIST_NODE_TYPES.has(node.type)) {
++      return markFromList(blocksFromNodes(node.nodes, id));
++    }
++
+     return blocksFromNodes(node.nodes, id);
+   }).filter((block) => block.kind === "image" || block.runs.length > 0);
+ }
+@@ -107,14 +126,55 @@ export function getWixRichContentBlocks(content?: WixRichContent, fallback?: str
+     .filter((block) => block.runs[0].text.length > 0);
+ }
+ 
+-function textOfBlock(block: TextBlock) {
++export function textOfRichContentBlock(block: TextBlock) {
+   return block.runs.map((run) => run.text).join("").replace(/\s+/g, " ").trim();
+ }
+ 
++function textOfBlock(block: TextBlock) {
++  return textOfRichContentBlock(block);
++}
++
+ function isFaqHeading(text: string) {
+   return text.toLocaleLowerCase("pt-BR").startsWith("perguntas frequentes");
+ }
+ 
++/**
++ * Cut markers for compact CTA insertion (parecer 08).
++ * Embedded editorial service/WhatsApp links inside a body paragraph are NOT a cut.
++ */
++export function isCompactInsertionCutBlock(block: WixRichContentBlock) {
++  if (block.kind === "image") return false;
++
++  const text = textOfBlock(block).toLocaleLowerCase("pt-BR");
++  if (block.kind === "heading" && block.level === 2 && isFaqHeading(text)) return true;
++  if (text.startsWith("leia também")) return true;
++  if (text.startsWith("fale com a dra.")) return true;
++  return false;
++}
++
++export function isEligibleBodyParagraph(block: WixRichContentBlock) {
++  return block.kind === "paragraph"
++    && !block.fromList
++    && textOfBlock(block).length > 0
++    && !isCompactInsertionCutBlock(block);
++}
++
++/** Index of the 3rd eligible body paragraph, or null when compact CTA must be omitted. */
++export function findDueDiligenceCompactInsertionIndex(blocks: WixRichContentBlock[]) {
++  let eligibleCount = 0;
++
++  for (let index = 0; index < blocks.length; index += 1) {
++    const block = blocks[index];
++    if (isCompactInsertionCutBlock(block)) return null;
++    if (!isEligibleBodyParagraph(block)) continue;
++
++    eligibleCount += 1;
++    if (eligibleCount === 3) return index;
++  }
++
++  return null;
++}
++
+ function isFaqQuestion(block: Exclude<WixRichContentBlock, { kind: "image" }>) {
+   if (block.kind === "heading") return block.level === 3;
+ 

@@ -1,0 +1,272 @@
+{
+  "comparedAt": "2026-11-07T18:52:38.077Z",
+  "chrome": "156.0.8078.81",
+  "candidateOrigin": "http://127.0.0.1:3025",
+  "baselineOrigin": "http://127.0.0.1:3024",
+  "rows": [
+    {
+      "page": "home",
+      "profile": "desktop-cold",
+      "lcpCandidateMedian": 312,
+      "lcpBaselineMedian": 300,
+      "lcpDeltaMedian": 12,
+      "lcpCandidateRange": [
+        256,
+        416
+      ],
+      "lcpBaselineRange": [
+        244,
+        572
+      ],
+      "lcpCandidateSd": 61.21,
+      "lcpBaselineSd": 117.56,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 69,
+      "proxyBaselineMedian": 7,
+      "ttfbCandidateMedian": 14,
+      "ttfbBaselineMedian": 11,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 370.91,
+      "transferBaselineMedianKb": 370.72,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "home",
+      "profile": "mobile-cold",
+      "lcpCandidateMedian": 1724,
+      "lcpBaselineMedian": 1632,
+      "lcpDeltaMedian": 92,
+      "lcpCandidateRange": [
+        1604,
+        2020
+      ],
+      "lcpBaselineRange": [
+        1576,
+        2444
+      ],
+      "lcpCandidateSd": 157.3,
+      "lcpBaselineSd": 331.57,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 228,
+      "proxyBaselineMedian": 173,
+      "ttfbCandidateMedian": 6,
+      "ttfbBaselineMedian": 6,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 322.11,
+      "transferBaselineMedianKb": 321.92,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "due-diligence",
+      "profile": "desktop-cold",
+      "lcpCandidateMedian": 312,
+      "lcpBaselineMedian": 232,
+      "lcpDeltaMedian": 80,
+      "lcpCandidateRange": [
+        284,
+        424
+      ],
+      "lcpBaselineRange": [
+        208,
+        356
+      ],
+      "lcpCandidateSd": 60.32,
+      "lcpBaselineSd": 58.1,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 118,
+      "proxyBaselineMedian": 72,
+      "ttfbCandidateMedian": 32,
+      "ttfbBaselineMedian": 10,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 195.78,
+      "transferBaselineMedianKb": 189.6,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "due-diligence",
+      "profile": "mobile-cold",
+      "lcpCandidateMedian": 1540,
+      "lcpBaselineMedian": 1272,
+      "lcpDeltaMedian": 268,
+      "lcpCandidateRange": [
+        1324,
+        1604
+      ],
+      "lcpBaselineRange": [
+        1212,
+        1636
+      ],
+      "lcpCandidateSd": 112.39,
+      "lcpBaselineSd": 171.69,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 768,
+      "proxyBaselineMedian": 713,
+      "ttfbCandidateMedian": 7,
+      "ttfbBaselineMedian": 6,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 195.78,
+      "transferBaselineMedianKb": 189.6,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "imobiliarias",
+      "profile": "desktop-cold",
+      "lcpCandidateMedian": 244,
+      "lcpBaselineMedian": 284,
+      "lcpDeltaMedian": -40,
+      "lcpCandidateRange": [
+        176,
+        356
+      ],
+      "lcpBaselineRange": [
+        204,
+        348
+      ],
+      "lcpCandidateSd": 61.63,
+      "lcpBaselineSd": 46.85,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 83,
+      "proxyBaselineMedian": 92,
+      "ttfbCandidateMedian": 12,
+      "ttfbBaselineMedian": 9,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 368.03,
+      "transferBaselineMedianKb": 367.83,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "imobiliarias",
+      "profile": "mobile-cold",
+      "lcpCandidateMedian": 1232,
+      "lcpBaselineMedian": 1384,
+      "lcpDeltaMedian": -152,
+      "lcpCandidateRange": [
+        1220,
+        1600
+      ],
+      "lcpBaselineRange": [
+        1248,
+        1580
+      ],
+      "lcpCandidateSd": 145.36,
+      "lcpBaselineSd": 114.42,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 655,
+      "proxyBaselineMedian": 686,
+      "ttfbCandidateMedian": 6,
+      "ttfbBaselineMedian": 7,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 368.03,
+      "transferBaselineMedianKb": 367.83,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "compra",
+      "profile": "desktop-cold",
+      "lcpCandidateMedian": 260,
+      "lcpBaselineMedian": 264,
+      "lcpDeltaMedian": -4,
+      "lcpCandidateRange": [
+        184,
+        336
+      ],
+      "lcpBaselineRange": [
+        204,
+        444
+      ],
+      "lcpCandidateSd": 48.31,
+      "lcpBaselineSd": 88.02,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 83,
+      "proxyBaselineMedian": 77,
+      "ttfbCandidateMedian": 7,
+      "ttfbBaselineMedian": 7,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 193.08,
+      "transferBaselineMedianKb": 192.88,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    },
+    {
+      "page": "compra",
+      "profile": "mobile-cold",
+      "lcpCandidateMedian": 1364,
+      "lcpBaselineMedian": 1520,
+      "lcpDeltaMedian": -156,
+      "lcpCandidateRange": [
+        1248,
+        1572
+      ],
+      "lcpBaselineRange": [
+        1396,
+        1544
+      ],
+      "lcpCandidateSd": 109.47,
+      "lcpBaselineSd": 55.34,
+      "clsCandidateMedian": 0,
+      "clsBaselineMedian": 0,
+      "proxyCandidateMedian": 673,
+      "proxyBaselineMedian": 770,
+      "ttfbCandidateMedian": 6,
+      "ttfbBaselineMedian": 6,
+      "jsTransferCandidateMedianKb": 141.41,
+      "jsTransferBaselineMedianKb": 141.37,
+      "jsEncodedCandidateMedianKb": 139.07,
+      "jsEncodedBaselineMedianKb": 139.03,
+      "cssTransferCandidateMedianKb": 9.43,
+      "cssTransferBaselineMedianKb": 9.27,
+      "transferCandidateMedianKb": 193.08,
+      "transferBaselineMedianKb": 192.88,
+      "validCandidateRuns": 5,
+      "validBaselineRuns": 5
+    }
+  ]
+}

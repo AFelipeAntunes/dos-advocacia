@@ -1,0 +1,242 @@
+{
+  "probedAt": "2026-11-09T14:14:34.017Z",
+  "chrome": "156.0.8078.81",
+  "origin": "http://127.0.0.1:3025",
+  "selector": ".dd-lcp-opt #o-que-voce-recebe",
+  "method": "click link + direct fragment; assert H2.top >= header.bottom and title fits under header",
+  "ok": true,
+  "results": [
+    {
+      "viewport": "390",
+      "mode": "click",
+      "status": 200,
+      "ok": true,
+      "failReasons": [],
+      "measure": {
+        "headingExists": true,
+        "text": "O que você recebe",
+        "hash": "#o-que-voce-recebe",
+        "scrollMarginTop": "100px",
+        "header": {
+          "top": 0,
+          "bottom": 79,
+          "height": 79
+        },
+        "heading": {
+          "top": 118,
+          "bottom": 156,
+          "height": 37
+        },
+        "viewportHeight": 844,
+        "belowHeader": true,
+        "fitsVisible": true,
+        "readable": true,
+        "gapBelowHeaderPx": 39
+      },
+      "screenshot": "anchor-cto24-390-click.png"
+    },
+    {
+      "viewport": "390",
+      "mode": "direct",
+      "status": 200,
+      "ok": true,
+      "failReasons": [],
+      "measure": {
+        "headingExists": true,
+        "text": "O que você recebe",
+        "hash": "#o-que-voce-recebe",
+        "scrollMarginTop": "100px",
+        "header": {
+          "top": 0,
+          "bottom": 79,
+          "height": 79
+        },
+        "heading": {
+          "top": 126,
+          "bottom": 164,
+          "height": 37
+        },
+        "viewportHeight": 844,
+        "belowHeader": true,
+        "fitsVisible": true,
+        "readable": true,
+        "gapBelowHeaderPx": 47
+      },
+      "screenshot": "anchor-cto24-390-direct.png"
+    },
+    {
+      "viewport": "768",
+      "mode": "click",
+      "status": 200,
+      "ok": true,
+      "failReasons": [],
+      "measure": {
+        "headingExists": true,
+        "text": "O que você recebe",
+        "hash": "#o-que-voce-recebe",
+        "scrollMarginTop": "100px",
+        "header": {
+          "top": 0,
+          "bottom": 79,
+          "height": 79
+        },
+        "heading": {
+          "top": 105,
+          "bottom": 143,
+          "height": 37
+        },
+        "viewportHeight": 1024,
+        "belowHeader": true,
+        "fitsVisible": true,
+        "readable": true,
+        "gapBelowHeaderPx": 26
+      },
+      "screenshot": null
+    },
+    {
+      "viewport": "768",
+      "mode": "direct",
+      "status": 200,
+      "ok": true,
+      "failReasons": [],
+      "measure": {
+        "headingExists": true,
+        "text": "O que você recebe",
+        "hash": "#o-que-voce-recebe",
+        "scrollMarginTop": "100px",
+        "header": {
+          "top": 0,
+          "bottom": 79,
+          "height": 79
+        },
+        "heading": {
+          "top": 102,
+          "bottom": 140,
+          "height": 37
+        },
+        "viewportHeight": 1024,
+        "belowHeader": true,
+        "fitsVisible": true,
+        "readable": true,
+        "gapBelowHeaderPx": 23
+      },
+      "screenshot": null
+    },
+    {
+      "viewport": "1000",
+      "mode": "click",
+      "status": 200,
+      "ok": true,
+      "failReasons": [],
+      "measure": {
+        "headingExists": true,
+        "text": "O que você recebe",
+        "hash": "#o-que-voce-recebe",
+        "scrollMarginTop": "116px",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "height": 93
+        },
+        "heading": {
+          "top": 122,
+          "bottom": 163,
+          "height": 42
+        },
+        "viewportHeight": 800,
+        "belowHeader": true,
+        "fitsVisible": true,
+        "readable": true,
+        "gapBelowHeaderPx": 29
+      },
+      "screenshot": null
+    },
+    {
+      "viewport": "1000",
+      "mode": "direct",
+      "status": 200,
+      "ok": true,
+      "failReasons": [],
+      "measure": {
+        "headingExists": true,
+        "text": "O que você recebe",
+        "hash": "#o-que-voce-recebe",
+        "scrollMarginTop": "116px",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "height": 93
+        },
+        "heading": {
+          "top": 119,
+          "bottom": 160,
+          "height": 42
+        },
+        "viewportHeight": 800,
+        "belowHeader": true,
+        "fitsVisible": true,
+        "readable": true,
+        "gapBelowHeaderPx": 26
+      },
+      "screenshot": null
+    },
+    {
+      "viewport": "1440",
+      "mode": "click",
+      "status": 200,
+      "ok": true,
+      "failReasons": [],
+      "measure": {
+        "headingExists": true,
+        "text": "O que você recebe",
+        "hash": "#o-que-voce-recebe",
+        "scrollMarginTop": "116px",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "height": 93
+        },
+        "heading": {
+          "top": 129,
+          "bottom": 189,
+          "height": 60
+        },
+        "viewportHeight": 900,
+        "belowHeader": true,
+        "fitsVisible": true,
+        "readable": true,
+        "gapBelowHeaderPx": 36
+      },
+      "screenshot": "anchor-cto24-1440-click.png"
+    },
+    {
+      "viewport": "1440",
+      "mode": "direct",
+      "status": 200,
+      "ok": true,
+      "failReasons": [],
+      "measure": {
+        "headingExists": true,
+        "text": "O que você recebe",
+        "hash": "#o-que-voce-recebe",
+        "scrollMarginTop": "116px",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "height": 93
+        },
+        "heading": {
+          "top": 121,
+          "bottom": 181,
+          "height": 60
+        },
+        "viewportHeight": 900,
+        "belowHeader": true,
+        "fitsVisible": true,
+        "readable": true,
+        "gapBelowHeaderPx": 28
+      },
+      "screenshot": "anchor-cto24-1440-direct.png"
+    }
+  ]
+}

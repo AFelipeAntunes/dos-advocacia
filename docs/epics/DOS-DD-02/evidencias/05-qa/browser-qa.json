@@ -1,0 +1,87 @@
+{
+  "startedAt": "2026-11-07T18:19:31.652Z",
+  "checks": [
+    {
+      "name": "landing-due-diligence",
+      "title": "Due diligence imobiliária | Curitiba e todo o Brasil",
+      "h1": "Due diligence imobiliária antes de comprar, vender ou investir",
+      "h1Count": 1,
+      "faq": 6,
+      "faqH3": [
+        "O que é due diligence imobiliária?",
+        "A due diligence imobiliária é obrigatória por lei?",
+        "Quanto tempo leva a análise?",
+        "A due diligence substitui as certidões e a escritura?",
+        "A imobiliária pode contratar a due diligence de um negócio que intermedeia?",
+        "A análise atende imóveis fora de Curitiba?"
+      ],
+      "canonical": "https://www.dosadvocacia.com.br/due-diligence-imobiliaria",
+      "form": {
+        "pageSlug": "due-diligence-imobiliaria",
+        "icp": "comprador"
+      },
+      "schemaLegalName": "Drielle Pereira Sociedade Individual de Advocacia",
+      "overflowX": false,
+      "faqOpenAfterEnter": 1
+    },
+    {
+      "name": "landing-form-success",
+      "waText": "Olá, Drielle! Vim pela página de Due diligence imobiliária, já enviei o formulário e quero conversar sobre a análise do imóvel.",
+      "intercepted": true
+    },
+    {
+      "name": "landing-mobile",
+      "overflowX": false
+    },
+    {
+      "name": "institutional-anchors",
+      "home": [
+        {
+          "href": "/due-diligence-imobiliaria",
+          "text": "04 Due diligence imobiliária Investir sem due diligence é decidir no escuro. Investigação documental antes do movimento patrimonial. ↗"
+        }
+      ],
+      "compra": [
+        {
+          "href": "/due-diligence-imobiliaria",
+          "text": "análise completa do imóvel e das partes antes da compra"
+        }
+      ],
+      "nacional": [
+        {
+          "href": "/due-diligence-imobiliaria",
+          "text": "Due diligence imobiliária"
+        },
+        {
+          "href": "/due-diligence-imobiliaria",
+          "text": "Due diligence imobiliária →"
+        }
+      ],
+      "curitiba": [
+        {
+          "href": "/due-diligence-imobiliaria",
+          "text": "Due diligence imobiliária →"
+        }
+      ]
+    },
+    {
+      "name": "production-article-principal-cta-state",
+      "title": "O que é due diligence imobiliária e o que ela verifica",
+      "compact": false,
+      "complete": false,
+      "b2b": false,
+      "serviceLinks": 2,
+      "leiaTambem": true,
+      "note": "Produção ainda sem card04; compacto/completo ausentes é esperado até release."
+    },
+    {
+      "name": "viewport-768",
+      "overflowX": false
+    },
+    {
+      "name": "viewport-1000",
+      "overflowX": false
+    }
+  ],
+  "finishedAt": "2026-11-07T18:19:42.145Z"
+}

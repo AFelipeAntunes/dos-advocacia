@@ -1,0 +1,63 @@
+{
+  "probedAt": "2026-11-09T13:48:00.482Z",
+  "chrome": "156.0.8078.81",
+  "method": "extraHTTPHeaders+CDP-blocklist-no-route",
+  "allowedOrigins": [
+    "https://dos-advocacia-fp0125m2c-dos-advocacia.vercel.app",
+    "https://dos-advocacia-n7nukp43d-dos-advocacia.vercel.app"
+  ],
+  "blockedPatterns": [
+    "*googletagmanager.com*",
+    "*google-analytics.com*",
+    "*googleapis.com*",
+    "*gstatic.com*",
+    "*fonts.googleapis.com*",
+    "*fonts.gstatic.com*",
+    "*vercel-insights.com*",
+    "*va.vercel-scripts.com*",
+    "*vercel.live*",
+    "*facebook.net*",
+    "*doubleclick.net*",
+    "*hotjar.com*",
+    "*clarity.ms*"
+  ],
+  "candidateCold": {
+    "status": 200,
+    "h1": "Due diligence imobiliária antes de comprar, vender ou investir",
+    "title": "Due diligence imobiliária | Curitiba e todo o Brasil",
+    "isSso": false,
+    "hasDdLcpOpt": true,
+    "formAnchorExists": true,
+    "documentTransfer": 13474,
+    "resourceCount": 19,
+    "cachedLikeResourceCount": 0,
+    "externalCompletedOrigins": []
+  },
+  "candidateWarm": {
+    "firstDocumentTransfer": 13474,
+    "secondDocumentTransfer": 300,
+    "firstCachedLike": 0,
+    "secondCachedLike": 11,
+    "firstResourceCount": 19,
+    "secondResourceCount": 19,
+    "secondStatus": 200,
+    "secondH1": "Due diligence imobiliária antes de comprar, vender ou investir",
+    "secondIsSso": false,
+    "cacheHitEvidence": true,
+    "externalCompletedOrigins": []
+  },
+  "baselineCold": {
+    "status": 200,
+    "h1": "O imóvel parece certo. Os documentos podem contar outra história.",
+    "title": "Due diligence imobiliária | Advogado para análise de imóvel",
+    "isSso": false,
+    "hasDdLcpOpt": false,
+    "formAnchorExists": true,
+    "documentTransfer": 8592,
+    "resourceCount": 19,
+    "cachedLikeResourceCount": 0,
+    "externalCompletedOrigins": []
+  },
+  "ok": true,
+  "note": "No Playwright route(); HTTP cache remains available. OIDC via extraHTTPHeaders. Third-party origins blocked via CDP so the token is not sent externally. Google Fonts blocked; Next/font self-host remains."
+}

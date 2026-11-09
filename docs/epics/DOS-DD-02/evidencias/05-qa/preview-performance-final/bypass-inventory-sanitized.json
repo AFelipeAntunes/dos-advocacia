@@ -1,0 +1,19 @@
+{
+  "count": 1,
+  "entries": [
+    {
+      "idPrefix": "N4hK…Pb14",
+      "idLen": 32,
+      "metaKeys": [
+        "scope",
+        "isEnvVar",
+        "createdAt",
+        "createdBy"
+      ],
+      "createdAt": 1794230991361,
+      "scope": "automation-bypass",
+      "rawType": "object"
+    }
+  ],
+  "note": "id values not stored"
+}

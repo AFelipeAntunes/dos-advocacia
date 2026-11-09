@@ -1,0 +1,28 @@
+{
+    "categories":  [
+                       {
+                           "label":  "Due Diligence Imobiliária",
+                           "id":  "8c2ee73c-4740-4d24-8b95-54c0bb24b1ba",
+                           "slug":  "due-diligence-imobiliária"
+                       },
+                       {
+                           "label":  "Contratos Imobiliários",
+                           "id":  "5622eb6a-8cb7-4bfa-92b1-7f694afc7de5",
+                           "slug":  "contratos-imobiliários"
+                       },
+                       {
+                           "label":  "Assessoria para Imobiliárias",
+                           "id":  "d3ccf9b7-7097-45c8-97f6-d102bc5fc8e2",
+                           "slug":  "assessoria-para-imobiliárias"
+                       },
+                       {
+                           "label":  "Litígios Imobiliários",
+                           "id":  "2077ef1a-3096-4792-90c7-4e9eaa601618",
+                           "slug":  "litígios-imobiliários"
+                       }
+                   ],
+    "note":  "IDs de categoria confirmados na reconciliação Preview 12; lista dos 3 multicategoria exige API/snapshot completo.",
+    "source":  "docs/epics/DOS-SEO-01/evidencias/12-preview-real/inventory-reconciliation.json",
+    "multicategoryPostsCount":  3,
+    "capturedAt":  "2026-11-04T11:34:47.654Z"
+}

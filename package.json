@@ -12,7 +12,7 @@
     "test:redirects": "tsx --test src/lib/redirects.test.ts src/lib/redirect-graph.test.ts",
     "test:navigation": "tsx --test src/lib/legacy-navigation.test.ts",
     "test:sitemap": "tsx --test src/lib/sitemap.test.ts",
-    "test:wix": "tsx --test src/lib/wix/*.test.ts",
+    "test:wix": "tsx --test src/lib/wix/*.test.ts src/components/blog-cta-tracker.test.ts",
     "test:analytics": "tsx --test src/lib/analytics/*.test.ts",
     "test:contact": "tsx --test src/app/api/contato/route.test.ts src/lib/contact-form.test.ts",
     "typecheck": "tsc --noEmit"

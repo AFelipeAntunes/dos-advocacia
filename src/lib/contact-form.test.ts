@@ -82,6 +82,28 @@ test("successful landing form identifies the page and contracting intent in What
   assert.equal(leadEvents.length, 1);
 });
 
+test("due diligence form success WhatsApp identifies the page without PII", async () => {
+  const { markup, leadEvents } = await submitForm("due-diligence-imobiliaria");
+  const href = markup.match(/href="([^"]+)"/)?.[1];
+  assert.ok(href);
+  const message = new URL(href).searchParams.get("text") ?? "";
+  assert.match(message, /página de Due diligence imobiliária/);
+  assert.match(message, /já enviei o formulário/);
+  assert.match(message, /análise do imóvel/);
+  assert.doesNotMatch(message, /qa@example|41999999999|Mensagem privada|Teste QA/);
+  assert.equal(leadEvents.length, 1);
+});
+
+test("registers the due diligence landing with comprador ICP and compra demanda", () => {
+  const markup = getContactFormMarkup("dueDiligence");
+
+  assert.ok(markup);
+  assert.match(markup, /data-page-slug="due-diligence-imobiliaria"/);
+  assert.match(markup, /data-icp="comprador"/);
+  assert.match(markup, /data-form-location="servico"/);
+  assert.match(markup, /name="demandType" value="Compra, venda ou investimento"/);
+});
+
 test("other forms retain their existing WhatsApp message", async () => {
   const { markup } = await submitForm("contato");
   const href = markup.match(/href="([^"]+)"/)?.[1];

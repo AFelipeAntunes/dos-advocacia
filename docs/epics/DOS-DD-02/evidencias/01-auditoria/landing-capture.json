@@ -1,0 +1,48 @@
+{
+    "form":  {
+                 "pageSlug":  "due-diligence-imobiliaria",
+                 "demandType":  "Compra, venda ou investimento",
+                 "formLocation":  "servico",
+                 "fields":  [
+                                "name",
+                                "email",
+                                "phone",
+                                "message",
+                                "consent",
+                                "website(honeypot)",
+                                "startedAt"
+                            ],
+                 "icp":  "comprador"
+             },
+    "h3":  [
+               "Leitura documental",
+               "Informações relevantes",
+               "Riscos e prioridades",
+               "Orientação estratégica"
+           ],
+    "branch":  "audit/dos-dd-02-01",
+    "faqPage":  false,
+    "whatsappCta":  "Falar sobre o investimento pelo WhatsApp",
+    "schemaTypes":  [
+                        "BreadcrumbList",
+                        "Service",
+                        "LegalService",
+                        "ListItem",
+                        "PostalAddress"
+                    ],
+    "source":  "production",
+    "ogTitle":  "Due diligence imobiliária | Advogado para análise de imóvel",
+    "description":  "Due diligence imobiliária revela dívidas, penhoras e passivos ocultos antes da compra. Entenda o que é verificado e quando contratar a análise.",
+    "h1ContainsKeyword":  false,
+    "gitBase":  "7fec6b2fb2da7dc5408498099e7c4917aa33bb4d",
+    "url":  "https://www.dosadvocacia.com.br/due-diligence-imobiliaria",
+    "capturedAt":  "2026-11-07T13:56:47.4760696-03:00",
+    "title":  "Due diligence imobiliária | Advogado para análise de imóvel",
+    "h2":  [
+               "Preço e localização não revelam todos os riscos da operação.",
+               "Antes de movimentar patrimônio, descubra o que os documentos mudam na sua decisão.",
+               "Prefere escrever?"
+           ],
+    "canonical":  "https://www.dosadvocacia.com.br/due-diligence-imobiliaria",
+    "h1":  "O imóvel parece certo. Os documentos podem contar outra história."
+}

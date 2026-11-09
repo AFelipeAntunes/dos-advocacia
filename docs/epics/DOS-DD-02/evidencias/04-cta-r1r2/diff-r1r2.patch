@@ -1,0 +1,669 @@
+﻿diff --git a/package.json b/package.json
+index ef1350d..b133dc0 100644
+--- a/package.json
++++ b/package.json
+@@ -12,7 +12,7 @@
+     "test:redirects": "tsx --test src/lib/redirects.test.ts src/lib/redirect-graph.test.ts",
+     "test:navigation": "tsx --test src/lib/legacy-navigation.test.ts",
+     "test:sitemap": "tsx --test src/lib/sitemap.test.ts",
+-    "test:wix": "tsx --test src/lib/wix/*.test.ts",
++    "test:wix": "tsx --test src/lib/wix/*.test.ts src/components/blog-cta-tracker.test.ts",
+     "test:analytics": "tsx --test src/lib/analytics/*.test.ts",
+     "test:contact": "tsx --test src/app/api/contato/route.test.ts src/lib/contact-form.test.ts",
+     "typecheck": "tsc --noEmit"
+diff --git a/src/components/blog-cta-tracker.tsx b/src/components/blog-cta-tracker.tsx
+index c88af5c..fbf4ffa 100644
+--- a/src/components/blog-cta-tracker.tsx
++++ b/src/components/blog-cta-tracker.tsx
+@@ -24,74 +24,130 @@ declare global {
+   }
+ }
+ 
+-export function BlogCtaTracker({ postSlug }: BlogCtaTrackerProps) {
+-  useEffect(() => {
+-    const articleContent = document.querySelector<HTMLElement>(".article__content");
+-    const serviceCta = document.querySelector<HTMLElement>(".article-service-cta");
+-    if (!articleContent && !serviceCta) return;
+-
+-    const serviceLinks = articleContent
+-      ? Array.from(articleContent.querySelectorAll<HTMLAnchorElement>("a[href]"))
+-      : [];
+-    const articleCluster = serviceLinks
+-      .map((link) => getServiceDestination(link.href, window.location.origin))
+-      .filter((destination): destination is string => destination !== null)
+-      .map(getClusterFromDestination)
+-      .find((cluster) => cluster !== undefined);
+-
+-    function getClickedLink(event: MouseEvent) {
+-      const target = event.target;
+-      if (!(target instanceof Element) || !window.gtag) return null;
+-
+-      return target.closest<HTMLAnchorElement>("a[href]");
+-    }
++export type BlogCtaTrackerDocument = Pick<Document, "querySelector" | "querySelectorAll">;
+ 
+-    function trackArticleClick(event: MouseEvent) {
+-      const link = getClickedLink(event);
+-      if (!link || !articleContent?.contains(link)) return;
++export type BindBlogCtaTrackerOptions = {
++  gtag?: Gtag;
++  origin?: string;
++};
+ 
+-      if (isWhatsAppUrl(link.href)) {
+-        window.gtag?.("event", "click_whatsapp", {
+-          post_slug: postSlug,
+-          ...(articleCluster ? { cluster: articleCluster } : {}),
+-          cta_position: "fim",
+-          link_url: link.href
+-        });
+-        return;
+-      }
++/**
++ * Privacy / series note (parecer 08 + card 04):
++ * - Editorial links inside `.article__content` keep historical `cta_position=meio`
++ *   and WhatsApp keeps `cta_position=fim` + `link_url`.
++ * - Injected DD blocks use `meio_artigo` / `fim_artigo` and omit `link_url` on WhatsApp.
++ * - B2B final block keeps `fim_artigo` without `link_url`.
++ * - Related-posts cards sit outside these scopes and emit zero service events.
++ *
++ * Exported for CTO 11 R2 behavioral harnesses that exercise the same listeners the
++ * component mounts in useEffect, including cleanup on remount/postSlug change.
++ */
++export function bindBlogCtaTrackerListeners(
++  documentRef: BlogCtaTrackerDocument,
++  postSlug: string,
++  options: BindBlogCtaTrackerOptions = {}
++) {
++  const articleContent = documentRef.querySelector<HTMLElement>(".article__content");
++  const serviceScopes = Array.from(
++    documentRef.querySelectorAll<HTMLElement>("[data-cta-scope]")
++  );
++  if (!articleContent && serviceScopes.length === 0) return () => {};
++
++  const origin = options.origin
++    ?? (typeof window !== "undefined" ? window.location.origin : "https://www.dosadvocacia.com.br");
++  const emit: Gtag = options.gtag
++    ?? ((...args) => {
++      window.gtag?.(...args);
++    });
++
++  const serviceLinks = articleContent
++    ? Array.from(articleContent.querySelectorAll<HTMLAnchorElement>("a[href]")).filter(
++      (link) => !link.closest("[data-cta-scope]")
++    )
++    : [];
++  const articleCluster = serviceLinks
++    .map((link) => getServiceDestination(link.href, origin))
++    .filter((destination): destination is string => destination !== null)
++    .map(getClusterFromDestination)
++    .find((cluster) => cluster !== undefined);
++
++  function getClickedLink(event: Event) {
++    const target = event.target as Element | null;
++    if (!target || typeof target.closest !== "function") return null;
++
++    return target.closest<HTMLAnchorElement>("a[href]");
++  }
+ 
+-      const destination = getServiceDestination(link.href, window.location.origin);
+-      if (!destination) return;
++  function trackArticleClick(event: Event) {
++    const link = getClickedLink(event);
++    if (!link || !articleContent?.contains(link)) return;
++    if (link.closest("[data-cta-scope]")) return;
+ 
+-      window.gtag?.("event", "click_cta_servico", {
++    if (isWhatsAppUrl(link.href)) {
++      emit("event", "click_whatsapp", {
+         post_slug: postSlug,
+-        destino: destination,
+-        cta_position: "meio"
++        ...(articleCluster ? { cluster: articleCluster } : {}),
++        cta_position: "fim",
++        link_url: link.href
+       });
++      return;
+     }
+ 
+-    function trackServiceCtaClick(event: MouseEvent) {
+-      const link = getClickedLink(event);
+-      if (!link || !serviceCta?.contains(link)) return;
++    const destination = getServiceDestination(link.href, origin);
++    if (!destination) return;
++
++    emit("event", "click_cta_servico", {
++      post_slug: postSlug,
++      destino: destination,
++      cta_position: "meio"
++    });
++  }
++
++  function trackServiceScopeClick(event: Event) {
++    const link = getClickedLink(event);
++    if (!link) return;
++
++    const scope = link.closest<HTMLElement>("[data-cta-scope]");
++    if (!scope || !serviceScopes.includes(scope)) return;
++
++    const position = scope.dataset.ctaPosition === "meio_artigo" ? "meio_artigo" : "fim_artigo";
+ 
+-      const destination = getServiceDestination(link.href, window.location.origin);
+-      if (!destination) return;
++    if (isWhatsAppUrl(link.href)) {
++      const cluster = getClusterFromDestination("due-diligence-imobiliaria");
+ 
+-      window.gtag?.("event", "click_cta_servico", {
++      emit("event", "click_whatsapp", {
+         post_slug: postSlug,
+-        destino: destination,
+-        cta_position: "fim_artigo"
++        ...(cluster ? { cluster } : {}),
++        cta_position: position
+       });
++      return;
+     }
+ 
+-    articleContent?.addEventListener("click", trackArticleClick);
+-    serviceCta?.addEventListener("click", trackServiceCtaClick);
++    const destination = getServiceDestination(link.href, origin);
++    if (!destination) return;
+ 
+-    return () => {
+-      articleContent?.removeEventListener("click", trackArticleClick);
+-      serviceCta?.removeEventListener("click", trackServiceCtaClick);
+-    };
+-  }, [postSlug]);
++    emit("event", "click_cta_servico", {
++      post_slug: postSlug,
++      destino: destination,
++      cta_position: position
++    });
++  }
++
++  articleContent?.addEventListener("click", trackArticleClick);
++  for (const scope of serviceScopes) {
++    scope.addEventListener("click", trackServiceScopeClick);
++  }
++
++  return () => {
++    articleContent?.removeEventListener("click", trackArticleClick);
++    for (const scope of serviceScopes) {
++      scope.removeEventListener("click", trackServiceScopeClick);
++    }
++  };
++}
++
++export function BlogCtaTracker({ postSlug }: BlogCtaTrackerProps) {
++  useEffect(() => bindBlogCtaTrackerListeners(document, postSlug), [postSlug]);
+ 
+   return null;
+ }
+diff --git a/src/lib/wix/blog-service-cta.test.ts b/src/lib/wix/blog-service-cta.test.ts
+index 244d987..180fb94 100644
+--- a/src/lib/wix/blog-service-cta.test.ts
++++ b/src/lib/wix/blog-service-cta.test.ts
+@@ -3,9 +3,15 @@ import test from "node:test";
+ import { createElement } from "react";
+ import { renderToStaticMarkup } from "react-dom/server";
+ 
+-import { BlogServiceCta } from "@/components/blog-service-cta";
++import { BlogDueDiligenceCompactCta, BlogServiceCta } from "@/components/blog-service-cta";
++import { WixRichContent } from "@/components/wix-rich-content";
++import { resolveBlogServiceCtaPlan, CONTRATOS_COMPRADOR_POST_IDS } from "@/lib/wix/blog-cta-eligibility";
+ import { getBlogCategories } from "@/lib/wix/blog-navigation";
+-import type { WixBlogCategory, WixBlogPost } from "@/lib/wix/types";
++import {
++  findDueDiligenceCompactInsertionIndex,
++  getWixRichContentBlocks
++} from "@/lib/wix/rich-content";
++import type { WixBlogCategory, WixBlogPost, WixRichContentNode } from "@/lib/wix/types";
+ 
+ const wixCategories: WixBlogCategory[] = [
+   { id: "assessoria", label: "Assessoria para Imobiliárias", slug: "assessoria-para-imobiliárias" },
+@@ -14,51 +20,242 @@ const wixCategories: WixBlogCategory[] = [
+   { id: "litigios", label: "Litígios Imobiliários", slug: "litígios-imobiliários" }
+ ];
+ 
++const buyerContratosId = [...CONTRATOS_COMPRADOR_POST_IDS][0];
++
+ const fixtures = {
+   b2b: post("post-b2b", ["assessoria"]),
+-  b2c: post("post-b2c", ["due"]),
++  due: post("post-due", ["due"]),
++  contratosBuyer: post("post-contratos-buyer", ["contratos"], buyerContratosId),
++  contratosSemPersona: post("post-contratos-sem", ["contratos"], "id-fora-da-allowlist"),
+   multicategoria: post("post-multicategoria", ["due", "assessoria"]),
++  dueComDesconhecida: post("post-due-unknown", ["due", "fora-do-catalogo"]),
++  litigios: post("post-litigios", ["litigios"]),
+   semCategoria: post("post-sem-categoria", []),
+   categoriaDesconhecida: post("post-categoria-desconhecida", ["fora-do-catalogo"])
+ };
+ 
+ const categories = getBlogCategories(Object.values(fixtures), wixCategories);
+ 
+-function render(postFixture: WixBlogPost) {
++function renderFinal(postFixture: WixBlogPost) {
+   return renderToStaticMarkup(createElement(BlogServiceCta, { categories, post: postFixture }));
+ }
+ 
+-test("renders the service block on the server for the approved B2B category", () => {
+-  const html = render(fixtures.b2b);
+-
++test("keeps the B2B final block for Assessoria and suppresses DD", () => {
++  const html = renderFinal(fixtures.b2b);
+   assert.match(html, /data-cta-scope="article-service"/);
+   assert.match(html, /href="\/assessoria-juridica-para-imobiliarias"/);
+-  assert.equal((html.match(/assessoria-juridica-para-imobiliarias/g) ?? []).length, 1);
++  assert.doesNotMatch(html, /due-diligence-imobiliaria/);
++  assert.equal(resolveBlogServiceCtaPlan(fixtures.multicategoria, categories)?.kind, "imobiliarias");
++  assert.doesNotMatch(renderFinal(fixtures.multicategoria), /article-dd-cta-complete/);
++});
+ 
+-  const anchor = /<a\b[^>]*href="\/assessoria-juridica-para-imobiliarias"[^>]*>([\s\S]*?)<\/a>/.exec(html);
+-  assert.ok(anchor, "service block link was not rendered");
+-  assert.equal(anchor[1].trim(), "Assessoria jurídica para imobiliárias");
++test("Due Diligence category receives complete DD block without compra secondary", () => {
++  const html = renderFinal(fixtures.due);
++  assert.match(html, /id="article-dd-cta-complete"/);
++  assert.match(html, /data-cta-position="fim_artigo"/);
++  assert.match(html, /href="\/due-diligence-imobiliaria"/);
++  assert.match(html, /Conhecer a due diligence imobiliária/);
++  assert.match(html, /Falar pelo WhatsApp/);
++  assert.doesNotMatch(html, /ver assessoria na compra/);
+ });
+ 
+-test("renders the block when the approved category is one of several", () => {
+-  const html = render(fixtures.multicategoria);
++test("Contratos comprador allowlist receives DD complete with compra secondary", () => {
++  const html = renderFinal(fixtures.contratosBuyer);
++  assert.match(html, /article-dd-cta-complete/);
++  assert.match(html, /ver assessoria na compra/);
++  assert.match(html, /href="\/assessoria-juridica-compra-de-imovel"/);
++});
+ 
+-  assert.match(html, /data-cta-scope="article-service"/);
+-  assert.match(html, /href="\/assessoria-juridica-para-imobiliarias"/);
++test("Contratos without buyer proof, Litígios, empty and unknown stay without new blocks", () => {
++  assert.equal(renderFinal(fixtures.contratosSemPersona), "");
++  assert.equal(renderFinal(fixtures.litigios), "");
++  assert.equal(renderFinal(fixtures.semCategoria), "");
++  assert.equal(renderFinal(fixtures.categoriaDesconhecida), "");
++});
++
++test("unknown extra category id does not erase a known Due Diligence match", () => {
++  assert.equal(resolveBlogServiceCtaPlan(fixtures.dueComDesconhecida, categories)?.kind, "due-diligence");
++  assert.match(renderFinal(fixtures.dueComDesconhecida), /article-dd-cta-complete/);
++});
++
++test("compact CTA SSR markup has unique id and meio_artigo position", () => {
++  const html = renderToStaticMarkup(createElement(BlogDueDiligenceCompactCta));
++  assert.match(html, /id="article-dd-cta-compact"/);
++  assert.match(html, /data-cta-position="meio_artigo"/);
++  assert.match(html, /data-cta-scope="due-diligence"/);
++  assert.match(html, /Entender a due diligence/);
++  assert.match(html, /href="\/due-diligence-imobiliaria"/);
++});
++
++test("inserts at most one compact after the third eligible paragraph on the server", () => {
++  const nodes = paragraphs(4);
++  const blocks = getWixRichContentBlocks({ nodes });
++  const index = findDueDiligenceCompactInsertionIndex(blocks);
++  assert.equal(index, 2);
++
++  const html = renderToStaticMarkup(
++    createElement(WixRichContent, {
++      content: { nodes },
++      compactAfterBlockIndex: index,
++      compactCta: createElement(BlogDueDiligenceCompactCta)
++    })
++  );
++
++  assert.equal((html.match(/id="article-dd-cta-compact"/g) ?? []).length, 1);
++  assert.match(html, /P1[\s\S]*P2[\s\S]*P3[\s\S]*article-dd-cta-compact[\s\S]*P4/);
++});
++
++test("short content keeps only the final block opportunity (no compact)", () => {
++  const nodes = paragraphs(2);
++  assert.equal(findDueDiligenceCompactInsertionIndex(getWixRichContentBlocks({ nodes })), null);
++});
++
++test("FAQ and Leia também cut off compact insertion", () => {
++  const withFaq: WixRichContentNode[] = [
++    ...paragraphs(2),
++    {
++      id: "faq",
++      headingData: { level: 2 },
++      nodes: [{ textData: { text: "Perguntas frequentes" }, type: "TEXT" }],
++      type: "HEADING"
++    },
++    ...paragraphs(3, "faq-p")
++  ];
++  assert.equal(findDueDiligenceCompactInsertionIndex(getWixRichContentBlocks({ nodes: withFaq })), null);
++
++  const withRelated: WixRichContentNode[] = [
++    ...paragraphs(2),
++    {
++      id: "related",
++      nodes: [{ textData: { text: "Leia também: outro post" }, type: "TEXT" }],
++      type: "PARAGRAPH"
++    },
++    ...paragraphs(3, "after")
++  ];
++  assert.equal(findDueDiligenceCompactInsertionIndex(getWixRichContentBlocks({ nodes: withRelated })), null);
+ });
+ 
+-test("does not render the block outside the approved category", () => {
+-  assert.equal(render(fixtures.b2c), "");
+-  assert.equal(render(fixtures.semCategoria), "");
+-  assert.equal(render(fixtures.categoriaDesconhecida), "");
++test("list paragraphs are not counted as eligible body paragraphs", () => {
++  const nodes: WixRichContentNode[] = [
++    ...paragraphs(2),
++    {
++      id: "list",
++      type: "BULLETED_LIST",
++      nodes: [
++        {
++          id: "li1",
++          type: "LIST_ITEM",
++          nodes: [{
++            id: "li1-p",
++            type: "PARAGRAPH",
++            nodes: [{ textData: { text: "Item de lista" }, type: "TEXT" }]
++          }]
++        }
++      ]
++    },
++    ...paragraphs(1, "p3")
++  ];
++  const blocks = getWixRichContentBlocks({ nodes });
++  assert.equal(
++    blocks.some((block) => block.kind === "paragraph" && "fromList" in block && block.fromList === true),
++    true
++  );
++  assert.equal(findDueDiligenceCompactInsertionIndex(blocks), 3);
+ });
+ 
+-function post(slug: string, categoryIds: string[]): WixBlogPost {
++test("existing editorial service link does not suppress compact eligibility", () => {
++  const nodes: WixRichContentNode[] = [
++    paragraphWithLink("P1 com link editorial para due diligence ", "/due-diligence-imobiliaria", "no meio do texto"),
++    ...paragraphs(2, "rest")
++  ];
++  assert.equal(findDueDiligenceCompactInsertionIndex(getWixRichContentBlocks({ nodes })), 2);
++});
++
++test("R1: isolated WhatsApp-only conversion paragraph cuts compact before a third body paragraph", () => {
++  const nodes: WixRichContentNode[] = [
++    ...paragraphs(2),
++    {
++      id: "wa-only",
++      type: "PARAGRAPH",
++      nodes: [{
++        type: "TEXT",
++        textData: {
++          text: "Falar pelo WhatsApp",
++          decorations: [{
++            type: "LINK",
++            linkData: { link: { url: "https://wa.me/5541987926468?text=Oi" } }
++          }]
++        }
++      }]
++    },
++    ...paragraphs(2, "after")
++  ];
++  assert.equal(findDueDiligenceCompactInsertionIndex(getWixRichContentBlocks({ nodes })), null);
++});
++
++test("R1: contact section heading cuts compact before later prose", () => {
++  const nodes: WixRichContentNode[] = [
++    ...paragraphs(2),
++    {
++      id: "contact-h2",
++      type: "HEADING",
++      headingData: { level: 2 },
++      nodes: [{ type: "TEXT", textData: { text: "Fale com o escritório" } }]
++    },
++    ...paragraphs(2, "contact-body")
++  ];
++  assert.equal(findDueDiligenceCompactInsertionIndex(getWixRichContentBlocks({ nodes })), null);
++});
++
++test("R1 contrast: body paragraph that only embeds an editorial link still counts toward the third", () => {
++  const nodes: WixRichContentNode[] = [
++    ...paragraphs(2),
++    paragraphWithLink(
++      "Antes de assinar, leia a ",
++      "/due-diligence-imobiliaria",
++      " due diligence imobiliária com calma."
++    )
++  ];
++  assert.equal(findDueDiligenceCompactInsertionIndex(getWixRichContentBlocks({ nodes })), 2);
++});
++
++function post(slug: string, categoryIds: string[], id = slug): WixBlogPost {
+   return {
+     categoryIds,
+     firstPublishedDate: "2026-07-20",
+-    id: slug,
++    id,
+     slug,
+     title: slug
+   };
+ }
++
++function paragraphs(count: number, prefix = "p"): WixRichContentNode[] {
++  return Array.from({ length: count }, (_, index) => ({
++    id: `${prefix}-${index + 1}`,
++    type: "PARAGRAPH",
++    nodes: [{ textData: { text: `P${index + 1}` }, type: "TEXT" }]
++  }));
++}
++
++function paragraphWithLink(before: string, href: string, after = ""): WixRichContentNode {
++  const nodes: WixRichContentNode[] = [];
++  if (before) {
++    nodes.push({ type: "TEXT", textData: { text: before } });
++  }
++  nodes.push({
++    type: "TEXT",
++    textData: {
++      text: href.includes("due-diligence") ? "due diligence" : "serviço",
++      decorations: [{ type: "LINK", linkData: { link: { url: href } } }]
++    }
++  });
++  if (after) {
++    nodes.push({ type: "TEXT", textData: { text: after } });
++  }
++
++  return {
++    id: `linked-${nodes.length}`,
++    type: "PARAGRAPH",
++    nodes
++  };
++}
+diff --git a/src/lib/wix/rich-content.ts b/src/lib/wix/rich-content.ts
+index a07abad..29d7275 100644
+--- a/src/lib/wix/rich-content.ts
++++ b/src/lib/wix/rich-content.ts
+@@ -10,6 +10,7 @@ export type WixRichTextRun = {
+ };
+ 
+ type TextBlock = {
++  fromList?: boolean;
+   id: string;
+   runs: WixRichTextRun[];
+ };
+@@ -20,6 +21,13 @@ export type WixRichContentBlock =
+   | (TextBlock & { kind: "paragraph" })
+   | { alt?: string; height?: number; id: string; kind: "image"; src?: string; width?: number };
+ 
++const LIST_NODE_TYPES = new Set([
++  "BULLETED_LIST",
++  "ORDERED_LIST",
++  "LIST_ITEM",
++  "LIST"
++]);
++
+ export type WixFaqItem = {
+   answer: string;
+   question: string;
+@@ -62,6 +70,13 @@ function imageSource(node: WixRichContentNode) {
+   return typeof source === "string" ? source : source?.id;
+ }
+ 
++function markFromList(blocks: WixRichContentBlock[]): WixRichContentBlock[] {
++  return blocks.map((block) => {
++    if (block.kind === "image") return block;
++    return { ...block, fromList: true };
++  });
++}
++
+ function blocksFromNodes(nodes?: WixRichContentNode[], prefix = "block"): WixRichContentBlock[] {
+   return (nodes ?? []).flatMap((node, index) => {
+     const id = node.id || `${prefix}-${index}`;
+@@ -89,6 +104,10 @@ function blocksFromNodes(nodes?: WixRichContentNode[], prefix = "block"): WixRic
+       return [{ id, kind: "paragraph" as const, runs: textRuns(node.nodes) }];
+     }
+ 
++    if (node.type && LIST_NODE_TYPES.has(node.type)) {
++      return markFromList(blocksFromNodes(node.nodes, id));
++    }
++
+     return blocksFromNodes(node.nodes, id);
+   }).filter((block) => block.kind === "image" || block.runs.length > 0);
+ }
+@@ -107,14 +126,99 @@ export function getWixRichContentBlocks(content?: WixRichContent, fallback?: str
+     .filter((block) => block.runs[0].text.length > 0);
+ }
+ 
+-function textOfBlock(block: TextBlock) {
++export function textOfRichContentBlock(block: TextBlock) {
+   return block.runs.map((run) => run.text).join("").replace(/\s+/g, " ").trim();
+ }
+ 
++function textOfBlock(block: TextBlock) {
++  return textOfRichContentBlock(block);
++}
++
+ function isFaqHeading(text: string) {
+   return text.toLocaleLowerCase("pt-BR").startsWith("perguntas frequentes");
+ }
+ 
++const faqCtaDestinations = new Set([
++  "/assessoria-em-locacao",
++  "/assessoria-juridica-compra-de-imovel",
++  "/conflitos-imobiliarios",
++  "/contratos-imobiliarios",
++  "/due-diligence-imobiliaria"
++]);
++
++function isConversionHref(href: string) {
++  try {
++    const url = new URL(href, "https://www.dosadvocacia.com.br");
++    return url.hostname === "wa.me"
++      || url.hostname === "api.whatsapp.com"
++      || faqCtaDestinations.has(url.pathname.replace(/\/+$/, ""));
++  } catch {
++    return false;
++  }
++}
++
++function isContactSectionHeading(text: string) {
++  const normalized = text.toLocaleLowerCase("pt-BR").trim();
++  return /^(fale com|fale conosco|entre em contato|canais de atendimento|whatsapp)\b/.test(normalized);
++}
++
++/**
++ * Isolated conversion block: every substantive run is a WhatsApp/service link,
++ * or the visible text is itself a contact CTA label. Body copy that merely embeds
++ * an editorial link keeps non-linked runs and is NOT a cut (parecer 08 / CTO 11 R1).
++ */
++function isIsolatedConversionParagraph(block: TextBlock) {
++  const text = textOfBlock(block).toLocaleLowerCase("pt-BR");
++  if (
++    /^(fale com a dra\.|fale com o escrit|fale conosco|falar pelo whatsapp|chamar no whatsapp|converse pelo whatsapp)\b/.test(text)
++  ) {
++    return true;
++  }
++
++  const substantiveRuns = block.runs.filter((run) => run.text.replace(/\s+/g, "").length > 0);
++  if (substantiveRuns.length === 0) return false;
++
++  return substantiveRuns.every((run) => Boolean(run.href && isConversionHref(run.href)));
++}
++
++/**
++ * Cut markers for compact CTA insertion (parecer 08 + CTO 11 R1).
++ * Embedded editorial service/WhatsApp links inside a body paragraph are NOT a cut.
++ */
++export function isCompactInsertionCutBlock(block: WixRichContentBlock) {
++  if (block.kind === "image") return false;
++
++  const text = textOfBlock(block).toLocaleLowerCase("pt-BR");
++  if (block.kind === "heading" && block.level === 2 && isFaqHeading(text)) return true;
++  if (block.kind === "heading" && isContactSectionHeading(text)) return true;
++  if (text.startsWith("leia também")) return true;
++  if (block.kind === "paragraph" && isIsolatedConversionParagraph(block)) return true;
++  return false;
++}
++
++export function isEligibleBodyParagraph(block: WixRichContentBlock) {
++  return block.kind === "paragraph"
++    && !block.fromList
++    && textOfBlock(block).length > 0
++    && !isCompactInsertionCutBlock(block);
++}
++
++/** Index of the 3rd eligible body paragraph, or null when compact CTA must be omitted. */
++export function findDueDiligenceCompactInsertionIndex(blocks: WixRichContentBlock[]) {
++  let eligibleCount = 0;
++
++  for (let index = 0; index < blocks.length; index += 1) {
++    const block = blocks[index];
++    if (isCompactInsertionCutBlock(block)) return null;
++    if (!isEligibleBodyParagraph(block)) continue;
++
++    eligibleCount += 1;
++    if (eligibleCount === 3) return index;
++  }
++
++  return null;
++}
++
+ function isFaqQuestion(block: Exclude<WixRichContentBlock, { kind: "image" }>) {
+   if (block.kind === "heading") return block.level === 3;
+ 
+@@ -125,30 +229,11 @@ function isFaqQuestion(block: Exclude<WixRichContentBlock, { kind: "image" }>) {
+     && block.runs.every((run) => run.bold);
+ }
+ 
+-const faqCtaDestinations = new Set([
+-  "/assessoria-em-locacao",
+-  "/assessoria-juridica-compra-de-imovel",
+-  "/conflitos-imobiliarios",
+-  "/contratos-imobiliarios",
+-  "/due-diligence-imobiliaria"
+-]);
+-
+ function isFaqCta(block: TextBlock) {
+   const text = textOfBlock(block).toLocaleLowerCase("pt-BR");
+   if (text.startsWith("leia também:") || text.startsWith("fale com a dra.")) return true;
+ 
+-  return block.runs.some((run) => {
+-    if (!run.href) return false;
+-
+-    try {
+-      const url = new URL(run.href, "https://www.dosadvocacia.com.br");
+-      return url.hostname === "wa.me"
+-        || url.hostname === "api.whatsapp.com"
+-        || faqCtaDestinations.has(url.pathname.replace(/\/+$/, ""));
+-    } catch {
+-      return false;
+-    }
+-  });
++  return block.runs.some((run) => Boolean(run.href && isConversionHref(run.href)));
+ }
+ 
+ export function getWixFaqItems(content?: WixRichContent): WixFaqItem[] {

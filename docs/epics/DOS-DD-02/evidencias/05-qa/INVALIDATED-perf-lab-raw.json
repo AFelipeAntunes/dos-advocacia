@@ -1,0 +1,2524 @@
+{
+  "method": "playwright-lab DOS-DD-02.05",
+  "candidateOrigin": "http://127.0.0.1:3025",
+  "baselineOrigin": "https://www.dosadvocacia.com.br",
+  "candidateShaBase": "7fec6b2 + uncommitted 03+04 local",
+  "baselineLabel": "production www.dosadvocacia.com.br (publicado)",
+  "runsPerCell": 5,
+  "startedAt": "2026-11-07T18:26:04.484Z",
+  "cells": [
+    {
+      "page": "home",
+      "path": "/",
+      "profile": "desktop-cold",
+      "origin": "candidate",
+      "summary": {
+        "lcpMs": {
+          "min": 196,
+          "max": 480,
+          "avg": 282.4,
+          "samples": [
+            480,
+            228,
+            196,
+            276,
+            232
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 6,
+          "max": 8,
+          "avg": 6.6,
+          "samples": [
+            8,
+            6,
+            6,
+            7,
+            6
+          ]
+        },
+        "proxyMs": {
+          "min": 0,
+          "max": 42,
+          "avg": 27.6,
+          "samples": [
+            42,
+            35,
+            23,
+            0,
+            38
+          ]
+        },
+        "jsKb": {
+          "min": 141.41,
+          "max": 141.41,
+          "avg": 141.4,
+          "samples": [
+            141.41,
+            141.41,
+            141.41,
+            141.41,
+            141.41
+          ]
+        },
+        "cssKb": {
+          "min": 112.82,
+          "max": 112.82,
+          "avg": 112.8,
+          "samples": [
+            112.82,
+            112.82,
+            112.82,
+            112.82,
+            112.82
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 2239,
+          "lcpMs": 480,
+          "cls": 0,
+          "ttfbMs": 8,
+          "proxyMs": 42,
+          "jsKb": 141.41,
+          "cssKb": 112.82,
+          "transferKb": 359.99,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2225,
+          "lcpMs": 228,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 35,
+          "jsKb": 141.41,
+          "cssKb": 112.82,
+          "transferKb": 359.99,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2191,
+          "lcpMs": 196,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 23,
+          "jsKb": 141.41,
+          "cssKb": 112.82,
+          "transferKb": 359.99,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2277,
+          "lcpMs": 276,
+          "cls": 0,
+          "ttfbMs": 7,
+          "proxyMs": 0,
+          "jsKb": 141.41,
+          "cssKb": 112.82,
+          "transferKb": 359.99,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2241,
+          "lcpMs": 232,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 38,
+          "jsKb": 141.41,
+          "cssKb": 112.82,
+          "transferKb": 359.99,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "home",
+      "path": "/",
+      "profile": "desktop-cold",
+      "origin": "baseline",
+      "summary": {
+        "lcpMs": {
+          "min": 288,
+          "max": 428,
+          "avg": 344,
+          "samples": [
+            376,
+            316,
+            428,
+            312,
+            288
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 49,
+          "max": 124,
+          "avg": 71.6,
+          "samples": [
+            61,
+            67,
+            124,
+            57,
+            49
+          ]
+        },
+        "proxyMs": {
+          "min": 0,
+          "max": 3,
+          "avg": 1.2,
+          "samples": [
+            3,
+            0,
+            0,
+            3,
+            0
+          ]
+        },
+        "jsKb": {
+          "min": 152.01,
+          "max": 152.01,
+          "avg": 152,
+          "samples": [
+            152.01,
+            152.01,
+            152.01,
+            152.01,
+            152.01
+          ]
+        },
+        "cssKb": {
+          "min": 113.95,
+          "max": 113.95,
+          "avg": 114,
+          "samples": [
+            113.95,
+            113.95,
+            113.95,
+            113.95,
+            113.95
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 2401,
+          "lcpMs": 376,
+          "cls": 0,
+          "ttfbMs": 61,
+          "proxyMs": 3,
+          "jsKb": 152.01,
+          "cssKb": 113.95,
+          "transferKb": 371.56,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2336,
+          "lcpMs": 316,
+          "cls": 0,
+          "ttfbMs": 67,
+          "proxyMs": 0,
+          "jsKb": 152.01,
+          "cssKb": 113.95,
+          "transferKb": 371.56,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2418,
+          "lcpMs": 428,
+          "cls": 0,
+          "ttfbMs": 124,
+          "proxyMs": 0,
+          "jsKb": 152.01,
+          "cssKb": 113.95,
+          "transferKb": 371.56,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2350,
+          "lcpMs": 312,
+          "cls": 0,
+          "ttfbMs": 57,
+          "proxyMs": 3,
+          "jsKb": 152.01,
+          "cssKb": 113.95,
+          "transferKb": 371.56,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2334,
+          "lcpMs": 288,
+          "cls": 0,
+          "ttfbMs": 49,
+          "proxyMs": 0,
+          "jsKb": 152.01,
+          "cssKb": 113.95,
+          "transferKb": 371.56,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "due-diligence",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "origin": "candidate",
+      "summary": {
+        "lcpMs": {
+          "min": 188,
+          "max": 276,
+          "avg": 245.6,
+          "samples": [
+            236,
+            268,
+            260,
+            188,
+            276
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 6,
+          "max": 8,
+          "avg": 7.4,
+          "samples": [
+            8,
+            8,
+            8,
+            6,
+            7
+          ]
+        },
+        "proxyMs": {
+          "min": 29,
+          "max": 104,
+          "avg": 63.4,
+          "samples": [
+            72,
+            43,
+            69,
+            29,
+            104
+          ]
+        },
+        "jsKb": {
+          "min": 141.41,
+          "max": 141.41,
+          "avg": 141.4,
+          "samples": [
+            141.41,
+            141.41,
+            141.41,
+            141.41,
+            141.41
+          ]
+        },
+        "cssKb": {
+          "min": 41.13,
+          "max": 41.13,
+          "avg": 41.1,
+          "samples": [
+            41.13,
+            41.13,
+            41.13,
+            41.13,
+            41.13
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 2294,
+          "lcpMs": 236,
+          "cls": 0,
+          "ttfbMs": 8,
+          "proxyMs": 72,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 2,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2248,
+          "lcpMs": 268,
+          "cls": 0,
+          "ttfbMs": 8,
+          "proxyMs": 43,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2287,
+          "lcpMs": 260,
+          "cls": 0,
+          "ttfbMs": 8,
+          "proxyMs": 69,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 2,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2220,
+          "lcpMs": 188,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 29,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2357,
+          "lcpMs": 276,
+          "cls": 0,
+          "ttfbMs": 7,
+          "proxyMs": 104,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 2,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "due-diligence",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "desktop-cold",
+      "origin": "baseline",
+      "summary": {
+        "lcpMs": {
+          "min": 280,
+          "max": 312,
+          "avg": 293.6,
+          "samples": [
+            284,
+            288,
+            304,
+            312,
+            280
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 77,
+          "max": 95,
+          "avg": 87.8,
+          "samples": [
+            95,
+            77,
+            95,
+            80,
+            92
+          ]
+        },
+        "proxyMs": {
+          "min": 0,
+          "max": 16,
+          "avg": 4.8,
+          "samples": [
+            6,
+            0,
+            0,
+            2,
+            16
+          ]
+        },
+        "jsKb": {
+          "min": 152.01,
+          "max": 152.01,
+          "avg": 152,
+          "samples": [
+            152.01,
+            152.01,
+            152.01,
+            152.01,
+            152.01
+          ]
+        },
+        "cssKb": {
+          "min": 42.26,
+          "max": 42.26,
+          "avg": 42.3,
+          "samples": [
+            42.26,
+            42.26,
+            42.26,
+            42.26,
+            42.26
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 2340,
+          "lcpMs": 284,
+          "cls": 0,
+          "ttfbMs": 95,
+          "proxyMs": 6,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2328,
+          "lcpMs": 288,
+          "cls": 0,
+          "ttfbMs": 77,
+          "proxyMs": 0,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2334,
+          "lcpMs": 304,
+          "cls": 0,
+          "ttfbMs": 95,
+          "proxyMs": 0,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2343,
+          "lcpMs": 312,
+          "cls": 0,
+          "ttfbMs": 80,
+          "proxyMs": 2,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2332,
+          "lcpMs": 280,
+          "cls": 0,
+          "ttfbMs": 92,
+          "proxyMs": 16,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "imobiliarias",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "origin": "candidate",
+      "summary": {
+        "lcpMs": {
+          "min": 196,
+          "max": 400,
+          "avg": 272.8,
+          "samples": [
+            224,
+            296,
+            400,
+            248,
+            196
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 7,
+          "max": 26,
+          "avg": 11.2,
+          "samples": [
+            8,
+            7,
+            26,
+            8,
+            7
+          ]
+        },
+        "proxyMs": {
+          "min": 0,
+          "max": 121,
+          "avg": 72.2,
+          "samples": [
+            0,
+            94,
+            121,
+            102,
+            44
+          ]
+        },
+        "jsKb": {
+          "min": 141.41,
+          "max": 141.41,
+          "avg": 141.4,
+          "samples": [
+            141.41,
+            141.41,
+            141.41,
+            141.41,
+            141.41
+          ]
+        },
+        "cssKb": {
+          "min": 41.13,
+          "max": 41.13,
+          "avg": 41.1,
+          "samples": [
+            41.13,
+            41.13,
+            41.13,
+            41.13,
+            41.13
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 2219,
+          "lcpMs": 224,
+          "cls": 0,
+          "ttfbMs": 8,
+          "proxyMs": 0,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 351.19,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2328,
+          "lcpMs": 296,
+          "cls": 0,
+          "ttfbMs": 7,
+          "proxyMs": 94,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 351.19,
+          "longTaskCount": 2,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2397,
+          "lcpMs": 400,
+          "cls": 0,
+          "ttfbMs": 26,
+          "proxyMs": 121,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 351.19,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2299,
+          "lcpMs": 248,
+          "cls": 0,
+          "ttfbMs": 8,
+          "proxyMs": 102,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 351.19,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2239,
+          "lcpMs": 196,
+          "cls": 0,
+          "ttfbMs": 7,
+          "proxyMs": 44,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 351.19,
+          "longTaskCount": 2,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "imobiliarias",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "desktop-cold",
+      "origin": "baseline",
+      "summary": {
+        "lcpMs": {
+          "min": 284,
+          "max": 9584,
+          "avg": 2205.6,
+          "samples": [
+            9584,
+            408,
+            444,
+            308,
+            284
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 69,
+          "max": 9251,
+          "avg": 1918,
+          "samples": [
+            9251,
+            96,
+            78,
+            96,
+            69
+          ]
+        },
+        "proxyMs": {
+          "min": 0,
+          "max": 145,
+          "avg": 35.4,
+          "samples": [
+            32,
+            0,
+            145,
+            0,
+            0
+          ]
+        },
+        "jsKb": {
+          "min": 152.01,
+          "max": 152.01,
+          "avg": 152,
+          "samples": [
+            152.01,
+            152.01,
+            152.01,
+            152.01,
+            152.01
+          ]
+        },
+        "cssKb": {
+          "min": 42.26,
+          "max": 42.26,
+          "avg": 42.3,
+          "samples": [
+            42.26,
+            42.26,
+            42.26,
+            42.26,
+            42.26
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 11696,
+          "lcpMs": 9584,
+          "cls": 0,
+          "ttfbMs": 9251,
+          "proxyMs": 32,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 362.76,
+          "longTaskCount": 2,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2430,
+          "lcpMs": 408,
+          "cls": 0,
+          "ttfbMs": 96,
+          "proxyMs": 0,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 362.76,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2488,
+          "lcpMs": 444,
+          "cls": 0,
+          "ttfbMs": 78,
+          "proxyMs": 145,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 362.76,
+          "longTaskCount": 2,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2331,
+          "lcpMs": 308,
+          "cls": 0,
+          "ttfbMs": 96,
+          "proxyMs": 0,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 362.76,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2328,
+          "lcpMs": 284,
+          "cls": 0,
+          "ttfbMs": 69,
+          "proxyMs": 0,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 362.76,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "compra",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "origin": "candidate",
+      "summary": {
+        "lcpMs": {
+          "min": 220,
+          "max": 288,
+          "avg": 247.2,
+          "samples": [
+            288,
+            248,
+            228,
+            220,
+            252
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 6,
+          "max": 7,
+          "avg": 6.2,
+          "samples": [
+            6,
+            6,
+            7,
+            6,
+            6
+          ]
+        },
+        "proxyMs": {
+          "min": 34,
+          "max": 77,
+          "avg": 58.4,
+          "samples": [
+            74,
+            63,
+            34,
+            44,
+            77
+          ]
+        },
+        "jsKb": {
+          "min": 141.41,
+          "max": 141.41,
+          "avg": 141.4,
+          "samples": [
+            141.41,
+            141.41,
+            141.41,
+            141.41,
+            141.41
+          ]
+        },
+        "cssKb": {
+          "min": 41.13,
+          "max": 41.13,
+          "avg": 41.1,
+          "samples": [
+            41.13,
+            41.13,
+            41.13,
+            41.13,
+            41.13
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 2281,
+          "lcpMs": 288,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 74,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2275,
+          "lcpMs": 248,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 63,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2208,
+          "lcpMs": 228,
+          "cls": 0,
+          "ttfbMs": 7,
+          "proxyMs": 34,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2230,
+          "lcpMs": 220,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 44,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2283,
+          "lcpMs": 252,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 77,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 2,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "compra",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "desktop-cold",
+      "origin": "baseline",
+      "summary": {
+        "lcpMs": {
+          "min": 260,
+          "max": 344,
+          "avg": 297.6,
+          "samples": [
+            280,
+            260,
+            312,
+            292,
+            344
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 70,
+          "max": 121,
+          "avg": 83.4,
+          "samples": [
+            73,
+            70,
+            82,
+            71,
+            121
+          ]
+        },
+        "proxyMs": {
+          "min": 0,
+          "max": 3,
+          "avg": 0.8,
+          "samples": [
+            3,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "jsKb": {
+          "min": 152.01,
+          "max": 152.01,
+          "avg": 152,
+          "samples": [
+            152.01,
+            152.01,
+            152.01,
+            152.01,
+            152.01
+          ]
+        },
+        "cssKb": {
+          "min": 42.26,
+          "max": 42.26,
+          "avg": 42.3,
+          "samples": [
+            42.26,
+            42.26,
+            42.26,
+            42.26,
+            42.26
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 2344,
+          "lcpMs": 280,
+          "cls": 0,
+          "ttfbMs": 73,
+          "proxyMs": 3,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2295,
+          "lcpMs": 260,
+          "cls": 0,
+          "ttfbMs": 70,
+          "proxyMs": 0,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2374,
+          "lcpMs": 312,
+          "cls": 0,
+          "ttfbMs": 82,
+          "proxyMs": 0,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2350,
+          "lcpMs": 292,
+          "cls": 0,
+          "ttfbMs": 71,
+          "proxyMs": 1,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 1,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2399,
+          "lcpMs": 344,
+          "cls": 0,
+          "ttfbMs": 121,
+          "proxyMs": 0,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 0,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "home",
+      "path": "/",
+      "profile": "mobile-cold",
+      "origin": "candidate",
+      "summary": {
+        "lcpMs": {
+          "min": 1328,
+          "max": 1604,
+          "avg": 1438.4,
+          "samples": [
+            1604,
+            1484,
+            1388,
+            1388,
+            1328
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 5,
+          "max": 7,
+          "avg": 6,
+          "samples": [
+            6,
+            5,
+            7,
+            6,
+            6
+          ]
+        },
+        "proxyMs": {
+          "min": 745,
+          "max": 830,
+          "avg": 786.6,
+          "samples": [
+            797,
+            830,
+            803,
+            758,
+            745
+          ]
+        },
+        "jsKb": {
+          "min": 141.41,
+          "max": 141.41,
+          "avg": 141.4,
+          "samples": [
+            141.41,
+            141.41,
+            141.41,
+            141.41,
+            141.41
+          ]
+        },
+        "cssKb": {
+          "min": 64.02,
+          "max": 64.02,
+          "avg": 64,
+          "samples": [
+            64.02,
+            64.02,
+            64.02,
+            64.02,
+            64.02
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 5547,
+          "lcpMs": 1604,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 797,
+          "jsKb": 141.41,
+          "cssKb": 64.02,
+          "transferKb": 311.19,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5735,
+          "lcpMs": 1484,
+          "cls": 0,
+          "ttfbMs": 5,
+          "proxyMs": 830,
+          "jsKb": 141.41,
+          "cssKb": 64.02,
+          "transferKb": 311.19,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5615,
+          "lcpMs": 1388,
+          "cls": 0,
+          "ttfbMs": 7,
+          "proxyMs": 803,
+          "jsKb": 141.41,
+          "cssKb": 64.02,
+          "transferKb": 311.19,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5611,
+          "lcpMs": 1388,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 758,
+          "jsKb": 141.41,
+          "cssKb": 64.02,
+          "transferKb": 311.19,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5632,
+          "lcpMs": 1328,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 745,
+          "jsKb": 141.41,
+          "cssKb": 64.02,
+          "transferKb": 311.19,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "home",
+      "path": "/",
+      "profile": "mobile-cold",
+      "origin": "baseline",
+      "summary": {
+        "lcpMs": {
+          "min": 1628,
+          "max": 1772,
+          "avg": 1687.2,
+          "samples": [
+            1628,
+            1668,
+            1672,
+            1772,
+            1696
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 78,
+          "max": 88,
+          "avg": 83,
+          "samples": [
+            86,
+            88,
+            78,
+            82,
+            81
+          ]
+        },
+        "proxyMs": {
+          "min": 649,
+          "max": 776,
+          "avg": 700,
+          "samples": [
+            649,
+            776,
+            720,
+            667,
+            688
+          ]
+        },
+        "jsKb": {
+          "min": 152.01,
+          "max": 152.01,
+          "avg": 152,
+          "samples": [
+            152.01,
+            152.01,
+            152.01,
+            152.01,
+            152.01
+          ]
+        },
+        "cssKb": {
+          "min": 65.15,
+          "max": 65.15,
+          "avg": 65.2,
+          "samples": [
+            65.15,
+            65.15,
+            65.15,
+            65.15,
+            65.15
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 5609,
+          "lcpMs": 1628,
+          "cls": 0,
+          "ttfbMs": 86,
+          "proxyMs": 649,
+          "jsKb": 152.01,
+          "cssKb": 65.15,
+          "transferKb": 322.76,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5748,
+          "lcpMs": 1668,
+          "cls": 0,
+          "ttfbMs": 88,
+          "proxyMs": 776,
+          "jsKb": 152.01,
+          "cssKb": 65.15,
+          "transferKb": 322.76,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5698,
+          "lcpMs": 1672,
+          "cls": 0,
+          "ttfbMs": 78,
+          "proxyMs": 720,
+          "jsKb": 152.01,
+          "cssKb": 65.15,
+          "transferKb": 322.76,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5600,
+          "lcpMs": 1772,
+          "cls": 0,
+          "ttfbMs": 82,
+          "proxyMs": 667,
+          "jsKb": 152.01,
+          "cssKb": 65.15,
+          "transferKb": 322.76,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5653,
+          "lcpMs": 1696,
+          "cls": 0,
+          "ttfbMs": 81,
+          "proxyMs": 688,
+          "jsKb": 152.01,
+          "cssKb": 65.15,
+          "transferKb": 322.76,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "due-diligence",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "origin": "candidate",
+      "summary": {
+        "lcpMs": {
+          "min": 1268,
+          "max": 1352,
+          "avg": 1314.4,
+          "samples": [
+            1344,
+            1352,
+            1292,
+            1316,
+            1268
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 6,
+          "max": 8,
+          "avg": 6.6,
+          "samples": [
+            6,
+            6,
+            7,
+            8,
+            6
+          ]
+        },
+        "proxyMs": {
+          "min": 420,
+          "max": 1066,
+          "avg": 806,
+          "samples": [
+            420,
+            1066,
+            836,
+            846,
+            862
+          ]
+        },
+        "jsKb": {
+          "min": 141.41,
+          "max": 141.41,
+          "avg": 141.4,
+          "samples": [
+            141.41,
+            141.41,
+            141.41,
+            141.41,
+            141.41
+          ]
+        },
+        "cssKb": {
+          "min": 41.13,
+          "max": 41.13,
+          "avg": 41.1,
+          "samples": [
+            41.13,
+            41.13,
+            41.13,
+            41.13,
+            41.13
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 3863,
+          "lcpMs": 1344,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 420,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 3598,
+          "lcpMs": 1352,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 1066,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 3860,
+          "lcpMs": 1292,
+          "cls": 0,
+          "ttfbMs": 7,
+          "proxyMs": 836,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 3879,
+          "lcpMs": 1316,
+          "cls": 0,
+          "ttfbMs": 8,
+          "proxyMs": 846,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 3914,
+          "lcpMs": 1268,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 862,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.11,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "due-diligence",
+      "path": "/due-diligence-imobiliaria",
+      "profile": "mobile-cold",
+      "origin": "baseline",
+      "summary": {
+        "lcpMs": {
+          "min": 1364,
+          "max": 8796,
+          "avg": 2932.8,
+          "samples": [
+            8796,
+            1700,
+            1364,
+            1380,
+            1424
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 72,
+          "max": 7183,
+          "avg": 1498.8,
+          "samples": [
+            7183,
+            79,
+            72,
+            75,
+            85
+          ]
+        },
+        "proxyMs": {
+          "min": 895,
+          "max": 1185,
+          "avg": 1012,
+          "samples": [
+            1069,
+            1185,
+            998,
+            895,
+            913
+          ]
+        },
+        "jsKb": {
+          "min": 152.01,
+          "max": 152.01,
+          "avg": 152,
+          "samples": [
+            152.01,
+            152.01,
+            152.01,
+            152.01,
+            152.01
+          ]
+        },
+        "cssKb": {
+          "min": 42.26,
+          "max": 42.26,
+          "avg": 42.3,
+          "samples": [
+            42.26,
+            42.26,
+            42.26,
+            42.26,
+            42.26
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 11545,
+          "lcpMs": 8796,
+          "cls": 0,
+          "ttfbMs": 7183,
+          "proxyMs": 1069,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 4078,
+          "lcpMs": 1700,
+          "cls": 0,
+          "ttfbMs": 79,
+          "proxyMs": 1185,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 4002,
+          "lcpMs": 1364,
+          "cls": 0,
+          "ttfbMs": 72,
+          "proxyMs": 998,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 4031,
+          "lcpMs": 1380,
+          "cls": 0,
+          "ttfbMs": 75,
+          "proxyMs": 895,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 4058,
+          "lcpMs": 1424,
+          "cls": 0,
+          "ttfbMs": 85,
+          "proxyMs": 913,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "imobiliarias",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "origin": "candidate",
+      "summary": {
+        "lcpMs": {
+          "min": 1240,
+          "max": 1968,
+          "avg": 1604,
+          "samples": [
+            1320,
+            1908,
+            1968,
+            1584,
+            1240
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 6,
+          "max": 9,
+          "avg": 7.4,
+          "samples": [
+            9,
+            7,
+            6,
+            8,
+            7
+          ]
+        },
+        "proxyMs": {
+          "min": 1234,
+          "max": 1904,
+          "avg": 1495.6,
+          "samples": [
+            1283,
+            1549,
+            1904,
+            1508,
+            1234
+          ]
+        },
+        "jsKb": {
+          "min": 141.41,
+          "max": 141.41,
+          "avg": 141.4,
+          "samples": [
+            141.41,
+            141.41,
+            141.41,
+            141.41,
+            141.41
+          ]
+        },
+        "cssKb": {
+          "min": 41.13,
+          "max": 41.13,
+          "avg": 41.1,
+          "samples": [
+            41.13,
+            41.13,
+            41.13,
+            41.13,
+            41.13
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 5565,
+          "lcpMs": 1320,
+          "cls": 0,
+          "ttfbMs": 9,
+          "proxyMs": 1283,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 351.19,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5147,
+          "lcpMs": 1908,
+          "cls": 0,
+          "ttfbMs": 7,
+          "proxyMs": 1549,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 351.19,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5458,
+          "lcpMs": 1968,
+          "cls": 0,
+          "ttfbMs": 6,
+          "proxyMs": 1904,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 351.19,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5768,
+          "lcpMs": 1584,
+          "cls": 0,
+          "ttfbMs": 8,
+          "proxyMs": 1508,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 351.19,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5583,
+          "lcpMs": 1240,
+          "cls": 0,
+          "ttfbMs": 7,
+          "proxyMs": 1234,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 351.19,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "imobiliarias",
+      "path": "/assessoria-juridica-para-imobiliarias",
+      "profile": "mobile-cold",
+      "origin": "baseline",
+      "summary": {
+        "lcpMs": {
+          "min": 1632,
+          "max": 2164,
+          "avg": 1814.4,
+          "samples": [
+            1632,
+            1760,
+            1748,
+            1768,
+            2164
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 63,
+          "max": 91,
+          "avg": 76.8,
+          "samples": [
+            82,
+            63,
+            91,
+            78,
+            70
+          ]
+        },
+        "proxyMs": {
+          "min": 1096,
+          "max": 2543,
+          "avg": 1474.2,
+          "samples": [
+            1157,
+            1096,
+            1274,
+            1301,
+            2543
+          ]
+        },
+        "jsKb": {
+          "min": 152.01,
+          "max": 152.01,
+          "avg": 152,
+          "samples": [
+            152.01,
+            152.01,
+            152.01,
+            152.01,
+            152.01
+          ]
+        },
+        "cssKb": {
+          "min": 42.26,
+          "max": 42.26,
+          "avg": 42.3,
+          "samples": [
+            42.26,
+            42.26,
+            42.26,
+            42.26,
+            42.26
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 5473,
+          "lcpMs": 1632,
+          "cls": 0,
+          "ttfbMs": 82,
+          "proxyMs": 1157,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 362.76,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5175,
+          "lcpMs": 1760,
+          "cls": 0,
+          "ttfbMs": 63,
+          "proxyMs": 1096,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 362.76,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5583,
+          "lcpMs": 1748,
+          "cls": 0,
+          "ttfbMs": 91,
+          "proxyMs": 1274,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 362.76,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5391,
+          "lcpMs": 1768,
+          "cls": 0,
+          "ttfbMs": 78,
+          "proxyMs": 1301,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 362.76,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 6365,
+          "lcpMs": 2164,
+          "cls": 0,
+          "ttfbMs": 70,
+          "proxyMs": 2543,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 362.76,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "compra",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "origin": "candidate",
+      "summary": {
+        "lcpMs": {
+          "min": 1276,
+          "max": 2088,
+          "avg": 1519.2,
+          "samples": [
+            1340,
+            1524,
+            1276,
+            1368,
+            2088
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 10,
+          "max": 66,
+          "avg": 21.4,
+          "samples": [
+            66,
+            10,
+            10,
+            11,
+            10
+          ]
+        },
+        "proxyMs": {
+          "min": 426,
+          "max": 1913,
+          "avg": 985,
+          "samples": [
+            426,
+            1077,
+            1075,
+            434,
+            1913
+          ]
+        },
+        "jsKb": {
+          "min": 141.41,
+          "max": 141.41,
+          "avg": 141.4,
+          "samples": [
+            141.41,
+            141.41,
+            141.41,
+            141.41,
+            141.41
+          ]
+        },
+        "cssKb": {
+          "min": 41.13,
+          "max": 41.13,
+          "avg": 41.1,
+          "samples": [
+            41.13,
+            41.13,
+            41.13,
+            41.13,
+            41.13
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 3891,
+          "lcpMs": 1340,
+          "cls": 0,
+          "ttfbMs": 66,
+          "proxyMs": 426,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.1,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 4017,
+          "lcpMs": 1524,
+          "cls": 0,
+          "ttfbMs": 10,
+          "proxyMs": 1077,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.1,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 3899,
+          "lcpMs": 1276,
+          "cls": 0,
+          "ttfbMs": 10,
+          "proxyMs": 1075,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.1,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 3897,
+          "lcpMs": 1368,
+          "cls": 0,
+          "ttfbMs": 11,
+          "proxyMs": 434,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.1,
+          "longTaskCount": 3,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 4561,
+          "lcpMs": 2088,
+          "cls": 0,
+          "ttfbMs": 10,
+          "proxyMs": 1913,
+          "jsKb": 141.41,
+          "cssKb": 41.13,
+          "transferKb": 181.1,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    },
+    {
+      "page": "compra",
+      "path": "/assessoria-juridica-compra-de-imovel",
+      "profile": "mobile-cold",
+      "origin": "baseline",
+      "summary": {
+        "lcpMs": {
+          "min": 1872,
+          "max": 2132,
+          "avg": 1964.8,
+          "samples": [
+            2132,
+            1872,
+            1912,
+            2000,
+            1908
+          ]
+        },
+        "cls": {
+          "min": 0,
+          "max": 0,
+          "avg": 0,
+          "samples": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ttfbMs": {
+          "min": 70,
+          "max": 113,
+          "avg": 91,
+          "samples": [
+            97,
+            92,
+            113,
+            83,
+            70
+          ]
+        },
+        "proxyMs": {
+          "min": 1215,
+          "max": 1623,
+          "avg": 1465.4,
+          "samples": [
+            1556,
+            1380,
+            1623,
+            1553,
+            1215
+          ]
+        },
+        "jsKb": {
+          "min": 152.01,
+          "max": 152.01,
+          "avg": 152,
+          "samples": [
+            152.01,
+            152.01,
+            152.01,
+            152.01,
+            152.01
+          ]
+        },
+        "cssKb": {
+          "min": 42.26,
+          "max": 42.26,
+          "avg": 42.3,
+          "samples": [
+            42.26,
+            42.26,
+            42.26,
+            42.26,
+            42.26
+          ]
+        }
+      },
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 4491,
+          "lcpMs": 2132,
+          "cls": 0,
+          "ttfbMs": 97,
+          "proxyMs": 1556,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 4246,
+          "lcpMs": 1872,
+          "cls": 0,
+          "ttfbMs": 92,
+          "proxyMs": 1380,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 4273,
+          "lcpMs": 1912,
+          "cls": 0,
+          "ttfbMs": 113,
+          "proxyMs": 1623,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 4370,
+          "lcpMs": 2000,
+          "cls": 0,
+          "ttfbMs": 83,
+          "proxyMs": 1553,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        },
+        {
+          "status": 200,
+          "elapsedMs": 4217,
+          "lcpMs": 1908,
+          "cls": 0,
+          "ttfbMs": 70,
+          "proxyMs": 1215,
+          "jsKb": 152.01,
+          "cssKb": 42.26,
+          "transferKb": 192.67,
+          "longTaskCount": 4,
+          "portraitProfissionalFound": false,
+          "portraitProfissionalTransferKb": null,
+          "portraitProfissionalDurationMs": null
+        }
+      ]
+    }
+  ],
+  "finishedAt": "2026-11-07T18:31:24.229Z"
+}

@@ -1,0 +1,34 @@
+{
+  "probedAt": "2026-11-09T13:32:10.074Z",
+  "chrome": "156.0.8078.81",
+  "mode": "oidc",
+  "hasOidc": true,
+  "hasBypass": false,
+  "authHeaderName": "x-vercel-trusted-oidc-idp-token",
+  "originsAllowed": [
+    "https://dos-advocacia-fp0125m2c-dos-advocacia.vercel.app",
+    "https://dos-advocacia-jxeouysg4-dos-advocacia.vercel.app"
+  ],
+  "ok": false,
+  "candidate": {
+    "label": "candidate",
+    "origin": "https://dos-advocacia-fp0125m2c-dos-advocacia.vercel.app",
+    "status": 200,
+    "h1": "Due diligence imobiliária antes de comprar, vender ou investir",
+    "title": "Due diligence imobiliária | Curitiba e todo o Brasil",
+    "isSso": false,
+    "hasDdLcpOpt": true,
+    "formAnchorExists": true
+  },
+  "baseline": {
+    "label": "baseline",
+    "origin": "https://dos-advocacia-jxeouysg4-dos-advocacia.vercel.app",
+    "status": 403,
+    "h1": null,
+    "title": "403: FORBIDDEN",
+    "isSso": false,
+    "hasDdLcpOpt": false,
+    "formAnchorExists": false
+  },
+  "note": "Token values never written. vercel curl previously returned 200 for both URLs."
+}

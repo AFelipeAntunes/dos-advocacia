@@ -1,0 +1,7 @@
+# Hash regeneration log CTO13
+before_pack_note: previous evidencias-pack-sha256 had divergences on RELATORIO-CONSOLIDADO.md and candidato-manifesto-sha256.txt (CTO 13 R3)
+after_generated: 2026-11-07T15:54:00.8514165-03:00
+sources_final:
+  - perf-lab-controlled-summary.json
+  - RELATORIO-CTO13-R1R2R3.md
+  - candidato-manifesto-sha256.txt

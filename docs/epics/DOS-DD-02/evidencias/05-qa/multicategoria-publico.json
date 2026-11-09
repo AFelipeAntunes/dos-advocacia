@@ -1,0 +1,999 @@
+{
+  "fetchedAt": "2026-11-07T18:18:42.503Z",
+  "method": "cruzamento público das abas /blog?categoria= (não enumera categoryIds da API)",
+  "historicalClaim": "inventário Preview citava 3 posts multicategoria",
+  "perCategory": {
+    "due-diligence-imobiliária": {
+      "url": "https://www.dosadvocacia.com.br/blog?categoria=due-diligence-imobili%C3%A1ria",
+      "status": 200,
+      "finalUrl": "https://www.dosadvocacia.com.br/blog?categoria=due-diligence-imobili%C3%A1ria",
+      "cardCount": 30,
+      "slugs": [
+        "due-diligence-imobiliária-o-que-é-e-por-que-você-precisa-fazer-antes-de-qualquer-compra",
+        "comprar-imóvel-tombado-o-que-vem-junto-com-a-escritura",
+        "imóvel-rural-com-passivo-ambiental-o-risco-é-do-comprador",
+        "imóvel-penhorado-o-risco-que-o-comprador-não-vê",
+        "advogado-imobiliário-em-curitiba-quando-você-precisa",
+        "servidão-de-passagem-o-direito-que-pode-fazer-seu-imóvel-valer-70-menos",
+        "3-riscos-ao-comprar-imóvel-com-alienação-fiduciária-ativa",
+        "imóvel-usucapido-o-risco-oculto-para-quem-compra-em-2026",
+        "loteamento-irregular-o-comprador-pode-nunca-ser-dono",
+        "o-imóvel-estava-hipotecado-o-comprador-só-descobriu-depois-da-escritura",
+        "o-imóvel-foi-vendido-o-cônjuge-não-assinou-e-a-venda-pode-ser-desfeita",
+        "direito-de-superfície-quando-o-imóvel-que-você-comprou-não-inclui-o-terreno",
+        "o-vendedor-tinha-uma-dívida-o-imóvel-ficou-bloqueado-depois-que-o-comprador-registrou",
+        "o-imóvel-estava-no-nome-dele-o-comprador-pagou-tudo-e-quando-foi-registrar-descobriu-que-não-podi",
+        "você-comprou-o-imóvel-pagou-registrou-e-pode-perder-tudo-assim-mesmo",
+        "o-imóvel-foi-entregue-com-defeito-o-comprador-só-descobriu-depois-de-assinar-a-escritura",
+        "a-incorporadora-entrou-em-recuperação-judicial-e-o-seu-imóvel-na-planta",
+        "a-construção-não-estava-averbada-o-banco-recusou-o-financiamento-na-hora-do-fechamento",
+        "distrato-de-imóvel-na-planta-a-construtora-quis-reter-50-o-stj-disse-que-não",
+        "assinou-a-escritura-pagou-pelo-imóvel-mas-não-registrou-e-agora-o-risco-é-seu",
+        "o-imóvel-estava-ocupado-há-anos-o-comprador-só-descobriu-depois-de-pagar",
+        "fraude-à-execução-no-imóvel-o-risco-que-pode-te-custar-tudo",
+        "multipropriedade-imobiliária-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+        "permuta-de-imóvel-riscos-jurídicos-que-ninguém-conta-antes-de-trocar",
+        "alienação-fiduciária-de-imóvel-o-risco-real-que-ninguém-te-conta-antes-de-financiar",
+        "compra-de-imóvel-em-inventário-riscos-que-ninguém-te-conta",
+        "imóvel-irregular-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+        "cib-e-cruzamento-de-dados-os-riscos-jurídicos-que-ninguém-avisou-ao-vendedor",
+        "imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+        "dívida-de-condomínio-e-iptu-na-compra-de-imóvel-quem-paga-a-conta"
+      ],
+      "note": "ok"
+    },
+    "contratos-imobiliários": {
+      "url": "https://www.dosadvocacia.com.br/blog?categoria=contratos-imobili%C3%A1rios",
+      "status": 200,
+      "finalUrl": "https://www.dosadvocacia.com.br/blog?categoria=contratos-imobili%C3%A1rios",
+      "cardCount": 28,
+      "slugs": [
+        "direito-de-preferência-do-condômino-venda-sem-aviso",
+        "imóvel-com-cláusula-de-inalienabilidade-pode-ser-vendido",
+        "procuração-falsa-na-compra-de-imóvel",
+        "o-inventário-nunca-foi-aberto-o-comprador-ficou-sem-imóvel",
+        "vendeu-o-imóvel-para-comprar-outro-a-isenção-de-ir-mudou",
+        "garantia-do-fiador-na-renovação-do-contrato-de-aluguel",
+        "área-do-imóvel-diferente-da-matrícula-o-risco-é-do-comprador",
+        "georreferenciamento-rural-a-venda-que-trava-no-cartório",
+        "o-itbi-do-imóvel-subiu-e-ninguém-avisou-o-comprador",
+        "contrato-de-gaveta-você-comprou-pagou-mas-não-é-o-dono-do-imóvel",
+        "consórcio-imobiliário-parece-simples-o-contrato-não-é",
+        "usou-o-fgts-para-comprar-um-imóvel-sem-checar-todas-as-condições-agora-o-negócio-pode-ser-desfeito",
+        "o-imóvel-estava-alugado-o-comprador-assinou-o-inquilino-entrou-na-justiça-para-ficar-com-ele",
+        "distrato-de-imóvel-na-planta-a-construtora-quis-reter-50-o-stj-disse-que-não",
+        "seu-imóvel-é-bem-de-família-mas-ele-pode-ser-penhorado-assim-mesmo",
+        "o-vendedor-não-pode-comparecer-mandou-um-procurador-e-aí-começa-o-risco",
+        "cessão-de-direitos-em-imóvel-na-planta-o-que-muda-quando-o-comprador-não-é-o-original",
+        "doação-de-imóvel-com-usufruto-o-que-parece-proteção-pode-virar-armadilha",
+        "sinal-de-negócio-em-imóvel-quando-pagar-pode-ser-uma-armadilha",
+        "multipropriedade-imobiliária-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+        "imóvel-herdado-o-que-fazer-quando-um-herdeiro-não-quer-vender",
+        "atraso-na-entrega-de-imóvel-na-planta-direitos-do-comprador-que-a-construtora-não-conta",
+        "holding-imobiliária-vantagens-reais-e-riscos-que-ninguém-conta",
+        "reforma-tributária-e-imóveis-em-2026-riscos-que-o-comprador-precisa-conhecer",
+        "comprar-imóvel-em-leilão-os-riscos-jurídicos-que-ninguém-lê-no-edital",
+        "crédito-imobiliário-2026-o-que-mudou-e-quais-os-riscos-jurídicos-para-o-comprador",
+        "diferença-entre-contrato-de-compra-e-venda-e-escritura-de-imóvel-riscos-que-ninguém-te-conta",
+        "contrato-de-compra-e-venda-de-imóvel-6-pontos-que-você-precisa-analisar-antes-de-assinar"
+      ],
+      "note": "ok"
+    },
+    "assessoria-para-imobiliárias": {
+      "url": "https://www.dosadvocacia.com.br/blog?categoria=assessoria-para-imobili%C3%A1rias",
+      "status": 200,
+      "finalUrl": "https://www.dosadvocacia.com.br/blog?categoria=assessoria-para-imobili%C3%A1rias",
+      "cardCount": 50,
+      "slugs": [
+        "prescrição-de-aluguéis-atrasados-o-prazo-corre-em-silêncio",
+        "assinatura-eletrônica-na-locação-a-imobiliária-está-segura",
+        "dimob-imobiliária-a-declaração-que-pode-virar-multa-mensal",
+        "despesas-extraordinárias-de-condomínio-na-locação",
+        "penhora-do-bem-de-família-do-fiador-veja-quando-ocorre",
+        "prestação-de-contas-do-aluguel-a-imobiliária-está-protegida",
+        "garantia-do-fiador-na-renovação-do-contrato-de-aluguel",
+        "o-locatário-morreu-o-contrato-de-locação-não-morre-junto",
+        "contrato-de-locação-verbal-o-que-a-imobiliária-arrisca",
+        "cláusula-sobre-animais-no-contrato-de-locação-o-erro-que-a-imobiliária-comete",
+        "locação-por-temporada-ou-residencial-a-imobiliária-sabe-qual-contrato-está-assinando",
+        "seguro-fiança-negado-a-garantia-que-a-imobiliária-achou-que-tinha",
+        "o-locatário-saiu-o-dano-apareceu-e-a-vistoria-de-entrada-não-provava-nada",
+        "o-fiador-pediu-exoneração-da-fiança-a-imobiliária-tem-30-dias-para-agir",
+        "duas-garantias-na-locação-a-cláusula-que-pode-ser-nula-desde-o-início",
+        "rescisão-antecipada-do-contrato-de-locação-a-multa-que-a-imobiliária-cobra-errado",
+        "airbnb-sem-aprovação-do-condomínio-a-imobiliária-responde",
+        "renovação-compulsória-o-prazo-que-a-imobiliária-administradora-não-pode-perder",
+        "o-imóvel-foi-vendido-o-inquilino-não-foi-notificado-a-imobiliária-está-no-meio",
+        "o-contrato-não-previa-benfeitorias-o-inquilino-reformou-agora-a-imobiliária-não-tem-como-cobrar",
+        "o-inquilino-sumiu-o-imóvel-ficou-vazio-e-agora-o-que-a-imobiliária-pode-fazer",
+        "o-imóvel-tinha-infiltração-desde-a-entrega-o-locatário-processou-e-a-imobiliária-respondeu-junto",
+        "título-de-capitalização-na-locação-onde-a-imobiliária-erra",
+        "vistoria-de-saída-o-erro-que-derruba-a-cobrança-de-danos",
+        "o-aluguel-não-veio-o-inquilino-não-sai-quando-a-ação-de-despejo-precisa-começar",
+        "3-erros-no-reajuste-do-aluguel-que-a-imobiliária-comete-e-que-podem-virar-processo",
+        "o-inquilino-fez-uma-reforma-agora-diz-que-não-sai-até-ser-indenizado-e-o-contrato-não-previu-isso",
+        "o-aluguel-atrasou-o-locatário-não-atende-o-que-a-imobiliária-pode-e-não-pode-fazer-agora",
+        "o-locatário-reformou-o-imóvel-sem-pedir-autorização-e-a-imobiliária-foi-acionada-pelo-locador",
+        "o-seguro-fiança-foi-aceito-o-contrato-foi-assinado-e-quando-o-inquilino-parou-de-pagar-a-cobertu",
+        "o-locador-quer-o-imóvel-de-volta-para-uso-próprio-e-a-imobiliária-fica-no-meio",
+        "fiador-aceito-contrato-assinado-e-a-imobiliária-ainda-pode-responder-pelo-prejuízo",
+        "rescisão-antecipada-de-aluguel-onde-a-imobiliária-erra-e-responde",
+        "caução-em-dinheiro-na-locação-a-imobiliária-sabe-o-que-a-lei-exige-dela",
+        "a-garantia-venceu-e-o-locatário-ainda-está-no-imóvel-a-imobiliária-percebeu",
+        "a-imobiliária-responde-por-dano-que-o-locatário-causou",
+        "renovação-compulsória-do-contrato-comercial-a-imobiliária-sabe-quando-o-prazo-começa-a-correr",
+        "a-imobiliária-colocou-o-imóvel-no-airbnb-agora-o-locador-quer-responsabilizá-la",
+        "3-falhas-de-compliance-que-colocam-a-imobiliária-em-risco-jurídico-real",
+        "locação-por-temporada-virou-residencial-a-imobiliária-sabia-do-risco",
+        "o-inquilino-reformou-o-imóvel-sem-avisar-agora-ele-quer-ser-ressarcido-e-a-imobiliária-está-no-me",
+        "reajuste-de-aluguel-a-imobiliária-está-aplicando-o-índice-certo-no-contrato",
+        "sublocação-não-autorizada-o-risco-que-a-imobiliária-assume-sem-perceber",
+        "a-imobiliária-pode-ser-responsabilizada-em-uma-ação-de-despejo",
+        "o-inquilino-saiu-o-imóvel-estava-destruído-e-a-imobiliária-foi-acionada",
+        "rescisão-antecipada-de-locação-o-que-a-imobiliária-precisa-saber-antes-de-encerrar-o-contrato",
+        "garantias-locatícias-o-que-a-imobiliária-precisa-saber-antes-de-aceitar",
+        "vistoria-de-imóvel-alugado-a-responsabilidade-da-imobiliária",
+        "inadimplência-do-locatário-o-que-a-imobiliária-pode-e-não-pode-fazer",
+        "4-riscos-jurídicos-que-toda-imobiliária-precisa-conhecer-e-como-prevenir"
+      ],
+      "note": "ok"
+    },
+    "litígios-imobiliários": {
+      "url": "https://www.dosadvocacia.com.br/blog?categoria=lit%C3%ADgios-imobili%C3%A1rios",
+      "status": 200,
+      "finalUrl": "https://www.dosadvocacia.com.br/blog",
+      "cardCount": 106,
+      "slugs": [
+        "due-diligence-imobiliária-o-que-é-e-por-que-você-precisa-fazer-antes-de-qualquer-compra",
+        "direito-de-preferência-do-condômino-venda-sem-aviso",
+        "prescrição-de-aluguéis-atrasados-o-prazo-corre-em-silêncio",
+        "imóvel-com-cláusula-de-inalienabilidade-pode-ser-vendido",
+        "assinatura-eletrônica-na-locação-a-imobiliária-está-segura",
+        "comprar-imóvel-tombado-o-que-vem-junto-com-a-escritura",
+        "procuração-falsa-na-compra-de-imóvel",
+        "dimob-imobiliária-a-declaração-que-pode-virar-multa-mensal",
+        "imóvel-rural-com-passivo-ambiental-o-risco-é-do-comprador",
+        "despesas-extraordinárias-de-condomínio-na-locação",
+        "o-inventário-nunca-foi-aberto-o-comprador-ficou-sem-imóvel",
+        "penhora-do-bem-de-família-do-fiador-veja-quando-ocorre",
+        "vendeu-o-imóvel-para-comprar-outro-a-isenção-de-ir-mudou",
+        "prestação-de-contas-do-aluguel-a-imobiliária-está-protegida",
+        "garantia-do-fiador-na-renovação-do-contrato-de-aluguel",
+        "área-do-imóvel-diferente-da-matrícula-o-risco-é-do-comprador",
+        "o-locatário-morreu-o-contrato-de-locação-não-morre-junto",
+        "imóvel-penhorado-o-risco-que-o-comprador-não-vê",
+        "advogado-imobiliário-em-curitiba-quando-você-precisa",
+        "georreferenciamento-rural-a-venda-que-trava-no-cartório",
+        "contrato-de-locação-verbal-o-que-a-imobiliária-arrisca",
+        "cláusula-sobre-animais-no-contrato-de-locação-o-erro-que-a-imobiliária-comete",
+        "locação-por-temporada-ou-residencial-a-imobiliária-sabe-qual-contrato-está-assinando",
+        "seguro-fiança-negado-a-garantia-que-a-imobiliária-achou-que-tinha",
+        "servidão-de-passagem-o-direito-que-pode-fazer-seu-imóvel-valer-70-menos",
+        "o-locatário-saiu-o-dano-apareceu-e-a-vistoria-de-entrada-não-provava-nada",
+        "o-fiador-pediu-exoneração-da-fiança-a-imobiliária-tem-30-dias-para-agir",
+        "duas-garantias-na-locação-a-cláusula-que-pode-ser-nula-desde-o-início",
+        "3-riscos-ao-comprar-imóvel-com-alienação-fiduciária-ativa",
+        "imóvel-usucapido-o-risco-oculto-para-quem-compra-em-2026",
+        "rescisão-antecipada-do-contrato-de-locação-a-multa-que-a-imobiliária-cobra-errado",
+        "airbnb-sem-aprovação-do-condomínio-a-imobiliária-responde",
+        "loteamento-irregular-o-comprador-pode-nunca-ser-dono",
+        "renovação-compulsória-o-prazo-que-a-imobiliária-administradora-não-pode-perder",
+        "o-imóvel-foi-vendido-o-inquilino-não-foi-notificado-a-imobiliária-está-no-meio",
+        "o-contrato-não-previa-benfeitorias-o-inquilino-reformou-agora-a-imobiliária-não-tem-como-cobrar",
+        "o-inquilino-sumiu-o-imóvel-ficou-vazio-e-agora-o-que-a-imobiliária-pode-fazer",
+        "o-itbi-do-imóvel-subiu-e-ninguém-avisou-o-comprador",
+        "contrato-de-gaveta-você-comprou-pagou-mas-não-é-o-dono-do-imóvel",
+        "o-imóvel-tinha-infiltração-desde-a-entrega-o-locatário-processou-e-a-imobiliária-respondeu-junto",
+        "título-de-capitalização-na-locação-onde-a-imobiliária-erra",
+        "vistoria-de-saída-o-erro-que-derruba-a-cobrança-de-danos",
+        "o-aluguel-não-veio-o-inquilino-não-sai-quando-a-ação-de-despejo-precisa-começar",
+        "3-erros-no-reajuste-do-aluguel-que-a-imobiliária-comete-e-que-podem-virar-processo",
+        "o-inquilino-fez-uma-reforma-agora-diz-que-não-sai-até-ser-indenizado-e-o-contrato-não-previu-isso",
+        "o-imóvel-estava-hipotecado-o-comprador-só-descobriu-depois-da-escritura",
+        "o-imóvel-foi-vendido-o-cônjuge-não-assinou-e-a-venda-pode-ser-desfeita",
+        "o-aluguel-atrasou-o-locatário-não-atende-o-que-a-imobiliária-pode-e-não-pode-fazer-agora",
+        "o-locatário-reformou-o-imóvel-sem-pedir-autorização-e-a-imobiliária-foi-acionada-pelo-locador",
+        "direito-de-superfície-quando-o-imóvel-que-você-comprou-não-inclui-o-terreno",
+        "o-seguro-fiança-foi-aceito-o-contrato-foi-assinado-e-quando-o-inquilino-parou-de-pagar-a-cobertu",
+        "o-vendedor-tinha-uma-dívida-o-imóvel-ficou-bloqueado-depois-que-o-comprador-registrou",
+        "o-locador-quer-o-imóvel-de-volta-para-uso-próprio-e-a-imobiliária-fica-no-meio",
+        "fiador-aceito-contrato-assinado-e-a-imobiliária-ainda-pode-responder-pelo-prejuízo",
+        "o-imóvel-estava-no-nome-dele-o-comprador-pagou-tudo-e-quando-foi-registrar-descobriu-que-não-podi",
+        "consórcio-imobiliário-parece-simples-o-contrato-não-é",
+        "rescisão-antecipada-de-aluguel-onde-a-imobiliária-erra-e-responde",
+        "você-comprou-o-imóvel-pagou-registrou-e-pode-perder-tudo-assim-mesmo",
+        "caução-em-dinheiro-na-locação-a-imobiliária-sabe-o-que-a-lei-exige-dela",
+        "o-imóvel-foi-entregue-com-defeito-o-comprador-só-descobriu-depois-de-assinar-a-escritura",
+        "usou-o-fgts-para-comprar-um-imóvel-sem-checar-todas-as-condições-agora-o-negócio-pode-ser-desfeito",
+        "a-incorporadora-entrou-em-recuperação-judicial-e-o-seu-imóvel-na-planta",
+        "a-garantia-venceu-e-o-locatário-ainda-está-no-imóvel-a-imobiliária-percebeu",
+        "a-imobiliária-responde-por-dano-que-o-locatário-causou",
+        "renovação-compulsória-do-contrato-comercial-a-imobiliária-sabe-quando-o-prazo-começa-a-correr",
+        "o-imóvel-estava-alugado-o-comprador-assinou-o-inquilino-entrou-na-justiça-para-ficar-com-ele",
+        "a-imobiliária-colocou-o-imóvel-no-airbnb-agora-o-locador-quer-responsabilizá-la",
+        "a-construção-não-estava-averbada-o-banco-recusou-o-financiamento-na-hora-do-fechamento",
+        "distrato-de-imóvel-na-planta-a-construtora-quis-reter-50-o-stj-disse-que-não",
+        "3-falhas-de-compliance-que-colocam-a-imobiliária-em-risco-jurídico-real",
+        "assinou-a-escritura-pagou-pelo-imóvel-mas-não-registrou-e-agora-o-risco-é-seu",
+        "locação-por-temporada-virou-residencial-a-imobiliária-sabia-do-risco",
+        "o-imóvel-estava-ocupado-há-anos-o-comprador-só-descobriu-depois-de-pagar",
+        "o-inquilino-reformou-o-imóvel-sem-avisar-agora-ele-quer-ser-ressarcido-e-a-imobiliária-está-no-me",
+        "reajuste-de-aluguel-a-imobiliária-está-aplicando-o-índice-certo-no-contrato",
+        "seu-imóvel-é-bem-de-família-mas-ele-pode-ser-penhorado-assim-mesmo",
+        "sublocação-não-autorizada-o-risco-que-a-imobiliária-assume-sem-perceber",
+        "o-vendedor-não-pode-comparecer-mandou-um-procurador-e-aí-começa-o-risco",
+        "cessão-de-direitos-em-imóvel-na-planta-o-que-muda-quando-o-comprador-não-é-o-original",
+        "a-imobiliária-pode-ser-responsabilizada-em-uma-ação-de-despejo",
+        "doação-de-imóvel-com-usufruto-o-que-parece-proteção-pode-virar-armadilha",
+        "o-inquilino-saiu-o-imóvel-estava-destruído-e-a-imobiliária-foi-acionada",
+        "sinal-de-negócio-em-imóvel-quando-pagar-pode-ser-uma-armadilha",
+        "rescisão-antecipada-de-locação-o-que-a-imobiliária-precisa-saber-antes-de-encerrar-o-contrato",
+        "garantias-locatícias-o-que-a-imobiliária-precisa-saber-antes-de-aceitar",
+        "vistoria-de-imóvel-alugado-a-responsabilidade-da-imobiliária",
+        "inadimplência-do-locatário-o-que-a-imobiliária-pode-e-não-pode-fazer",
+        "fraude-à-execução-no-imóvel-o-risco-que-pode-te-custar-tudo",
+        "multipropriedade-imobiliária-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+        "imóvel-herdado-o-que-fazer-quando-um-herdeiro-não-quer-vender",
+        "permuta-de-imóvel-riscos-jurídicos-que-ninguém-conta-antes-de-trocar",
+        "alienação-fiduciária-de-imóvel-o-risco-real-que-ninguém-te-conta-antes-de-financiar",
+        "compra-de-imóvel-em-inventário-riscos-que-ninguém-te-conta",
+        "imóvel-irregular-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+        "cib-e-cruzamento-de-dados-os-riscos-jurídicos-que-ninguém-avisou-ao-vendedor",
+        "atraso-na-entrega-de-imóvel-na-planta-direitos-do-comprador-que-a-construtora-não-conta",
+        "holding-imobiliária-vantagens-reais-e-riscos-que-ninguém-conta",
+        "imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+        "reforma-tributária-e-imóveis-em-2026-riscos-que-o-comprador-precisa-conhecer",
+        "dívida-de-condomínio-e-iptu-na-compra-de-imóvel-quem-paga-a-conta",
+        "comprar-imóvel-em-leilão-os-riscos-jurídicos-que-ninguém-lê-no-edital",
+        "usucapião-extrajudicial-2026-o-que-mudou-com-a-reforma-e-por-que-você-ainda-precisa-de-advogado",
+        "crédito-imobiliário-2026-o-que-mudou-e-quais-os-riscos-jurídicos-para-o-comprador",
+        "diferença-entre-contrato-de-compra-e-venda-e-escritura-de-imóvel-riscos-que-ninguém-te-conta",
+        "contrato-de-compra-e-venda-de-imóvel-6-pontos-que-você-precisa-analisar-antes-de-assinar",
+        "4-riscos-jurídicos-que-toda-imobiliária-precisa-conhecer-e-como-prevenir"
+      ],
+      "note": "ok"
+    }
+  },
+  "multicategoryPublicIntersection": [
+    {
+      "slug": "due-diligence-imobiliária-o-que-é-e-por-que-você-precisa-fazer-antes-de-qualquer-compra",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "comprar-imóvel-tombado-o-que-vem-junto-com-a-escritura",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "imóvel-rural-com-passivo-ambiental-o-risco-é-do-comprador",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "imóvel-penhorado-o-risco-que-o-comprador-não-vê",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "advogado-imobiliário-em-curitiba-quando-você-precisa",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "servidão-de-passagem-o-direito-que-pode-fazer-seu-imóvel-valer-70-menos",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "3-riscos-ao-comprar-imóvel-com-alienação-fiduciária-ativa",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "imóvel-usucapido-o-risco-oculto-para-quem-compra-em-2026",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "loteamento-irregular-o-comprador-pode-nunca-ser-dono",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-imóvel-estava-hipotecado-o-comprador-só-descobriu-depois-da-escritura",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-imóvel-foi-vendido-o-cônjuge-não-assinou-e-a-venda-pode-ser-desfeita",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "direito-de-superfície-quando-o-imóvel-que-você-comprou-não-inclui-o-terreno",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-vendedor-tinha-uma-dívida-o-imóvel-ficou-bloqueado-depois-que-o-comprador-registrou",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-imóvel-estava-no-nome-dele-o-comprador-pagou-tudo-e-quando-foi-registrar-descobriu-que-não-podi",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "você-comprou-o-imóvel-pagou-registrou-e-pode-perder-tudo-assim-mesmo",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-imóvel-foi-entregue-com-defeito-o-comprador-só-descobriu-depois-de-assinar-a-escritura",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "a-incorporadora-entrou-em-recuperação-judicial-e-o-seu-imóvel-na-planta",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "a-construção-não-estava-averbada-o-banco-recusou-o-financiamento-na-hora-do-fechamento",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "distrato-de-imóvel-na-planta-a-construtora-quis-reter-50-o-stj-disse-que-não",
+      "categories": [
+        "contratos-imobiliários",
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "assinou-a-escritura-pagou-pelo-imóvel-mas-não-registrou-e-agora-o-risco-é-seu",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-imóvel-estava-ocupado-há-anos-o-comprador-só-descobriu-depois-de-pagar",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "fraude-à-execução-no-imóvel-o-risco-que-pode-te-custar-tudo",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "multipropriedade-imobiliária-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+      "categories": [
+        "contratos-imobiliários",
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "permuta-de-imóvel-riscos-jurídicos-que-ninguém-conta-antes-de-trocar",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "alienação-fiduciária-de-imóvel-o-risco-real-que-ninguém-te-conta-antes-de-financiar",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "compra-de-imóvel-em-inventário-riscos-que-ninguém-te-conta",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "imóvel-irregular-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "cib-e-cruzamento-de-dados-os-riscos-jurídicos-que-ninguém-avisou-ao-vendedor",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "dívida-de-condomínio-e-iptu-na-compra-de-imóvel-quem-paga-a-conta",
+      "categories": [
+        "due-diligence-imobiliária",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "direito-de-preferência-do-condômino-venda-sem-aviso",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "imóvel-com-cláusula-de-inalienabilidade-pode-ser-vendido",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "procuração-falsa-na-compra-de-imóvel",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-inventário-nunca-foi-aberto-o-comprador-ficou-sem-imóvel",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "vendeu-o-imóvel-para-comprar-outro-a-isenção-de-ir-mudou",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "garantia-do-fiador-na-renovação-do-contrato-de-aluguel",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "área-do-imóvel-diferente-da-matrícula-o-risco-é-do-comprador",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "georreferenciamento-rural-a-venda-que-trava-no-cartório",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-itbi-do-imóvel-subiu-e-ninguém-avisou-o-comprador",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "contrato-de-gaveta-você-comprou-pagou-mas-não-é-o-dono-do-imóvel",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "consórcio-imobiliário-parece-simples-o-contrato-não-é",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "usou-o-fgts-para-comprar-um-imóvel-sem-checar-todas-as-condições-agora-o-negócio-pode-ser-desfeito",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-imóvel-estava-alugado-o-comprador-assinou-o-inquilino-entrou-na-justiça-para-ficar-com-ele",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "seu-imóvel-é-bem-de-família-mas-ele-pode-ser-penhorado-assim-mesmo",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-vendedor-não-pode-comparecer-mandou-um-procurador-e-aí-começa-o-risco",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "cessão-de-direitos-em-imóvel-na-planta-o-que-muda-quando-o-comprador-não-é-o-original",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "doação-de-imóvel-com-usufruto-o-que-parece-proteção-pode-virar-armadilha",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "sinal-de-negócio-em-imóvel-quando-pagar-pode-ser-uma-armadilha",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "imóvel-herdado-o-que-fazer-quando-um-herdeiro-não-quer-vender",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "atraso-na-entrega-de-imóvel-na-planta-direitos-do-comprador-que-a-construtora-não-conta",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "holding-imobiliária-vantagens-reais-e-riscos-que-ninguém-conta",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "reforma-tributária-e-imóveis-em-2026-riscos-que-o-comprador-precisa-conhecer",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "comprar-imóvel-em-leilão-os-riscos-jurídicos-que-ninguém-lê-no-edital",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "crédito-imobiliário-2026-o-que-mudou-e-quais-os-riscos-jurídicos-para-o-comprador",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "diferença-entre-contrato-de-compra-e-venda-e-escritura-de-imóvel-riscos-que-ninguém-te-conta",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "contrato-de-compra-e-venda-de-imóvel-6-pontos-que-você-precisa-analisar-antes-de-assinar",
+      "categories": [
+        "contratos-imobiliários",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "prescrição-de-aluguéis-atrasados-o-prazo-corre-em-silêncio",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "assinatura-eletrônica-na-locação-a-imobiliária-está-segura",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "dimob-imobiliária-a-declaração-que-pode-virar-multa-mensal",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "despesas-extraordinárias-de-condomínio-na-locação",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "penhora-do-bem-de-família-do-fiador-veja-quando-ocorre",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "prestação-de-contas-do-aluguel-a-imobiliária-está-protegida",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-locatário-morreu-o-contrato-de-locação-não-morre-junto",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "contrato-de-locação-verbal-o-que-a-imobiliária-arrisca",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "cláusula-sobre-animais-no-contrato-de-locação-o-erro-que-a-imobiliária-comete",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "locação-por-temporada-ou-residencial-a-imobiliária-sabe-qual-contrato-está-assinando",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "seguro-fiança-negado-a-garantia-que-a-imobiliária-achou-que-tinha",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-locatário-saiu-o-dano-apareceu-e-a-vistoria-de-entrada-não-provava-nada",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-fiador-pediu-exoneração-da-fiança-a-imobiliária-tem-30-dias-para-agir",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "duas-garantias-na-locação-a-cláusula-que-pode-ser-nula-desde-o-início",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "rescisão-antecipada-do-contrato-de-locação-a-multa-que-a-imobiliária-cobra-errado",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "airbnb-sem-aprovação-do-condomínio-a-imobiliária-responde",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "renovação-compulsória-o-prazo-que-a-imobiliária-administradora-não-pode-perder",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-imóvel-foi-vendido-o-inquilino-não-foi-notificado-a-imobiliária-está-no-meio",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-contrato-não-previa-benfeitorias-o-inquilino-reformou-agora-a-imobiliária-não-tem-como-cobrar",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-inquilino-sumiu-o-imóvel-ficou-vazio-e-agora-o-que-a-imobiliária-pode-fazer",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-imóvel-tinha-infiltração-desde-a-entrega-o-locatário-processou-e-a-imobiliária-respondeu-junto",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "título-de-capitalização-na-locação-onde-a-imobiliária-erra",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "vistoria-de-saída-o-erro-que-derruba-a-cobrança-de-danos",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-aluguel-não-veio-o-inquilino-não-sai-quando-a-ação-de-despejo-precisa-começar",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "3-erros-no-reajuste-do-aluguel-que-a-imobiliária-comete-e-que-podem-virar-processo",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-inquilino-fez-uma-reforma-agora-diz-que-não-sai-até-ser-indenizado-e-o-contrato-não-previu-isso",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-aluguel-atrasou-o-locatário-não-atende-o-que-a-imobiliária-pode-e-não-pode-fazer-agora",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-locatário-reformou-o-imóvel-sem-pedir-autorização-e-a-imobiliária-foi-acionada-pelo-locador",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-seguro-fiança-foi-aceito-o-contrato-foi-assinado-e-quando-o-inquilino-parou-de-pagar-a-cobertu",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-locador-quer-o-imóvel-de-volta-para-uso-próprio-e-a-imobiliária-fica-no-meio",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "fiador-aceito-contrato-assinado-e-a-imobiliária-ainda-pode-responder-pelo-prejuízo",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "rescisão-antecipada-de-aluguel-onde-a-imobiliária-erra-e-responde",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "caução-em-dinheiro-na-locação-a-imobiliária-sabe-o-que-a-lei-exige-dela",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "a-garantia-venceu-e-o-locatário-ainda-está-no-imóvel-a-imobiliária-percebeu",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "a-imobiliária-responde-por-dano-que-o-locatário-causou",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "renovação-compulsória-do-contrato-comercial-a-imobiliária-sabe-quando-o-prazo-começa-a-correr",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "a-imobiliária-colocou-o-imóvel-no-airbnb-agora-o-locador-quer-responsabilizá-la",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "3-falhas-de-compliance-que-colocam-a-imobiliária-em-risco-jurídico-real",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "locação-por-temporada-virou-residencial-a-imobiliária-sabia-do-risco",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-inquilino-reformou-o-imóvel-sem-avisar-agora-ele-quer-ser-ressarcido-e-a-imobiliária-está-no-me",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "reajuste-de-aluguel-a-imobiliária-está-aplicando-o-índice-certo-no-contrato",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "sublocação-não-autorizada-o-risco-que-a-imobiliária-assume-sem-perceber",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "a-imobiliária-pode-ser-responsabilizada-em-uma-ação-de-despejo",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "o-inquilino-saiu-o-imóvel-estava-destruído-e-a-imobiliária-foi-acionada",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "rescisão-antecipada-de-locação-o-que-a-imobiliária-precisa-saber-antes-de-encerrar-o-contrato",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "garantias-locatícias-o-que-a-imobiliária-precisa-saber-antes-de-aceitar",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "vistoria-de-imóvel-alugado-a-responsabilidade-da-imobiliária",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "inadimplência-do-locatário-o-que-a-imobiliária-pode-e-não-pode-fazer",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    },
+    {
+      "slug": "4-riscos-jurídicos-que-toda-imobiliária-precisa-conhecer-e-como-prevenir",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "litígios-imobiliários"
+      ]
+    }
+  ],
+  "multicategoryPublicCount": 105,
+  "gap": "Sem WIX_API_KEY/.env.local neste worktree; interseção de abas públicas ≠ categoryIds runtime. Contagem 0 nas abas não prova ausência de multicategoria na API."
+}

@@ -1,0 +1,61 @@
+﻿{
+  "id": "dpl_CMEHKRbujwgfVuSjR88ZhGjQ1D3N",
+  "name": "preflight-playwright-auth",
+  "url": "preflight-playwright-auth-epmof5a6m-dos-advocacia.vercel.app",
+  "target": "production",
+  "readyState": "READY",
+  "createdAt": 1794231093456,
+  "duration": {
+    "startTime": 1794231094916,
+    "endTime": 1794231101303,
+    "endTimeCapped": 1794231101303,
+    "timeToReady": 1643,
+    "timeToContainerExit": 6387,
+    "timeToContainerExitCapped": 6387,
+    "timeForBilling": 60000,
+    "cpuTimeForBilling": 120000
+  },
+  "buildMachine": {
+    "cores": 2,
+    "memory": 8192,
+    "machine": "basic",
+    "selectionType": "fixed",
+    "selectionSource": "plan-default"
+  },
+  "buildCacheSummary": {
+    "save": {
+      "saved": false,
+      "reason": "no_files"
+    }
+  },
+  "aliases": [
+    "preflight-playwright-auth.vercel.app",
+    "preflight-playwright-auth-dos-advocacia.vercel.app"
+  ],
+  "builds": [
+    {
+      "id": "bld_eas9pkfh9",
+      "deploymentId": "dpl_CMEHKRbujwgfVuSjR88ZhGjQ1D3N",
+      "entrypoint": ".",
+      "readyState": "READY",
+      "readyStateAt": 1794231093307,
+      "createdAt": 1794231093307,
+      "createdIn": "sfo1",
+      "use": "@vercel/vc-build",
+      "config": {
+        "installCommand": "",
+        "buildCommand": "",
+        "nodeVersion": "26.x",
+        "projectCreatedAt": 1794231092965,
+        "vercelConfig": {
+          "name": "preflight-playwright-auth",
+          "version": 2
+        }
+      },
+      "middleware": [],
+      "output": [],
+      "fingerprint": null
+    }
+  ],
+  "contextName": "dos-advocacia"
+}

@@ -34,20 +34,21 @@ const DEFAULT_SITE_URL = "https://www.dosadvocacia.com.br";
  * Ajustes globais pouco significativos (por exemplo, a troca do e-mail do rodapé
  * em 2026-08-06) não elevam a data de todas as páginas.
  *
- * Home, nacional, Curitiba, Áreas, Treinamentos, Locação e a landing usam a data do deploy da PR #5.
+ * Áreas, Treinamentos, Locação e Imobiliárias preservam o deploy da PR #5.
+ * Home, nacional, Curitiba, Compra e Due Diligence: rollout autorizado da PR #12 em 2026-11-09.
  */
 const institutionalRoutes: readonly InstitutionalRoute[] = [
-  { path: "/", lastModified: "2026-11-04", changeFrequency: "weekly", priority: 1 },
-  { path: "/advogada-imobiliaria", lastModified: "2026-11-04", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/advogada-imobiliaria-curitiba", lastModified: "2026-11-04", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/", lastModified: "2026-11-09", changeFrequency: "weekly", priority: 1 },
+  { path: "/advogada-imobiliaria", lastModified: "2026-11-09", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/advogada-imobiliaria-curitiba", lastModified: "2026-11-09", changeFrequency: "monthly", priority: 0.8 },
   { path: "/areas-de-atuacao", lastModified: "2026-11-04", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/assessoria-juridica-compra-de-imovel", lastModified: "2026-08-02", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/assessoria-juridica-compra-de-imovel", lastModified: "2026-11-09", changeFrequency: "monthly", priority: 0.8 },
   { path: "/assessoria-em-locacao", lastModified: "2026-11-04", changeFrequency: "monthly", priority: 0.8 },
   { path: "/assessoria-juridica-para-imobiliarias", lastModified: "2026-11-04", changeFrequency: "monthly", priority: 0.8 },
   { path: "/conflitos-imobiliarios", lastModified: "2026-08-02", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contato", lastModified: "2026-08-06", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contratos-imobiliarios", lastModified: "2026-08-02", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/due-diligence-imobiliaria", lastModified: "2026-08-02", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/due-diligence-imobiliaria", lastModified: "2026-11-09", changeFrequency: "monthly", priority: 0.8 },
   { path: "/politica-de-privacidade", lastModified: "2026-08-06", changeFrequency: "monthly", priority: 0.8 },
   { path: "/sobre", lastModified: "2026-07-10", changeFrequency: "monthly", priority: 0.8 },
   { path: "/treinamentos", lastModified: "2026-11-04", changeFrequency: "monthly", priority: 0.8 }

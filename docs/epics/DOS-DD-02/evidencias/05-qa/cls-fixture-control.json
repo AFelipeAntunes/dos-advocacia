@@ -1,0 +1,20 @@
+{
+  "probedAt": "2026-11-07T18:45:55.491Z",
+  "chrome": "156.0.8078.81",
+  "purpose": "Demonstrate layout-shift PerformanceObserver + session-window CLS on a known fixture",
+  "expected": "cls > 0 and shiftCount >= 1 when late block appears above stable box",
+  "passed": true,
+  "metrics": {
+    "support": true,
+    "errors": [],
+    "shiftCount": 1,
+    "cls": 0.0581,
+    "shifts": [
+      {
+        "t": 432,
+        "v": 0.058053848399977195,
+        "hadInput": false
+      }
+    ]
+  }
+}

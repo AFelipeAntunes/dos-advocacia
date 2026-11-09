@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_bwBkZMufr8AHJ7TXedO6LtxEe7gu",
+  "name": "dos-advocacia",
+  "ssoProtection": {
+    "deploymentType": "all_except_custom_domains"
+  },
+  "gitForkProtection": true,
+  "protectionBypass": {
+    "REDACTED_REVOKED_BYPASS_1": {
+      "scope": "automation-bypass",
+      "isEnvVar": true,
+      "createdAt": 1794230991361,
+      "createdBy": "TBm9xwzBeBMfJx20DmP86uCo"
+    }
+  }
+}

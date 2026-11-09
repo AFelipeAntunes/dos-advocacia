@@ -153,6 +153,12 @@ npm run build
 
 ## 11. Status atual
 
+**DOS-DD-02.05 CTO 24 âncora 09/11/2026.** `scroll-margin-top` scoped em `.dd-lcp-opt #o-que-voce-recebe` (7.25rem / 6.25rem ≤960px). Prova local 390/768/1000/1440 click+direct: H2 abaixo do header. typecheck/build ok. CTAs/form CTO23 e lab 80/80 reaproveitados (delta CSS só). Sem merge/produção. `preview-performance-final/RELATORIO-CTO24-ANCORA.md`.
+
+**DOS-DD-02.05 CTO 16 R1 escopo DD local em 07/11/2026.** Otimizações LCP restritas a `dueDiligence` via `.dd-lcp-opt`. Relatório `RELATORIO-CTO16-ESCOPO-DD.md` (aceite de âncora retirado pelo parecer 20).
+
+**DOS-DD-02.04 R1/R2 corrigidos localmente em 07/11/2026 (parecer 11; sem publicar).** Worktree `.dos-dd-02-04-cta`. Corte de contato/conversão isolada no compacto e prova comportamental do tracker. Classificador e landing aceitos preservados. Evidências em `docs/epics/DOS-DD-02/evidencias/04-cta-r1r2/`.
+
 **DOS-SEO-01 em produção em 05/11/2026 (PRs #5 a #10).** O domínio oficial serve a landing B2B, a locação reposicionada, sete fusões e sete aprofundamentos. As sete origens foram despublicadas no Wix e preservadas como rascunhos com redirects 301 ativos. Quatro pares ficaram fora das fusões. O sitemap público conferido tem 121 URLs e 106 posts. O feed antigo segue em 404 por decisão editorial e os seis redirects legados confirmados estão ativos.
 
 A PR #10 (merge `e7c125d`) publicou a marca pública, sete H3 no FAQ e datas de 04/11 nas cinco páginas com novos links. Os três pontos foram conferidos no domínio oficial. Registros anteriores de Preview ou bloqueio desses lotes são históricos.
@@ -196,6 +202,20 @@ A PR #10 (merge `e7c125d`) publicou a marca pública, sete H3 no FAQ e datas de 
 - O agente de navegador deve repetir em Production o teste do GA4 DebugView para `generate_lead` e confirmar os parâmetros `page_slug`, `tipo_demanda`, `icp` e `form_location`, além de exercitar a sexta requisição inválida para confirmar o 429.
 
 ## 12. Alterações recentes
+
+- **09/11/2026 — DOS-DD-02.05 CTO 24 âncora (local):** `scroll-margin` scoped DD; 8/8 viewports ok; typecheck/build. `RELATORIO-CTO24-ANCORA.md`.
+- **09/11/2026 — DOS-DD-02.05 CTO 23 smoke (local):** âncora real / CTAs / form interceptados no Preview; checklist de liberação. `RELATORIO-CTO23-SMOKE.md`.
+- **09/11/2026 — DOS-DD-02.05 CTO 22 B+D (local):** limpeza D executada; auth OIDC cache-safe; bateria 80 Preview + âncora dirigida. `RELATORIO-CTO22-B-D.md`. Aplicação intacta.
+- **07/11/2026 — DOS-DD-02.05 CTO 16 R1 (local):** escopo das três otimizações LCP só em `dueDiligence` (`.dd-lcp-opt`); controles sem CV/defer/reordenação; sonda DD `cto16-final` + QA âncora/FAQ/CLS/form interceptado. `RELATORIO-CTO16-ESCOPO-DD.md`.
+- **07/11/2026 — DOS-DD-02.05 CTO 15 sonda H1 (local):** 10× DD only; LCP=H1; fix depois escopado no 16. `RELATORIO-CTO15-SONDA-H1.md`.
+- **07/11/2026 — DOS-DD-02.05 CTO 13 R1–R3 (local):** PerformanceObserver LCP/CLS/longtask; lab institucional controlado `7fec6b2`×candidato; `RELATORIO-CTO13-R1R2R3.md`. Gaps de artigos reais separados.
+- **07/11/2026 — DOS-DD-02.05 (local, parecer 12; LCP/CLS invalidado pelo 13):** QA browser/multicategoria/artigo + retrato método; bateria perf antiga marcada `INVALIDATED-*`.
+
+- **07/11/2026 — DOS-DD-02.04 R1/R2 (local, parecer 11):** `isCompactInsertionCutBlock` passa a cortar bloco isolado de conversão (ex.: só WhatsApp) e heading de contato (“Fale com o escritório”), sem tratar link editorial embutido como corte; tracker com `bindBlogCtaTrackerListeners` e testes comportamentais de clique/cleanup na suíte `test:wix`.
+
+- **07/11/2026 — DOS-DD-02.04 (local):** classificador SSR com precedência Assessoria > Due Diligence > Contratos allowlist; compacto após 3º parágrafo elegível; bloco completo DD com WhatsApp contextual e link secundário de compra só em Contratos comprador; tracker com `querySelectorAll([data-cta-scope])`, `meio_artigo`/`fim_artigo` nos blocos novos, série editorial histórica preservada (`meio`/`fim`+`link_url`); CSS restrito às classes do bloco. Landing do card 03 incluída sem republicação.
+
+- **07/11/2026 — DOS-DD-02.03 (local, aceito no parecer 10):** reescrita de `/due-diligence-imobiliaria` e âncoras institucionais; preservada neste checkout do card 04.
 
 - **05/11/2026 — LegalService:** o Teste de pesquisa aprimorada apontou ausência de `legalName` na Home, Curitiba e landing para imobiliárias. Razão social adicionada no módulo compartilhado. Correção preparada localmente.
 
@@ -398,6 +418,8 @@ A PR #10 (merge `e7c125d`) publicou a marca pública, sete H3 no FAQ e datas de 
 
 ## 13. Pendências e recomendações
 
+- **DOS-DD-02.05:** CTO 24 — âncora real corrigida localmente; CTAs/form e lab aceitos. Aguardando CTO montar commit de release na PR12 (evidências sanitizadas + lastModified na data do rollout). Produção só com autorização específica do lote. DebugView real pós-publish. `RELATORIO-CTO24-ANCORA.md`.
+- **DOS-DD-02.04:** R1/R2 reenviados ao CTO. Composição 03+04 preservada no checkout do 05. Sem merge/deploy até autorização concreta de Felipe.
 - Publicar a correção de `legalName` pelo fluxo autorizado de PR e repetir a verificação nas três páginas públicas.
 - Search Console: sitemap processado, indexação da landing solicitada e validação iniciada. Acompanhar o resultado e comparar consultas, CTR e cliques em 4 a 6 semanas.
 - Rodapé: confirmar o ano correto antes de alterar o © 2024.
@@ -433,3 +455,59 @@ A PR #10 (merge `e7c125d`) publicou a marca pública, sete H3 no FAQ e datas de 
 - Acompanhar no Search Console o CTR e a posição das quatro páginas ajustadas por pelo menos 28 dias antes de uma nova rodada de titles ou descriptions, evitando mudanças simultâneas que prejudiquem a comparação.
 - Não criar outro CMS: a decisão atual é manter Wix Blog como painel editorial integrado ao Next/Vercel.
 - Realizar uma edição/publicação editorial controlada no Wix após a janela de ativação e confirmar o evento real na aba de logs. O teste de entrega do Wix já passou; a rota sob demanda permanece como contingência.
+
+
+### DOS-DD-02 — CTO16, 07/11/2026
+Status atual: sonda H1 local apresenta -52 ms desktop/-18 ms mobile; revisão de artefatos, sem reexecução independente. Alterações recentes: parecer16 registrado, aplicação não editada pelo CTO. Pendência: seletor content-visibility e alterações LegacyPage atingem outras páginas sem sonda correspondente; restringir otimizações à due diligence e devolver sonda/smoke dirigidos. Copy e retrato preservados. Sem commit, PR, deploy ou Wix nesta revisão.
+
+
+### DOS-DD-02 — CTO17, 07/11/2026
+Status atual: R1 de escopo aceito; pacote local apto tecnicamente como base PR/Preview. Alterações recentes: parecer17 espelhado, somente documentação pelo CTO. Pendências: integração Wix/multicategoria/eventos reais e desempenho mobile final (+54 ms na última comparação, resultado misto; não declarado sem regressão). Nenhum novo refactor local solicitado. Commit/push/PR/Preview aguardam autorização específica; produção intacta nesta revisão.
+
+
+### DOS-DD-02 — integração autorizada, 07/11/2026
+Status atual: Felipe autorizou commit/push/PR/Preview do lote aceito no CTO17; sem merge ou produção. Alterações recentes: preflight remoto sem divergência/PRs abertas; 114 testes, typecheck e build23/23 aprovados pelo CTO. Pendências: URL/SHA do Preview, integração Wix real e gate mobile. Registro em docs/epics/DOS-DD-02/18-INTEGRACAO-PR-PREVIEW.md.
+
+
+### DOS-DD-02 — PR12 e primeiro Preview, 07/11/2026
+Status atual: PR12 em rascunho, commit74293fe, Preview keu822p1e Ready, checks verdes; produção7fec6b2 intacta. Alterações recentes: integração Wix real conferida;108 posts publicados e três multicategoria identificados via conector, CTAs DD/B2B/comprador corretos nas páginas sondadas. Pendências: SITE_URL Preview genérica antiga afeta canonical dos artigos; autorização específica de override da branch solicitada, não aplicada. Medição automatizada protegida por SSO e GA4/DebugView real continuam abertos. Detalhes e limites em18-INTEGRACAO-PR-PREVIEW.md.
+
+
+### DOS-DD-02 — SITE_URL Preview,08/11/2026
+Status atual: override autorizado por Felipe e salvo somente na Preview Branch qa/dos-dd-02-05. Alterações recentes: SITE_URL Config com domínio oficial; nenhuma aplicação alterada. Novo build via integração Git após cancelamento da confirmação por e-mail do redeploy manual. Pendências: validar canonical/schema/sitemap no novo Preview, desempenho mobile e GA4 real. Ver19-PREVIEW-SITE-URL-20261108.md. Production e credenciais preservadas.
+
+
+### DOS-DD-02 — SITE_URL Preview validada,08/11/2026
+Status atual: override da branch qa/dos-dd-02-05 aplicado e validado. Preview oficial fp0125m2c Ready, commit2abfbeb, aplicação intacta. Alterações recentes: canonical/OG/BlogPosting dos artigos com domínio oficial; sitemap123 URLs/108 posts, zero duplicatas. Capturas e parecer19 atualizados localmente após build. Pendências: velocidade mobile final, acesso automatizado protegido e GA4 real; PR12 em rascunho. Sem merge/produção/Wix write/credenciais.
+
+
+### DOS-DD-02 — CTO20,08/11/2026
+Status atual: navegador limitado não mediu desempenho, gate permanece inconclusivo. Alterações recentes: handoff local Chrome/CDP com preflight de acesso protegido antes da bateria. Errata: JSON do CTO16 tem formAnchorExists=true mas anchorInView=false nos dois perfis; aceite anterior de navegação ao formulário retirado. HTML/código local contém alvo sr-only; ausência de id no form não prova ausência no documento. Pendências: QA local de velocidade e reprodução dirigida da navegação, GA4 real. Ver20-REVISAO-CTO-NAVEGADOR-E-HANDOFF-LOCAL.md. Só documentação alterada pelo CTO.
+
+
+### DOS-DD-02 — CTO21,08/11/2026
+Status atual: preflight CLI deslogada/SSO aceito como diagnóstico; desempenho e âncora seguem inconclusivos. Alterações recentes: handoff21 para login normal assistido por Felipe, vínculo ao projeto oficial e preflight no próprio Playwright. Ressalva: OIDC de desenvolvimento não garante Production protegido; não ampliar acesso sem autorização. Header restrito às origens exatas. Pendências: autenticação e duas revisões acessíveis antes de80 medições. Sem mutação externa ou aplicação pelo CTO.
+
+
+### DOS-DD-02 — CTO22,09/11/2026
+Status atual: opçãoB liberada tecnicamente. Baseline Preview n7nukp43d vinculada ao commit753bad4 via deployment/status GitHub; árvore Git e49e8c58cf6250c7d41d61b404b3c4fe5e231594 idêntica à Production7fec6b2. Alterações recentes: Felipe autorizouD (excluir só projeto acidental preflight-playwright-auth e revogar só bypass involuntário). Executor Cursor; limpeza não executada pelo CTO. Pendências: bateria80+âncora e comprovação da limpeza. context.route do preflight desativa cache HTTP, deve ser tratado antes de medir quente. A/C não liberadas. Handoff22 espelhado.
+
+
+### DOS-DD-02 — CTO23,09/11/2026
+Status atual: limpezaD aceita por artefatos e desempenho laboratorial da landing aceito (80/80, quatro medianas sem piora). Alterações recentes: medianas recalculadas pelo CTO; outlier10456ms acompanha TTFB9213ms, intervalo resposta-LCP1243ms vs1255ms base. Pré-estado de bypass revogado sanitizado antes de versionar. Fragmento sr-only do formulário falha, mas não consta dos links/copy aprovados: pendência técnica não bloqueante. Pendências: smoke curto da âncora real o-que-voce-recebe, eventos/formulário interceptados no Preview e preparação de release; DebugView real pós-publicação autorizada. Handoff23 espelhado. Nenhuma aplicação/produção alterada pelo CTO.
+
+
+### DOS-DD-02 — CTO24,09/11/2026
+Status atual: CTAs/eventos e formulário interceptado do smoke aceitos (bruto ctas.ok e form.ok true); gap real da âncora o-que-voce-recebe confirmado por header sticky. Alterações recentes: handoff24 libera apenas scroll-margin-top local restrito ao alvo DD, sem nova confirmação editorial. Pendências: rechecagem dirigida da âncora e typecheck/build; depois CTO prepara lote concreto de release. Não repetir80 medições ou smoke aceito sem mudança relacionada. Sem código/produção alterado pelo CTO.
+
+
+### DOS-DD-02 — CTO25,09/11/2026
+Status atual: ajuste da âncora real aceito, oito verificações locais aprovadas. Preparação do commit final e Preview na PR12, sem merge/produção. Alterações recentes: CSS isolado scroll-margin; typecheck e build23/23 reexecutados pelo CTO; evidências sanitizadas (bypass revogado e cabeçalhos de sessão). Pendências: smoke remoto da âncora final, datas efetivas do rollout e autorização específica de produção. GSC em frente separada: dois posts200 fora do sitemap público121URLs; sem causa de não indexação comprovada. Ver25-CTO-ACEITE-ANCORA-E-LOTE-RELEASE.md.
+
+
+### DOS-DD-02 — Preview final f5f3d7e,09/11/2026
+Status atual: commit final f5f3d7ec0775c5d2f4e6fa8bde09238440bd442a enviado na PR12. Preview oficial6jyj6gmyb com deployment GitHub7657095068 emsuccess. Âncora remota conferida pelo CTO em1280x720: topo116.125px >header92.8px, scroll-margin116px; pass. Demais oito combinações locais e bateria80 preservadas. Lote pronto para autorização específica de merge/produção, incluindo lastModified no rollout real. Sem merge/deploy Production. Dados e screenshot de smoke remoto locais em evidencias/05-qa/release-f5f3d7e.
+
+
+### DOS-DD-02 — rollout autorizado,09/11/2026
+Status atual: Felipe autorizou merge da PR12 e publicação, com lastModified no rollout e smoke/revalidação se necessária. Alterações recentes: datas2026-11-09 nas cinco rotas do lote, testes sitemap17/17, typecheck e build23/23 aprovados. Publicação em andamento, ainda não declarada concluída. Produção anterior7fec6b2; nenhum Wix/DNS/credencial alterado. Ver26-RELEASE-AUTORIZADO-20261109.md.

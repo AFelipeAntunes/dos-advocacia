@@ -1,0 +1,348 @@
+{
+  "probedAt": "2026-11-09T14:09:05.733Z",
+  "finishedAt": "2026-11-09T14:09:20.388Z",
+  "chrome": "156.0.8078.81",
+  "candidate": {
+    "sha": "2abfbebab000a89250e0c18a29b06d0a161c6864",
+    "preview": "https://dos-advocacia-fp0125m2c-dos-advocacia.vercel.app",
+    "deploymentHint": "fp0125m2c"
+  },
+  "method": "OIDC extraHTTPHeaders; gtag stub local; /api/contato intercepted; WhatsApp not navigated",
+  "anchor": [
+    {
+      "profile": "desktop-1440",
+      "status": 200,
+      "linkVisibleCount": 1,
+      "ok": false,
+      "linkAndHashOk": true,
+      "headerClear": false,
+      "formKeyboardOk": true,
+      "failReasons": [
+        "heading-not-visible",
+        "covered-by-header"
+      ],
+      "note": "Link e hash corretos; H2 fica sob header sticky (sem scroll-margin no alvo). Gap de UX, sem mudança de app neste smoke.",
+      "measure": {
+        "hash": "#o-que-voce-recebe",
+        "headerBottom": 93,
+        "heading": {
+          "exists": true,
+          "text": "O que você recebe",
+          "top": 0,
+          "bottom": 60,
+          "height": 60,
+          "visible": false,
+          "notCoveredByHeader": false
+        },
+        "formKeyboard": {
+          "field": "name",
+          "focused": true,
+          "partiallyInView": false
+        },
+        "formExists": true
+      },
+      "screenshot": "D:\\Projetos desenvolvimento\\.dos-dd-02-04-cta\\docs\\epics\\DOS-DD-02\\evidencias\\05-qa\\preview-performance-final\\smoke-anchor-desktop.png"
+    },
+    {
+      "profile": "mobile-390",
+      "status": 200,
+      "linkVisibleCount": 1,
+      "ok": false,
+      "linkAndHashOk": true,
+      "headerClear": false,
+      "formKeyboardOk": true,
+      "failReasons": [
+        "heading-not-visible",
+        "covered-by-header"
+      ],
+      "note": "Link e hash corretos; H2 fica sob header sticky (sem scroll-margin no alvo). Gap de UX, sem mudança de app neste smoke.",
+      "measure": {
+        "hash": "#o-que-voce-recebe",
+        "headerBottom": 79,
+        "heading": {
+          "exists": true,
+          "text": "O que você recebe",
+          "top": 0,
+          "bottom": 38,
+          "height": 37,
+          "visible": false,
+          "notCoveredByHeader": false
+        },
+        "formKeyboard": {
+          "field": "name",
+          "focused": true,
+          "partiallyInView": false
+        },
+        "formExists": true
+      },
+      "screenshot": "D:\\Projetos desenvolvimento\\.dos-dd-02-04-cta\\docs\\epics\\DOS-DD-02\\evidencias\\05-qa\\preview-performance-final\\smoke-anchor-mobile.png"
+    }
+  ],
+  "ctas": {
+    "articles": {
+      "habiteSe": {
+        "slug": "imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+        "status": 200,
+        "inventory": {
+          "compact": true,
+          "complete": true,
+          "compra": false,
+          "b2b": false,
+          "wa": "https://wa.me/5541987926468?text=Ol%C3%A1%2C%20Drielle!%20Vim%20pelo%20conte%C3%BAdo%20do%20blog%20e%20quero%20conversar%20sobre%20uma%20due%20diligence%20imobili%C3%A1ria.",
+          "h1": "Comprar imóvel sem Habite-se: o risco que aparece depois da escritura"
+        }
+      },
+      "cesao": {
+        "slug": "cessão-de-direitos-em-imóvel-na-planta-o-que-muda-quando-o-comprador-não-é-o-original",
+        "status": 200,
+        "inventory": {
+          "compact": true,
+          "complete": true,
+          "compra": true,
+          "wa": "https://wa.me/5541987926468?text=Ol%C3%A1%2C%20Drielle!%20Vim%20pelo%20conte%C3%BAdo%20do%20blog%20e%20quero%20conversar%20sobre%20uma%20due%20diligence%20imobili%C3%A1ria.",
+          "h1": "Cessão de direitos em imóvel na planta: o que muda quando o comprador não é o original"
+        }
+      },
+      "fiador": {
+        "slug": "garantia-do-fiador-na-renovação-do-contrato-de-aluguel",
+        "status": 200,
+        "inventory": {
+          "compact": false,
+          "complete": false,
+          "b2b": true,
+          "h1": "Garantia do fiador na renovação do contrato de aluguel"
+        }
+      }
+    },
+    "clicks": [
+      {
+        "label": "compacto-dd",
+        "ok": true,
+        "selector": "[data-cta-variant=\"due-diligence-compacto\"] a[data-cta-destination=\"due-diligence-imobiliaria\"]",
+        "eventCount": 1,
+        "rawEventCount": 1,
+        "events": [
+          {
+            "name": "click_cta_servico",
+            "params": {
+              "post_slug": "imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+              "destino": "due-diligence-imobiliaria",
+              "cta_position": "meio_artigo"
+            }
+          }
+        ],
+        "hrefInfo": {
+          "href": "/due-diligence-imobiliaria",
+          "destination": "due-diligence-imobiliaria",
+          "hasScope": true,
+          "scopePosition": "meio_artigo",
+          "listenersLikely": true
+        }
+      },
+      {
+        "label": "final-dd",
+        "ok": true,
+        "selector": "[data-cta-variant=\"due-diligence-completo\"] a.button[data-cta-destination=\"due-diligence-imobiliaria\"]",
+        "eventCount": 1,
+        "rawEventCount": 1,
+        "events": [
+          {
+            "name": "click_cta_servico",
+            "params": {
+              "post_slug": "imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+              "destino": "due-diligence-imobiliaria",
+              "cta_position": "fim_artigo"
+            }
+          }
+        ],
+        "hrefInfo": {
+          "href": "/due-diligence-imobiliaria",
+          "destination": "due-diligence-imobiliaria",
+          "hasScope": true,
+          "scopePosition": "fim_artigo",
+          "listenersLikely": true
+        }
+      },
+      {
+        "label": "secundario-compra",
+        "ok": true,
+        "selector": "[data-cta-destination=\"assessoria-juridica-compra-de-imovel\"]",
+        "eventCount": 1,
+        "rawEventCount": 1,
+        "events": [
+          {
+            "name": "click_cta_servico",
+            "params": {
+              "post_slug": "cessão-de-direitos-em-imóvel-na-planta-o-que-muda-quando-o-comprador-não-é-o-original",
+              "destino": "assessoria-juridica-compra-de-imovel",
+              "cta_position": "fim_artigo"
+            }
+          }
+        ],
+        "hrefInfo": {
+          "href": "/assessoria-juridica-compra-de-imovel",
+          "destination": "assessoria-juridica-compra-de-imovel",
+          "hasScope": true,
+          "scopePosition": "fim_artigo",
+          "listenersLikely": true
+        }
+      },
+      {
+        "label": "b2b-imobiliarias",
+        "ok": true,
+        "selector": "[data-cta-variant=\"imobiliarias\"] a.button",
+        "eventCount": 1,
+        "rawEventCount": 1,
+        "events": [
+          {
+            "name": "click_cta_servico",
+            "params": {
+              "post_slug": "garantia-do-fiador-na-renovação-do-contrato-de-aluguel",
+              "destino": "assessoria-juridica-para-imobiliarias",
+              "cta_position": "fim_artigo"
+            }
+          }
+        ],
+        "hrefInfo": {
+          "href": "/assessoria-juridica-para-imobiliarias",
+          "destination": "assessoria-juridica-para-imobiliarias",
+          "hasScope": true,
+          "scopePosition": "fim_artigo",
+          "listenersLikely": true
+        }
+      }
+    ],
+    "whatsappContextual": {
+      "hrefPresent": true,
+      "isWaMe": true,
+      "hasEncodedText": true,
+      "clicked": false
+    },
+    "eventChecks": [
+      {
+        "label": "compacto-dd",
+        "ok": true,
+        "eventCount": 1,
+        "event": {
+          "name": "click_cta_servico",
+          "params": {
+            "post_slug": "imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+            "destino": "due-diligence-imobiliaria",
+            "cta_position": "meio_artigo"
+          }
+        },
+        "forbiddenKeysPresent": [],
+        "expected": {
+          "name": "click_cta_servico",
+          "cta_position": "meio_artigo",
+          "destino": "due-diligence-imobiliaria"
+        }
+      },
+      {
+        "label": "final-dd",
+        "ok": true,
+        "eventCount": 1,
+        "event": {
+          "name": "click_cta_servico",
+          "params": {
+            "post_slug": "imóvel-sem-habite-se-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+            "destino": "due-diligence-imobiliaria",
+            "cta_position": "fim_artigo"
+          }
+        },
+        "forbiddenKeysPresent": [],
+        "expected": {
+          "name": "click_cta_servico",
+          "cta_position": "fim_artigo",
+          "destino": "due-diligence-imobiliaria"
+        }
+      },
+      {
+        "label": "secundario-compra",
+        "ok": true,
+        "eventCount": 1,
+        "event": {
+          "name": "click_cta_servico",
+          "params": {
+            "post_slug": "cessão-de-direitos-em-imóvel-na-planta-o-que-muda-quando-o-comprador-não-é-o-original",
+            "destino": "assessoria-juridica-compra-de-imovel",
+            "cta_position": "fim_artigo"
+          }
+        },
+        "forbiddenKeysPresent": [],
+        "expected": {
+          "name": "click_cta_servico",
+          "cta_position": "fim_artigo",
+          "destino": "assessoria-juridica-compra-de-imovel"
+        }
+      },
+      {
+        "label": "b2b-imobiliarias",
+        "ok": true,
+        "eventCount": 1,
+        "event": {
+          "name": "click_cta_servico",
+          "params": {
+            "post_slug": "garantia-do-fiador-na-renovação-do-contrato-de-aluguel",
+            "destino": "assessoria-juridica-para-imobiliarias",
+            "cta_position": "fim_artigo"
+          }
+        },
+        "forbiddenKeysPresent": [],
+        "expected": {
+          "name": "click_cta_servico",
+          "cta_position": "fim_artigo"
+        }
+      }
+    ],
+    "ok": true
+  },
+  "form": {
+    "pageSlugExpected": "due-diligence-imobiliaria",
+    "whatsappOnPage": [
+      {
+        "text": "Conversar sobre o imóvel que estou avaliando ↗",
+        "hasTextParam": true,
+        "mentionsDd": true
+      },
+      {
+        "text": "Conversar sobre o imóvel pelo WhatsApp ↗",
+        "hasTextParam": true,
+        "mentionsDd": true
+      },
+      {
+        "text": "+55 41 98792-6468",
+        "hasTextParam": true,
+        "mentionsDd": false
+      }
+    ],
+    "errorPath": {
+      "generateLeadCount": 0,
+      "statusText": "Dados inválidos.",
+      "ok": true
+    },
+    "successPath": {
+      "generateLeadCount": 1,
+      "event": {
+        "name": "generate_lead",
+        "params": {
+          "page_slug": "due-diligence-imobiliaria",
+          "tipo_demanda": "Compra, venda ou investimento",
+          "icp": "comprador",
+          "form_location": "servico"
+        }
+      },
+      "extraKeys": [],
+      "forbiddenPii": [],
+      "ui": {
+        "successVisible": true,
+        "waPresent": true,
+        "waText": "Olá, Drielle! Vim pela página de Due diligence imobiliária, já enviei o formulário e quero conversar sobre a análise do imóvel.",
+        "contextualDd": true
+      },
+      "ok": true
+    },
+    "ok": true
+  },
+  "ok": false
+}

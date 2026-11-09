@@ -1,0 +1,30 @@
+{
+  "id": "prj_oGSRjIAMCRzwviGYbbJOOCjEj4N5",
+  "name": "preflight-playwright-auth",
+  "accountId": null,
+  "framework": null,
+  "createdAt": 1794231092965,
+  "updatedAt": null,
+  "nodeVersion": "26.x",
+  "targets": null,
+  "alias": null,
+  "url": null,
+  "projectId": null,
+  "deploymentId": null,
+  "meta": null,
+  "readyState": null,
+  "target": null,
+  "keys": [
+    "id",
+    "name",
+    "owner",
+    "createdAt",
+    "rootDirectory",
+    "nodeVersion",
+    "framework",
+    "buildCommand",
+    "outputDirectory",
+    "installCommand",
+    "sandbox"
+  ]
+}

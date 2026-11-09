@@ -1,0 +1,37 @@
+{
+  "reconciledAt": "2026-11-07T18:19:30.969Z",
+  "litigioAba": {
+    "finalUrl": "https://www.dosadvocacia.com.br/blog",
+    "cardCount": 106,
+    "finding": "Filtro litígios redireciona para /blog canônico; cruzar com essa aba inventa multicategoria falsa."
+  },
+  "historicalPreviewClaim": 3,
+  "publicIntersectionExcludingLitigios": [
+    {
+      "slug": "distrato-de-imóvel-na-planta-a-construtora-quis-reter-50-o-stj-disse-que-não",
+      "categories": [
+        "contratos-imobiliários",
+        "due-diligence-imobiliária"
+      ]
+    },
+    {
+      "slug": "multipropriedade-imobiliária-riscos-jurídicos-que-o-comprador-precisa-conhecer",
+      "categories": [
+        "contratos-imobiliários",
+        "due-diligence-imobiliária"
+      ]
+    },
+    {
+      "slug": "garantia-do-fiador-na-renovação-do-contrato-de-aluguel",
+      "categories": [
+        "assessoria-para-imobiliárias",
+        "contratos-imobiliários"
+      ]
+    }
+  ],
+  "publicIntersectionExcludingLitigiosCount": 3,
+  "assessoriaPlusDueDiligencePublic": [],
+  "assessoriaPlusDueDiligenceCount": 0,
+  "conclusion": "Há interseção pública real entre abas utilizáveis; listar IDs via API antes do release.",
+  "gapApi": "Sem .env.local/WIX_API_KEY neste worktree — categoryIds runtime não lidos."
+}

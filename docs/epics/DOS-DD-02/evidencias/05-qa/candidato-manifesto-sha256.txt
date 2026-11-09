@@ -1,0 +1,23 @@
+# DOS-DD-02.05 candidato manifesto SHA-256 (CTO16)
+# generated 2026-11-07T17:37:35.4860648-03:00
+# base 7fec6b2 + local composition; LCP opts scoped to dueDiligence
+
+81d4179fcaaee74bcaa4f11797caa43b810be280287251cbfd658ff330a53f97  src/legacy-pages/due-diligence-imobiliaria.html
+0522eeb2ba0a927a0be4aec9362065b6b37929247d9053f4b86e129ec2fbe4a1  src/app/globals.css
+9cb4fc2449b2fae4703e2d708a526068cea518c17231680a7da7c19840778584  src/components/legacy-page.tsx
+acfc8950fa4b0825fb31526bb6e3974cc1230bfaa4175b58a0a397ee221eba17  public/site-interactions.js
+6f112d7b415c5123fbaf0290a5e03df73dd27fd8e69d0dff8c687b346b6f127c  src/app/post/[slug]/page.tsx
+532cefe192766e0030beb44eb8269db7896b4e97110e8d5a9b59b1a3d8f2718b  src/components/blog-cta-tracker.tsx
+247d4bcdca5aeb4b8440893a5b688e19101ca83c1aa1986895f212e3852c6cd1  src/components/blog-cta-tracker.test.ts
+37bdd0c3994b5f5ce2e5ee8054eea066be116bf1b2b83c19aa5983beeadbc130  src/components/blog-service-cta.tsx
+e14e87bcce6d4746cf9dad226e45f5f328f781dc0e1de8a54e0209503d5b1aa1  src/components/wix-rich-content.tsx
+a7a217c009aaf5b7c375fd31138551acd96e39d93b5eef1e684c17c2a9920986  src/legacy-pages/advogada-imobiliaria-curitiba.html
+2fc70c441eb5a8f9f457a9d444856a56db7612827ce4befbf7248ad1d6c8a5e3  src/legacy-pages/advogada-imobiliaria.html
+f518f5e46c09928f8e093fef1fbcd422ce9b7351b749a1b58b0798c5ef29f735  src/legacy-pages/assessoria-juridica-compra-de-imovel.html
+01ecb63c3fbf41deb6da9677054b83406592af620858a60d90f2f7b2a0427607  src/legacy-pages/index.html
+984652c90c41a01a458f64bd7656dabb1e52565f03622c4064e4473ab422dc25  src/lib/contact-form.test.ts
+eb8714c4ac0cfc9b3810776db6b2ad3cb8c372f6ab4842af7877084ea7ef9f48  src/lib/wix/blog-cta-eligibility.ts
+a90b86c4eb2bfbcdc52ca9ee0bcdd49249074d2b51f7d39524ddeefe96c4473e  src/lib/wix/blog-service-cta.test.ts
+bfa04758e365b390732ec7df2d6ada64a3fb9a30dfc3cd9c157caa975fac1f25  src/lib/wix/rich-content.ts
+c05c8beb382fdce30b637b6d1e322c7956ff6c48826c6b747796e7f251927fac  package.json
+eee46d8946c64122fa7b3f71328f7170dd8bdccbb609f023890ece6aa90604a1  PROJECT_CONTEXT.md
